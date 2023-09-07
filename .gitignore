@@ -224,3 +224,9 @@ AppPackages/
 #####
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
 #####
+<<<<<<< HEAD
+=======
+
+capa_presentacion/bin
+capa_presentacion/obj
+>>>>>>> 04c361d (creado repositorio local)
