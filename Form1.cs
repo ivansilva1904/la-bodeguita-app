@@ -18,10 +18,16 @@ namespace la_bodeguita
             InitializeComponent();
         }
 
-        private void BUT_OTRA_VISTA_Click(object sender, EventArgs e)
+        private void BUT_ALTA_USUARIO_Click(object sender, EventArgs e)
         {
             Form vista_altaUsuario = new alta_usuario();
             vista_altaUsuario.Show();
+        }
+
+        private void BUT_BAJA_USUARIO_Click(object sender, EventArgs e)
+        {
+            Form vista_bajaUsuario = new baja_usuario();
+            vista_bajaUsuario.Show();
         }
     }
 }
