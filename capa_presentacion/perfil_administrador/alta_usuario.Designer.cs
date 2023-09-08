@@ -48,6 +48,7 @@
             this.RADBUT_VENDEDOR = new System.Windows.Forms.RadioButton();
             this.RADBUT_SUPERVISOR = new System.Windows.Forms.RadioButton();
             this.BUT_AGREGAR = new System.Windows.Forms.Button();
+            this.DTP_FECHA_NACIMIENTO = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // LBL_INGRESAR
@@ -220,11 +221,20 @@
             this.BUT_AGREGAR.Text = "Agregar";
             this.BUT_AGREGAR.UseVisualStyleBackColor = true;
             // 
+            // DTP_FECHA_NACIMIENTO
+            // 
+            this.DTP_FECHA_NACIMIENTO.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTP_FECHA_NACIMIENTO.Location = new System.Drawing.Point(543, 125);
+            this.DTP_FECHA_NACIMIENTO.Name = "DTP_FECHA_NACIMIENTO";
+            this.DTP_FECHA_NACIMIENTO.Size = new System.Drawing.Size(103, 20);
+            this.DTP_FECHA_NACIMIENTO.TabIndex = 20;
+            // 
             // alta_usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DTP_FECHA_NACIMIENTO);
             this.Controls.Add(this.BUT_AGREGAR);
             this.Controls.Add(this.RADBUT_SUPERVISOR);
             this.Controls.Add(this.RADBUT_VENDEDOR);
@@ -274,5 +284,6 @@
         private System.Windows.Forms.RadioButton RADBUT_VENDEDOR;
         private System.Windows.Forms.RadioButton RADBUT_SUPERVISOR;
         private System.Windows.Forms.Button BUT_AGREGAR;
+        private System.Windows.Forms.DateTimePicker DTP_FECHA_NACIMIENTO;
     }
 }
