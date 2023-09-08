@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using capa_presentacion.perfil_administrador;
 
 namespace la_bodeguita
 {
@@ -15,6 +16,12 @@ namespace la_bodeguita
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void BUT_OTRA_VISTA_Click(object sender, EventArgs e)
+        {
+            Form vista_altaUsuario = new alta_usuario();
+            vista_altaUsuario.Show();
         }
     }
 }
