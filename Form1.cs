@@ -29,5 +29,11 @@ namespace la_bodeguita
             Form vista_bajaUsuario = new baja_usuario();
             vista_bajaUsuario.Show();
         }
+
+        private void BUT_MODIFICAR_USUARIO_Click(object sender, EventArgs e)
+        {
+            Form vista_modificarUsuario = new modificar_usuario();
+            vista_modificarUsuario.Show();
+        }
     }
 }
