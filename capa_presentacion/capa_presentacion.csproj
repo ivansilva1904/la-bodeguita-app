@@ -56,6 +56,12 @@
     <Compile Include="perfil_administrador\baja_usuario.Designer.cs">
       <DependentUpon>baja_usuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="perfil_administrador\menu_administrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="perfil_administrador\menu_administrador.Designer.cs">
+      <DependentUpon>menu_administrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="perfil_administrador\modificar_usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_administrador\baja_usuario.resx">
       <DependentUpon>baja_usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="perfil_administrador\menu_administrador.resx">
+      <DependentUpon>menu_administrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_administrador\modificar_usuario.resx">
       <DependentUpon>modificar_usuario.cs</DependentUpon>

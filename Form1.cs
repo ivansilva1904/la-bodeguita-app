@@ -20,8 +20,8 @@ namespace la_bodeguita
 
         private void BUT_ALTA_USUARIO_Click(object sender, EventArgs e)
         {
-            Form vista_altaUsuario = new alta_usuario();
-            vista_altaUsuario.Show();
+            Form vista_menu = new menu_administrador();
+            vista_menu.Show();
         }
 
         private void BUT_BAJA_USUARIO_Click(object sender, EventArgs e)

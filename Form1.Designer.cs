@@ -40,7 +40,7 @@
             this.BUT_ALTA_USUARIO.Name = "BUT_ALTA_USUARIO";
             this.BUT_ALTA_USUARIO.Size = new System.Drawing.Size(125, 35);
             this.BUT_ALTA_USUARIO.TabIndex = 0;
-            this.BUT_ALTA_USUARIO.Text = "Alta usuario";
+            this.BUT_ALTA_USUARIO.Text = "vista menu";
             this.BUT_ALTA_USUARIO.UseVisualStyleBackColor = true;
             this.BUT_ALTA_USUARIO.Click += new System.EventHandler(this.BUT_ALTA_USUARIO_Click);
             // 
