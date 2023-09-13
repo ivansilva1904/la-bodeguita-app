@@ -11,9 +11,9 @@ using capa_presentacion.perfil_administrador;
 
 namespace la_bodeguita
 {
-    public partial class Form1 : Form
+    public partial class login : Form
     {
-        public Form1()
+        public login()
         {
             InitializeComponent();
         }
@@ -34,6 +34,30 @@ namespace la_bodeguita
         {
             Form vista_modificarUsuario = new modificar_usuario();
             vista_modificarUsuario.Show();
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))//(Si se quiere agregar puntos) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+           
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtContra.Text) )
+            {
+                MessageBox.Show("Existen Campos Vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lblTest.Text = "log nul";
+            }
+            else
+            {
+                //Checkear login con base de datos y entrar al menu de usuario correspondiente
+                lblTest.Text = "log correcto";
+
+            }
         }
     }
 }

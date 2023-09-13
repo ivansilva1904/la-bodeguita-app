@@ -1,6 +1,6 @@
 ﻿namespace la_bodeguita
 {
-    partial class Form1
+    partial class login
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,73 +28,132 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BUT_ALTA_USUARIO = new System.Windows.Forms.Button();
-            this.BUT_BAJA_USUARIO = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelLogin = new System.Windows.Forms.Panel();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtContra = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.BUT_MODIFICAR_USUARIO = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.lblTest = new System.Windows.Forms.Label();
+            this.panelLogin.SuspendLayout();
             this.SuspendLayout();
             // 
-            // BUT_ALTA_USUARIO
+            // panel1
             // 
-            this.BUT_ALTA_USUARIO.Location = new System.Drawing.Point(78, 73);
-            this.BUT_ALTA_USUARIO.Name = "BUT_ALTA_USUARIO";
-            this.BUT_ALTA_USUARIO.Size = new System.Drawing.Size(125, 35);
-            this.BUT_ALTA_USUARIO.TabIndex = 0;
-            this.BUT_ALTA_USUARIO.Text = "Alta usuario";
-            this.BUT_ALTA_USUARIO.UseVisualStyleBackColor = true;
-            this.BUT_ALTA_USUARIO.Click += new System.EventHandler(this.BUT_ALTA_USUARIO_Click);
+            this.panel1.BackgroundImage = global::la_bodeguita.Properties.Resources.pexels_pixabay_434311;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(308, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(335, 313);
+            this.panel1.TabIndex = 4;
             // 
-            // BUT_BAJA_USUARIO
+            // panelLogin
             // 
-            this.BUT_BAJA_USUARIO.Location = new System.Drawing.Point(78, 140);
-            this.BUT_BAJA_USUARIO.Name = "BUT_BAJA_USUARIO";
-            this.BUT_BAJA_USUARIO.Size = new System.Drawing.Size(125, 35);
-            this.BUT_BAJA_USUARIO.TabIndex = 1;
-            this.BUT_BAJA_USUARIO.Text = "Baja usuario";
-            this.BUT_BAJA_USUARIO.UseVisualStyleBackColor = true;
-            this.BUT_BAJA_USUARIO.Click += new System.EventHandler(this.BUT_BAJA_USUARIO_Click);
+            this.panelLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLogin.Controls.Add(this.lblTest);
+            this.panelLogin.Controls.Add(this.btnLogin);
+            this.panelLogin.Controls.Add(this.label2);
+            this.panelLogin.Controls.Add(this.label1);
+            this.panelLogin.Controls.Add(this.txtContra);
+            this.panelLogin.Controls.Add(this.txtUsuario);
+            this.panelLogin.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelLogin.Location = new System.Drawing.Point(12, 12);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(277, 273);
+            this.panelLogin.TabIndex = 5;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtUsuario.Location = new System.Drawing.Point(47, 59);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(152, 27);
+            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
+            // 
+            // txtContra
+            // 
+            this.txtContra.Location = new System.Drawing.Point(47, 135);
+            this.txtContra.Name = "txtContra";
+            this.txtContra.Size = new System.Drawing.Size(152, 27);
+            this.txtContra.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(103, 32);
+            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(44, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.Size = new System.Drawing.Size(70, 18);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Administrador";
+            this.label1.Text = "Usuario";
             // 
-            // BUT_MODIFICAR_USUARIO
+            // label2
             // 
-            this.BUT_MODIFICAR_USUARIO.Location = new System.Drawing.Point(78, 213);
-            this.BUT_MODIFICAR_USUARIO.Name = "BUT_MODIFICAR_USUARIO";
-            this.BUT_MODIFICAR_USUARIO.Size = new System.Drawing.Size(125, 35);
-            this.BUT_MODIFICAR_USUARIO.TabIndex = 3;
-            this.BUT_MODIFICAR_USUARIO.Text = "Modificar usuario";
-            this.BUT_MODIFICAR_USUARIO.UseVisualStyleBackColor = true;
-            this.BUT_MODIFICAR_USUARIO.Click += new System.EventHandler(this.BUT_MODIFICAR_USUARIO_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(44, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 18);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Contraseña";
             // 
-            // Form1
+            // btnLogin
+            // 
+            this.btnLogin.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(47, 186);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(98, 31);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // lblTest
+            // 
+            this.lblTest.AutoSize = true;
+            this.lblTest.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTest.Location = new System.Drawing.Point(184, 239);
+            this.lblTest.Name = "lblTest";
+            this.lblTest.Size = new System.Drawing.Size(0, 13);
+            this.lblTest.TabIndex = 5;
+            // 
+            // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BUT_MODIFICAR_USUARIO);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.BUT_BAJA_USUARIO);
-            this.Controls.Add(this.BUT_ALTA_USUARIO);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.Beige;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(641, 309);
+            this.Controls.Add(this.panelLogin);
+            this.Controls.Add(this.panel1);
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(657, 347);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(657, 347);
+            this.Name = "login";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "La Bodeguita";
+            this.panelLogin.ResumeLayout(false);
+            this.panelLogin.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button BUT_ALTA_USUARIO;
-        private System.Windows.Forms.Button BUT_BAJA_USUARIO;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelLogin;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BUT_MODIFICAR_USUARIO;
+        private System.Windows.Forms.TextBox txtContra;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.Label lblTest;
     }
 }
 
