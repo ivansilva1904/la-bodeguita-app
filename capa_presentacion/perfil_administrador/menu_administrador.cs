@@ -22,5 +22,20 @@ namespace capa_presentacion.perfil_administrador
             Form alta_usuario = new alta_usuario();
             alta_usuario.Show();
         }
+
+        private void panAltaUsuario_MouseHover(object sender, EventArgs e)
+        {
+            OnMouseEnter(panAltaUsuario.BackColor = Color.Bisque);
+        }
+
+        /*private void panAltaUsuario_MouseEnter(object sender, EventArgs e)
+        {
+            panAltaUsuario.BackColor = Color.Bisque;
+        }
+
+        private void panAltaUsuario_MouseLeave(object sender, EventArgs e)
+        {
+            panAltaUsuario.BackColor = Color.Tan;
+        }*/
     }
 }
