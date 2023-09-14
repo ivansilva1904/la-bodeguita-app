@@ -56,6 +56,11 @@ namespace la_bodeguita
             {
                 //Checkear login con base de datos y entrar al menu de usuario correspondiente
                 lblTest.Text = "log correcto";
+                if(txtUsuario.Text == "1")
+                {
+                    Form menu_administrador = new menu_administrador();
+                    menu_administrador.Show();
+                }
 
             }
         }
