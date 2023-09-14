@@ -74,10 +74,21 @@
     <Compile Include="perfil_administrador\modificar_usuario.Designer.cs">
       <DependentUpon>modificar_usuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="perfil_supervisor\alta_proovedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="perfil_supervisor\alta_proovedor.Designer.cs">
+      <DependentUpon>alta_proovedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="perfil_supervisor\menu_supervisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="perfil_supervisor\menu_supervisor.Designer.cs">
+      <DependentUpon>menu_supervisor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="perfil_supervisor\" />
     <Folder Include="perfil_vendedor\" />
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +103,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_administrador\modificar_usuario.resx">
       <DependentUpon>modificar_usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="perfil_supervisor\alta_proovedor.resx">
+      <DependentUpon>alta_proovedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="perfil_supervisor\menu_supervisor.resx">
+      <DependentUpon>menu_supervisor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
