@@ -25,7 +25,7 @@ namespace capa_presentacion.perfil_administrador
 
         private void panAltaUsuario_MouseHover(object sender, EventArgs e)
         {
-            OnMouseEnter(panAltaUsuario.BackColor = Color.Bisque);
+            //OnMouseEnter(panAltaUsuario.BackColor = Color.Bisque);
         }
 
         /*private void panAltaUsuario_MouseEnter(object sender, EventArgs e)

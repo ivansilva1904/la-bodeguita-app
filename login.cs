@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using capa_presentacion.perfil_administrador;
+using capa_presentacion.perfil_supervisor;
+using capa_presentacion.perfil_vendedor;
 
 namespace la_bodeguita
 {
@@ -61,7 +63,16 @@ namespace la_bodeguita
                     Form menu_administrador = new menu_administrador();
                     menu_administrador.Show();
                 }
-
+                if(txtUsuario.Text == "2")
+                {
+                    Form menu_supervisor = new menu_supervisor();
+                    menu_supervisor.Show();
+                }
+                if(txtUsuario.Text == "3")
+                {
+                    Form menu_vendedor = new menu_vendedor();
+                    menu_vendedor.Show();
+                }
             }
         }
     }
