@@ -56,6 +56,12 @@
     <Compile Include="perfil_administrador\baja_usuario.Designer.cs">
       <DependentUpon>baja_usuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="perfil_administrador\generar_respaldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="perfil_administrador\generar_respaldo.Designer.cs">
+      <DependentUpon>generar_respaldo.cs</DependentUpon>
+    </Compile>
     <Compile Include="perfil_administrador\menu_administrador.cs">
       <SubType>Form</SubType>
     </Compile>
