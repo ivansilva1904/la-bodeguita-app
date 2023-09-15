@@ -45,7 +45,7 @@
             // lblRazonSocial
             // 
             this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.Location = new System.Drawing.Point(385, 93);
+            this.lblRazonSocial.Location = new System.Drawing.Point(376, 104);
             this.lblRazonSocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(80, 13);
@@ -55,7 +55,7 @@
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(96, 93);
+            this.lblCuit.Location = new System.Drawing.Point(80, 104);
             this.lblCuit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(36, 13);
@@ -65,7 +65,7 @@
             // lblRubro
             // 
             this.lblRubro.AutoSize = true;
-            this.lblRubro.Location = new System.Drawing.Point(96, 150);
+            this.lblRubro.Location = new System.Drawing.Point(80, 161);
             this.lblRubro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRubro.Name = "lblRubro";
             this.lblRubro.Size = new System.Drawing.Size(41, 13);
@@ -74,7 +74,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(492, 143);
+            this.txtDireccion.Location = new System.Drawing.Point(483, 154);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(116, 21);
@@ -82,7 +82,7 @@
             // 
             // txtCuit
             // 
-            this.txtCuit.Location = new System.Drawing.Point(172, 90);
+            this.txtCuit.Location = new System.Drawing.Point(156, 101);
             this.txtCuit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(116, 21);
@@ -91,7 +91,7 @@
             // 
             // txtRubro
             // 
-            this.txtRubro.Location = new System.Drawing.Point(172, 143);
+            this.txtRubro.Location = new System.Drawing.Point(156, 154);
             this.txtRubro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtRubro.Name = "txtRubro";
             this.txtRubro.Size = new System.Drawing.Size(116, 21);
@@ -114,13 +114,13 @@
             this.pnlAltaProovedor.Location = new System.Drawing.Point(14, 12);
             this.pnlAltaProovedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlAltaProovedor.Name = "pnlAltaProovedor";
-            this.pnlAltaProovedor.Size = new System.Drawing.Size(752, 317);
+            this.pnlAltaProovedor.Size = new System.Drawing.Size(706, 442);
             this.pnlAltaProovedor.TabIndex = 6;
             // 
             // lblCabecera
             // 
             this.lblCabecera.AutoSize = true;
-            this.lblCabecera.Location = new System.Drawing.Point(329, 39);
+            this.lblCabecera.Location = new System.Drawing.Point(275, 38);
             this.lblCabecera.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCabecera.Name = "lblCabecera";
             this.lblCabecera.Size = new System.Drawing.Size(106, 13);
@@ -129,7 +129,7 @@
             // 
             // btnGuardarProveedor
             // 
-            this.btnGuardarProveedor.Location = new System.Drawing.Point(573, 269);
+            this.btnGuardarProveedor.Location = new System.Drawing.Point(483, 361);
             this.btnGuardarProveedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGuardarProveedor.Name = "btnGuardarProveedor";
             this.btnGuardarProveedor.Size = new System.Drawing.Size(125, 29);
@@ -140,7 +140,7 @@
             // 
             // txtRazonSocial
             // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(492, 90);
+            this.txtRazonSocial.Location = new System.Drawing.Point(483, 101);
             this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(116, 21);
@@ -149,7 +149,7 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(385, 146);
+            this.lblDireccion.Location = new System.Drawing.Point(376, 157);
             this.lblDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(60, 13);
@@ -161,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
-            this.ClientSize = new System.Drawing.Size(780, 341);
+            this.ClientSize = new System.Drawing.Size(733, 466);
             this.ControlBox = false;
             this.Controls.Add(this.pnlAltaProovedor);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
