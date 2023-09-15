@@ -16,21 +16,11 @@ namespace capa_presentacion.perfil_administrador
         {
             InitializeComponent();
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Form alta_usuario = new alta_usuario();
-            alta_usuario.Show();
-        }
-        private void panAltaUsuario_MouseEnter_1(object sender, EventArgs e)
-        {
-            //panAltaUsuario.BackColor = Color.Bisque;
-        }
-
-        private void panAltaUsuario_MouseLeave_1(object sender, EventArgs e)
-        {
-            //panAltaUsuario.BackColor = Color.Tan;
-        }
+        //Estas deben ser globales para el manejo del menu
+        char formularioActivo = ' ';
+        alta_usuario alta_user = new alta_usuario();
+        baja_usuario baja_user = new baja_usuario();
+        modificar_usuario mod_user = new modificar_usuario();
 
         private void btnAltaEmpleado_MouseEnter(object sender, EventArgs e)
         {
@@ -74,26 +64,70 @@ namespace capa_presentacion.perfil_administrador
 
         private void btnAltaEmpleado_Click(object sender, EventArgs e)
         {
-            alta_usuario alta_user = new alta_usuario();
+            switch (formularioActivo)
+            {
+                case 'A':{
+                    panFormsAdministrador.Controls.Remove(alta_user);
+                    break;
+                }
+                case 'B':{
+                    panFormsAdministrador.Controls.Remove(baja_user);
+                    break;
+                }
+                case 'M':{
+                    panFormsAdministrador.Controls.Remove(mod_user);
+                    break;
+                }
+            }
             alta_user.TopLevel = false;
             panFormsAdministrador.Controls.Add(alta_user);
             alta_user.Show();
+            formularioActivo = 'A';
         }
 
         private void btnBajaEmpleado_Click(object sender, EventArgs e)
         {
-            baja_usuario baja_user = new baja_usuario();
+            switch (formularioActivo){
+                case 'A':{
+                    panFormsAdministrador.Controls.Remove(alta_user);
+                    break;
+                }
+                case 'B':{
+                    panFormsAdministrador.Controls.Remove(baja_user);
+                    break;
+                }
+                case 'M':{
+                    panFormsAdministrador.Controls.Remove(mod_user);
+                    break;
+                }
+            }
             baja_user.TopLevel = false;
             panFormsAdministrador.Controls.Add(baja_user);
             baja_user.Show();
+            formularioActivo = 'B';
         }
 
         private void btnModEmpleado_Click(object sender, EventArgs e)
         {
-            modificar_usuario mod_user = new modificar_usuario();
+            switch (formularioActivo)
+            {
+                case 'A':{
+                    panFormsAdministrador.Controls.Remove(alta_user);
+                    break;
+                }
+                case 'B':{
+                    panFormsAdministrador.Controls.Remove(baja_user);
+                    break;
+                }
+                case 'M':{
+                    panFormsAdministrador.Controls.Remove(mod_user);
+                    break;
+                }
+            }
             mod_user.TopLevel = false;
             panFormsAdministrador.Controls.Add(mod_user);
             mod_user.Show();
+            formularioActivo = 'M';
         }
     }
 }
