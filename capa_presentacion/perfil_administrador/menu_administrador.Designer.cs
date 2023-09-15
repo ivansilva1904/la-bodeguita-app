@@ -75,6 +75,7 @@
             this.btnModEmpleado.TabIndex = 6;
             this.btnModEmpleado.Text = "Modificar empleado";
             this.btnModEmpleado.UseVisualStyleBackColor = true;
+            this.btnModEmpleado.Click += new System.EventHandler(this.btnModEmpleado_Click);
             this.btnModEmpleado.MouseEnter += new System.EventHandler(this.btnModEmpleado_MouseEnter);
             this.btnModEmpleado.MouseLeave += new System.EventHandler(this.btnModEmpleado_MouseLeave);
             // 
@@ -88,6 +89,7 @@
             this.btnBajaEmpleado.TabIndex = 5;
             this.btnBajaEmpleado.Text = "Baja empleado";
             this.btnBajaEmpleado.UseVisualStyleBackColor = true;
+            this.btnBajaEmpleado.Click += new System.EventHandler(this.btnBajaEmpleado_Click);
             this.btnBajaEmpleado.MouseEnter += new System.EventHandler(this.btnBajaEmpleado_MouseEnter);
             this.btnBajaEmpleado.MouseLeave += new System.EventHandler(this.btnBajaEmpleado_MouseLeave);
             // 

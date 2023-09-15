@@ -79,5 +79,21 @@ namespace capa_presentacion.perfil_administrador
             panFormsAdministrador.Controls.Add(alta_user);
             alta_user.Show();
         }
+
+        private void btnBajaEmpleado_Click(object sender, EventArgs e)
+        {
+            baja_usuario baja_user = new baja_usuario();
+            baja_user.TopLevel = false;
+            panFormsAdministrador.Controls.Add(baja_user);
+            baja_user.Show();
+        }
+
+        private void btnModEmpleado_Click(object sender, EventArgs e)
+        {
+            modificar_usuario mod_user = new modificar_usuario();
+            mod_user.TopLevel = false;
+            panFormsAdministrador.Controls.Add(mod_user);
+            mod_user.Show();
+        }
     }
 }
