@@ -71,5 +71,13 @@ namespace capa_presentacion.perfil_administrador
         {
             btnGenerarRespaldo.BackColor = Color.Tan;
         }
+
+        private void btnAltaEmpleado_Click(object sender, EventArgs e)
+        {
+            alta_usuario alta_user = new alta_usuario();
+            alta_user.TopLevel = false;
+            panFormsAdministrador.Controls.Add(alta_user);
+            alta_user.Show();
+        }
     }
 }

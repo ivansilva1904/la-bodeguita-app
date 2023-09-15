@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panOpciones = new System.Windows.Forms.Panel();
-            this.btnGenerarRespaldo = new System.Windows.Forms.Button();
-            this.btnAltaEmpleado = new System.Windows.Forms.Button();
-            this.btnBajaEmpleado = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnModEmpleado = new System.Windows.Forms.Button();
+            this.btnBajaEmpleado = new System.Windows.Forms.Button();
+            this.btnAltaEmpleado = new System.Windows.Forms.Button();
+            this.btnGenerarRespaldo = new System.Windows.Forms.Button();
+            this.panFormsAdministrador = new System.Windows.Forms.Panel();
             this.panOpciones.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,31 +51,18 @@
             this.panOpciones.Size = new System.Drawing.Size(257, 466);
             this.panOpciones.TabIndex = 0;
             // 
-            // btnGenerarRespaldo
+            // btnModEmpleado
             // 
-            this.btnGenerarRespaldo.FlatAppearance.BorderSize = 0;
-            this.btnGenerarRespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarRespaldo.Location = new System.Drawing.Point(-2, 389);
-            this.btnGenerarRespaldo.Name = "btnGenerarRespaldo";
-            this.btnGenerarRespaldo.Size = new System.Drawing.Size(257, 50);
-            this.btnGenerarRespaldo.TabIndex = 3;
-            this.btnGenerarRespaldo.Text = "Generar respaldo";
-            this.btnGenerarRespaldo.UseVisualStyleBackColor = true;
-            this.btnGenerarRespaldo.MouseEnter += new System.EventHandler(this.btnGenerarRespaldo_MouseEnter);
-            this.btnGenerarRespaldo.MouseLeave += new System.EventHandler(this.btnGenerarRespaldo_MouseLeave);
-            // 
-            // btnAltaEmpleado
-            // 
-            this.btnAltaEmpleado.FlatAppearance.BorderSize = 0;
-            this.btnAltaEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAltaEmpleado.Location = new System.Drawing.Point(-2, 123);
-            this.btnAltaEmpleado.Name = "btnAltaEmpleado";
-            this.btnAltaEmpleado.Size = new System.Drawing.Size(257, 50);
-            this.btnAltaEmpleado.TabIndex = 4;
-            this.btnAltaEmpleado.Text = "Alta empleado";
-            this.btnAltaEmpleado.UseVisualStyleBackColor = true;
-            this.btnAltaEmpleado.MouseEnter += new System.EventHandler(this.btnAltaEmpleado_MouseEnter);
-            this.btnAltaEmpleado.MouseLeave += new System.EventHandler(this.btnAltaEmpleado_MouseLeave);
+            this.btnModEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnModEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModEmpleado.Location = new System.Drawing.Point(-2, 235);
+            this.btnModEmpleado.Name = "btnModEmpleado";
+            this.btnModEmpleado.Size = new System.Drawing.Size(257, 50);
+            this.btnModEmpleado.TabIndex = 6;
+            this.btnModEmpleado.Text = "Modificar empleado";
+            this.btnModEmpleado.UseVisualStyleBackColor = true;
+            this.btnModEmpleado.MouseEnter += new System.EventHandler(this.btnModEmpleado_MouseEnter);
+            this.btnModEmpleado.MouseLeave += new System.EventHandler(this.btnModEmpleado_MouseLeave);
             // 
             // btnBajaEmpleado
             // 
@@ -90,32 +77,46 @@
             this.btnBajaEmpleado.MouseEnter += new System.EventHandler(this.btnBajaEmpleado_MouseEnter);
             this.btnBajaEmpleado.MouseLeave += new System.EventHandler(this.btnBajaEmpleado_MouseLeave);
             // 
-            // panel1
+            // btnAltaEmpleado
             // 
-            this.panel1.Location = new System.Drawing.Point(256, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(733, 466);
-            this.panel1.TabIndex = 1;
+            this.btnAltaEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnAltaEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaEmpleado.Location = new System.Drawing.Point(-2, 123);
+            this.btnAltaEmpleado.Name = "btnAltaEmpleado";
+            this.btnAltaEmpleado.Size = new System.Drawing.Size(257, 50);
+            this.btnAltaEmpleado.TabIndex = 4;
+            this.btnAltaEmpleado.Text = "Alta empleado";
+            this.btnAltaEmpleado.UseVisualStyleBackColor = true;
+            this.btnAltaEmpleado.Click += new System.EventHandler(this.btnAltaEmpleado_Click);
+            this.btnAltaEmpleado.MouseEnter += new System.EventHandler(this.btnAltaEmpleado_MouseEnter);
+            this.btnAltaEmpleado.MouseLeave += new System.EventHandler(this.btnAltaEmpleado_MouseLeave);
             // 
-            // btnModEmpleado
+            // btnGenerarRespaldo
             // 
-            this.btnModEmpleado.FlatAppearance.BorderSize = 0;
-            this.btnModEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModEmpleado.Location = new System.Drawing.Point(-2, 235);
-            this.btnModEmpleado.Name = "btnModEmpleado";
-            this.btnModEmpleado.Size = new System.Drawing.Size(257, 50);
-            this.btnModEmpleado.TabIndex = 6;
-            this.btnModEmpleado.Text = "Modificar empleado";
-            this.btnModEmpleado.UseVisualStyleBackColor = true;
-            this.btnModEmpleado.MouseEnter += new System.EventHandler(this.btnModEmpleado_MouseEnter);
-            this.btnModEmpleado.MouseLeave += new System.EventHandler(this.btnModEmpleado_MouseLeave);
+            this.btnGenerarRespaldo.FlatAppearance.BorderSize = 0;
+            this.btnGenerarRespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarRespaldo.Location = new System.Drawing.Point(-2, 389);
+            this.btnGenerarRespaldo.Name = "btnGenerarRespaldo";
+            this.btnGenerarRespaldo.Size = new System.Drawing.Size(257, 50);
+            this.btnGenerarRespaldo.TabIndex = 3;
+            this.btnGenerarRespaldo.Text = "Generar respaldo";
+            this.btnGenerarRespaldo.UseVisualStyleBackColor = true;
+            this.btnGenerarRespaldo.MouseEnter += new System.EventHandler(this.btnGenerarRespaldo_MouseEnter);
+            this.btnGenerarRespaldo.MouseLeave += new System.EventHandler(this.btnGenerarRespaldo_MouseLeave);
+            // 
+            // panFormsAdministrador
+            // 
+            this.panFormsAdministrador.Location = new System.Drawing.Point(256, -1);
+            this.panFormsAdministrador.Name = "panFormsAdministrador";
+            this.panFormsAdministrador.Size = new System.Drawing.Size(733, 466);
+            this.panFormsAdministrador.TabIndex = 1;
             // 
             // menu_administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 461);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panFormsAdministrador);
             this.Controls.Add(this.panOpciones);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "menu_administrador";
@@ -131,7 +132,7 @@
         private System.Windows.Forms.Button btnGenerarRespaldo;
         private System.Windows.Forms.Button btnAltaEmpleado;
         private System.Windows.Forms.Button btnBajaEmpleado;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panFormsAdministrador;
         private System.Windows.Forms.Button btnModEmpleado;
     }
 }
