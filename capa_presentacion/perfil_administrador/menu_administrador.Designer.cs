@@ -28,19 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu_administrador));
             this.panOpciones = new System.Windows.Forms.Panel();
+            this.picboxLogo = new System.Windows.Forms.PictureBox();
             this.btnModEmpleado = new System.Windows.Forms.Button();
             this.btnBajaEmpleado = new System.Windows.Forms.Button();
             this.btnAltaEmpleado = new System.Windows.Forms.Button();
             this.btnGenerarRespaldo = new System.Windows.Forms.Button();
             this.panFormsAdministrador = new System.Windows.Forms.Panel();
             this.panOpciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panOpciones
             // 
             this.panOpciones.BackColor = System.Drawing.Color.Tan;
             this.panOpciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panOpciones.Controls.Add(this.picboxLogo);
             this.panOpciones.Controls.Add(this.btnModEmpleado);
             this.panOpciones.Controls.Add(this.btnBajaEmpleado);
             this.panOpciones.Controls.Add(this.btnAltaEmpleado);
@@ -50,6 +54,16 @@
             this.panOpciones.Name = "panOpciones";
             this.panOpciones.Size = new System.Drawing.Size(257, 466);
             this.panOpciones.TabIndex = 0;
+            // 
+            // picboxLogo
+            // 
+            this.picboxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxLogo.BackgroundImage")));
+            this.picboxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picboxLogo.Location = new System.Drawing.Point(33, 13);
+            this.picboxLogo.Name = "picboxLogo";
+            this.picboxLogo.Size = new System.Drawing.Size(186, 104);
+            this.picboxLogo.TabIndex = 7;
+            this.picboxLogo.TabStop = false;
             // 
             // btnModEmpleado
             // 
@@ -106,7 +120,9 @@
             // 
             // panFormsAdministrador
             // 
-            this.panFormsAdministrador.Location = new System.Drawing.Point(256, -1);
+            this.panFormsAdministrador.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_1283219;
+            this.panFormsAdministrador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panFormsAdministrador.Location = new System.Drawing.Point(254, -1);
             this.panFormsAdministrador.Name = "panFormsAdministrador";
             this.panFormsAdministrador.Size = new System.Drawing.Size(733, 466);
             this.panFormsAdministrador.TabIndex = 1;
@@ -122,6 +138,7 @@
             this.Name = "menu_administrador";
             this.Text = "menu";
             this.panOpciones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -134,5 +151,6 @@
         private System.Windows.Forms.Button btnBajaEmpleado;
         private System.Windows.Forms.Panel panFormsAdministrador;
         private System.Windows.Forms.Button btnModEmpleado;
+        private System.Windows.Forms.PictureBox picboxLogo;
     }
 }
