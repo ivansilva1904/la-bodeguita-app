@@ -19,10 +19,20 @@ namespace capa_presentacion.perfil_supervisor
 
         private void btnAltaProovedor_Click(object sender, EventArgs e)
         {
-            alta_proovedor altaprov = new alta_proovedor();
-            altaprov.TopLevel = false;
-            pnlFormsSupervisor.Controls.Add(altaprov);
-            altaprov.Show();
+            int cont = 0;
+            if (cont == 0)
+            {
+                alta_proovedor altaprov = new alta_proovedor();
+                altaprov.TopLevel = false;
+                pnlFormsSupervisor.Controls.Add(altaprov);
+                altaprov.Show();
+                cont ++;
+            }
+        }
+
+        private void menu_supervisor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
