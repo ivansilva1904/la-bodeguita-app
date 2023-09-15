@@ -22,20 +22,62 @@ namespace capa_presentacion.perfil_administrador
             Form alta_usuario = new alta_usuario();
             alta_usuario.Show();
         }
-
-        private void panAltaUsuario_MouseHover(object sender, EventArgs e)
+        private void panAltaUsuario_MouseEnter_1(object sender, EventArgs e)
         {
-            //OnMouseEnter(panAltaUsuario.BackColor = Color.Bisque);
+            //panAltaUsuario.BackColor = Color.Bisque;
         }
 
-        /*private void panAltaUsuario_MouseEnter(object sender, EventArgs e)
+        private void panAltaUsuario_MouseLeave_1(object sender, EventArgs e)
         {
-            panAltaUsuario.BackColor = Color.Bisque;
+            //panAltaUsuario.BackColor = Color.Tan;
         }
 
-        private void panAltaUsuario_MouseLeave(object sender, EventArgs e)
+        private void btnAltaEmpleado_MouseEnter(object sender, EventArgs e)
         {
-            panAltaUsuario.BackColor = Color.Tan;
-        }*/
+            btnAltaEmpleado.BackColor = Color.Bisque;
+        }
+
+        private void btnAltaEmpleado_MouseLeave(object sender, EventArgs e)
+        {
+            btnAltaEmpleado.BackColor = Color.Tan;
+        }
+
+        private void btnBajaEmpleado_MouseEnter(object sender, EventArgs e)
+        {
+            btnBajaEmpleado.BackColor = Color.Bisque;
+        }
+
+        private void btnBajaEmpleado_MouseLeave(object sender, EventArgs e)
+        {
+            btnBajaEmpleado.BackColor = Color.Tan;
+        }
+
+        private void btnModEmpleado_MouseEnter(object sender, EventArgs e)
+        {
+            btnModEmpleado.BackColor = Color.Bisque;
+        }
+
+        private void btnModEmpleado_MouseLeave(object sender, EventArgs e)
+        {
+            btnModEmpleado.BackColor = Color.Tan;
+        }
+
+        private void btnGenerarRespaldo_MouseEnter(object sender, EventArgs e)
+        {
+            btnGenerarRespaldo.BackColor = Color.Bisque;
+        }
+
+        private void btnGenerarRespaldo_MouseLeave(object sender, EventArgs e)
+        {
+            btnGenerarRespaldo.BackColor = Color.Tan;
+        }
+
+        private void btnAltaEmpleado_Click(object sender, EventArgs e)
+        {
+            alta_usuario alta_user = new alta_usuario();
+            alta_user.TopLevel = false;
+            panFormsAdministrador.Controls.Add(alta_user);
+            alta_user.Show();
+        }
     }
 }

@@ -29,86 +29,99 @@
         private void InitializeComponent()
         {
             this.panOpciones = new System.Windows.Forms.Panel();
-            this.panAltaUsuario = new System.Windows.Forms.Panel();
-            this.lblAltaUsuario = new System.Windows.Forms.Label();
+            this.btnModEmpleado = new System.Windows.Forms.Button();
+            this.btnBajaEmpleado = new System.Windows.Forms.Button();
+            this.btnAltaEmpleado = new System.Windows.Forms.Button();
             this.btnGenerarRespaldo = new System.Windows.Forms.Button();
-            this.lblModificarUsuario = new System.Windows.Forms.Label();
-            this.lblBajaUsuario = new System.Windows.Forms.Label();
+            this.panFormsAdministrador = new System.Windows.Forms.Panel();
             this.panOpciones.SuspendLayout();
-            this.panAltaUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
             // panOpciones
             // 
             this.panOpciones.BackColor = System.Drawing.Color.Tan;
             this.panOpciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panOpciones.Controls.Add(this.panAltaUsuario);
+            this.panOpciones.Controls.Add(this.btnModEmpleado);
+            this.panOpciones.Controls.Add(this.btnBajaEmpleado);
+            this.panOpciones.Controls.Add(this.btnAltaEmpleado);
             this.panOpciones.Controls.Add(this.btnGenerarRespaldo);
-            this.panOpciones.Controls.Add(this.lblModificarUsuario);
-            this.panOpciones.Controls.Add(this.lblBajaUsuario);
             this.panOpciones.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panOpciones.Location = new System.Drawing.Point(-1, -1);
             this.panOpciones.Name = "panOpciones";
-            this.panOpciones.Size = new System.Drawing.Size(221, 452);
+            this.panOpciones.Size = new System.Drawing.Size(257, 466);
             this.panOpciones.TabIndex = 0;
             // 
-            // panAltaUsuario
+            // btnModEmpleado
             // 
-            this.panAltaUsuario.Controls.Add(this.lblAltaUsuario);
-            this.panAltaUsuario.Location = new System.Drawing.Point(-2, 68);
-            this.panAltaUsuario.Name = "panAltaUsuario";
-            this.panAltaUsuario.Size = new System.Drawing.Size(221, 51);
-            this.panAltaUsuario.TabIndex = 4;
-            this.panAltaUsuario.MouseHover += new System.EventHandler(this.panAltaUsuario_MouseHover);
+            this.btnModEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnModEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModEmpleado.Location = new System.Drawing.Point(-2, 235);
+            this.btnModEmpleado.Name = "btnModEmpleado";
+            this.btnModEmpleado.Size = new System.Drawing.Size(257, 50);
+            this.btnModEmpleado.TabIndex = 6;
+            this.btnModEmpleado.Text = "Modificar empleado";
+            this.btnModEmpleado.UseVisualStyleBackColor = true;
+            this.btnModEmpleado.MouseEnter += new System.EventHandler(this.btnModEmpleado_MouseEnter);
+            this.btnModEmpleado.MouseLeave += new System.EventHandler(this.btnModEmpleado_MouseLeave);
             // 
-            // lblAltaUsuario
+            // btnBajaEmpleado
             // 
-            this.lblAltaUsuario.AutoSize = true;
-            this.lblAltaUsuario.Location = new System.Drawing.Point(53, 17);
-            this.lblAltaUsuario.Name = "lblAltaUsuario";
-            this.lblAltaUsuario.Size = new System.Drawing.Size(107, 18);
-            this.lblAltaUsuario.TabIndex = 0;
-            this.lblAltaUsuario.Text = "Alta usuario";
+            this.btnBajaEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnBajaEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBajaEmpleado.Location = new System.Drawing.Point(-2, 179);
+            this.btnBajaEmpleado.Name = "btnBajaEmpleado";
+            this.btnBajaEmpleado.Size = new System.Drawing.Size(257, 50);
+            this.btnBajaEmpleado.TabIndex = 5;
+            this.btnBajaEmpleado.Text = "Baja empleado";
+            this.btnBajaEmpleado.UseVisualStyleBackColor = true;
+            this.btnBajaEmpleado.MouseEnter += new System.EventHandler(this.btnBajaEmpleado_MouseEnter);
+            this.btnBajaEmpleado.MouseLeave += new System.EventHandler(this.btnBajaEmpleado_MouseLeave);
+            // 
+            // btnAltaEmpleado
+            // 
+            this.btnAltaEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnAltaEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaEmpleado.Location = new System.Drawing.Point(-2, 123);
+            this.btnAltaEmpleado.Name = "btnAltaEmpleado";
+            this.btnAltaEmpleado.Size = new System.Drawing.Size(257, 50);
+            this.btnAltaEmpleado.TabIndex = 4;
+            this.btnAltaEmpleado.Text = "Alta empleado";
+            this.btnAltaEmpleado.UseVisualStyleBackColor = true;
+            this.btnAltaEmpleado.Click += new System.EventHandler(this.btnAltaEmpleado_Click);
+            this.btnAltaEmpleado.MouseEnter += new System.EventHandler(this.btnAltaEmpleado_MouseEnter);
+            this.btnAltaEmpleado.MouseLeave += new System.EventHandler(this.btnAltaEmpleado_MouseLeave);
             // 
             // btnGenerarRespaldo
             // 
-            this.btnGenerarRespaldo.Location = new System.Drawing.Point(18, 397);
+            this.btnGenerarRespaldo.FlatAppearance.BorderSize = 0;
+            this.btnGenerarRespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarRespaldo.Location = new System.Drawing.Point(-2, 389);
             this.btnGenerarRespaldo.Name = "btnGenerarRespaldo";
-            this.btnGenerarRespaldo.Size = new System.Drawing.Size(161, 30);
+            this.btnGenerarRespaldo.Size = new System.Drawing.Size(257, 50);
             this.btnGenerarRespaldo.TabIndex = 3;
             this.btnGenerarRespaldo.Text = "Generar respaldo";
             this.btnGenerarRespaldo.UseVisualStyleBackColor = true;
+            this.btnGenerarRespaldo.MouseEnter += new System.EventHandler(this.btnGenerarRespaldo_MouseEnter);
+            this.btnGenerarRespaldo.MouseLeave += new System.EventHandler(this.btnGenerarRespaldo_MouseLeave);
             // 
-            // lblModificarUsuario
+            // panFormsAdministrador
             // 
-            this.lblModificarUsuario.AutoSize = true;
-            this.lblModificarUsuario.Location = new System.Drawing.Point(32, 214);
-            this.lblModificarUsuario.Name = "lblModificarUsuario";
-            this.lblModificarUsuario.Size = new System.Drawing.Size(147, 18);
-            this.lblModificarUsuario.TabIndex = 2;
-            this.lblModificarUsuario.Text = "Modificar usuario";
-            // 
-            // lblBajaUsuario
-            // 
-            this.lblBajaUsuario.AutoSize = true;
-            this.lblBajaUsuario.Location = new System.Drawing.Point(47, 145);
-            this.lblBajaUsuario.Name = "lblBajaUsuario";
-            this.lblBajaUsuario.Size = new System.Drawing.Size(111, 18);
-            this.lblBajaUsuario.TabIndex = 1;
-            this.lblBajaUsuario.Text = "Baja usuario";
+            this.panFormsAdministrador.Location = new System.Drawing.Point(256, -1);
+            this.panFormsAdministrador.Name = "panFormsAdministrador";
+            this.panFormsAdministrador.Size = new System.Drawing.Size(733, 466);
+            this.panFormsAdministrador.TabIndex = 1;
             // 
             // menu_administrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 461);
+            this.ClientSize = new System.Drawing.Size(984, 461);
+            this.Controls.Add(this.panFormsAdministrador);
             this.Controls.Add(this.panOpciones);
+            this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "menu_administrador";
             this.Text = "menu";
             this.panOpciones.ResumeLayout(false);
-            this.panOpciones.PerformLayout();
-            this.panAltaUsuario.ResumeLayout(false);
-            this.panAltaUsuario.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -116,10 +129,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panOpciones;
-        private System.Windows.Forms.Label lblAltaUsuario;
-        private System.Windows.Forms.Label lblBajaUsuario;
         private System.Windows.Forms.Button btnGenerarRespaldo;
-        private System.Windows.Forms.Label lblModificarUsuario;
-        private System.Windows.Forms.Panel panAltaUsuario;
+        private System.Windows.Forms.Button btnAltaEmpleado;
+        private System.Windows.Forms.Button btnBajaEmpleado;
+        private System.Windows.Forms.Panel panFormsAdministrador;
+        private System.Windows.Forms.Button btnModEmpleado;
     }
 }
