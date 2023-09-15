@@ -42,6 +42,7 @@
             // 
             // panOpciones
             // 
+            this.panOpciones.AutoSize = true;
             this.panOpciones.BackColor = System.Drawing.Color.Tan;
             this.panOpciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panOpciones.Controls.Add(this.picboxLogo);
@@ -52,7 +53,7 @@
             this.panOpciones.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panOpciones.Location = new System.Drawing.Point(-1, -1);
             this.panOpciones.Name = "panOpciones";
-            this.panOpciones.Size = new System.Drawing.Size(257, 466);
+            this.panOpciones.Size = new System.Drawing.Size(262, 466);
             this.panOpciones.TabIndex = 0;
             // 
             // picboxLogo
@@ -142,6 +143,7 @@
             this.panOpciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
