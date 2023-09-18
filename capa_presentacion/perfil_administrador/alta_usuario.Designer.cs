@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LBL_INGRESAR = new System.Windows.Forms.Label();
-            this.LBL_NOMBRE = new System.Windows.Forms.Label();
-            this.LBL_APELLIDO = new System.Windows.Forms.Label();
-            this.LBL_FECHA_NAC = new System.Windows.Forms.Label();
-            this.LBL_EMAIL = new System.Windows.Forms.Label();
-            this.LBL_TELEFONO = new System.Windows.Forms.Label();
-            this.LBL_CONTRASEÑA = new System.Windows.Forms.Label();
-            this.LBL_CONTRASEÑA2 = new System.Windows.Forms.Label();
-            this.LBL_TIPO_USER = new System.Windows.Forms.Label();
-            this.LBL_DNI = new System.Windows.Forms.Label();
+            this.lblIngresar = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblFechaNac = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblContraseña = new System.Windows.Forms.Label();
+            this.lblContraseña2 = new System.Windows.Forms.Label();
+            this.lblTipoUser = new System.Windows.Forms.Label();
+            this.lblDNI = new System.Windows.Forms.Label();
             this.TXT_NOMBRE = new System.Windows.Forms.TextBox();
             this.TXT_APELLIDO = new System.Windows.Forms.TextBox();
             this.TXT_DNI = new System.Windows.Forms.TextBox();
@@ -45,111 +45,112 @@
             this.TXT_TELEFONO = new System.Windows.Forms.TextBox();
             this.TXT_CONTRASEÑA = new System.Windows.Forms.TextBox();
             this.TXT_CONTRASEÑA2 = new System.Windows.Forms.TextBox();
-            this.RADBUT_VENDEDOR = new System.Windows.Forms.RadioButton();
-            this.RADBUT_SUPERVISOR = new System.Windows.Forms.RadioButton();
-            this.BUT_AGREGAR = new System.Windows.Forms.Button();
+            this.radbtnVendedor = new System.Windows.Forms.RadioButton();
+            this.radbtnSupervisor = new System.Windows.Forms.RadioButton();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.DTP_FECHA_NACIMIENTO = new System.Windows.Forms.DateTimePicker();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // LBL_INGRESAR
+            // lblIngresar
             // 
-            this.LBL_INGRESAR.AutoSize = true;
-            this.LBL_INGRESAR.Location = new System.Drawing.Point(266, 21);
-            this.LBL_INGRESAR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LBL_INGRESAR.Name = "LBL_INGRESAR";
-            this.LBL_INGRESAR.Size = new System.Drawing.Size(168, 13);
-            this.LBL_INGRESAR.TabIndex = 0;
-            this.LBL_INGRESAR.Text = "Ingrese un nuevo empleado";
+            this.lblIngresar.AutoSize = true;
+            this.lblIngresar.Location = new System.Drawing.Point(266, 21);
+            this.lblIngresar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIngresar.Name = "lblIngresar";
+            this.lblIngresar.Size = new System.Drawing.Size(168, 13);
+            this.lblIngresar.TabIndex = 0;
+            this.lblIngresar.Text = "Ingrese un nuevo empleado";
             // 
-            // LBL_NOMBRE
+            // lblNombre
             // 
-            this.LBL_NOMBRE.AutoSize = true;
-            this.LBL_NOMBRE.Location = new System.Drawing.Point(22, 70);
-            this.LBL_NOMBRE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LBL_NOMBRE.Name = "LBL_NOMBRE";
-            this.LBL_NOMBRE.Size = new System.Drawing.Size(52, 13);
-            this.LBL_NOMBRE.TabIndex = 1;
-            this.LBL_NOMBRE.Text = "Nombre";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(22, 70);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(52, 13);
+            this.lblNombre.TabIndex = 1;
+            this.lblNombre.Text = "Nombre";
             // 
-            // LBL_APELLIDO
+            // lblApellido
             // 
-            this.LBL_APELLIDO.AutoSize = true;
-            this.LBL_APELLIDO.Location = new System.Drawing.Point(342, 70);
-            this.LBL_APELLIDO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LBL_APELLIDO.Name = "LBL_APELLIDO";
-            this.LBL_APELLIDO.Size = new System.Drawing.Size(52, 13);
-            this.LBL_APELLIDO.TabIndex = 2;
-            this.LBL_APELLIDO.Text = "Apellido";
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(342, 70);
+            this.lblApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(52, 13);
+            this.lblApellido.TabIndex = 2;
+            this.lblApellido.Text = "Apellido";
             // 
-            // LBL_FECHA_NAC
+            // lblFechaNac
             // 
-            this.LBL_FECHA_NAC.AutoSize = true;
-            this.LBL_FECHA_NAC.Location = new System.Drawing.Point(342, 128);
-            this.LBL_FECHA_NAC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LBL_FECHA_NAC.Name = "LBL_FECHA_NAC";
-            this.LBL_FECHA_NAC.Size = new System.Drawing.Size(124, 13);
-            this.LBL_FECHA_NAC.TabIndex = 3;
-            this.LBL_FECHA_NAC.Text = "Fecha de nacimiento";
+            this.lblFechaNac.AutoSize = true;
+            this.lblFechaNac.Location = new System.Drawing.Point(342, 128);
+            this.lblFechaNac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaNac.Name = "lblFechaNac";
+            this.lblFechaNac.Size = new System.Drawing.Size(124, 13);
+            this.lblFechaNac.TabIndex = 3;
+            this.lblFechaNac.Text = "Fecha de nacimiento";
             // 
-            // LBL_EMAIL
+            // lblEmail
             // 
-            this.LBL_EMAIL.AutoSize = true;
-            this.LBL_EMAIL.Location = new System.Drawing.Point(22, 179);
-            this.LBL_EMAIL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LBL_EMAIL.Name = "LBL_EMAIL";
-            this.LBL_EMAIL.Size = new System.Drawing.Size(38, 13);
-            this.LBL_EMAIL.TabIndex = 4;
-            this.LBL_EMAIL.Text = "Email";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(22, 179);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(38, 13);
+            this.lblEmail.TabIndex = 4;
+            this.lblEmail.Text = "Email";
             // 
-            // LBL_TELEFONO
+            // lblTelefono
             // 
-            this.LBL_TELEFONO.AutoSize = true;
-            this.LBL_TELEFONO.Location = new System.Drawing.Point(342, 179);
-            this.LBL_TELEFONO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LBL_TELEFONO.Name = "LBL_TELEFONO";
-            this.LBL_TELEFONO.Size = new System.Drawing.Size(55, 13);
-            this.LBL_TELEFONO.TabIndex = 5;
-            this.LBL_TELEFONO.Text = "Telefono";
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(342, 179);
+            this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(55, 13);
+            this.lblTelefono.TabIndex = 5;
+            this.lblTelefono.Text = "Telefono";
             // 
-            // LBL_CONTRASEÑA
+            // lblContraseña
             // 
-            this.LBL_CONTRASEÑA.AutoSize = true;
-            this.LBL_CONTRASEÑA.Location = new System.Drawing.Point(22, 240);
-            this.LBL_CONTRASEÑA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LBL_CONTRASEÑA.Name = "LBL_CONTRASEÑA";
-            this.LBL_CONTRASEÑA.Size = new System.Drawing.Size(73, 13);
-            this.LBL_CONTRASEÑA.TabIndex = 6;
-            this.LBL_CONTRASEÑA.Text = "Contraseña";
+            this.lblContraseña.AutoSize = true;
+            this.lblContraseña.Location = new System.Drawing.Point(22, 240);
+            this.lblContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContraseña.Name = "lblContraseña";
+            this.lblContraseña.Size = new System.Drawing.Size(73, 13);
+            this.lblContraseña.TabIndex = 6;
+            this.lblContraseña.Text = "Contraseña";
             // 
-            // LBL_CONTRASEÑA2
+            // lblContraseña2
             // 
-            this.LBL_CONTRASEÑA2.AutoSize = true;
-            this.LBL_CONTRASEÑA2.Location = new System.Drawing.Point(342, 241);
-            this.LBL_CONTRASEÑA2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LBL_CONTRASEÑA2.Name = "LBL_CONTRASEÑA2";
-            this.LBL_CONTRASEÑA2.Size = new System.Drawing.Size(136, 13);
-            this.LBL_CONTRASEÑA2.TabIndex = 7;
-            this.LBL_CONTRASEÑA2.Text = "Reingresar contraseña";
+            this.lblContraseña2.AutoSize = true;
+            this.lblContraseña2.Location = new System.Drawing.Point(342, 241);
+            this.lblContraseña2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContraseña2.Name = "lblContraseña2";
+            this.lblContraseña2.Size = new System.Drawing.Size(136, 13);
+            this.lblContraseña2.TabIndex = 7;
+            this.lblContraseña2.Text = "Reingresar contraseña";
             // 
-            // LBL_TIPO_USER
+            // lblTipoUser
             // 
-            this.LBL_TIPO_USER.AutoSize = true;
-            this.LBL_TIPO_USER.Location = new System.Drawing.Point(85, 304);
-            this.LBL_TIPO_USER.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LBL_TIPO_USER.Name = "LBL_TIPO_USER";
-            this.LBL_TIPO_USER.Size = new System.Drawing.Size(95, 13);
-            this.LBL_TIPO_USER.TabIndex = 8;
-            this.LBL_TIPO_USER.Text = "Tipo de usuario";
+            this.lblTipoUser.AutoSize = true;
+            this.lblTipoUser.Location = new System.Drawing.Point(85, 304);
+            this.lblTipoUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoUser.Name = "lblTipoUser";
+            this.lblTipoUser.Size = new System.Drawing.Size(95, 13);
+            this.lblTipoUser.TabIndex = 8;
+            this.lblTipoUser.Text = "Tipo de usuario";
             // 
-            // LBL_DNI
+            // lblDNI
             // 
-            this.LBL_DNI.AutoSize = true;
-            this.LBL_DNI.Location = new System.Drawing.Point(22, 131);
-            this.LBL_DNI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LBL_DNI.Name = "LBL_DNI";
-            this.LBL_DNI.Size = new System.Drawing.Size(29, 13);
-            this.LBL_DNI.TabIndex = 9;
-            this.LBL_DNI.Text = "DNI";
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.Location = new System.Drawing.Point(22, 131);
+            this.lblDNI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(29, 13);
+            this.lblDNI.TabIndex = 9;
+            this.lblDNI.Text = "DNI";
             // 
             // TXT_NOMBRE
             // 
@@ -207,39 +208,39 @@
             this.TXT_CONTRASEÑA2.Size = new System.Drawing.Size(209, 21);
             this.TXT_CONTRASEÑA2.TabIndex = 16;
             // 
-            // RADBUT_VENDEDOR
+            // radbtnVendedor
             // 
-            this.RADBUT_VENDEDOR.AutoSize = true;
-            this.RADBUT_VENDEDOR.Location = new System.Drawing.Point(281, 304);
-            this.RADBUT_VENDEDOR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.RADBUT_VENDEDOR.Name = "RADBUT_VENDEDOR";
-            this.RADBUT_VENDEDOR.Size = new System.Drawing.Size(79, 17);
-            this.RADBUT_VENDEDOR.TabIndex = 17;
-            this.RADBUT_VENDEDOR.TabStop = true;
-            this.RADBUT_VENDEDOR.Text = "Vendedor";
-            this.RADBUT_VENDEDOR.UseVisualStyleBackColor = true;
+            this.radbtnVendedor.AutoSize = true;
+            this.radbtnVendedor.Location = new System.Drawing.Point(281, 304);
+            this.radbtnVendedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.radbtnVendedor.Name = "radbtnVendedor";
+            this.radbtnVendedor.Size = new System.Drawing.Size(79, 17);
+            this.radbtnVendedor.TabIndex = 17;
+            this.radbtnVendedor.TabStop = true;
+            this.radbtnVendedor.Text = "Vendedor";
+            this.radbtnVendedor.UseVisualStyleBackColor = true;
             // 
-            // RADBUT_SUPERVISOR
+            // radbtnSupervisor
             // 
-            this.RADBUT_SUPERVISOR.AutoSize = true;
-            this.RADBUT_SUPERVISOR.Location = new System.Drawing.Point(437, 304);
-            this.RADBUT_SUPERVISOR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.RADBUT_SUPERVISOR.Name = "RADBUT_SUPERVISOR";
-            this.RADBUT_SUPERVISOR.Size = new System.Drawing.Size(87, 17);
-            this.RADBUT_SUPERVISOR.TabIndex = 18;
-            this.RADBUT_SUPERVISOR.TabStop = true;
-            this.RADBUT_SUPERVISOR.Text = "Supervisor";
-            this.RADBUT_SUPERVISOR.UseVisualStyleBackColor = true;
+            this.radbtnSupervisor.AutoSize = true;
+            this.radbtnSupervisor.Location = new System.Drawing.Point(437, 304);
+            this.radbtnSupervisor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.radbtnSupervisor.Name = "radbtnSupervisor";
+            this.radbtnSupervisor.Size = new System.Drawing.Size(87, 17);
+            this.radbtnSupervisor.TabIndex = 18;
+            this.radbtnSupervisor.TabStop = true;
+            this.radbtnSupervisor.Text = "Supervisor";
+            this.radbtnSupervisor.UseVisualStyleBackColor = true;
             // 
-            // BUT_AGREGAR
+            // btnAgregar
             // 
-            this.BUT_AGREGAR.Location = new System.Drawing.Point(269, 368);
-            this.BUT_AGREGAR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BUT_AGREGAR.Name = "BUT_AGREGAR";
-            this.BUT_AGREGAR.Size = new System.Drawing.Size(146, 30);
-            this.BUT_AGREGAR.TabIndex = 19;
-            this.BUT_AGREGAR.Text = "Agregar";
-            this.BUT_AGREGAR.UseVisualStyleBackColor = true;
+            this.btnAgregar.Location = new System.Drawing.Point(251, 380);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(150, 30);
+            this.btnAgregar.TabIndex = 19;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // DTP_FECHA_NACIMIENTO
             // 
@@ -250,16 +251,27 @@
             this.DTP_FECHA_NACIMIENTO.Size = new System.Drawing.Size(119, 21);
             this.DTP_FECHA_NACIMIENTO.TabIndex = 20;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(571, 424);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(150, 30);
+            this.btnCerrar.TabIndex = 21;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // alta_usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 466);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.DTP_FECHA_NACIMIENTO);
-            this.Controls.Add(this.BUT_AGREGAR);
-            this.Controls.Add(this.RADBUT_SUPERVISOR);
-            this.Controls.Add(this.RADBUT_VENDEDOR);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.radbtnSupervisor);
+            this.Controls.Add(this.radbtnVendedor);
             this.Controls.Add(this.TXT_CONTRASEÑA2);
             this.Controls.Add(this.TXT_CONTRASEÑA);
             this.Controls.Add(this.TXT_TELEFONO);
@@ -267,16 +279,16 @@
             this.Controls.Add(this.TXT_DNI);
             this.Controls.Add(this.TXT_APELLIDO);
             this.Controls.Add(this.TXT_NOMBRE);
-            this.Controls.Add(this.LBL_DNI);
-            this.Controls.Add(this.LBL_TIPO_USER);
-            this.Controls.Add(this.LBL_CONTRASEÑA2);
-            this.Controls.Add(this.LBL_CONTRASEÑA);
-            this.Controls.Add(this.LBL_TELEFONO);
-            this.Controls.Add(this.LBL_EMAIL);
-            this.Controls.Add(this.LBL_FECHA_NAC);
-            this.Controls.Add(this.LBL_APELLIDO);
-            this.Controls.Add(this.LBL_NOMBRE);
-            this.Controls.Add(this.LBL_INGRESAR);
+            this.Controls.Add(this.lblDNI);
+            this.Controls.Add(this.lblTipoUser);
+            this.Controls.Add(this.lblContraseña2);
+            this.Controls.Add(this.lblContraseña);
+            this.Controls.Add(this.lblTelefono);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblFechaNac);
+            this.Controls.Add(this.lblApellido);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.lblIngresar);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -289,16 +301,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label LBL_INGRESAR;
-        private System.Windows.Forms.Label LBL_NOMBRE;
-        private System.Windows.Forms.Label LBL_APELLIDO;
-        private System.Windows.Forms.Label LBL_FECHA_NAC;
-        private System.Windows.Forms.Label LBL_EMAIL;
-        private System.Windows.Forms.Label LBL_TELEFONO;
-        private System.Windows.Forms.Label LBL_CONTRASEÑA;
-        private System.Windows.Forms.Label LBL_CONTRASEÑA2;
-        private System.Windows.Forms.Label LBL_TIPO_USER;
-        private System.Windows.Forms.Label LBL_DNI;
+        private System.Windows.Forms.Label lblIngresar;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblFechaNac;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Label lblContraseña;
+        private System.Windows.Forms.Label lblContraseña2;
+        private System.Windows.Forms.Label lblTipoUser;
+        private System.Windows.Forms.Label lblDNI;
         private System.Windows.Forms.TextBox TXT_NOMBRE;
         private System.Windows.Forms.TextBox TXT_APELLIDO;
         private System.Windows.Forms.TextBox TXT_DNI;
@@ -306,9 +318,10 @@
         private System.Windows.Forms.TextBox TXT_TELEFONO;
         private System.Windows.Forms.TextBox TXT_CONTRASEÑA;
         private System.Windows.Forms.TextBox TXT_CONTRASEÑA2;
-        private System.Windows.Forms.RadioButton RADBUT_VENDEDOR;
-        private System.Windows.Forms.RadioButton RADBUT_SUPERVISOR;
-        private System.Windows.Forms.Button BUT_AGREGAR;
+        private System.Windows.Forms.RadioButton radbtnVendedor;
+        private System.Windows.Forms.RadioButton radbtnSupervisor;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DateTimePicker DTP_FECHA_NACIMIENTO;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
