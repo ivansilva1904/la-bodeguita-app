@@ -54,148 +54,166 @@
             // LBL_INGRESAR
             // 
             this.LBL_INGRESAR.AutoSize = true;
-            this.LBL_INGRESAR.Location = new System.Drawing.Point(321, 19);
+            this.LBL_INGRESAR.Location = new System.Drawing.Point(266, 21);
+            this.LBL_INGRESAR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBL_INGRESAR.Name = "LBL_INGRESAR";
-            this.LBL_INGRESAR.Size = new System.Drawing.Size(127, 13);
+            this.LBL_INGRESAR.Size = new System.Drawing.Size(168, 13);
             this.LBL_INGRESAR.TabIndex = 0;
-            this.LBL_INGRESAR.Text = "Ingrese un nuevo usuario";
+            this.LBL_INGRESAR.Text = "Ingrese un nuevo empleado";
             // 
             // LBL_NOMBRE
             // 
             this.LBL_NOMBRE.AutoSize = true;
-            this.LBL_NOMBRE.Location = new System.Drawing.Point(73, 70);
+            this.LBL_NOMBRE.Location = new System.Drawing.Point(22, 70);
+            this.LBL_NOMBRE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBL_NOMBRE.Name = "LBL_NOMBRE";
-            this.LBL_NOMBRE.Size = new System.Drawing.Size(44, 13);
+            this.LBL_NOMBRE.Size = new System.Drawing.Size(52, 13);
             this.LBL_NOMBRE.TabIndex = 1;
             this.LBL_NOMBRE.Text = "Nombre";
             // 
             // LBL_APELLIDO
             // 
             this.LBL_APELLIDO.AutoSize = true;
-            this.LBL_APELLIDO.Location = new System.Drawing.Point(404, 70);
+            this.LBL_APELLIDO.Location = new System.Drawing.Point(342, 70);
+            this.LBL_APELLIDO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBL_APELLIDO.Name = "LBL_APELLIDO";
-            this.LBL_APELLIDO.Size = new System.Drawing.Size(44, 13);
+            this.LBL_APELLIDO.Size = new System.Drawing.Size(52, 13);
             this.LBL_APELLIDO.TabIndex = 2;
             this.LBL_APELLIDO.Text = "Apellido";
             // 
             // LBL_FECHA_NAC
             // 
             this.LBL_FECHA_NAC.AutoSize = true;
-            this.LBL_FECHA_NAC.Location = new System.Drawing.Point(404, 128);
+            this.LBL_FECHA_NAC.Location = new System.Drawing.Point(342, 128);
+            this.LBL_FECHA_NAC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBL_FECHA_NAC.Name = "LBL_FECHA_NAC";
-            this.LBL_FECHA_NAC.Size = new System.Drawing.Size(106, 13);
+            this.LBL_FECHA_NAC.Size = new System.Drawing.Size(124, 13);
             this.LBL_FECHA_NAC.TabIndex = 3;
             this.LBL_FECHA_NAC.Text = "Fecha de nacimiento";
             // 
             // LBL_EMAIL
             // 
             this.LBL_EMAIL.AutoSize = true;
-            this.LBL_EMAIL.Location = new System.Drawing.Point(73, 179);
+            this.LBL_EMAIL.Location = new System.Drawing.Point(22, 179);
+            this.LBL_EMAIL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBL_EMAIL.Name = "LBL_EMAIL";
-            this.LBL_EMAIL.Size = new System.Drawing.Size(32, 13);
+            this.LBL_EMAIL.Size = new System.Drawing.Size(38, 13);
             this.LBL_EMAIL.TabIndex = 4;
             this.LBL_EMAIL.Text = "Email";
             // 
             // LBL_TELEFONO
             // 
             this.LBL_TELEFONO.AutoSize = true;
-            this.LBL_TELEFONO.Location = new System.Drawing.Point(404, 179);
+            this.LBL_TELEFONO.Location = new System.Drawing.Point(342, 179);
+            this.LBL_TELEFONO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBL_TELEFONO.Name = "LBL_TELEFONO";
-            this.LBL_TELEFONO.Size = new System.Drawing.Size(49, 13);
+            this.LBL_TELEFONO.Size = new System.Drawing.Size(55, 13);
             this.LBL_TELEFONO.TabIndex = 5;
             this.LBL_TELEFONO.Text = "Telefono";
             // 
             // LBL_CONTRASEÑA
             // 
             this.LBL_CONTRASEÑA.AutoSize = true;
-            this.LBL_CONTRASEÑA.Location = new System.Drawing.Point(73, 240);
+            this.LBL_CONTRASEÑA.Location = new System.Drawing.Point(22, 240);
+            this.LBL_CONTRASEÑA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBL_CONTRASEÑA.Name = "LBL_CONTRASEÑA";
-            this.LBL_CONTRASEÑA.Size = new System.Drawing.Size(61, 13);
+            this.LBL_CONTRASEÑA.Size = new System.Drawing.Size(73, 13);
             this.LBL_CONTRASEÑA.TabIndex = 6;
             this.LBL_CONTRASEÑA.Text = "Contraseña";
             // 
             // LBL_CONTRASEÑA2
             // 
             this.LBL_CONTRASEÑA2.AutoSize = true;
-            this.LBL_CONTRASEÑA2.Location = new System.Drawing.Point(404, 241);
+            this.LBL_CONTRASEÑA2.Location = new System.Drawing.Point(342, 241);
+            this.LBL_CONTRASEÑA2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBL_CONTRASEÑA2.Name = "LBL_CONTRASEÑA2";
-            this.LBL_CONTRASEÑA2.Size = new System.Drawing.Size(114, 13);
+            this.LBL_CONTRASEÑA2.Size = new System.Drawing.Size(136, 13);
             this.LBL_CONTRASEÑA2.TabIndex = 7;
             this.LBL_CONTRASEÑA2.Text = "Reingresar contraseña";
             // 
             // LBL_TIPO_USER
             // 
             this.LBL_TIPO_USER.AutoSize = true;
-            this.LBL_TIPO_USER.Location = new System.Drawing.Point(73, 304);
+            this.LBL_TIPO_USER.Location = new System.Drawing.Point(85, 304);
+            this.LBL_TIPO_USER.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBL_TIPO_USER.Name = "LBL_TIPO_USER";
-            this.LBL_TIPO_USER.Size = new System.Drawing.Size(80, 13);
+            this.LBL_TIPO_USER.Size = new System.Drawing.Size(95, 13);
             this.LBL_TIPO_USER.TabIndex = 8;
             this.LBL_TIPO_USER.Text = "Tipo de usuario";
             // 
             // LBL_DNI
             // 
             this.LBL_DNI.AutoSize = true;
-            this.LBL_DNI.Location = new System.Drawing.Point(73, 131);
+            this.LBL_DNI.Location = new System.Drawing.Point(22, 131);
+            this.LBL_DNI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBL_DNI.Name = "LBL_DNI";
-            this.LBL_DNI.Size = new System.Drawing.Size(26, 13);
+            this.LBL_DNI.Size = new System.Drawing.Size(29, 13);
             this.LBL_DNI.TabIndex = 9;
             this.LBL_DNI.Text = "DNI";
             // 
             // TXT_NOMBRE
             // 
-            this.TXT_NOMBRE.Location = new System.Drawing.Point(162, 67);
+            this.TXT_NOMBRE.Location = new System.Drawing.Point(110, 67);
+            this.TXT_NOMBRE.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TXT_NOMBRE.Name = "TXT_NOMBRE";
-            this.TXT_NOMBRE.Size = new System.Drawing.Size(180, 20);
+            this.TXT_NOMBRE.Size = new System.Drawing.Size(209, 21);
             this.TXT_NOMBRE.TabIndex = 10;
             // 
             // TXT_APELLIDO
             // 
-            this.TXT_APELLIDO.Location = new System.Drawing.Point(543, 67);
+            this.TXT_APELLIDO.Location = new System.Drawing.Point(495, 67);
+            this.TXT_APELLIDO.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TXT_APELLIDO.Name = "TXT_APELLIDO";
-            this.TXT_APELLIDO.Size = new System.Drawing.Size(180, 20);
+            this.TXT_APELLIDO.Size = new System.Drawing.Size(209, 21);
             this.TXT_APELLIDO.TabIndex = 11;
             // 
             // TXT_DNI
             // 
-            this.TXT_DNI.Location = new System.Drawing.Point(162, 128);
+            this.TXT_DNI.Location = new System.Drawing.Point(110, 128);
+            this.TXT_DNI.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TXT_DNI.Name = "TXT_DNI";
-            this.TXT_DNI.Size = new System.Drawing.Size(180, 20);
+            this.TXT_DNI.Size = new System.Drawing.Size(209, 21);
             this.TXT_DNI.TabIndex = 12;
             // 
             // TXT_EMAIL
             // 
-            this.TXT_EMAIL.Location = new System.Drawing.Point(162, 179);
+            this.TXT_EMAIL.Location = new System.Drawing.Point(110, 179);
+            this.TXT_EMAIL.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TXT_EMAIL.Name = "TXT_EMAIL";
-            this.TXT_EMAIL.Size = new System.Drawing.Size(180, 20);
+            this.TXT_EMAIL.Size = new System.Drawing.Size(209, 21);
             this.TXT_EMAIL.TabIndex = 13;
             // 
             // TXT_TELEFONO
             // 
-            this.TXT_TELEFONO.Location = new System.Drawing.Point(543, 176);
+            this.TXT_TELEFONO.Location = new System.Drawing.Point(495, 176);
+            this.TXT_TELEFONO.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TXT_TELEFONO.Name = "TXT_TELEFONO";
-            this.TXT_TELEFONO.Size = new System.Drawing.Size(180, 20);
+            this.TXT_TELEFONO.Size = new System.Drawing.Size(209, 21);
             this.TXT_TELEFONO.TabIndex = 14;
             // 
             // TXT_CONTRASEÑA
             // 
-            this.TXT_CONTRASEÑA.Location = new System.Drawing.Point(162, 238);
+            this.TXT_CONTRASEÑA.Location = new System.Drawing.Point(110, 238);
+            this.TXT_CONTRASEÑA.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TXT_CONTRASEÑA.Name = "TXT_CONTRASEÑA";
-            this.TXT_CONTRASEÑA.Size = new System.Drawing.Size(180, 20);
+            this.TXT_CONTRASEÑA.Size = new System.Drawing.Size(209, 21);
             this.TXT_CONTRASEÑA.TabIndex = 15;
             // 
             // TXT_CONTRASEÑA2
             // 
-            this.TXT_CONTRASEÑA2.Location = new System.Drawing.Point(543, 240);
+            this.TXT_CONTRASEÑA2.Location = new System.Drawing.Point(495, 240);
+            this.TXT_CONTRASEÑA2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TXT_CONTRASEÑA2.Name = "TXT_CONTRASEÑA2";
-            this.TXT_CONTRASEÑA2.Size = new System.Drawing.Size(180, 20);
+            this.TXT_CONTRASEÑA2.Size = new System.Drawing.Size(209, 21);
             this.TXT_CONTRASEÑA2.TabIndex = 16;
             // 
             // RADBUT_VENDEDOR
             // 
             this.RADBUT_VENDEDOR.AutoSize = true;
-            this.RADBUT_VENDEDOR.Location = new System.Drawing.Point(241, 304);
+            this.RADBUT_VENDEDOR.Location = new System.Drawing.Point(281, 304);
+            this.RADBUT_VENDEDOR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RADBUT_VENDEDOR.Name = "RADBUT_VENDEDOR";
-            this.RADBUT_VENDEDOR.Size = new System.Drawing.Size(71, 17);
+            this.RADBUT_VENDEDOR.Size = new System.Drawing.Size(79, 17);
             this.RADBUT_VENDEDOR.TabIndex = 17;
             this.RADBUT_VENDEDOR.TabStop = true;
             this.RADBUT_VENDEDOR.Text = "Vendedor";
@@ -204,9 +222,10 @@
             // RADBUT_SUPERVISOR
             // 
             this.RADBUT_SUPERVISOR.AutoSize = true;
-            this.RADBUT_SUPERVISOR.Location = new System.Drawing.Point(423, 304);
+            this.RADBUT_SUPERVISOR.Location = new System.Drawing.Point(437, 304);
+            this.RADBUT_SUPERVISOR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RADBUT_SUPERVISOR.Name = "RADBUT_SUPERVISOR";
-            this.RADBUT_SUPERVISOR.Size = new System.Drawing.Size(75, 17);
+            this.RADBUT_SUPERVISOR.Size = new System.Drawing.Size(87, 17);
             this.RADBUT_SUPERVISOR.TabIndex = 18;
             this.RADBUT_SUPERVISOR.TabStop = true;
             this.RADBUT_SUPERVISOR.Text = "Supervisor";
@@ -214,9 +233,10 @@
             // 
             // BUT_AGREGAR
             // 
-            this.BUT_AGREGAR.Location = new System.Drawing.Point(298, 365);
+            this.BUT_AGREGAR.Location = new System.Drawing.Point(269, 368);
+            this.BUT_AGREGAR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BUT_AGREGAR.Name = "BUT_AGREGAR";
-            this.BUT_AGREGAR.Size = new System.Drawing.Size(125, 30);
+            this.BUT_AGREGAR.Size = new System.Drawing.Size(146, 30);
             this.BUT_AGREGAR.TabIndex = 19;
             this.BUT_AGREGAR.Text = "Agregar";
             this.BUT_AGREGAR.UseVisualStyleBackColor = true;
@@ -224,16 +244,18 @@
             // DTP_FECHA_NACIMIENTO
             // 
             this.DTP_FECHA_NACIMIENTO.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTP_FECHA_NACIMIENTO.Location = new System.Drawing.Point(543, 125);
+            this.DTP_FECHA_NACIMIENTO.Location = new System.Drawing.Point(495, 125);
+            this.DTP_FECHA_NACIMIENTO.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DTP_FECHA_NACIMIENTO.Name = "DTP_FECHA_NACIMIENTO";
-            this.DTP_FECHA_NACIMIENTO.Size = new System.Drawing.Size(103, 20);
+            this.DTP_FECHA_NACIMIENTO.Size = new System.Drawing.Size(119, 21);
             this.DTP_FECHA_NACIMIENTO.TabIndex = 20;
             // 
             // alta_usuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(733, 466);
+            this.ControlBox = false;
             this.Controls.Add(this.DTP_FECHA_NACIMIENTO);
             this.Controls.Add(this.BUT_AGREGAR);
             this.Controls.Add(this.RADBUT_SUPERVISOR);
@@ -255,6 +277,9 @@
             this.Controls.Add(this.LBL_APELLIDO);
             this.Controls.Add(this.LBL_NOMBRE);
             this.Controls.Add(this.LBL_INGRESAR);
+            this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "alta_usuario";
             this.Text = "Alta usuario";
             this.ResumeLayout(false);
