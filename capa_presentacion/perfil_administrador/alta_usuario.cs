@@ -16,10 +16,5 @@ namespace capa_presentacion.perfil_administrador
         {
             InitializeComponent();
         }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
