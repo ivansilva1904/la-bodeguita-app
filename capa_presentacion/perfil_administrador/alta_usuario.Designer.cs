@@ -37,17 +37,17 @@
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblTipoUser = new System.Windows.Forms.Label();
             this.lblDNI = new System.Windows.Forms.Label();
-            this.TXT_NOMBRE = new System.Windows.Forms.TextBox();
-            this.TXT_APELLIDO = new System.Windows.Forms.TextBox();
-            this.TXT_DNI = new System.Windows.Forms.TextBox();
-            this.TXT_EMAIL = new System.Windows.Forms.TextBox();
-            this.TXT_TELEFONO = new System.Windows.Forms.TextBox();
-            this.TXT_CONTRASEÑA = new System.Windows.Forms.TextBox();
-            this.TXT_CONTRASEÑA2 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtContraseña2 = new System.Windows.Forms.TextBox();
             this.radbtnVendedor = new System.Windows.Forms.RadioButton();
             this.radbtnSupervisor = new System.Windows.Forms.RadioButton();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.DTP_FECHA_NACIMIENTO = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblContraseña2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -143,61 +143,66 @@
             this.lblDNI.TabIndex = 9;
             this.lblDNI.Text = "DNI";
             // 
-            // TXT_NOMBRE
+            // txtNombre
             // 
-            this.TXT_NOMBRE.Location = new System.Drawing.Point(106, 34);
-            this.TXT_NOMBRE.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TXT_NOMBRE.Name = "TXT_NOMBRE";
-            this.TXT_NOMBRE.Size = new System.Drawing.Size(200, 21);
-            this.TXT_NOMBRE.TabIndex = 10;
+            this.txtNombre.Location = new System.Drawing.Point(106, 34);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(200, 21);
+            this.txtNombre.TabIndex = 10;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
-            // TXT_APELLIDO
+            // txtApellido
             // 
-            this.TXT_APELLIDO.Location = new System.Drawing.Point(485, 34);
-            this.TXT_APELLIDO.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TXT_APELLIDO.Name = "TXT_APELLIDO";
-            this.TXT_APELLIDO.Size = new System.Drawing.Size(200, 21);
-            this.TXT_APELLIDO.TabIndex = 11;
+            this.txtApellido.Location = new System.Drawing.Point(485, 34);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(200, 21);
+            this.txtApellido.TabIndex = 11;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
-            // TXT_DNI
+            // txtDNI
             // 
-            this.TXT_DNI.Location = new System.Drawing.Point(106, 92);
-            this.TXT_DNI.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TXT_DNI.Name = "TXT_DNI";
-            this.TXT_DNI.Size = new System.Drawing.Size(200, 21);
-            this.TXT_DNI.TabIndex = 12;
+            this.txtDNI.Location = new System.Drawing.Point(106, 92);
+            this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(200, 21);
+            this.txtDNI.TabIndex = 12;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
-            // TXT_EMAIL
+            // txtEmail
             // 
-            this.TXT_EMAIL.Location = new System.Drawing.Point(106, 146);
-            this.TXT_EMAIL.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TXT_EMAIL.Name = "TXT_EMAIL";
-            this.TXT_EMAIL.Size = new System.Drawing.Size(200, 21);
-            this.TXT_EMAIL.TabIndex = 13;
+            this.txtEmail.Location = new System.Drawing.Point(106, 146);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(200, 21);
+            this.txtEmail.TabIndex = 13;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
-            // TXT_TELEFONO
+            // txtTelefono
             // 
-            this.TXT_TELEFONO.Location = new System.Drawing.Point(485, 146);
-            this.TXT_TELEFONO.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TXT_TELEFONO.Name = "TXT_TELEFONO";
-            this.TXT_TELEFONO.Size = new System.Drawing.Size(200, 21);
-            this.TXT_TELEFONO.TabIndex = 14;
+            this.txtTelefono.Location = new System.Drawing.Point(485, 146);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(200, 21);
+            this.txtTelefono.TabIndex = 14;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
-            // TXT_CONTRASEÑA
+            // txtContraseña
             // 
-            this.TXT_CONTRASEÑA.Location = new System.Drawing.Point(106, 205);
-            this.TXT_CONTRASEÑA.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TXT_CONTRASEÑA.Name = "TXT_CONTRASEÑA";
-            this.TXT_CONTRASEÑA.Size = new System.Drawing.Size(200, 21);
-            this.TXT_CONTRASEÑA.TabIndex = 15;
+            this.txtContraseña.Location = new System.Drawing.Point(106, 205);
+            this.txtContraseña.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(200, 21);
+            this.txtContraseña.TabIndex = 15;
             // 
-            // TXT_CONTRASEÑA2
+            // txtContraseña2
             // 
-            this.TXT_CONTRASEÑA2.Location = new System.Drawing.Point(485, 204);
-            this.TXT_CONTRASEÑA2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TXT_CONTRASEÑA2.Name = "TXT_CONTRASEÑA2";
-            this.TXT_CONTRASEÑA2.Size = new System.Drawing.Size(200, 21);
-            this.TXT_CONTRASEÑA2.TabIndex = 16;
+            this.txtContraseña2.Location = new System.Drawing.Point(485, 204);
+            this.txtContraseña2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtContraseña2.Name = "txtContraseña2";
+            this.txtContraseña2.Size = new System.Drawing.Size(200, 21);
+            this.txtContraseña2.TabIndex = 16;
             // 
             // radbtnVendedor
             // 
@@ -232,38 +237,39 @@
             this.btnAgregar.TabIndex = 19;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // DTP_FECHA_NACIMIENTO
+            // dtpFechaNac
             // 
-            this.DTP_FECHA_NACIMIENTO.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTP_FECHA_NACIMIENTO.Location = new System.Drawing.Point(485, 89);
-            this.DTP_FECHA_NACIMIENTO.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.DTP_FECHA_NACIMIENTO.Name = "DTP_FECHA_NACIMIENTO";
-            this.DTP_FECHA_NACIMIENTO.Size = new System.Drawing.Size(119, 21);
-            this.DTP_FECHA_NACIMIENTO.TabIndex = 20;
+            this.dtpFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaNac.Location = new System.Drawing.Point(485, 89);
+            this.dtpFechaNac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dtpFechaNac.Name = "dtpFechaNac";
+            this.dtpFechaNac.Size = new System.Drawing.Size(119, 21);
+            this.dtpFechaNac.TabIndex = 20;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.TXT_NOMBRE);
+            this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.btnAgregar);
-            this.panel1.Controls.Add(this.DTP_FECHA_NACIMIENTO);
+            this.panel1.Controls.Add(this.dtpFechaNac);
             this.panel1.Controls.Add(this.lblNombre);
             this.panel1.Controls.Add(this.lblEmail);
-            this.panel1.Controls.Add(this.TXT_CONTRASEÑA2);
+            this.panel1.Controls.Add(this.txtContraseña2);
             this.panel1.Controls.Add(this.radbtnSupervisor);
-            this.panel1.Controls.Add(this.TXT_TELEFONO);
+            this.panel1.Controls.Add(this.txtTelefono);
             this.panel1.Controls.Add(this.radbtnVendedor);
-            this.panel1.Controls.Add(this.TXT_APELLIDO);
+            this.panel1.Controls.Add(this.txtApellido);
             this.panel1.Controls.Add(this.lblContraseña2);
             this.panel1.Controls.Add(this.lblContraseña);
             this.panel1.Controls.Add(this.lblTelefono);
             this.panel1.Controls.Add(this.lblDNI);
             this.panel1.Controls.Add(this.lblFechaNac);
-            this.panel1.Controls.Add(this.TXT_DNI);
+            this.panel1.Controls.Add(this.txtDNI);
             this.panel1.Controls.Add(this.lblApellido);
-            this.panel1.Controls.Add(this.TXT_CONTRASEÑA);
+            this.panel1.Controls.Add(this.txtContraseña);
             this.panel1.Controls.Add(this.lblTipoUser);
-            this.panel1.Controls.Add(this.TXT_EMAIL);
+            this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Location = new System.Drawing.Point(12, 49);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(709, 405);
@@ -310,17 +316,17 @@
         private System.Windows.Forms.Label lblContraseña;
         private System.Windows.Forms.Label lblTipoUser;
         private System.Windows.Forms.Label lblDNI;
-        private System.Windows.Forms.TextBox TXT_NOMBRE;
-        private System.Windows.Forms.TextBox TXT_APELLIDO;
-        private System.Windows.Forms.TextBox TXT_DNI;
-        private System.Windows.Forms.TextBox TXT_EMAIL;
-        private System.Windows.Forms.TextBox TXT_TELEFONO;
-        private System.Windows.Forms.TextBox TXT_CONTRASEÑA;
-        private System.Windows.Forms.TextBox TXT_CONTRASEÑA2;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.TextBox txtContraseña2;
         private System.Windows.Forms.RadioButton radbtnVendedor;
         private System.Windows.Forms.RadioButton radbtnSupervisor;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DateTimePicker DTP_FECHA_NACIMIENTO;
+        private System.Windows.Forms.DateTimePicker dtpFechaNac;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblContraseña2;
     }
