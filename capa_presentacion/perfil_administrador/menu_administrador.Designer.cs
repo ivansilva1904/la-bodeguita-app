@@ -60,11 +60,14 @@
             // 
             this.picboxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxLogo.BackgroundImage")));
             this.picboxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picboxLogo.Location = new System.Drawing.Point(33, 13);
+            this.picboxLogo.Location = new System.Drawing.Point(27, 13);
             this.picboxLogo.Name = "picboxLogo";
-            this.picboxLogo.Size = new System.Drawing.Size(186, 104);
+            this.picboxLogo.Size = new System.Drawing.Size(200, 104);
             this.picboxLogo.TabIndex = 7;
             this.picboxLogo.TabStop = false;
+            this.picboxLogo.Click += new System.EventHandler(this.picboxLogo_Click);
+            this.picboxLogo.MouseEnter += new System.EventHandler(this.picboxLogo_MouseEnter);
+            this.picboxLogo.MouseLeave += new System.EventHandler(this.picboxLogo_MouseLeave);
             // 
             // btnModEmpleado
             // 

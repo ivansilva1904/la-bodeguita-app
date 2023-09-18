@@ -22,6 +22,25 @@ namespace capa_presentacion.perfil_administrador
         baja_usuario baja_user = new baja_usuario();
         modificar_usuario mod_user = new modificar_usuario();
 
+        private void removerFormularioActivo()
+        {
+            switch (formularioActivo)
+            {
+                case 'A': {
+                    panFormsAdministrador.Controls.Remove(alta_user);
+                    break;    
+                }
+                case 'B': {
+                    panFormsAdministrador.Controls.Remove(baja_user);
+                    break;
+                }
+                case 'M': {
+                    panFormsAdministrador.Controls.Remove(mod_user);
+                    break;
+                }
+            }
+        }
+
         private void btnAltaEmpleado_MouseEnter(object sender, EventArgs e)
         {
             btnAltaEmpleado.BackColor = Color.Bisque;
@@ -64,21 +83,8 @@ namespace capa_presentacion.perfil_administrador
 
         private void btnAltaEmpleado_Click(object sender, EventArgs e)
         {
-            switch (formularioActivo)
-            {
-                case 'A':{
-                    panFormsAdministrador.Controls.Remove(alta_user);
-                    break;
-                }
-                case 'B':{
-                    panFormsAdministrador.Controls.Remove(baja_user);
-                    break;
-                }
-                case 'M':{
-                    panFormsAdministrador.Controls.Remove(mod_user);
-                    break;
-                }
-            }
+            removerFormularioActivo();
+
             alta_user.TopLevel = false;
             panFormsAdministrador.Controls.Add(alta_user);
             alta_user.Show();
@@ -87,20 +93,8 @@ namespace capa_presentacion.perfil_administrador
 
         private void btnBajaEmpleado_Click(object sender, EventArgs e)
         {
-            switch (formularioActivo){
-                case 'A':{
-                    panFormsAdministrador.Controls.Remove(alta_user);
-                    break;
-                }
-                case 'B':{
-                    panFormsAdministrador.Controls.Remove(baja_user);
-                    break;
-                }
-                case 'M':{
-                    panFormsAdministrador.Controls.Remove(mod_user);
-                    break;
-                }
-            }
+            removerFormularioActivo();
+
             baja_user.TopLevel = false;
             panFormsAdministrador.Controls.Add(baja_user);
             baja_user.Show();
@@ -109,25 +103,27 @@ namespace capa_presentacion.perfil_administrador
 
         private void btnModEmpleado_Click(object sender, EventArgs e)
         {
-            switch (formularioActivo)
-            {
-                case 'A':{
-                    panFormsAdministrador.Controls.Remove(alta_user);
-                    break;
-                }
-                case 'B':{
-                    panFormsAdministrador.Controls.Remove(baja_user);
-                    break;
-                }
-                case 'M':{
-                    panFormsAdministrador.Controls.Remove(mod_user);
-                    break;
-                }
-            }
+            removerFormularioActivo();
+
             mod_user.TopLevel = false;
             panFormsAdministrador.Controls.Add(mod_user);
             mod_user.Show();
             formularioActivo = 'M';
+        }
+
+        private void picboxLogo_MouseEnter(object sender, EventArgs e)
+        {
+            picboxLogo.BackColor = Color.Bisque;
+        }
+
+        private void picboxLogo_MouseLeave(object sender, EventArgs e)
+        {
+            picboxLogo.BackColor = Color.Tan;
+        }
+
+        private void picboxLogo_Click(object sender, EventArgs e)
+        {
+            removerFormularioActivo();
         }
     }
 }
