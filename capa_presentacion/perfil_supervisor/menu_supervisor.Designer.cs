@@ -30,6 +30,9 @@
         {
             this.btnAltaProovedor = new System.Windows.Forms.Button();
             this.menuSupervisor = new System.Windows.Forms.Panel();
+            this.btnAltaProducto = new System.Windows.Forms.Button();
+            this.btnModificarProveedor = new System.Windows.Forms.Button();
+            this.btnBajaProveedor = new System.Windows.Forms.Button();
             this.pnlFormsSupervisor = new System.Windows.Forms.Panel();
             this.menuSupervisor.SuspendLayout();
             this.SuspendLayout();
@@ -39,7 +42,7 @@
             this.btnAltaProovedor.Location = new System.Drawing.Point(46, 61);
             this.btnAltaProovedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAltaProovedor.Name = "btnAltaProovedor";
-            this.btnAltaProovedor.Size = new System.Drawing.Size(99, 32);
+            this.btnAltaProovedor.Size = new System.Drawing.Size(130, 31);
             this.btnAltaProovedor.TabIndex = 0;
             this.btnAltaProovedor.Text = "Alta Proovedor";
             this.btnAltaProovedor.UseVisualStyleBackColor = true;
@@ -48,12 +51,45 @@
             // menuSupervisor
             // 
             this.menuSupervisor.BackColor = System.Drawing.Color.Tan;
+            this.menuSupervisor.Controls.Add(this.btnAltaProducto);
+            this.menuSupervisor.Controls.Add(this.btnModificarProveedor);
+            this.menuSupervisor.Controls.Add(this.btnBajaProveedor);
             this.menuSupervisor.Controls.Add(this.btnAltaProovedor);
             this.menuSupervisor.Location = new System.Drawing.Point(1, 0);
             this.menuSupervisor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.menuSupervisor.Name = "menuSupervisor";
             this.menuSupervisor.Size = new System.Drawing.Size(257, 466);
             this.menuSupervisor.TabIndex = 1;
+            // 
+            // btnAltaProducto
+            // 
+            this.btnAltaProducto.Location = new System.Drawing.Point(46, 226);
+            this.btnAltaProducto.Name = "btnAltaProducto";
+            this.btnAltaProducto.Size = new System.Drawing.Size(130, 38);
+            this.btnAltaProducto.TabIndex = 0;
+            this.btnAltaProducto.Text = "Alta Producto";
+            this.btnAltaProducto.UseVisualStyleBackColor = true;
+            this.btnAltaProducto.Click += new System.EventHandler(this.btnAltaProducto_Click);
+            // 
+            // btnModificarProveedor
+            // 
+            this.btnModificarProveedor.Location = new System.Drawing.Point(46, 169);
+            this.btnModificarProveedor.Name = "btnModificarProveedor";
+            this.btnModificarProveedor.Size = new System.Drawing.Size(130, 34);
+            this.btnModificarProveedor.TabIndex = 0;
+            this.btnModificarProveedor.Text = "Modificar Proveedor";
+            this.btnModificarProveedor.UseVisualStyleBackColor = true;
+            this.btnModificarProveedor.Click += new System.EventHandler(this.btnModificarProveedor_Click);
+            // 
+            // btnBajaProveedor
+            // 
+            this.btnBajaProveedor.Location = new System.Drawing.Point(46, 113);
+            this.btnBajaProveedor.Name = "btnBajaProveedor";
+            this.btnBajaProveedor.Size = new System.Drawing.Size(130, 32);
+            this.btnBajaProveedor.TabIndex = 0;
+            this.btnBajaProveedor.Text = "Baja Proveedor";
+            this.btnBajaProveedor.UseVisualStyleBackColor = true;
+            this.btnBajaProveedor.Click += new System.EventHandler(this.btnBajaProveedor_Click);
             // 
             // pnlFormsSupervisor
             // 
@@ -77,7 +113,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "menu_supervisor";
             this.Text = "Supervisor";
-            this.Load += new System.EventHandler(this.menu_supervisor_Load);
             this.menuSupervisor.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -88,5 +123,8 @@
         private System.Windows.Forms.Button btnAltaProovedor;
         private System.Windows.Forms.Panel menuSupervisor;
         private System.Windows.Forms.Panel pnlFormsSupervisor;
+        private System.Windows.Forms.Button btnAltaProducto;
+        private System.Windows.Forms.Button btnModificarProveedor;
+        private System.Windows.Forms.Button btnBajaProveedor;
     }
 }

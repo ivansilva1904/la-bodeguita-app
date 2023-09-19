@@ -19,20 +19,45 @@ namespace capa_presentacion.perfil_supervisor
 
         private void btnAltaProovedor_Click(object sender, EventArgs e)
         {
-            int cont = 0;
-            if (cont == 0)
-            {
+            pnlFormsSupervisor.Controls.Clear();
+         
                 alta_proovedor altaprov = new alta_proovedor();
                 altaprov.TopLevel = false;
                 pnlFormsSupervisor.Controls.Add(altaprov);
                 altaprov.Show();
-                cont ++;
-            }
+        
+            
         }
 
-        private void menu_supervisor_Load(object sender, EventArgs e)
+        private void btnBajaProveedor_Click(object sender, EventArgs e)
         {
+            pnlFormsSupervisor.Controls.Clear();
+         
+                baja_proveedor bajaprov = new baja_proveedor();
+                bajaprov.TopLevel = false;
+                pnlFormsSupervisor.Controls.Add(bajaprov);
+                bajaprov.Show();
 
+        }
+
+        private void btnModificarProveedor_Click(object sender, EventArgs e)
+        {
+            pnlFormsSupervisor.Controls.Clear();
+
+            modificar_proveedor modifprov = new modificar_proveedor();
+            modifprov.TopLevel = false;
+            pnlFormsSupervisor.Controls.Add(modifprov);
+            modifprov.Show();
+        }
+
+        private void btnAltaProducto_Click(object sender, EventArgs e)
+        {
+            pnlFormsSupervisor.Controls.Clear();
+
+            alta_producto altaprod = new alta_producto();
+            altaprod.TopLevel = false;
+            pnlFormsSupervisor.Controls.Add(altaprod);
+            altaprod.Show();
         }
     }
 }
