@@ -80,6 +80,12 @@
     <Compile Include="perfil_supervisor\alta_proovedor.Designer.cs">
       <DependentUpon>alta_proovedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="perfil_supervisor\baja_proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="perfil_supervisor\baja_proveedor.Designer.cs">
+      <DependentUpon>baja_proveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="perfil_supervisor\menu_supervisor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_supervisor\alta_proovedor.resx">
       <DependentUpon>alta_proovedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="perfil_supervisor\baja_proveedor.resx">
+      <DependentUpon>baja_proveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_supervisor\menu_supervisor.resx">
       <DependentUpon>menu_supervisor.cs</DependentUpon>
