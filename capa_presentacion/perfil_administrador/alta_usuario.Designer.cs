@@ -56,7 +56,7 @@
             // lblIngresar
             // 
             this.lblIngresar.AutoSize = true;
-            this.lblIngresar.Location = new System.Drawing.Point(266, 21);
+            this.lblIngresar.Location = new System.Drawing.Point(269, 33);
             this.lblIngresar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIngresar.Name = "lblIngresar";
             this.lblIngresar.Size = new System.Drawing.Size(168, 13);
@@ -66,7 +66,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(18, 37);
+            this.lblNombre.Location = new System.Drawing.Point(19, 94);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(52, 13);
@@ -76,7 +76,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(330, 37);
+            this.lblApellido.Location = new System.Drawing.Point(331, 94);
             this.lblApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(52, 13);
@@ -86,7 +86,7 @@
             // lblFechaNac
             // 
             this.lblFechaNac.AutoSize = true;
-            this.lblFechaNac.Location = new System.Drawing.Point(330, 95);
+            this.lblFechaNac.Location = new System.Drawing.Point(331, 152);
             this.lblFechaNac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaNac.Name = "lblFechaNac";
             this.lblFechaNac.Size = new System.Drawing.Size(124, 13);
@@ -96,7 +96,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(18, 146);
+            this.lblEmail.Location = new System.Drawing.Point(19, 203);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(38, 13);
@@ -106,7 +106,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(330, 149);
+            this.lblTelefono.Location = new System.Drawing.Point(331, 206);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(55, 13);
@@ -116,7 +116,7 @@
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(18, 207);
+            this.lblContraseña.Location = new System.Drawing.Point(19, 264);
             this.lblContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(73, 13);
@@ -126,7 +126,7 @@
             // lblTipoUser
             // 
             this.lblTipoUser.AutoSize = true;
-            this.lblTipoUser.Location = new System.Drawing.Point(147, 264);
+            this.lblTipoUser.Location = new System.Drawing.Point(148, 321);
             this.lblTipoUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTipoUser.Name = "lblTipoUser";
             this.lblTipoUser.Size = new System.Drawing.Size(95, 13);
@@ -136,7 +136,7 @@
             // lblDNI
             // 
             this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(18, 95);
+            this.lblDNI.Location = new System.Drawing.Point(19, 152);
             this.lblDNI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(29, 13);
@@ -145,7 +145,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(106, 34);
+            this.txtNombre.Location = new System.Drawing.Point(107, 91);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 21);
@@ -154,7 +154,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(485, 34);
+            this.txtApellido.Location = new System.Drawing.Point(486, 91);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(200, 21);
@@ -163,7 +163,7 @@
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(106, 92);
+            this.txtDNI.Location = new System.Drawing.Point(107, 149);
             this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(200, 21);
@@ -172,7 +172,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(106, 146);
+            this.txtEmail.Location = new System.Drawing.Point(107, 203);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 21);
@@ -181,7 +181,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(485, 146);
+            this.txtTelefono.Location = new System.Drawing.Point(486, 203);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(200, 21);
@@ -190,7 +190,7 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(106, 205);
+            this.txtContraseña.Location = new System.Drawing.Point(107, 262);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(200, 21);
@@ -198,7 +198,7 @@
             // 
             // txtContraseña2
             // 
-            this.txtContraseña2.Location = new System.Drawing.Point(485, 204);
+            this.txtContraseña2.Location = new System.Drawing.Point(486, 261);
             this.txtContraseña2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtContraseña2.Name = "txtContraseña2";
             this.txtContraseña2.Size = new System.Drawing.Size(200, 21);
@@ -207,7 +207,7 @@
             // radbtnVendedor
             // 
             this.radbtnVendedor.AutoSize = true;
-            this.radbtnVendedor.Location = new System.Drawing.Point(330, 262);
+            this.radbtnVendedor.Location = new System.Drawing.Point(331, 319);
             this.radbtnVendedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radbtnVendedor.Name = "radbtnVendedor";
             this.radbtnVendedor.Size = new System.Drawing.Size(79, 17);
@@ -219,7 +219,7 @@
             // radbtnSupervisor
             // 
             this.radbtnSupervisor.AutoSize = true;
-            this.radbtnSupervisor.Location = new System.Drawing.Point(456, 262);
+            this.radbtnSupervisor.Location = new System.Drawing.Point(457, 319);
             this.radbtnSupervisor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radbtnSupervisor.Name = "radbtnSupervisor";
             this.radbtnSupervisor.Size = new System.Drawing.Size(87, 17);
@@ -230,7 +230,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(272, 349);
+            this.btnAgregar.Location = new System.Drawing.Point(272, 384);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(150, 30);
@@ -242,7 +242,7 @@
             // dtpFechaNac
             // 
             this.dtpFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNac.Location = new System.Drawing.Point(485, 89);
+            this.dtpFechaNac.Location = new System.Drawing.Point(486, 146);
             this.dtpFechaNac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtpFechaNac.Name = "dtpFechaNac";
             this.dtpFechaNac.Size = new System.Drawing.Size(119, 21);
@@ -250,7 +250,9 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Beige;
             this.panel1.Controls.Add(this.txtNombre);
+            this.panel1.Controls.Add(this.lblIngresar);
             this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Controls.Add(this.dtpFechaNac);
             this.panel1.Controls.Add(this.lblNombre);
@@ -270,15 +272,15 @@
             this.panel1.Controls.Add(this.txtContraseña);
             this.panel1.Controls.Add(this.lblTipoUser);
             this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Location = new System.Drawing.Point(12, 49);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(709, 405);
+            this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 21;
             // 
             // lblContraseña2
             // 
             this.lblContraseña2.AutoSize = true;
-            this.lblContraseña2.Location = new System.Drawing.Point(328, 211);
+            this.lblContraseña2.Location = new System.Drawing.Point(329, 268);
             this.lblContraseña2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContraseña2.Name = "lblContraseña2";
             this.lblContraseña2.Size = new System.Drawing.Size(136, 13);
@@ -289,10 +291,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Cornsilk;
             this.ClientSize = new System.Drawing.Size(733, 466);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblIngresar);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -301,7 +303,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
