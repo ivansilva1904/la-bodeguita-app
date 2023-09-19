@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblCuit = new System.Windows.Forms.Label();
-            this.lblRazonSocial = new System.Windows.Forms.Label();
             this.lblRubro = new System.Windows.Forms.Label();
+            this.lblCuit = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
-            this.txtRubro = new System.Windows.Forms.TextBox();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtRazonSocial = new System.Windows.Forms.TextBox();
-            this.txtCuit = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblRazonSocial = new System.Windows.Forms.Label();
+            this.btnGuardarCambios = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,93 +50,93 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Beige;
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.txtCuit);
-            this.panel1.Controls.Add(this.txtRazonSocial);
-            this.panel1.Controls.Add(this.txtDireccion);
-            this.panel1.Controls.Add(this.txtRubro);
-            this.panel1.Controls.Add(this.lblDireccion);
             this.panel1.Controls.Add(this.lblRubro);
-            this.panel1.Controls.Add(this.lblRazonSocial);
             this.panel1.Controls.Add(this.lblCuit);
+            this.panel1.Controls.Add(this.lblDireccion);
+            this.panel1.Controls.Add(this.lblRazonSocial);
+            this.panel1.Controls.Add(this.btnGuardarCambios);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(742, 442);
+            this.panel1.Size = new System.Drawing.Size(693, 404);
             this.panel1.TabIndex = 0;
-            // 
-            // lblCuit
-            // 
-            this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(112, 68);
-            this.lblCuit.Name = "lblCuit";
-            this.lblCuit.Size = new System.Drawing.Size(30, 13);
-            this.lblCuit.TabIndex = 0;
-            this.lblCuit.Text = "Cuit";
-            // 
-            // lblRazonSocial
-            // 
-            this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.Location = new System.Drawing.Point(377, 71);
-            this.lblRazonSocial.Name = "lblRazonSocial";
-            this.lblRazonSocial.Size = new System.Drawing.Size(80, 13);
-            this.lblRazonSocial.TabIndex = 1;
-            this.lblRazonSocial.Text = "Razon Social";
             // 
             // lblRubro
             // 
             this.lblRubro.AutoSize = true;
-            this.lblRubro.Location = new System.Drawing.Point(112, 156);
+            this.lblRubro.Location = new System.Drawing.Point(70, 115);
             this.lblRubro.Name = "lblRubro";
             this.lblRubro.Size = new System.Drawing.Size(41, 13);
-            this.lblRubro.TabIndex = 2;
+            this.lblRubro.TabIndex = 9;
             this.lblRubro.Text = "Rubro";
+            // 
+            // lblCuit
+            // 
+            this.lblCuit.AutoSize = true;
+            this.lblCuit.Location = new System.Drawing.Point(70, 75);
+            this.lblCuit.Name = "lblCuit";
+            this.lblCuit.Size = new System.Drawing.Size(30, 13);
+            this.lblCuit.TabIndex = 8;
+            this.lblCuit.Text = "Cuit";
             // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(377, 156);
+            this.lblDireccion.Location = new System.Drawing.Point(328, 115);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(60, 13);
-            this.lblDireccion.TabIndex = 3;
+            this.lblDireccion.TabIndex = 7;
             this.lblDireccion.Text = "Direccion";
             // 
-            // txtRubro
+            // lblRazonSocial
             // 
-            this.txtRubro.Location = new System.Drawing.Point(159, 153);
-            this.txtRubro.Name = "txtRubro";
-            this.txtRubro.Size = new System.Drawing.Size(167, 21);
-            this.txtRubro.TabIndex = 4;
+            this.lblRazonSocial.AutoSize = true;
+            this.lblRazonSocial.Location = new System.Drawing.Point(328, 75);
+            this.lblRazonSocial.Name = "lblRazonSocial";
+            this.lblRazonSocial.Size = new System.Drawing.Size(80, 13);
+            this.lblRazonSocial.TabIndex = 6;
+            this.lblRazonSocial.Text = "Razon Social";
             // 
-            // txtDireccion
+            // btnGuardarCambios
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(470, 153);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(167, 21);
-            this.txtDireccion.TabIndex = 5;
+            this.btnGuardarCambios.Location = new System.Drawing.Point(454, 170);
+            this.btnGuardarCambios.Name = "btnGuardarCambios";
+            this.btnGuardarCambios.Size = new System.Drawing.Size(122, 31);
+            this.btnGuardarCambios.TabIndex = 5;
+            this.btnGuardarCambios.Text = "Guardar Cambios";
+            this.btnGuardarCambios.UseVisualStyleBackColor = true;
             // 
-            // txtRazonSocial
+            // textBox4
             // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(470, 68);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(167, 21);
-            this.txtRazonSocial.TabIndex = 6;
+            this.textBox4.Location = new System.Drawing.Point(426, 112);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(174, 21);
+            this.textBox4.TabIndex = 4;
             // 
-            // txtCuit
+            // textBox3
             // 
-            this.txtCuit.Location = new System.Drawing.Point(159, 65);
-            this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(167, 21);
-            this.txtCuit.TabIndex = 7;
+            this.textBox3.Location = new System.Drawing.Point(426, 72);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(174, 21);
+            this.textBox3.TabIndex = 3;
             // 
-            // button1
+            // textBox2
             // 
-            this.button1.Location = new System.Drawing.Point(503, 216);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 26);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Guardar Cambios";
-            this.button1.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(129, 72);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(174, 21);
+            this.textBox2.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(129, 112);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(174, 21);
+            this.textBox1.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -146,10 +146,10 @@
             this.razonSocial,
             this.rubro,
             this.direccion});
-            this.dataGridView1.Location = new System.Drawing.Point(115, 263);
+            this.dataGridView1.Location = new System.Drawing.Point(85, 235);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(507, 150);
-            this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.Size = new System.Drawing.Size(491, 133);
+            this.dataGridView1.TabIndex = 0;
             // 
             // cuit
             // 
@@ -176,7 +176,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
-            this.ClientSize = new System.Drawing.Size(766, 466);
+            this.ClientSize = new System.Drawing.Size(717, 428);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -193,19 +193,19 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblRubro;
+        private System.Windows.Forms.Label lblCuit;
+        private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.Label lblRazonSocial;
+        private System.Windows.Forms.Button btnGuardarCambios;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn rubro;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtCuit;
-        private System.Windows.Forms.TextBox txtRazonSocial;
-        private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtRubro;
-        private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.Label lblRubro;
-        private System.Windows.Forms.Label lblRazonSocial;
-        private System.Windows.Forms.Label lblCuit;
     }
 }

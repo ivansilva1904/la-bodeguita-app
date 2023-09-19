@@ -16,5 +16,6 @@ namespace capa_presentacion.perfil_supervisor
         {
             InitializeComponent();
         }
+
     }
 }
