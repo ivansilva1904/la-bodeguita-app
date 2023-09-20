@@ -34,8 +34,8 @@
             this.btnRealizarVenta = new System.Windows.Forms.Button();
             this.btnModificarCliente = new System.Windows.Forms.Button();
             this.btnAltaCliente = new System.Windows.Forms.Button();
+            this.panVistasMenu = new System.Windows.Forms.Panel();
             this.picboxLogo = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -122,8 +122,16 @@
             this.btnAltaCliente.TabIndex = 1;
             this.btnAltaCliente.Text = "Alta cliente";
             this.btnAltaCliente.UseVisualStyleBackColor = true;
+            this.btnAltaCliente.Click += new System.EventHandler(this.btnAltaCliente_Click);
             this.btnAltaCliente.MouseEnter += new System.EventHandler(this.btnAltaCliente_MouseEnter);
             this.btnAltaCliente.MouseLeave += new System.EventHandler(this.btnAltaCliente_MouseLeave);
+            // 
+            // panVistasMenu
+            // 
+            this.panVistasMenu.Location = new System.Drawing.Point(254, -1);
+            this.panVistasMenu.Name = "panVistasMenu";
+            this.panVistasMenu.Size = new System.Drawing.Size(733, 466);
+            this.panVistasMenu.TabIndex = 1;
             // 
             // picboxLogo
             // 
@@ -137,19 +145,12 @@
             this.picboxLogo.MouseEnter += new System.EventHandler(this.picboxLogo_MouseEnter);
             this.picboxLogo.MouseLeave += new System.EventHandler(this.picboxLogo_MouseLeave);
             // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(254, -1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(733, 466);
-            this.panel2.TabIndex = 1;
-            // 
             // menu_vendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 461);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panVistasMenu);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "menu_vendedor";
@@ -163,7 +164,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panVistasMenu;
         private System.Windows.Forms.PictureBox picboxLogo;
         private System.Windows.Forms.Button btnRealizarVenta;
         private System.Windows.Forms.Button btnModificarCliente;

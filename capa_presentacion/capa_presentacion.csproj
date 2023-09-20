@@ -154,6 +154,9 @@
     <EmbeddedResource Include="perfil_vendedor\alta_cliente.resx">
       <DependentUpon>alta_cliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="perfil_vendedor\menu_vendedor.resx">
+      <DependentUpon>menu_vendedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

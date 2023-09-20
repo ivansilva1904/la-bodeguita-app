@@ -76,5 +76,15 @@ namespace capa_presentacion.perfil_vendedor
         {
             picboxLogo.BackColor = Color.Tan;
         }
+
+        private void btnAltaCliente_Click(object sender, EventArgs e)
+        {
+            panVistasMenu.Controls.Clear();
+
+            alta_cliente vistaAltaCliente = new alta_cliente();
+            vistaAltaCliente.TopLevel = false;
+            panVistasMenu.Controls.Add(vistaAltaCliente);
+            vistaAltaCliente.Show();
+        }
     }
 }
