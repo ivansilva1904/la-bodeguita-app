@@ -59,5 +59,10 @@ namespace capa_presentacion.perfil_supervisor
             pnlFormsSupervisor.Controls.Add(altaprod);
             altaprod.Show();
         }
+
+        private void btnAltaProovedor_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
