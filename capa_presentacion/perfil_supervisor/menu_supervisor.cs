@@ -62,7 +62,52 @@ namespace capa_presentacion.perfil_supervisor
 
         private void btnAltaProovedor_MouseEnter(object sender, EventArgs e)
         {
+            btnAltaProovedor.BackColor = Color.Bisque;
+        }
 
+        private void btnAltaProovedor_MouseLeave(object sender, EventArgs e)
+        {
+            btnAltaProovedor.BackColor = Color.Tan;
+        }
+
+        private void btnBajaProveedor_MouseEnter(object sender, EventArgs e)
+        {
+            btnBajaProveedor.BackColor = Color.Bisque;
+        }
+
+        private void btnBajaProveedor_MouseLeave(object sender, EventArgs e)
+        {
+            btnBajaProveedor.BackColor = Color.Tan;
+        }
+
+        private void btnModificarProveedor_MouseEnter(object sender, EventArgs e)
+        {
+            btnModificarProveedor.BackColor = Color.Bisque;
+        }
+
+        private void btnModificarProveedor_MouseLeave(object sender, EventArgs e)
+        {
+            btnModificarProveedor.BackColor = Color.Tan;
+        }
+
+        private void btnAltaProducto_MouseEnter(object sender, EventArgs e)
+        {
+            btnAltaProducto.BackColor = Color.Bisque;
+        }
+
+        private void btnAltaProducto_MouseLeave(object sender, EventArgs e)
+        {
+            btnAltaProducto.BackColor = Color.Tan;
+        }
+
+        private void picboxLogo_MouseEnter(object sender, EventArgs e)
+        {
+            picboxLogo.BackColor = Color.Bisque;
+        }
+
+        private void picboxLogo_MouseLeave(object sender, EventArgs e)
+        {
+            picboxLogo.BackColor = Color.Tan;
         }
     }
 }

@@ -53,6 +53,7 @@
             this.btnAltaProovedor.UseVisualStyleBackColor = true;
             this.btnAltaProovedor.Click += new System.EventHandler(this.btnAltaProovedor_Click);
             this.btnAltaProovedor.MouseEnter += new System.EventHandler(this.btnAltaProovedor_MouseEnter);
+            this.btnAltaProovedor.MouseLeave += new System.EventHandler(this.btnAltaProovedor_MouseLeave);
             // 
             // menuSupervisor
             // 
@@ -81,6 +82,8 @@
             this.btnAltaProducto.Text = "Alta Producto";
             this.btnAltaProducto.UseVisualStyleBackColor = true;
             this.btnAltaProducto.Click += new System.EventHandler(this.btnAltaProducto_Click);
+            this.btnAltaProducto.MouseEnter += new System.EventHandler(this.btnAltaProducto_MouseEnter);
+            this.btnAltaProducto.MouseLeave += new System.EventHandler(this.btnAltaProducto_MouseLeave);
             // 
             // btnModificarProveedor
             // 
@@ -94,6 +97,8 @@
             this.btnModificarProveedor.Text = "Modificar Proveedor";
             this.btnModificarProveedor.UseVisualStyleBackColor = true;
             this.btnModificarProveedor.Click += new System.EventHandler(this.btnModificarProveedor_Click);
+            this.btnModificarProveedor.MouseEnter += new System.EventHandler(this.btnModificarProveedor_MouseEnter);
+            this.btnModificarProveedor.MouseLeave += new System.EventHandler(this.btnModificarProveedor_MouseLeave);
             // 
             // btnBajaProveedor
             // 
@@ -107,6 +112,8 @@
             this.btnBajaProveedor.Text = "Baja Proveedor";
             this.btnBajaProveedor.UseVisualStyleBackColor = true;
             this.btnBajaProveedor.Click += new System.EventHandler(this.btnBajaProveedor_Click);
+            this.btnBajaProveedor.MouseEnter += new System.EventHandler(this.btnBajaProveedor_MouseEnter);
+            this.btnBajaProveedor.MouseLeave += new System.EventHandler(this.btnBajaProveedor_MouseLeave);
             // 
             // pnlFormsSupervisor
             // 
@@ -127,6 +134,8 @@
             this.picboxLogo.Size = new System.Drawing.Size(200, 104);
             this.picboxLogo.TabIndex = 1;
             this.picboxLogo.TabStop = false;
+            this.picboxLogo.MouseEnter += new System.EventHandler(this.picboxLogo_MouseEnter);
+            this.picboxLogo.MouseLeave += new System.EventHandler(this.picboxLogo_MouseLeave);
             // 
             // menu_supervisor
             // 
