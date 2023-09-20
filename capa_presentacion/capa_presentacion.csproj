@@ -145,6 +145,9 @@
     <EmbeddedResource Include="perfil_supervisor\modificar_proveedor.resx">
       <DependentUpon>modificar_proveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="perfil_vendedor\menu_vendedor.resx">
+      <DependentUpon>menu_vendedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
