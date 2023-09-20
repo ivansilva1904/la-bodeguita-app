@@ -34,6 +34,8 @@
             this.btnModificarCliente = new System.Windows.Forms.Button();
             this.btnRealizarVenta = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnListarClientes = new System.Windows.Forms.Button();
+            this.btnListarProductos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -42,6 +44,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Tan;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnListarProductos);
+            this.panel1.Controls.Add(this.btnListarClientes);
             this.panel1.Controls.Add(this.btnRealizarVenta);
             this.panel1.Controls.Add(this.btnModificarCliente);
             this.panel1.Controls.Add(this.btnAltaCliente);
@@ -69,6 +73,8 @@
             this.btnAltaCliente.TabIndex = 1;
             this.btnAltaCliente.Text = "Alta cliente";
             this.btnAltaCliente.UseVisualStyleBackColor = true;
+            this.btnAltaCliente.MouseEnter += new System.EventHandler(this.btnAltaCliente_MouseEnter);
+            this.btnAltaCliente.MouseLeave += new System.EventHandler(this.btnAltaCliente_MouseLeave);
             // 
             // btnModificarCliente
             // 
@@ -81,6 +87,8 @@
             this.btnModificarCliente.TabIndex = 2;
             this.btnModificarCliente.Text = "Modificar cliente";
             this.btnModificarCliente.UseVisualStyleBackColor = true;
+            this.btnModificarCliente.MouseEnter += new System.EventHandler(this.btnModificarCliente_MouseEnter);
+            this.btnModificarCliente.MouseLeave += new System.EventHandler(this.btnModificarCliente_MouseLeave);
             // 
             // btnRealizarVenta
             // 
@@ -93,6 +101,8 @@
             this.btnRealizarVenta.TabIndex = 3;
             this.btnRealizarVenta.Text = "Realizar venta";
             this.btnRealizarVenta.UseVisualStyleBackColor = true;
+            this.btnRealizarVenta.MouseEnter += new System.EventHandler(this.btnRealizarVenta_MouseEnter);
+            this.btnRealizarVenta.MouseLeave += new System.EventHandler(this.btnRealizarVenta_MouseLeave);
             // 
             // pictureBox1
             // 
@@ -104,6 +114,34 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnListarClientes
+            // 
+            this.btnListarClientes.FlatAppearance.BorderSize = 0;
+            this.btnListarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarClientes.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarClientes.Location = new System.Drawing.Point(-2, 291);
+            this.btnListarClientes.Name = "btnListarClientes";
+            this.btnListarClientes.Size = new System.Drawing.Size(257, 50);
+            this.btnListarClientes.TabIndex = 4;
+            this.btnListarClientes.Text = "Listar clientes";
+            this.btnListarClientes.UseVisualStyleBackColor = true;
+            this.btnListarClientes.MouseEnter += new System.EventHandler(this.btnListarClientes_MouseEnter);
+            this.btnListarClientes.MouseLeave += new System.EventHandler(this.btnListarClientes_MouseLeave);
+            // 
+            // btnListarProductos
+            // 
+            this.btnListarProductos.FlatAppearance.BorderSize = 0;
+            this.btnListarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarProductos.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarProductos.Location = new System.Drawing.Point(-2, 347);
+            this.btnListarProductos.Name = "btnListarProductos";
+            this.btnListarProductos.Size = new System.Drawing.Size(257, 50);
+            this.btnListarProductos.TabIndex = 5;
+            this.btnListarProductos.Text = "Listar productos";
+            this.btnListarProductos.UseVisualStyleBackColor = true;
+            this.btnListarProductos.MouseEnter += new System.EventHandler(this.btnListarProductos_MouseEnter);
+            this.btnListarProductos.MouseLeave += new System.EventHandler(this.btnListarProductos_MouseLeave);
+            // 
             // menu_vendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -113,7 +151,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "menu_vendedor";
-            this.Text = "La bodeguita - Menu";
+            this.Text = "La bodeguita - Menu vendedor";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -128,5 +166,7 @@
         private System.Windows.Forms.Button btnRealizarVenta;
         private System.Windows.Forms.Button btnModificarCliente;
         private System.Windows.Forms.Button btnAltaCliente;
+        private System.Windows.Forms.Button btnListarProductos;
+        private System.Windows.Forms.Button btnListarClientes;
     }
 }
