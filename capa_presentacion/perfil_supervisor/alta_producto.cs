@@ -12,12 +12,9 @@ namespace capa_presentacion.perfil_supervisor
 {
     public partial class alta_producto : Form
     {
-     
-
-   
-
-
-
-
+        public alta_producto()
+        {
+            InitializeComponent();
+        }
     }
 }
