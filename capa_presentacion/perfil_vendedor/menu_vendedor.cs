@@ -66,5 +66,15 @@ namespace capa_presentacion.perfil_vendedor
         {
             btnListarProductos.BackColor = Color.Tan;
         }
+
+        private void picboxLogo_MouseEnter(object sender, EventArgs e)
+        {
+            picboxLogo.BackColor = Color.Bisque;
+        }
+
+        private void picboxLogo_MouseLeave(object sender, EventArgs e)
+        {
+            picboxLogo.BackColor = Color.Tan;
+        }
     }
 }
