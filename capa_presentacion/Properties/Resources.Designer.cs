@@ -79,5 +79,15 @@ namespace capa_presentacion.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap purple_grapes_vineyard_napa_valley_napa_vineyard {
+            get {
+                object obj = ResourceManager.GetObject("purple-grapes-vineyard-napa-valley-napa-vineyard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

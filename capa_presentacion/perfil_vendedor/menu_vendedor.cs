@@ -80,11 +80,33 @@ namespace capa_presentacion.perfil_vendedor
         private void btnAltaCliente_Click(object sender, EventArgs e)
         {
             panVistasMenu.Controls.Clear();
-
             alta_cliente vistaAltaCliente = new alta_cliente();
             vistaAltaCliente.TopLevel = false;
             panVistasMenu.Controls.Add(vistaAltaCliente);
             vistaAltaCliente.Show();
+        }
+
+        private void btnModificarCliente_Click(object sender, EventArgs e)
+        {
+            panVistasMenu.Controls.Clear();
+            modificar_cliente vistaModCliente = new modificar_cliente();
+            vistaModCliente.TopLevel = false;
+            panVistasMenu.Controls.Add(vistaModCliente);
+            vistaModCliente.Show();
+        }
+
+        private void btnRealizarVenta_Click(object sender, EventArgs e)
+        {
+            panVistasMenu.Controls.Clear();
+            realizar_venta vistaVenta = new realizar_venta();
+            vistaVenta.TopLevel = false;
+            panVistasMenu.Controls.Add(vistaVenta);
+            vistaVenta.Show();
+        }
+
+        private void picboxLogo_Click(object sender, EventArgs e)
+        {
+            panVistasMenu.Controls.Clear();
         }
     }
 }

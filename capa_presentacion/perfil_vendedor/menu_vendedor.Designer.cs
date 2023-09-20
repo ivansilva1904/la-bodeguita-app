@@ -94,6 +94,7 @@
             this.btnRealizarVenta.TabIndex = 3;
             this.btnRealizarVenta.Text = "Realizar venta";
             this.btnRealizarVenta.UseVisualStyleBackColor = true;
+            this.btnRealizarVenta.Click += new System.EventHandler(this.btnRealizarVenta_Click);
             this.btnRealizarVenta.MouseEnter += new System.EventHandler(this.btnRealizarVenta_MouseEnter);
             this.btnRealizarVenta.MouseLeave += new System.EventHandler(this.btnRealizarVenta_MouseLeave);
             // 
@@ -108,6 +109,7 @@
             this.btnModificarCliente.TabIndex = 2;
             this.btnModificarCliente.Text = "Modificar cliente";
             this.btnModificarCliente.UseVisualStyleBackColor = true;
+            this.btnModificarCliente.Click += new System.EventHandler(this.btnModificarCliente_Click);
             this.btnModificarCliente.MouseEnter += new System.EventHandler(this.btnModificarCliente_MouseEnter);
             this.btnModificarCliente.MouseLeave += new System.EventHandler(this.btnModificarCliente_MouseLeave);
             // 
@@ -128,6 +130,8 @@
             // 
             // panVistasMenu
             // 
+            this.panVistasMenu.BackgroundImage = global::capa_presentacion.Properties.Resources.purple_grapes_vineyard_napa_valley_napa_vineyard;
+            this.panVistasMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panVistasMenu.Location = new System.Drawing.Point(254, -1);
             this.panVistasMenu.Name = "panVistasMenu";
             this.panVistasMenu.Size = new System.Drawing.Size(733, 466);
@@ -142,6 +146,7 @@
             this.picboxLogo.Size = new System.Drawing.Size(200, 104);
             this.picboxLogo.TabIndex = 0;
             this.picboxLogo.TabStop = false;
+            this.picboxLogo.Click += new System.EventHandler(this.picboxLogo_Click);
             this.picboxLogo.MouseEnter += new System.EventHandler(this.picboxLogo_MouseEnter);
             this.picboxLogo.MouseLeave += new System.EventHandler(this.picboxLogo_MouseLeave);
             // 
