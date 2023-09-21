@@ -29,15 +29,13 @@ namespace capa_presentacion.perfil_supervisor
             
         }
 
-        private void btnBajaProveedor_Click(object sender, EventArgs e)
+        private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            pnlFormsSupervisor.Controls.Clear();
-         
-                baja_proveedor bajaprov = new baja_proveedor();
-                bajaprov.TopLevel = false;
-                pnlFormsSupervisor.Controls.Add(bajaprov);
-                bajaprov.Show();
-
+            pnlFormsSupervisor.Controls.Clear();        
+            modificar_producto modifProd = new modificar_producto();
+            modifProd.TopLevel = false;
+            pnlFormsSupervisor.Controls.Add(modifProd);
+            modifProd.Show();
         }
 
         private void btnModificarProveedor_Click(object sender, EventArgs e)
@@ -70,14 +68,14 @@ namespace capa_presentacion.perfil_supervisor
             btnAltaProovedor.BackColor = Color.Tan;
         }
 
-        private void btnBajaProveedor_MouseEnter(object sender, EventArgs e)
+        private void btnModificarProducto_MouseEnter(object sender, EventArgs e)
         {
-            btnBajaProveedor.BackColor = Color.Bisque;
+            btnModificarProducto.BackColor = Color.Bisque;
         }
 
-        private void btnBajaProveedor_MouseLeave(object sender, EventArgs e)
+        private void btnModificarProducto_MouseLeave(object sender, EventArgs e)
         {
-            btnBajaProveedor.BackColor = Color.Tan;
+            btnModificarProducto.BackColor = Color.Tan;
         }
 
         private void btnModificarProveedor_MouseEnter(object sender, EventArgs e)
