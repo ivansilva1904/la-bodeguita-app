@@ -116,6 +116,12 @@
     <Compile Include="perfil_vendedor\listar_clientes.Designer.cs">
       <DependentUpon>listar_clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="perfil_vendedor\listar_productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="perfil_vendedor\listar_productos.Designer.cs">
+      <DependentUpon>listar_productos.cs</DependentUpon>
+    </Compile>
     <Compile Include="perfil_vendedor\menu_vendedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_vendedor\listar_clientes.resx">
       <DependentUpon>listar_clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="perfil_vendedor\listar_productos.resx">
+      <DependentUpon>listar_productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_vendedor\menu_vendedor.resx">
       <DependentUpon>menu_vendedor.cs</DependentUpon>
