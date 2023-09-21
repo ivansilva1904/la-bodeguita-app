@@ -117,5 +117,25 @@ namespace capa_presentacion.perfil_administrador
             panFormsAdministrador.Controls.Add(vistaListarProductos);
             vistaListarProductos.Show();
         }
+
+        private void btnListarClientes_MouseEnter(object sender, EventArgs e)
+        {
+            btnListarClientes.BackColor = Color.Bisque;
+        }
+
+        private void btnListarClientes_MouseLeave(object sender, EventArgs e)
+        {
+            btnListarClientes.BackColor = Color.Tan;
+        }
+
+        private void btnListarProductos_MouseEnter(object sender, EventArgs e)
+        {
+            btnListarProductos.BackColor = Color.Bisque;
+        }
+
+        private void btnListarProductos_MouseLeave(object sender, EventArgs e)
+        {
+            btnListarProductos.BackColor = Color.Tan;
+        }
     }
 }

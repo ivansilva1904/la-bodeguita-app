@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu_administrador));
             this.panOpciones = new System.Windows.Forms.Panel();
+            this.btnListarProductos = new System.Windows.Forms.Button();
             this.btnListarClientes = new System.Windows.Forms.Button();
             this.picboxLogo = new System.Windows.Forms.PictureBox();
             this.btnModEmpleado = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.btnAltaEmpleado = new System.Windows.Forms.Button();
             this.btnGenerarRespaldo = new System.Windows.Forms.Button();
             this.panFormsAdministrador = new System.Windows.Forms.Panel();
-            this.btnListarProductos = new System.Windows.Forms.Button();
             this.panOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,20 @@
             this.panOpciones.Size = new System.Drawing.Size(262, 466);
             this.panOpciones.TabIndex = 0;
             // 
+            // btnListarProductos
+            // 
+            this.btnListarProductos.FlatAppearance.BorderSize = 0;
+            this.btnListarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarProductos.Location = new System.Drawing.Point(-2, 347);
+            this.btnListarProductos.Name = "btnListarProductos";
+            this.btnListarProductos.Size = new System.Drawing.Size(257, 50);
+            this.btnListarProductos.TabIndex = 9;
+            this.btnListarProductos.Text = "Listar productos";
+            this.btnListarProductos.UseVisualStyleBackColor = true;
+            this.btnListarProductos.Click += new System.EventHandler(this.btnListarProductos_Click);
+            this.btnListarProductos.MouseEnter += new System.EventHandler(this.btnListarProductos_MouseEnter);
+            this.btnListarProductos.MouseLeave += new System.EventHandler(this.btnListarProductos_MouseLeave);
+            // 
             // btnListarClientes
             // 
             this.btnListarClientes.FlatAppearance.BorderSize = 0;
@@ -71,6 +85,8 @@
             this.btnListarClientes.Text = "Listar clientes";
             this.btnListarClientes.UseVisualStyleBackColor = true;
             this.btnListarClientes.Click += new System.EventHandler(this.btnListarClientes_Click);
+            this.btnListarClientes.MouseEnter += new System.EventHandler(this.btnListarClientes_MouseEnter);
+            this.btnListarClientes.MouseLeave += new System.EventHandler(this.btnListarClientes_MouseLeave);
             // 
             // picboxLogo
             // 
@@ -148,18 +164,6 @@
             this.panFormsAdministrador.Name = "panFormsAdministrador";
             this.panFormsAdministrador.Size = new System.Drawing.Size(733, 466);
             this.panFormsAdministrador.TabIndex = 1;
-            // 
-            // btnListarProductos
-            // 
-            this.btnListarProductos.FlatAppearance.BorderSize = 0;
-            this.btnListarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListarProductos.Location = new System.Drawing.Point(-2, 347);
-            this.btnListarProductos.Name = "btnListarProductos";
-            this.btnListarProductos.Size = new System.Drawing.Size(257, 50);
-            this.btnListarProductos.TabIndex = 9;
-            this.btnListarProductos.Text = "Listar productos";
-            this.btnListarProductos.UseVisualStyleBackColor = true;
-            this.btnListarProductos.Click += new System.EventHandler(this.btnListarProductos_Click);
             // 
             // menu_administrador
             // 
