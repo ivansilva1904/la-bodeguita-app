@@ -207,5 +207,8 @@
   <ItemGroup>
     <None Include="Resources\purple-grapes-vineyard-napa-valley-napa-vineyard.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-photo-wine-barrel.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

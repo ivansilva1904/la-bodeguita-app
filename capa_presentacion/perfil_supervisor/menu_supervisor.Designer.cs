@@ -119,6 +119,8 @@
             // 
             this.pnlFormsSupervisor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFormsSupervisor.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_wine_barrel;
+            this.pnlFormsSupervisor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlFormsSupervisor.Location = new System.Drawing.Point(256, -1);
             this.pnlFormsSupervisor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlFormsSupervisor.Name = "pnlFormsSupervisor";
