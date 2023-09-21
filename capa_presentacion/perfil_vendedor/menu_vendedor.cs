@@ -108,5 +108,14 @@ namespace capa_presentacion.perfil_vendedor
         {
             panVistasMenu.Controls.Clear();
         }
+
+        private void btnListarClientes_Click(object sender, EventArgs e)
+        {
+            panVistasMenu.Controls.Clear();
+            listar_clientes vistaListaClientes = new listar_clientes();
+            vistaListaClientes.TopLevel = false;
+            panVistasMenu.Controls.Add(vistaListaClientes);
+            vistaListaClientes.Show();
+        }
     }
 }

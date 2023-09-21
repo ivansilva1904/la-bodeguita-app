@@ -34,8 +34,8 @@
             this.btnRealizarVenta = new System.Windows.Forms.Button();
             this.btnModificarCliente = new System.Windows.Forms.Button();
             this.btnAltaCliente = new System.Windows.Forms.Button();
-            this.panVistasMenu = new System.Windows.Forms.Panel();
             this.picboxLogo = new System.Windows.Forms.PictureBox();
+            this.panVistasMenu = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +80,7 @@
             this.btnListarClientes.TabIndex = 4;
             this.btnListarClientes.Text = "Listar clientes";
             this.btnListarClientes.UseVisualStyleBackColor = true;
+            this.btnListarClientes.Click += new System.EventHandler(this.btnListarClientes_Click);
             this.btnListarClientes.MouseEnter += new System.EventHandler(this.btnListarClientes_MouseEnter);
             this.btnListarClientes.MouseLeave += new System.EventHandler(this.btnListarClientes_MouseLeave);
             // 
@@ -128,15 +129,6 @@
             this.btnAltaCliente.MouseEnter += new System.EventHandler(this.btnAltaCliente_MouseEnter);
             this.btnAltaCliente.MouseLeave += new System.EventHandler(this.btnAltaCliente_MouseLeave);
             // 
-            // panVistasMenu
-            // 
-            this.panVistasMenu.BackgroundImage = global::capa_presentacion.Properties.Resources.purple_grapes_vineyard_napa_valley_napa_vineyard;
-            this.panVistasMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panVistasMenu.Location = new System.Drawing.Point(254, -1);
-            this.panVistasMenu.Name = "panVistasMenu";
-            this.panVistasMenu.Size = new System.Drawing.Size(733, 466);
-            this.panVistasMenu.TabIndex = 1;
-            // 
             // picboxLogo
             // 
             this.picboxLogo.BackgroundImage = global::capa_presentacion.Properties.Resources.logosinfondo1;
@@ -149,6 +141,15 @@
             this.picboxLogo.Click += new System.EventHandler(this.picboxLogo_Click);
             this.picboxLogo.MouseEnter += new System.EventHandler(this.picboxLogo_MouseEnter);
             this.picboxLogo.MouseLeave += new System.EventHandler(this.picboxLogo_MouseLeave);
+            // 
+            // panVistasMenu
+            // 
+            this.panVistasMenu.BackgroundImage = global::capa_presentacion.Properties.Resources.purple_grapes_vineyard_napa_valley_napa_vineyard;
+            this.panVistasMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panVistasMenu.Location = new System.Drawing.Point(254, -1);
+            this.panVistasMenu.Name = "panVistasMenu";
+            this.panVistasMenu.Size = new System.Drawing.Size(733, 466);
+            this.panVistasMenu.TabIndex = 1;
             // 
             // menu_vendedor
             // 
