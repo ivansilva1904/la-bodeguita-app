@@ -30,12 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu_administrador));
             this.panOpciones = new System.Windows.Forms.Panel();
+            this.btnListarClientes = new System.Windows.Forms.Button();
+            this.picboxLogo = new System.Windows.Forms.PictureBox();
             this.btnModEmpleado = new System.Windows.Forms.Button();
             this.btnBajaEmpleado = new System.Windows.Forms.Button();
             this.btnAltaEmpleado = new System.Windows.Forms.Button();
             this.btnGenerarRespaldo = new System.Windows.Forms.Button();
             this.panFormsAdministrador = new System.Windows.Forms.Panel();
-            this.picboxLogo = new System.Windows.Forms.PictureBox();
+            this.btnListarProductos = new System.Windows.Forms.Button();
             this.panOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +47,8 @@
             this.panOpciones.AutoSize = true;
             this.panOpciones.BackColor = System.Drawing.Color.Tan;
             this.panOpciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panOpciones.Controls.Add(this.btnListarProductos);
+            this.panOpciones.Controls.Add(this.btnListarClientes);
             this.panOpciones.Controls.Add(this.picboxLogo);
             this.panOpciones.Controls.Add(this.btnModEmpleado);
             this.panOpciones.Controls.Add(this.btnBajaEmpleado);
@@ -55,6 +59,31 @@
             this.panOpciones.Name = "panOpciones";
             this.panOpciones.Size = new System.Drawing.Size(262, 466);
             this.panOpciones.TabIndex = 0;
+            // 
+            // btnListarClientes
+            // 
+            this.btnListarClientes.FlatAppearance.BorderSize = 0;
+            this.btnListarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarClientes.Location = new System.Drawing.Point(-2, 291);
+            this.btnListarClientes.Name = "btnListarClientes";
+            this.btnListarClientes.Size = new System.Drawing.Size(257, 50);
+            this.btnListarClientes.TabIndex = 8;
+            this.btnListarClientes.Text = "Listar clientes";
+            this.btnListarClientes.UseVisualStyleBackColor = true;
+            this.btnListarClientes.Click += new System.EventHandler(this.btnListarClientes_Click);
+            // 
+            // picboxLogo
+            // 
+            this.picboxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxLogo.BackgroundImage")));
+            this.picboxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picboxLogo.Location = new System.Drawing.Point(27, 13);
+            this.picboxLogo.Name = "picboxLogo";
+            this.picboxLogo.Size = new System.Drawing.Size(200, 104);
+            this.picboxLogo.TabIndex = 7;
+            this.picboxLogo.TabStop = false;
+            this.picboxLogo.Click += new System.EventHandler(this.picboxLogo_Click);
+            this.picboxLogo.MouseEnter += new System.EventHandler(this.picboxLogo_MouseEnter);
+            this.picboxLogo.MouseLeave += new System.EventHandler(this.picboxLogo_MouseLeave);
             // 
             // btnModEmpleado
             // 
@@ -102,7 +131,7 @@
             // 
             this.btnGenerarRespaldo.FlatAppearance.BorderSize = 0;
             this.btnGenerarRespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarRespaldo.Location = new System.Drawing.Point(-2, 389);
+            this.btnGenerarRespaldo.Location = new System.Drawing.Point(-2, 403);
             this.btnGenerarRespaldo.Name = "btnGenerarRespaldo";
             this.btnGenerarRespaldo.Size = new System.Drawing.Size(257, 50);
             this.btnGenerarRespaldo.TabIndex = 3;
@@ -120,18 +149,17 @@
             this.panFormsAdministrador.Size = new System.Drawing.Size(733, 466);
             this.panFormsAdministrador.TabIndex = 1;
             // 
-            // picboxLogo
+            // btnListarProductos
             // 
-            this.picboxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxLogo.BackgroundImage")));
-            this.picboxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picboxLogo.Location = new System.Drawing.Point(27, 13);
-            this.picboxLogo.Name = "picboxLogo";
-            this.picboxLogo.Size = new System.Drawing.Size(200, 104);
-            this.picboxLogo.TabIndex = 7;
-            this.picboxLogo.TabStop = false;
-            this.picboxLogo.Click += new System.EventHandler(this.picboxLogo_Click);
-            this.picboxLogo.MouseEnter += new System.EventHandler(this.picboxLogo_MouseEnter);
-            this.picboxLogo.MouseLeave += new System.EventHandler(this.picboxLogo_MouseLeave);
+            this.btnListarProductos.FlatAppearance.BorderSize = 0;
+            this.btnListarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarProductos.Location = new System.Drawing.Point(-2, 347);
+            this.btnListarProductos.Name = "btnListarProductos";
+            this.btnListarProductos.Size = new System.Drawing.Size(257, 50);
+            this.btnListarProductos.TabIndex = 9;
+            this.btnListarProductos.Text = "Listar productos";
+            this.btnListarProductos.UseVisualStyleBackColor = true;
+            this.btnListarProductos.Click += new System.EventHandler(this.btnListarProductos_Click);
             // 
             // menu_administrador
             // 
@@ -159,5 +187,7 @@
         private System.Windows.Forms.Panel panFormsAdministrador;
         private System.Windows.Forms.Button btnModEmpleado;
         private System.Windows.Forms.PictureBox picboxLogo;
+        private System.Windows.Forms.Button btnListarClientes;
+        private System.Windows.Forms.Button btnListarProductos;
     }
 }

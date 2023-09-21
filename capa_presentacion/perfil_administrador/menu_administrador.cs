@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using capa_presentacion.perfil_vendedor;
+
 namespace capa_presentacion.perfil_administrador
 {
     public partial class menu_administrador : Form
@@ -16,31 +18,6 @@ namespace capa_presentacion.perfil_administrador
         {
             InitializeComponent();
         }
-        //Estas deben ser globales para el manejo del menu
-        char formularioActivo = ' ';
-        alta_usuario alta_user = new alta_usuario();
-        baja_usuario baja_user = new baja_usuario();
-        modificar_usuario mod_user = new modificar_usuario();
-
-        private void removerFormularioActivo()
-        {
-            switch (formularioActivo)
-            {
-                case 'A': {
-                    panFormsAdministrador.Controls.Remove(alta_user);
-                    break;    
-                }
-                case 'B': {
-                    panFormsAdministrador.Controls.Remove(baja_user);
-                    break;
-                }
-                case 'M': {
-                    panFormsAdministrador.Controls.Remove(mod_user);
-                    break;
-                }
-            }
-        }
-
         private void btnAltaEmpleado_MouseEnter(object sender, EventArgs e)
         {
             btnAltaEmpleado.BackColor = Color.Bisque;
@@ -83,32 +60,29 @@ namespace capa_presentacion.perfil_administrador
 
         private void btnAltaEmpleado_Click(object sender, EventArgs e)
         {
-            removerFormularioActivo();
-
-            alta_user.TopLevel = false;
-            panFormsAdministrador.Controls.Add(alta_user);
-            alta_user.Show();
-            formularioActivo = 'A';
+            panFormsAdministrador.Controls.Clear();
+            alta_usuario vistaAltaUsuario = new alta_usuario();
+            vistaAltaUsuario.TopLevel = false;
+            panFormsAdministrador.Controls.Add(vistaAltaUsuario);
+            vistaAltaUsuario.Show();
         }
 
         private void btnBajaEmpleado_Click(object sender, EventArgs e)
         {
-            removerFormularioActivo();
-
-            baja_user.TopLevel = false;
-            panFormsAdministrador.Controls.Add(baja_user);
-            baja_user.Show();
-            formularioActivo = 'B';
+            panFormsAdministrador.Controls.Clear();
+            baja_usuario vistaBajaUsuario = new baja_usuario();
+            vistaBajaUsuario.TopLevel = false;
+            panFormsAdministrador.Controls.Add(vistaBajaUsuario);
+            vistaBajaUsuario.Show();
         }
 
         private void btnModEmpleado_Click(object sender, EventArgs e)
         {
-            removerFormularioActivo();
-
-            mod_user.TopLevel = false;
-            panFormsAdministrador.Controls.Add(mod_user);
-            mod_user.Show();
-            formularioActivo = 'M';
+            panFormsAdministrador.Controls.Clear();
+            modificar_usuario vistaModUsuario = new modificar_usuario();
+            vistaModUsuario.TopLevel = false;
+            panFormsAdministrador.Controls.Add(vistaModUsuario);
+            vistaModUsuario.Show();
         }
 
         private void picboxLogo_MouseEnter(object sender, EventArgs e)
@@ -123,7 +97,25 @@ namespace capa_presentacion.perfil_administrador
 
         private void picboxLogo_Click(object sender, EventArgs e)
         {
-            removerFormularioActivo();
+            panFormsAdministrador.Controls.Clear();
+        }
+
+        private void btnListarClientes_Click(object sender, EventArgs e)
+        {
+            panFormsAdministrador.Controls.Clear();
+            listar_clientes vistaListarClientes = new listar_clientes();
+            vistaListarClientes.TopLevel = false;
+            panFormsAdministrador.Controls.Add(vistaListarClientes);
+            vistaListarClientes.Show();
+        }
+
+        private void btnListarProductos_Click(object sender, EventArgs e)
+        {
+            panFormsAdministrador.Controls.Clear();
+            listar_productos vistaListarProductos = new listar_productos();
+            vistaListarProductos.TopLevel = false;
+            panFormsAdministrador.Controls.Add(vistaListarProductos);
+            vistaListarProductos.Show();
         }
     }
 }
