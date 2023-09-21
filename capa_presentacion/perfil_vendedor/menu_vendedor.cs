@@ -117,5 +117,14 @@ namespace capa_presentacion.perfil_vendedor
             panVistasMenu.Controls.Add(vistaListaClientes);
             vistaListaClientes.Show();
         }
+
+        private void btnListarProductos_Click(object sender, EventArgs e)
+        {
+            panVistasMenu.Controls.Clear();
+            listar_productos vistaListaProductos = new listar_productos();
+            vistaListaProductos.TopLevel = false;
+            panVistasMenu.Controls.Add(vistaListaProductos);
+            vistaListaProductos.Show();
+        }
     }
 }

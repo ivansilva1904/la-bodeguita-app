@@ -66,6 +66,7 @@
             this.btnListarProductos.TabIndex = 5;
             this.btnListarProductos.Text = "Listar productos";
             this.btnListarProductos.UseVisualStyleBackColor = true;
+            this.btnListarProductos.Click += new System.EventHandler(this.btnListarProductos_Click);
             this.btnListarProductos.MouseEnter += new System.EventHandler(this.btnListarProductos_MouseEnter);
             this.btnListarProductos.MouseLeave += new System.EventHandler(this.btnListarProductos_MouseLeave);
             // 
