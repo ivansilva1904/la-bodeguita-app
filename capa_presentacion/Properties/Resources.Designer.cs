@@ -73,9 +73,9 @@ namespace capa_presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pexels_photo_1283219 {
+        internal static System.Drawing.Bitmap pexels_photo_15455291 {
             get {
-                object obj = ResourceManager.GetObject("pexels-photo-1283219", resourceCulture);
+                object obj = ResourceManager.GetObject("pexels-photo-15455291", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -202,13 +202,13 @@
     <None Include="Resources\logosinfondo12.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pexels-photo-1283219.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\purple-grapes-vineyard-napa-valley-napa-vineyard.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pexels-photo-wine-barrel.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-photo-15455291.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

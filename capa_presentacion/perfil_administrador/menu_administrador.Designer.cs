@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu_administrador));
             this.panOpciones = new System.Windows.Forms.Panel();
-            this.picboxLogo = new System.Windows.Forms.PictureBox();
             this.btnModEmpleado = new System.Windows.Forms.Button();
             this.btnBajaEmpleado = new System.Windows.Forms.Button();
             this.btnAltaEmpleado = new System.Windows.Forms.Button();
             this.btnGenerarRespaldo = new System.Windows.Forms.Button();
             this.panFormsAdministrador = new System.Windows.Forms.Panel();
+            this.picboxLogo = new System.Windows.Forms.PictureBox();
             this.panOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -55,19 +55,6 @@
             this.panOpciones.Name = "panOpciones";
             this.panOpciones.Size = new System.Drawing.Size(262, 466);
             this.panOpciones.TabIndex = 0;
-            // 
-            // picboxLogo
-            // 
-            this.picboxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxLogo.BackgroundImage")));
-            this.picboxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picboxLogo.Location = new System.Drawing.Point(27, 13);
-            this.picboxLogo.Name = "picboxLogo";
-            this.picboxLogo.Size = new System.Drawing.Size(200, 104);
-            this.picboxLogo.TabIndex = 7;
-            this.picboxLogo.TabStop = false;
-            this.picboxLogo.Click += new System.EventHandler(this.picboxLogo_Click);
-            this.picboxLogo.MouseEnter += new System.EventHandler(this.picboxLogo_MouseEnter);
-            this.picboxLogo.MouseLeave += new System.EventHandler(this.picboxLogo_MouseLeave);
             // 
             // btnModEmpleado
             // 
@@ -126,12 +113,25 @@
             // 
             // panFormsAdministrador
             // 
-            this.panFormsAdministrador.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_1283219;
+            this.panFormsAdministrador.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_15455291;
             this.panFormsAdministrador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panFormsAdministrador.Location = new System.Drawing.Point(254, -1);
             this.panFormsAdministrador.Name = "panFormsAdministrador";
             this.panFormsAdministrador.Size = new System.Drawing.Size(733, 466);
             this.panFormsAdministrador.TabIndex = 1;
+            // 
+            // picboxLogo
+            // 
+            this.picboxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxLogo.BackgroundImage")));
+            this.picboxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picboxLogo.Location = new System.Drawing.Point(27, 13);
+            this.picboxLogo.Name = "picboxLogo";
+            this.picboxLogo.Size = new System.Drawing.Size(200, 104);
+            this.picboxLogo.TabIndex = 7;
+            this.picboxLogo.TabStop = false;
+            this.picboxLogo.Click += new System.EventHandler(this.picboxLogo_Click);
+            this.picboxLogo.MouseEnter += new System.EventHandler(this.picboxLogo_MouseEnter);
+            this.picboxLogo.MouseLeave += new System.EventHandler(this.picboxLogo_MouseLeave);
             // 
             // menu_administrador
             // 
