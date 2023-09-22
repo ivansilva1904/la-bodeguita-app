@@ -39,13 +39,16 @@
             this.btnGuardarProveedor = new System.Windows.Forms.Button();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.pnlAltaProovedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblRazonSocial
             // 
             this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.Location = new System.Drawing.Point(376, 104);
+            this.lblRazonSocial.Location = new System.Drawing.Point(366, 109);
             this.lblRazonSocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(80, 13);
@@ -55,7 +58,7 @@
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(80, 104);
+            this.lblCuit.Location = new System.Drawing.Point(70, 109);
             this.lblCuit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(36, 13);
@@ -65,7 +68,7 @@
             // lblRubro
             // 
             this.lblRubro.AutoSize = true;
-            this.lblRubro.Location = new System.Drawing.Point(80, 161);
+            this.lblRubro.Location = new System.Drawing.Point(70, 166);
             this.lblRubro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRubro.Name = "lblRubro";
             this.lblRubro.Size = new System.Drawing.Size(41, 13);
@@ -74,33 +77,36 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(483, 154);
+            this.txtDireccion.Location = new System.Drawing.Point(473, 164);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(116, 21);
+            this.txtDireccion.Size = new System.Drawing.Size(157, 21);
             this.txtDireccion.TabIndex = 3;
             // 
             // txtCuit
             // 
-            this.txtCuit.Location = new System.Drawing.Point(156, 101);
+            this.txtCuit.Location = new System.Drawing.Point(146, 106);
             this.txtCuit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(116, 21);
+            this.txtCuit.Size = new System.Drawing.Size(140, 21);
             this.txtCuit.TabIndex = 4;
             this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // txtRubro
             // 
-            this.txtRubro.Location = new System.Drawing.Point(156, 154);
+            this.txtRubro.Location = new System.Drawing.Point(146, 164);
             this.txtRubro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtRubro.Name = "txtRubro";
-            this.txtRubro.Size = new System.Drawing.Size(116, 21);
+            this.txtRubro.Size = new System.Drawing.Size(140, 21);
             this.txtRubro.TabIndex = 5;
             this.txtRubro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRubro_KeyPress);
             // 
             // pnlAltaProovedor
             // 
             this.pnlAltaProovedor.BackColor = System.Drawing.Color.Beige;
+            this.pnlAltaProovedor.Controls.Add(this.btnLimpiar);
+            this.pnlAltaProovedor.Controls.Add(this.txtTelefono);
+            this.pnlAltaProovedor.Controls.Add(this.lblTelefono);
             this.pnlAltaProovedor.Controls.Add(this.lblCabecera);
             this.pnlAltaProovedor.Controls.Add(this.btnGuardarProveedor);
             this.pnlAltaProovedor.Controls.Add(this.txtRazonSocial);
@@ -120,16 +126,17 @@
             // lblCabecera
             // 
             this.lblCabecera.AutoSize = true;
+            this.lblCabecera.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCabecera.Location = new System.Drawing.Point(275, 38);
             this.lblCabecera.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCabecera.Name = "lblCabecera";
-            this.lblCabecera.Size = new System.Drawing.Size(106, 13);
+            this.lblCabecera.Size = new System.Drawing.Size(120, 13);
             this.lblCabecera.TabIndex = 9;
             this.lblCabecera.Text = "Nuevo Proovedor";
             // 
             // btnGuardarProveedor
             // 
-            this.btnGuardarProveedor.Location = new System.Drawing.Point(483, 361);
+            this.btnGuardarProveedor.Location = new System.Drawing.Point(549, 383);
             this.btnGuardarProveedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGuardarProveedor.Name = "btnGuardarProveedor";
             this.btnGuardarProveedor.Size = new System.Drawing.Size(125, 29);
@@ -140,27 +147,55 @@
             // 
             // txtRazonSocial
             // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(483, 101);
+            this.txtRazonSocial.Location = new System.Drawing.Point(473, 106);
             this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(116, 21);
+            this.txtRazonSocial.Size = new System.Drawing.Size(157, 21);
             this.txtRazonSocial.TabIndex = 7;
             // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(376, 157);
+            this.lblDireccion.Location = new System.Drawing.Point(366, 162);
             this.lblDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(60, 13);
             this.lblDireccion.TabIndex = 6;
             this.lblDireccion.Text = "Direccion";
             // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(70, 223);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(56, 13);
+            this.lblTelefono.TabIndex = 10;
+            this.lblTelefono.Text = "Telefono";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(146, 222);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(140, 21);
+            this.txtTelefono.TabIndex = 11;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(417, 383);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(125, 29);
+            this.btnLimpiar.TabIndex = 12;
+            this.btnLimpiar.Text = "Limpiar Campos";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // alta_proovedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
+            this.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_wine_barrel;
             this.ClientSize = new System.Drawing.Size(733, 466);
             this.ControlBox = false;
             this.Controls.Add(this.pnlAltaProovedor);
@@ -192,5 +227,8 @@
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblCabecera;
         private System.Windows.Forms.Button btnGuardarProveedor;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
