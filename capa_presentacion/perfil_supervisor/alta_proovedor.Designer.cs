@@ -35,13 +35,13 @@
             this.txtCuit = new System.Windows.Forms.TextBox();
             this.txtRubro = new System.Windows.Forms.TextBox();
             this.pnlAltaProovedor = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.lblTelefono = new System.Windows.Forms.Label();
             this.lblCabecera = new System.Windows.Forms.Label();
             this.btnGuardarProveedor = new System.Windows.Forms.Button();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.pnlAltaProovedor.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,6 +123,33 @@
             this.pnlAltaProovedor.Size = new System.Drawing.Size(706, 442);
             this.pnlAltaProovedor.TabIndex = 6;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(417, 383);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(125, 29);
+            this.btnLimpiar.TabIndex = 12;
+            this.btnLimpiar.Text = "Limpiar Campos";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(146, 222);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(140, 21);
+            this.txtTelefono.TabIndex = 11;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(70, 223);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(56, 13);
+            this.lblTelefono.TabIndex = 10;
+            this.lblTelefono.Text = "Telefono";
+            // 
             // lblCabecera
             // 
             this.lblCabecera.AutoSize = true;
@@ -163,39 +190,13 @@
             this.lblDireccion.TabIndex = 6;
             this.lblDireccion.Text = "Direccion";
             // 
-            // lblTelefono
-            // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(70, 223);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(56, 13);
-            this.lblTelefono.TabIndex = 10;
-            this.lblTelefono.Text = "Telefono";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(146, 222);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(140, 21);
-            this.txtTelefono.TabIndex = 11;
-            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(417, 383);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(125, 29);
-            this.btnLimpiar.TabIndex = 12;
-            this.btnLimpiar.Text = "Limpiar Campos";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
             // alta_proovedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
             this.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_wine_barrel;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(733, 466);
             this.ControlBox = false;
             this.Controls.Add(this.pnlAltaProovedor);
