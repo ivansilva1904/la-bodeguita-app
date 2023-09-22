@@ -28,47 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlModificarProveedor = new System.Windows.Forms.Panel();
+            this.cbxFiltro = new System.Windows.Forms.ComboBox();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.lblModificarProveedor = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnLimpiarCampos = new System.Windows.Forms.Button();
             this.lblRubro = new System.Windows.Forms.Label();
             this.lblCuit = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblRazonSocial = new System.Windows.Forms.Label();
             this.btnGuardarCambios = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtRazonSocial = new System.Windows.Forms.TextBox();
+            this.txtCuit = new System.Windows.Forms.TextBox();
+            this.txtRubro = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1.SuspendLayout();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.baja = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.pnlModificarProveedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlModificarProveedor
             // 
-            this.panel1.BackColor = System.Drawing.Color.Beige;
-            this.panel1.Controls.Add(this.lblRubro);
-            this.panel1.Controls.Add(this.lblCuit);
-            this.panel1.Controls.Add(this.lblDireccion);
-            this.panel1.Controls.Add(this.lblRazonSocial);
-            this.panel1.Controls.Add(this.btnGuardarCambios);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(693, 404);
-            this.panel1.TabIndex = 0;
+            this.pnlModificarProveedor.BackColor = System.Drawing.Color.Beige;
+            this.pnlModificarProveedor.Controls.Add(this.cbxFiltro);
+            this.pnlModificarProveedor.Controls.Add(this.lblFiltro);
+            this.pnlModificarProveedor.Controls.Add(this.txtFiltro);
+            this.pnlModificarProveedor.Controls.Add(this.btnBuscar);
+            this.pnlModificarProveedor.Controls.Add(this.txtTelefono);
+            this.pnlModificarProveedor.Controls.Add(this.lblModificarProveedor);
+            this.pnlModificarProveedor.Controls.Add(this.label1);
+            this.pnlModificarProveedor.Controls.Add(this.btnLimpiarCampos);
+            this.pnlModificarProveedor.Controls.Add(this.lblRubro);
+            this.pnlModificarProveedor.Controls.Add(this.lblCuit);
+            this.pnlModificarProveedor.Controls.Add(this.lblDireccion);
+            this.pnlModificarProveedor.Controls.Add(this.lblRazonSocial);
+            this.pnlModificarProveedor.Controls.Add(this.btnGuardarCambios);
+            this.pnlModificarProveedor.Controls.Add(this.txtDireccion);
+            this.pnlModificarProveedor.Controls.Add(this.txtRazonSocial);
+            this.pnlModificarProveedor.Controls.Add(this.txtCuit);
+            this.pnlModificarProveedor.Controls.Add(this.txtRubro);
+            this.pnlModificarProveedor.Controls.Add(this.dataGridView1);
+            this.pnlModificarProveedor.Location = new System.Drawing.Point(12, 12);
+            this.pnlModificarProveedor.Name = "pnlModificarProveedor";
+            this.pnlModificarProveedor.Size = new System.Drawing.Size(709, 442);
+            this.pnlModificarProveedor.TabIndex = 0;
+            // 
+            // cbxFiltro
+            // 
+            this.cbxFiltro.FormattingEnabled = true;
+            this.cbxFiltro.Items.AddRange(new object[] {
+            "Cuit",
+            "Razon Social",
+            "Rubro"});
+            this.cbxFiltro.Location = new System.Drawing.Point(117, 270);
+            this.cbxFiltro.Name = "cbxFiltro";
+            this.cbxFiltro.Size = new System.Drawing.Size(56, 21);
+            this.cbxFiltro.TabIndex = 17;
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(76, 273);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(35, 13);
+            this.lblFiltro.TabIndex = 16;
+            this.lblFiltro.Text = "Filtro";
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(186, 270);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(205, 21);
+            this.txtFiltro.TabIndex = 15;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(397, 270);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(119, 23);
+            this.btnBuscar.TabIndex = 14;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(135, 156);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(150, 21);
+            this.txtTelefono.TabIndex = 13;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
+            // 
+            // lblModificarProveedor
+            // 
+            this.lblModificarProveedor.AutoSize = true;
+            this.lblModificarProveedor.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModificarProveedor.Location = new System.Drawing.Point(282, 20);
+            this.lblModificarProveedor.Name = "lblModificarProveedor";
+            this.lblModificarProveedor.Size = new System.Drawing.Size(139, 13);
+            this.lblModificarProveedor.TabIndex = 12;
+            this.lblModificarProveedor.Text = "Modificar Proveedor";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(70, 159);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Telefono";
+            // 
+            // btnLimpiarCampos
+            // 
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(481, 169);
+            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(119, 24);
+            this.btnLimpiarCampos.TabIndex = 10;
+            this.btnLimpiarCampos.Text = "Limpiar Campos";
+            this.btnLimpiarCampos.UseVisualStyleBackColor = true;
+            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
             // 
             // lblRubro
             // 
             this.lblRubro.AutoSize = true;
-            this.lblRubro.Location = new System.Drawing.Point(70, 115);
+            this.lblRubro.Location = new System.Drawing.Point(70, 117);
             this.lblRubro.Name = "lblRubro";
             this.lblRubro.Size = new System.Drawing.Size(41, 13);
             this.lblRubro.TabIndex = 9;
@@ -86,7 +178,7 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(328, 115);
+            this.lblDireccion.Location = new System.Drawing.Point(341, 115);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(60, 13);
             this.lblDireccion.TabIndex = 7;
@@ -95,7 +187,7 @@
             // lblRazonSocial
             // 
             this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.Location = new System.Drawing.Point(328, 75);
+            this.lblRazonSocial.Location = new System.Drawing.Point(341, 75);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(80, 13);
             this.lblRazonSocial.TabIndex = 6;
@@ -103,40 +195,44 @@
             // 
             // btnGuardarCambios
             // 
-            this.btnGuardarCambios.Location = new System.Drawing.Point(454, 170);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(481, 199);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
-            this.btnGuardarCambios.Size = new System.Drawing.Size(122, 31);
+            this.btnGuardarCambios.Size = new System.Drawing.Size(119, 24);
             this.btnGuardarCambios.TabIndex = 5;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
-            // textBox4
+            // txtDireccion
             // 
-            this.textBox4.Location = new System.Drawing.Point(426, 112);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(174, 21);
-            this.textBox4.TabIndex = 4;
+            this.txtDireccion.Location = new System.Drawing.Point(444, 112);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(156, 21);
+            this.txtDireccion.TabIndex = 4;
             // 
-            // textBox3
+            // txtRazonSocial
             // 
-            this.textBox3.Location = new System.Drawing.Point(426, 72);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(174, 21);
-            this.textBox3.TabIndex = 3;
+            this.txtRazonSocial.Location = new System.Drawing.Point(444, 72);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(156, 21);
+            this.txtRazonSocial.TabIndex = 3;
             // 
-            // textBox2
+            // txtCuit
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 72);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(174, 21);
-            this.textBox2.TabIndex = 2;
+            this.txtCuit.Location = new System.Drawing.Point(135, 72);
+            this.txtCuit.Name = "txtCuit";
+            this.txtCuit.ReadOnly = true;
+            this.txtCuit.Size = new System.Drawing.Size(150, 21);
+            this.txtCuit.TabIndex = 2;
+            this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
-            // textBox1
+            // txtRubro
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 21);
-            this.textBox1.TabIndex = 1;
+            this.txtRubro.Location = new System.Drawing.Point(135, 114);
+            this.txtRubro.Name = "txtRubro";
+            this.txtRubro.Size = new System.Drawing.Size(150, 21);
+            this.txtRubro.TabIndex = 1;
+            this.txtRubro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRubro_KeyPress);
             // 
             // dataGridView1
             // 
@@ -145,10 +241,12 @@
             this.cuit,
             this.razonSocial,
             this.rubro,
-            this.direccion});
-            this.dataGridView1.Location = new System.Drawing.Point(85, 235);
+            this.direccion,
+            this.telefono,
+            this.baja});
+            this.dataGridView1.Location = new System.Drawing.Point(3, 304);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(491, 133);
+            this.dataGridView1.Size = new System.Drawing.Size(703, 135);
             this.dataGridView1.TabIndex = 0;
             // 
             // cuit
@@ -171,20 +269,33 @@
             this.direccion.HeaderText = "Direccion";
             this.direccion.Name = "direccion";
             // 
+            // telefono
+            // 
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            // 
+            // baja
+            // 
+            this.baja.HeaderText = "Dar Baja";
+            this.baja.Name = "baja";
+            this.baja.Text = "Dar Baja";
+            // 
             // modificar_proveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
-            this.ClientSize = new System.Drawing.Size(717, 428);
-            this.Controls.Add(this.panel1);
+            this.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_wine_barrel;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(733, 466);
+            this.Controls.Add(this.pnlModificarProveedor);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "modificar_proveedor";
             this.Text = "modificar_proveedor";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlModificarProveedor.ResumeLayout(false);
+            this.pnlModificarProveedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -192,20 +303,30 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlModificarProveedor;
         private System.Windows.Forms.Label lblRubro;
         private System.Windows.Forms.Label lblCuit;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblRazonSocial;
         private System.Windows.Forms.Button btnGuardarCambios;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtRazonSocial;
+        private System.Windows.Forms.TextBox txtCuit;
+        private System.Windows.Forms.TextBox txtRubro;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLimpiarCampos;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn rubro;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewButtonColumn baja;
+        private System.Windows.Forms.Label lblModificarProveedor;
+        private System.Windows.Forms.ComboBox cbxFiltro;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtTelefono;
     }
 }
