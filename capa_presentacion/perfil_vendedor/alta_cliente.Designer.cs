@@ -30,22 +30,26 @@ namespace capa_presentacion.perfil_vendedor
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaNac = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Controls.Add(this.lblFechaNac);
+            this.panel1.Controls.Add(this.dtpFechaNac);
             this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtApellido);
@@ -61,6 +65,79 @@ namespace capa_presentacion.perfil_vendedor
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(274, 352);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(150, 30);
+            this.btnAgregar.TabIndex = 9;
+            this.btnAgregar.Text = "Agregar cliente";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(96, 260);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(200, 21);
+            this.txtEmail.TabIndex = 8;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(467, 174);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(200, 21);
+            this.txtApellido.TabIndex = 7;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(96, 174);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(200, 21);
+            this.txtNombre.TabIndex = 6;
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(96, 89);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(200, 21);
+            this.txtDNI.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 260);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Email";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(328, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Apellido";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(26, 177);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Nombre";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "DNI";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -71,78 +148,21 @@ namespace capa_presentacion.perfil_vendedor
             this.label1.TabIndex = 0;
             this.label1.Text = "Ingrese un nuevo cliente";
             // 
-            // label2
+            // dtpFechaNac
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "DNI";
+            this.dtpFechaNac.Location = new System.Drawing.Point(467, 262);
+            this.dtpFechaNac.Name = "dtpFechaNac";
+            this.dtpFechaNac.Size = new System.Drawing.Size(200, 21);
+            this.dtpFechaNac.TabIndex = 10;
             // 
-            // label3
+            // lblFechaNac
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 163);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nombre";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(389, 163);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Apellido";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(47, 234);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Email";
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Location = new System.Drawing.Point(117, 89);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(200, 21);
-            this.txtDNI.TabIndex = 5;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(117, 160);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(200, 21);
-            this.txtNombre.TabIndex = 6;
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Location = new System.Drawing.Point(471, 160);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(200, 21);
-            this.txtApellido.TabIndex = 7;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(117, 234);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(200, 21);
-            this.txtEmail.TabIndex = 8;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(274, 365);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(150, 30);
-            this.btnAgregar.TabIndex = 9;
-            this.btnAgregar.Text = "Agregar cliente";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.lblFechaNac.AutoSize = true;
+            this.lblFechaNac.Location = new System.Drawing.Point(328, 268);
+            this.lblFechaNac.Name = "lblFechaNac";
+            this.lblFechaNac.Size = new System.Drawing.Size(124, 13);
+            this.lblFechaNac.TabIndex = 11;
+            this.lblFechaNac.Text = "Fecha de nacimiento";
             // 
             // alta_cliente
             // 
@@ -174,5 +194,7 @@ namespace capa_presentacion.perfil_vendedor
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Label lblFechaNac;
+        private System.Windows.Forms.DateTimePicker dtpFechaNac;
     }
 }
