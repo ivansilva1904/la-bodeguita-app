@@ -224,9 +224,15 @@ AppPackages/
 #####
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
 #####
-<<<<<<< HEAD
-=======
 
 capa_presentacion/bin
 capa_presentacion/obj
->>>>>>> 04c361d (creado repositorio local)
+
+capa_datos/bin
+capa_datos/obj
+capa_datos/app.config
+capa_datos/bodeguitaBDDataSet.Designer.cs
+capa_datos/bodeguitaBDDataSet.xsc
+capa_datos/bodeguitaBDDataSet.xsd
+capa_datos/bodeguitaBDDataSet.xss
+

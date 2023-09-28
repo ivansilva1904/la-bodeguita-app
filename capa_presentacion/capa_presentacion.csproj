@@ -219,5 +219,11 @@
   <ItemGroup>
     <None Include="Resources\pexels-photo-15455291.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\capa_datos\capa_datos.csproj">
+      <Project>{313531e5-54b2-4ade-bd7b-4fbb6ec92d23}</Project>
+      <Name>capa_datos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

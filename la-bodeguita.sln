@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.33919.361
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34031.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "la-bodeguita", "la-bodeguita.csproj", "{1417AE50-52E9-4308-AE2B-EB31E15E079B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capa_presentacion", "capa_presentacion\capa_presentacion.csproj", "{0A724DF1-060A-4718-867E-E55ECB4D3815}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capa_datos", "capa_datos\capa_datos.csproj", "{313531E5-54B2-4ADE-BD7B-4FBB6EC92D23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0A724DF1-060A-4718-867E-E55ECB4D3815}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A724DF1-060A-4718-867E-E55ECB4D3815}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A724DF1-060A-4718-867E-E55ECB4D3815}.Release|Any CPU.Build.0 = Release|Any CPU
+		{313531E5-54B2-4ADE-BD7B-4FBB6EC92D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{313531E5-54B2-4ADE-BD7B-4FBB6EC92D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{313531E5-54B2-4ADE-BD7B-4FBB6EC92D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{313531E5-54B2-4ADE-BD7B-4FBB6EC92D23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
