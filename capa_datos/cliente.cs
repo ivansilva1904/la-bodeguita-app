@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace capa_datos
 {
-    public class cliente
+    public class Cliente
     {
         SqlConnection conexion = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=bodeguitaBD;Integrated Security=true");
 
