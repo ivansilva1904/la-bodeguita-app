@@ -30,6 +30,8 @@ namespace capa_presentacion.perfil_vendedor
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblFechaNac = new System.Windows.Forms.Label();
+            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -40,8 +42,6 @@ namespace capa_presentacion.perfil_vendedor
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaNac = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,22 @@ namespace capa_presentacion.perfil_vendedor
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
             // 
+            // lblFechaNac
+            // 
+            this.lblFechaNac.AutoSize = true;
+            this.lblFechaNac.Location = new System.Drawing.Point(328, 268);
+            this.lblFechaNac.Name = "lblFechaNac";
+            this.lblFechaNac.Size = new System.Drawing.Size(124, 13);
+            this.lblFechaNac.TabIndex = 11;
+            this.lblFechaNac.Text = "Fecha de nacimiento";
+            // 
+            // dtpFechaNac
+            // 
+            this.dtpFechaNac.Location = new System.Drawing.Point(467, 262);
+            this.dtpFechaNac.Name = "dtpFechaNac";
+            this.dtpFechaNac.Size = new System.Drawing.Size(200, 21);
+            this.dtpFechaNac.TabIndex = 10;
+            // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(274, 352);
@@ -73,6 +89,7 @@ namespace capa_presentacion.perfil_vendedor
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar cliente";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtEmail
             // 
@@ -147,22 +164,6 @@ namespace capa_presentacion.perfil_vendedor
             this.label1.Size = new System.Drawing.Size(170, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ingrese un nuevo cliente";
-            // 
-            // dtpFechaNac
-            // 
-            this.dtpFechaNac.Location = new System.Drawing.Point(467, 262);
-            this.dtpFechaNac.Name = "dtpFechaNac";
-            this.dtpFechaNac.Size = new System.Drawing.Size(200, 21);
-            this.dtpFechaNac.TabIndex = 10;
-            // 
-            // lblFechaNac
-            // 
-            this.lblFechaNac.AutoSize = true;
-            this.lblFechaNac.Location = new System.Drawing.Point(328, 268);
-            this.lblFechaNac.Name = "lblFechaNac";
-            this.lblFechaNac.Size = new System.Drawing.Size(124, 13);
-            this.lblFechaNac.TabIndex = 11;
-            this.lblFechaNac.Text = "Fecha de nacimiento";
             // 
             // alta_cliente
             // 
