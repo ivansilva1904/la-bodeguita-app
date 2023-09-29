@@ -107,7 +107,6 @@ namespace capa_presentacion.perfil_administrador
 
             if (!string.IsNullOrWhiteSpace(nombre) &&
                 !string.IsNullOrWhiteSpace(apellido) &&
-                !string.IsNullOrWhiteSpace(dni) &&
                 !string.IsNullOrWhiteSpace(email) &&
                 !string.IsNullOrWhiteSpace(telefono) &&
                 !string.IsNullOrWhiteSpace(contraseña) &&
