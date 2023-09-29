@@ -30,14 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu_administrador));
             this.panOpciones = new System.Windows.Forms.Panel();
-            this.btnListarProductos = new System.Windows.Forms.Button();
-            this.btnListarClientes = new System.Windows.Forms.Button();
             this.picboxLogo = new System.Windows.Forms.PictureBox();
             this.btnModEmpleado = new System.Windows.Forms.Button();
-            this.btnBajaEmpleado = new System.Windows.Forms.Button();
             this.btnAltaEmpleado = new System.Windows.Forms.Button();
             this.btnGenerarRespaldo = new System.Windows.Forms.Button();
             this.panFormsAdministrador = new System.Windows.Forms.Panel();
+            this.btnListarEmpleados = new System.Windows.Forms.Button();
             this.panOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -47,46 +45,16 @@
             this.panOpciones.AutoSize = true;
             this.panOpciones.BackColor = System.Drawing.Color.Tan;
             this.panOpciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panOpciones.Controls.Add(this.btnListarProductos);
-            this.panOpciones.Controls.Add(this.btnListarClientes);
+            this.panOpciones.Controls.Add(this.btnListarEmpleados);
             this.panOpciones.Controls.Add(this.picboxLogo);
             this.panOpciones.Controls.Add(this.btnModEmpleado);
-            this.panOpciones.Controls.Add(this.btnBajaEmpleado);
             this.panOpciones.Controls.Add(this.btnAltaEmpleado);
             this.panOpciones.Controls.Add(this.btnGenerarRespaldo);
             this.panOpciones.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panOpciones.Location = new System.Drawing.Point(-1, -1);
             this.panOpciones.Name = "panOpciones";
-            this.panOpciones.Size = new System.Drawing.Size(262, 466);
+            this.panOpciones.Size = new System.Drawing.Size(262, 468);
             this.panOpciones.TabIndex = 0;
-            // 
-            // btnListarProductos
-            // 
-            this.btnListarProductos.FlatAppearance.BorderSize = 0;
-            this.btnListarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListarProductos.Location = new System.Drawing.Point(-2, 347);
-            this.btnListarProductos.Name = "btnListarProductos";
-            this.btnListarProductos.Size = new System.Drawing.Size(257, 50);
-            this.btnListarProductos.TabIndex = 9;
-            this.btnListarProductos.Text = "Listar productos";
-            this.btnListarProductos.UseVisualStyleBackColor = true;
-            this.btnListarProductos.Click += new System.EventHandler(this.btnListarProductos_Click);
-            this.btnListarProductos.MouseEnter += new System.EventHandler(this.btnListarProductos_MouseEnter);
-            this.btnListarProductos.MouseLeave += new System.EventHandler(this.btnListarProductos_MouseLeave);
-            // 
-            // btnListarClientes
-            // 
-            this.btnListarClientes.FlatAppearance.BorderSize = 0;
-            this.btnListarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListarClientes.Location = new System.Drawing.Point(-2, 291);
-            this.btnListarClientes.Name = "btnListarClientes";
-            this.btnListarClientes.Size = new System.Drawing.Size(257, 50);
-            this.btnListarClientes.TabIndex = 8;
-            this.btnListarClientes.Text = "Listar clientes";
-            this.btnListarClientes.UseVisualStyleBackColor = true;
-            this.btnListarClientes.Click += new System.EventHandler(this.btnListarClientes_Click);
-            this.btnListarClientes.MouseEnter += new System.EventHandler(this.btnListarClientes_MouseEnter);
-            this.btnListarClientes.MouseLeave += new System.EventHandler(this.btnListarClientes_MouseLeave);
             // 
             // picboxLogo
             // 
@@ -105,7 +73,7 @@
             // 
             this.btnModEmpleado.FlatAppearance.BorderSize = 0;
             this.btnModEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModEmpleado.Location = new System.Drawing.Point(-2, 235);
+            this.btnModEmpleado.Location = new System.Drawing.Point(-2, 179);
             this.btnModEmpleado.Name = "btnModEmpleado";
             this.btnModEmpleado.Size = new System.Drawing.Size(257, 50);
             this.btnModEmpleado.TabIndex = 6;
@@ -114,20 +82,6 @@
             this.btnModEmpleado.Click += new System.EventHandler(this.btnModEmpleado_Click);
             this.btnModEmpleado.MouseEnter += new System.EventHandler(this.btnModEmpleado_MouseEnter);
             this.btnModEmpleado.MouseLeave += new System.EventHandler(this.btnModEmpleado_MouseLeave);
-            // 
-            // btnBajaEmpleado
-            // 
-            this.btnBajaEmpleado.FlatAppearance.BorderSize = 0;
-            this.btnBajaEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBajaEmpleado.Location = new System.Drawing.Point(-2, 179);
-            this.btnBajaEmpleado.Name = "btnBajaEmpleado";
-            this.btnBajaEmpleado.Size = new System.Drawing.Size(257, 50);
-            this.btnBajaEmpleado.TabIndex = 5;
-            this.btnBajaEmpleado.Text = "Baja empleado";
-            this.btnBajaEmpleado.UseVisualStyleBackColor = true;
-            this.btnBajaEmpleado.Click += new System.EventHandler(this.btnBajaEmpleado_Click);
-            this.btnBajaEmpleado.MouseEnter += new System.EventHandler(this.btnBajaEmpleado_MouseEnter);
-            this.btnBajaEmpleado.MouseLeave += new System.EventHandler(this.btnBajaEmpleado_MouseLeave);
             // 
             // btnAltaEmpleado
             // 
@@ -147,12 +101,13 @@
             // 
             this.btnGenerarRespaldo.FlatAppearance.BorderSize = 0;
             this.btnGenerarRespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarRespaldo.Location = new System.Drawing.Point(-2, 403);
+            this.btnGenerarRespaldo.Location = new System.Drawing.Point(-2, 411);
             this.btnGenerarRespaldo.Name = "btnGenerarRespaldo";
             this.btnGenerarRespaldo.Size = new System.Drawing.Size(257, 50);
             this.btnGenerarRespaldo.TabIndex = 3;
             this.btnGenerarRespaldo.Text = "Generar respaldo";
             this.btnGenerarRespaldo.UseVisualStyleBackColor = true;
+            this.btnGenerarRespaldo.Click += new System.EventHandler(this.btnGenerarRespaldo_Click);
             this.btnGenerarRespaldo.MouseEnter += new System.EventHandler(this.btnGenerarRespaldo_MouseEnter);
             this.btnGenerarRespaldo.MouseLeave += new System.EventHandler(this.btnGenerarRespaldo_MouseLeave);
             // 
@@ -164,6 +119,20 @@
             this.panFormsAdministrador.Name = "panFormsAdministrador";
             this.panFormsAdministrador.Size = new System.Drawing.Size(733, 466);
             this.panFormsAdministrador.TabIndex = 1;
+            // 
+            // btnListarEmpleados
+            // 
+            this.btnListarEmpleados.FlatAppearance.BorderSize = 0;
+            this.btnListarEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarEmpleados.Location = new System.Drawing.Point(-2, 235);
+            this.btnListarEmpleados.Name = "btnListarEmpleados";
+            this.btnListarEmpleados.Size = new System.Drawing.Size(257, 50);
+            this.btnListarEmpleados.TabIndex = 8;
+            this.btnListarEmpleados.Text = "Listar Empleados";
+            this.btnListarEmpleados.UseVisualStyleBackColor = true;
+            this.btnListarEmpleados.Click += new System.EventHandler(this.btnListarEmpleados_Click);
+            this.btnListarEmpleados.MouseEnter += new System.EventHandler(this.btnListarEmpleados_MouseEnter);
+            this.btnListarEmpleados.MouseLeave += new System.EventHandler(this.btnListarEmpleados_MouseLeave);
             // 
             // menu_administrador
             // 
@@ -187,11 +156,9 @@
         private System.Windows.Forms.Panel panOpciones;
         private System.Windows.Forms.Button btnGenerarRespaldo;
         private System.Windows.Forms.Button btnAltaEmpleado;
-        private System.Windows.Forms.Button btnBajaEmpleado;
         private System.Windows.Forms.Panel panFormsAdministrador;
         private System.Windows.Forms.Button btnModEmpleado;
         private System.Windows.Forms.PictureBox picboxLogo;
-        private System.Windows.Forms.Button btnListarClientes;
-        private System.Windows.Forms.Button btnListarProductos;
+        private System.Windows.Forms.Button btnListarEmpleados;
     }
 }

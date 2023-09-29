@@ -22,12 +22,12 @@ namespace capa_presentacion.perfil_administrador
         {
             btnAltaEmpleado.BackColor = Color.Bisque;
         }
-
+        
         private void btnAltaEmpleado_MouseLeave(object sender, EventArgs e)
         {
             btnAltaEmpleado.BackColor = Color.Tan;
         }
-
+        /*
         private void btnBajaEmpleado_MouseEnter(object sender, EventArgs e)
         {
             btnBajaEmpleado.BackColor = Color.Bisque;
@@ -37,7 +37,7 @@ namespace capa_presentacion.perfil_administrador
         {
             btnBajaEmpleado.BackColor = Color.Tan;
         }
-
+        */
         private void btnModEmpleado_MouseEnter(object sender, EventArgs e)
         {
             btnModEmpleado.BackColor = Color.Bisque;
@@ -66,7 +66,7 @@ namespace capa_presentacion.perfil_administrador
             panFormsAdministrador.Controls.Add(vistaAltaUsuario);
             vistaAltaUsuario.Show();
         }
-
+       /*
         private void btnBajaEmpleado_Click(object sender, EventArgs e)
         {
             panFormsAdministrador.Controls.Clear();
@@ -75,7 +75,7 @@ namespace capa_presentacion.perfil_administrador
             panFormsAdministrador.Controls.Add(vistaBajaUsuario);
             vistaBajaUsuario.Show();
         }
-
+        */
         private void btnModEmpleado_Click(object sender, EventArgs e)
         {
             panFormsAdministrador.Controls.Clear();
@@ -118,6 +118,7 @@ namespace capa_presentacion.perfil_administrador
             vistaListarProductos.Show();
         }
 
+        /*
         private void btnListarClientes_MouseEnter(object sender, EventArgs e)
         {
             btnListarClientes.BackColor = Color.Bisque;
@@ -136,6 +137,34 @@ namespace capa_presentacion.perfil_administrador
         private void btnListarProductos_MouseLeave(object sender, EventArgs e)
         {
             btnListarProductos.BackColor = Color.Tan;
+        }
+        */
+        private void btnGenerarRespaldo_Click(object sender, EventArgs e)
+        {
+            panFormsAdministrador.Controls.Clear();
+            generar_respaldo vistaGenerarRespaldo = new generar_respaldo();
+            vistaGenerarRespaldo.TopLevel = false;
+            panFormsAdministrador.Controls.Add(vistaGenerarRespaldo);
+            vistaGenerarRespaldo.Show();
+        }
+        
+        private void btnListarEmpleados_Click(object sender, EventArgs e)
+        {/*
+            panFormsAdministrador.Controls.Clear();
+            generar_respaldo vistaListarEmpleados = new generar_respaldo();
+            vistaListarEmpleados.TopLevel = false;
+            panFormsAdministrador.Controls.Add(vistaListarEmpleados);
+            vistaListarEmpleados.Show();*/
+        }
+
+        private void btnListarEmpleados_MouseEnter(object sender, EventArgs e)
+        {
+            btnListarEmpleados.BackColor = Color.Bisque;
+        }
+
+        private void btnListarEmpleados_MouseLeave(object sender, EventArgs e)
+        {
+            btnListarEmpleados.BackColor = Color.Tan;
         }
     }
 }
