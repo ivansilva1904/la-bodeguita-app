@@ -149,12 +149,12 @@ namespace capa_presentacion.perfil_administrador
         }
         
         private void btnListarEmpleados_Click(object sender, EventArgs e)
-        {/*
+        {
             panFormsAdministrador.Controls.Clear();
-            generar_respaldo vistaListarEmpleados = new generar_respaldo();
+            listar_empleados vistaListarEmpleados = new listar_empleados();
             vistaListarEmpleados.TopLevel = false;
             panFormsAdministrador.Controls.Add(vistaListarEmpleados);
-            vistaListarEmpleados.Show();*/
+            vistaListarEmpleados.Show();
         }
 
         private void btnListarEmpleados_MouseEnter(object sender, EventArgs e)
