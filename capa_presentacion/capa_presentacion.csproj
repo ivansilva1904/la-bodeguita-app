@@ -166,6 +166,9 @@
     <EmbeddedResource Include="perfil_administrador\baja_usuario.resx">
       <DependentUpon>baja_usuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="perfil_administrador\generar_respaldo.resx">
+      <DependentUpon>generar_respaldo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="perfil_administrador\menu_administrador.resx">
       <DependentUpon>menu_administrador.cs</DependentUpon>
     </EmbeddedResource>

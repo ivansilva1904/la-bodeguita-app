@@ -16,5 +16,31 @@ namespace capa_presentacion.perfil_administrador
         {
             InitializeComponent();
         }
+
+        private void btnGenerarRespaldo_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtNombreRespaldo.Text))
+            {
+                DialogResult resp = MessageBox.Show("Desea Crear el respaldo de la base de datos?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+                if(resp == DialogResult.Yes)
+                {
+                    MessageBox.Show("Se ha generado el respaldo de la base de datos",
+                        "Confirmacion",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tiene que ponerle un nombre al respaldo",
+                    "Advertencia",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation); ;
+            }
+
+        }
     }
 }
