@@ -62,6 +62,12 @@
     <Compile Include="perfil_administrador\generar_respaldo.Designer.cs">
       <DependentUpon>generar_respaldo.cs</DependentUpon>
     </Compile>
+    <Compile Include="perfil_administrador\listar_empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="perfil_administrador\listar_empleados.Designer.cs">
+      <DependentUpon>listar_empleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="perfil_administrador\menu_administrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_administrador\generar_respaldo.resx">
       <DependentUpon>generar_respaldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="perfil_administrador\listar_empleados.resx">
+      <DependentUpon>listar_empleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_administrador\menu_administrador.resx">
       <DependentUpon>menu_administrador.cs</DependentUpon>
