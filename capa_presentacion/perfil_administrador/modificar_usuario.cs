@@ -123,7 +123,7 @@ namespace capa_presentacion.perfil_administrador
                         if (resp == DialogResult.Yes)
                         {
                             // Modificar base de datos //
-                            MessageBox.Show("Se ha registrado el empleado en la base de datos",
+                            MessageBox.Show("Se han modificado los datos del empleado en la base de datos",
                                 "Aviso de Alta",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
