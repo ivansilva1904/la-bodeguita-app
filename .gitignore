@@ -230,7 +230,6 @@ capa_presentacion/obj
 
 capa_datos/bin
 capa_datos/obj
-capa_datos/app.config
 capa_datos/bodeguitaBDDataSet.Designer.cs
 capa_datos/bodeguitaBDDataSet.xsc
 capa_datos/bodeguitaBDDataSet.xsd
