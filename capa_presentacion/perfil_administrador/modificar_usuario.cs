@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -96,7 +97,70 @@ namespace capa_presentacion.perfil_administrador
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            string nombre = txtNombre.Text;
+            string apellido = txtApellido.Text;
+            string dni = txtDNI.Text;
+            string email = txtEmail.Text;
+            string telefono = txtTelefono.Text;
+            string contraseña = txtNuevaContraseña.Text;
+            string contraseña2 = txtNuevaContraseña2.Text;
 
+            if (!string.IsNullOrWhiteSpace(nombre) &&
+                !string.IsNullOrWhiteSpace(apellido) &&
+                !string.IsNullOrWhiteSpace(dni) &&
+                !string.IsNullOrWhiteSpace(email) &&
+                !string.IsNullOrWhiteSpace(telefono) &&
+                !string.IsNullOrWhiteSpace(contraseña) &&
+                !string.IsNullOrWhiteSpace(contraseña2) &&
+                (radbtnSupervisor.Checked == true || radbtnVendedor.Checked == true))
+            {
+                if (validarCorreo(email) == true)
+                {
+                    if (contraseña == contraseña2)
+                    {
+                        DialogResult resp = MessageBox.Show("Desea Modificar el Empleado?",
+                            "Aviso", MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question);
+                        if (resp == DialogResult.Yes)
+                        {
+                            // Modificar base de datos //
+                            MessageBox.Show("Se ha registrado el empleado en la base de datos",
+                                "Aviso de Alta",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Las Contraseñas no coinciden",
+                        "Error Contraseña",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Formato de Email Invalido",
+                        "Email Invalido",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los campos",
+                    "Campos faltantes o erroneos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        public static bool validarCorreo(string comprobarCorreo)
+        {
+            return comprobarCorreo != null && Regex.IsMatch(comprobarCorreo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
         }
     }
 }
