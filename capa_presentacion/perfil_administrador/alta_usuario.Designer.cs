@@ -49,8 +49,8 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
             this.pnlAltaUsuario = new System.Windows.Forms.Panel();
-            this.lblContraseña2 = new System.Windows.Forms.Label();
             this.btnLimpiarCampos = new System.Windows.Forms.Button();
+            this.lblContraseña2 = new System.Windows.Forms.Label();
             this.pnlAltaUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,7 +181,8 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(177, 21);
             this.txtEmail.TabIndex = 13;
-            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
+            
+            
             // 
             // txtTelefono
             // 
@@ -197,6 +198,7 @@
             this.txtContraseña.Location = new System.Drawing.Point(110, 263);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(177, 21);
             this.txtContraseña.TabIndex = 15;
             // 
@@ -205,6 +207,7 @@
             this.txtContraseña2.Location = new System.Drawing.Point(486, 263);
             this.txtContraseña2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtContraseña2.Name = "txtContraseña2";
+            this.txtContraseña2.PasswordChar = '*';
             this.txtContraseña2.Size = new System.Drawing.Size(177, 21);
             this.txtContraseña2.TabIndex = 16;
             // 
@@ -282,16 +285,6 @@
             this.pnlAltaUsuario.Size = new System.Drawing.Size(706, 442);
             this.pnlAltaUsuario.TabIndex = 21;
             // 
-            // lblContraseña2
-            // 
-            this.lblContraseña2.AutoSize = true;
-            this.lblContraseña2.Location = new System.Drawing.Point(331, 266);
-            this.lblContraseña2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblContraseña2.Name = "lblContraseña2";
-            this.lblContraseña2.Size = new System.Drawing.Size(136, 13);
-            this.lblContraseña2.TabIndex = 7;
-            this.lblContraseña2.Text = "Reingresar contraseña";
-            // 
             // btnLimpiarCampos
             // 
             this.btnLimpiarCampos.Location = new System.Drawing.Point(356, 389);
@@ -301,6 +294,16 @@
             this.btnLimpiarCampos.Text = "Limpiar Campos";
             this.btnLimpiarCampos.UseVisualStyleBackColor = true;
             this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
+            // 
+            // lblContraseña2
+            // 
+            this.lblContraseña2.AutoSize = true;
+            this.lblContraseña2.Location = new System.Drawing.Point(331, 266);
+            this.lblContraseña2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContraseña2.Name = "lblContraseña2";
+            this.lblContraseña2.Size = new System.Drawing.Size(136, 13);
+            this.lblContraseña2.TabIndex = 7;
+            this.lblContraseña2.Text = "Reingresar contraseña";
             // 
             // alta_usuario
             // 

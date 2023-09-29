@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace capa_presentacion.perfil_administrador
 {
@@ -42,13 +43,7 @@ namespace capa_presentacion.perfil_administrador
             }
         }
 
-        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if(!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -77,34 +72,46 @@ namespace capa_presentacion.perfil_administrador
                 !string.IsNullOrWhiteSpace(contraseña2) && 
                 (radbtnSupervisor.Checked == true || radbtnVendedor.Checked == true))
             {
-                if (contraseña == contraseña2)
+                if (validarCorreo(email) == true)
                 {
-                    DialogResult resp = MessageBox.Show("Desea Ingresar el nuevo Empleado?",
-                        "Aviso",MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question);
+                    if (contraseña == contraseña2)
+                    {
+                        DialogResult resp = MessageBox.Show("Desea Ingresar el nuevo Empleado?",
+                            "Aviso",MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question);
                     if (resp == DialogResult.Yes)
                     {
                         // ingresar en la base de datos // verificar que no este repetido en la b (poner try catch?)
+                        // faltaria validacion de dni ya existente
                         MessageBox.Show("Se ha registrado el empleado en la base de datos",
                             "Aviso de Alta",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
                         
                     }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Las Contraseñas no coinciden",
+                        "Error Contraseña",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Las Contraseñas no coinciden",
-                    "Campos faltantes",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                    MessageBox.Show("Email Invalido",
+                        "Email Invalido",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
+                    
 
             }
             else
             {
-                MessageBox.Show("Debe completar todos los campos obligatorios",
-                    "Campos faltantes",
+                MessageBox.Show("Debe completar todos los campos",
+                    "Campos faltantes o erroneos",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
@@ -151,6 +158,14 @@ namespace capa_presentacion.perfil_administrador
             txtContraseña.Clear();
             txtContraseña2.Clear();
             txtTelefono.Clear();
+            radbtnSupervisor.Checked = false;
+            radbtnVendedor.Checked = false;
         }
+        //Comprobacion email
+        public static bool validarCorreo(string comprobarCorreo)
+        {
+           return comprobarCorreo != null && Regex.IsMatch(comprobarCorreo,@"^[^@\s]+@[^@\s]+\.[^@\s]+$");      
+        }
+ 
     }
 }
