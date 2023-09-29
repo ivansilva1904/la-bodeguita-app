@@ -92,6 +92,12 @@
     <Compile Include="perfil_supervisor\baja_proveedor.Designer.cs">
       <DependentUpon>baja_proveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="perfil_supervisor\informes_ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="perfil_supervisor\informes_ventas.Designer.cs">
+      <DependentUpon>informes_ventas.cs</DependentUpon>
+    </Compile>
     <Compile Include="perfil_supervisor\menu_supervisor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_supervisor\baja_proveedor.resx">
       <DependentUpon>baja_proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="perfil_supervisor\informes_ventas.resx">
+      <DependentUpon>informes_ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_supervisor\menu_supervisor.resx">
       <DependentUpon>menu_supervisor.cs</DependentUpon>
