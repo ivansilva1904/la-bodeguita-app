@@ -30,6 +30,14 @@
         {
             this.lblUsersRegistrados = new System.Windows.Forms.Label();
             this.dgvUsersRegistrados = new System.Windows.Forms.DataGridView();
+            this.COL_DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_TIPO_USER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.baja = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lblDNI = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
@@ -49,19 +57,11 @@
             this.txtNuevaContraseña2 = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLimpiarCampos = new System.Windows.Forms.Button();
-            this.lblModificarEmpleado = new System.Windows.Forms.Label();
-            this.COL_DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_TIPO_USER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.baja = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblModificarEmpleado = new System.Windows.Forms.Label();
+            this.btnLimpiarCampos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsersRegistrados)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +93,54 @@
             this.dgvUsersRegistrados.Name = "dgvUsersRegistrados";
             this.dgvUsersRegistrados.Size = new System.Drawing.Size(698, 150);
             this.dgvUsersRegistrados.TabIndex = 1;
+            // 
+            // COL_DNI
+            // 
+            this.COL_DNI.HeaderText = "DNI";
+            this.COL_DNI.Name = "COL_DNI";
+            this.COL_DNI.ReadOnly = true;
+            // 
+            // COL_NOMBRE
+            // 
+            this.COL_NOMBRE.HeaderText = "Nombre";
+            this.COL_NOMBRE.Name = "COL_NOMBRE";
+            this.COL_NOMBRE.ReadOnly = true;
+            // 
+            // COL_APELLIDO
+            // 
+            this.COL_APELLIDO.HeaderText = "Apellido";
+            this.COL_APELLIDO.Name = "COL_APELLIDO";
+            this.COL_APELLIDO.ReadOnly = true;
+            // 
+            // COL_EMAIL
+            // 
+            this.COL_EMAIL.HeaderText = "Email";
+            this.COL_EMAIL.Name = "COL_EMAIL";
+            this.COL_EMAIL.ReadOnly = true;
+            // 
+            // COL_TELEFONO
+            // 
+            this.COL_TELEFONO.HeaderText = "Telefono";
+            this.COL_TELEFONO.Name = "COL_TELEFONO";
+            this.COL_TELEFONO.ReadOnly = true;
+            // 
+            // COL_TIPO_USER
+            // 
+            this.COL_TIPO_USER.HeaderText = "Tipo usuario";
+            this.COL_TIPO_USER.Name = "COL_TIPO_USER";
+            this.COL_TIPO_USER.ReadOnly = true;
+            // 
+            // COL_MODIFICAR
+            // 
+            this.COL_MODIFICAR.HeaderText = "Modificar";
+            this.COL_MODIFICAR.Name = "COL_MODIFICAR";
+            // 
+            // baja
+            // 
+            this.baja.HeaderText = "De Baja";
+            this.baja.Name = "baja";
+            this.baja.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.baja.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // lblDNI
             // 
@@ -272,6 +320,7 @@
             this.btnGuardar.TabIndex = 19;
             this.btnGuardar.Text = "Guardar cambios";
             this.btnGuardar.UseVisualStyleBackColor = true;
+         
             // 
             // panel1
             // 
@@ -307,15 +356,30 @@
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 20;
             // 
-            // btnLimpiarCampos
+            // btnBuscar
             // 
-            this.btnLimpiarCampos.Location = new System.Drawing.Point(529, 200);
-            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
-            this.btnLimpiarCampos.Size = new System.Drawing.Size(140, 30);
-            this.btnLimpiarCampos.TabIndex = 20;
-            this.btnLimpiarCampos.Text = "Limpiar Campos";
-            this.btnLimpiarCampos.UseVisualStyleBackColor = true;
-            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
+            this.btnBuscar.Location = new System.Drawing.Point(262, 243);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(80, 23);
+            this.btnBuscar.TabIndex = 24;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(117, 245);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(133, 21);
+            this.txtBuscar.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 248);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Buscar por DNI";
             // 
             // lblModificarEmpleado
             // 
@@ -327,78 +391,15 @@
             this.lblModificarEmpleado.TabIndex = 21;
             this.lblModificarEmpleado.Text = "Modificar Empleado";
             // 
-            // COL_DNI
+            // btnLimpiarCampos
             // 
-            this.COL_DNI.HeaderText = "DNI";
-            this.COL_DNI.Name = "COL_DNI";
-            this.COL_DNI.ReadOnly = true;
-            // 
-            // COL_NOMBRE
-            // 
-            this.COL_NOMBRE.HeaderText = "Nombre";
-            this.COL_NOMBRE.Name = "COL_NOMBRE";
-            this.COL_NOMBRE.ReadOnly = true;
-            // 
-            // COL_APELLIDO
-            // 
-            this.COL_APELLIDO.HeaderText = "Apellido";
-            this.COL_APELLIDO.Name = "COL_APELLIDO";
-            this.COL_APELLIDO.ReadOnly = true;
-            // 
-            // COL_EMAIL
-            // 
-            this.COL_EMAIL.HeaderText = "Email";
-            this.COL_EMAIL.Name = "COL_EMAIL";
-            this.COL_EMAIL.ReadOnly = true;
-            // 
-            // COL_TELEFONO
-            // 
-            this.COL_TELEFONO.HeaderText = "Telefono";
-            this.COL_TELEFONO.Name = "COL_TELEFONO";
-            this.COL_TELEFONO.ReadOnly = true;
-            // 
-            // COL_TIPO_USER
-            // 
-            this.COL_TIPO_USER.HeaderText = "Tipo usuario";
-            this.COL_TIPO_USER.Name = "COL_TIPO_USER";
-            this.COL_TIPO_USER.ReadOnly = true;
-            // 
-            // COL_MODIFICAR
-            // 
-            this.COL_MODIFICAR.HeaderText = "Modificar";
-            this.COL_MODIFICAR.Name = "COL_MODIFICAR";
-            // 
-            // baja
-            // 
-            this.baja.HeaderText = "De Baja";
-            this.baja.Name = "baja";
-            this.baja.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.baja.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 248);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Buscar por DNI";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(117, 245);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(133, 21);
-            this.txtBuscar.TabIndex = 23;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(262, 243);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(80, 23);
-            this.btnBuscar.TabIndex = 24;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(529, 200);
+            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(140, 30);
+            this.btnLimpiarCampos.TabIndex = 20;
+            this.btnLimpiarCampos.Text = "Limpiar Campos";
+            this.btnLimpiarCampos.UseVisualStyleBackColor = true;
+            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
             // 
             // modificar_usuario
             // 
