@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using capa_datos;
+using capa_negocio;
 
 namespace capa_presentacion.perfil_vendedor
 {
@@ -32,8 +32,8 @@ namespace capa_presentacion.perfil_vendedor
                 !string.IsNullOrWhiteSpace(apellido) &&
                 !string.IsNullOrWhiteSpace(email))
             {
-                Cliente cliente = new Cliente();
-                cliente.crearCliente(int.Parse(dni), nombre, apellido, email, fechaNac);
+                NegocioCliente negocioCliente = new NegocioCliente();
+                negocioCliente.crearCliente(int.Parse(dni), nombre, apellido, email, fechaNac);
             }
             else
             {

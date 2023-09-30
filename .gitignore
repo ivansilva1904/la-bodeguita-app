@@ -235,3 +235,8 @@ capa_datos/bodeguitaBDDataSet.xsc
 capa_datos/bodeguitaBDDataSet.xsd
 capa_datos/bodeguitaBDDataSet.xss
 
+capa_negocio/bin
+capa_negocio/obj
+
+capa_entidades/bin
+capa_entidades/obj
