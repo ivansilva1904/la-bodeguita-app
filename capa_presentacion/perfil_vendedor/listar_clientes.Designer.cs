@@ -29,25 +29,29 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvListadoClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Beige;
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvListadoClientes);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
+            // 
+            // dgvListadoClientes
+            // 
+            this.dgvListadoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoClientes.Location = new System.Drawing.Point(29, 81);
+            this.dgvListadoClientes.Name = "dgvListadoClientes";
+            this.dgvListadoClientes.Size = new System.Drawing.Size(644, 150);
+            this.dgvListadoClientes.TabIndex = 1;
             // 
             // label1
             // 
@@ -58,43 +62,6 @@
             this.label1.Size = new System.Drawing.Size(255, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Listado de los clientes registrados";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colDNI,
-            this.colNombre,
-            this.colApellido,
-            this.colEmail});
-            this.dataGridView1.Location = new System.Drawing.Point(144, 60);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(444, 340);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // colDNI
-            // 
-            this.colDNI.HeaderText = "DNI";
-            this.colDNI.Name = "colDNI";
-            this.colDNI.ReadOnly = true;
-            // 
-            // colNombre
-            // 
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
-            // 
-            // colApellido
-            // 
-            this.colApellido.HeaderText = "Apellido";
-            this.colApellido.Name = "colApellido";
-            this.colApellido.ReadOnly = true;
-            // 
-            // colEmail
-            // 
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
             // 
             // listar_clientes
             // 
@@ -108,9 +75,10 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "listar_clientes";
             this.Text = "listar_clientes";
+            this.Load += new System.EventHandler(this.listar_clientes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoClientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -119,10 +87,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.DataGridView dgvListadoClientes;
     }
 }
