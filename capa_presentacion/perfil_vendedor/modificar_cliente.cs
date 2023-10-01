@@ -29,7 +29,7 @@ namespace capa_presentacion.perfil_vendedor
             if (!string.IsNullOrWhiteSpace(nombre) &&
                 !string.IsNullOrWhiteSpace(apellido) &&
                 !string.IsNullOrWhiteSpace(dni) &&
-                !string.IsNullOrWhiteSpace(email) &&)
+                !string.IsNullOrWhiteSpace(email))
             {
                 if (validarCorreo(email) == true)
                 {
