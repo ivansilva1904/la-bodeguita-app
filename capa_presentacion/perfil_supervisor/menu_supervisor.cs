@@ -120,12 +120,12 @@ namespace capa_presentacion.perfil_supervisor
 
         private void btnInformeVentas_MouseEnter(object sender, EventArgs e)
         {
-            picboxLogo.BackColor = Color.Bisque;
+            btnInformeVentas.BackColor = Color.Bisque;
         }
 
         private void btnInformeVentas_MouseLeave(object sender, EventArgs e)
         {
-            picboxLogo.BackColor = Color.Tan;
+            btnInformeVentas.BackColor = Color.Tan;
         }
     }
 }
