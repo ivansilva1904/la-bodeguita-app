@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblDNI = new System.Windows.Forms.Label();
-            this.txtDNICliente = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblRegistroCliente = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtMontoParcial = new System.Windows.Forms.TextBox();
+            this.lblMontoParcial = new System.Windows.Forms.Label();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.colCodProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuitar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.lblMontoParcial = new System.Windows.Forms.Label();
-            this.txtMontoParcial = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblRegistroCliente = new System.Windows.Forms.LinkLabel();
+            this.txtDNICliente = new System.Windows.Forms.TextBox();
+            this.lblDNI = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -62,21 +62,52 @@
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
             // 
-            // lblDNI
+            // lblRegistroCliente
             // 
-            this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(73, 85);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(91, 13);
-            this.lblDNI.TabIndex = 0;
-            this.lblDNI.Text = "DNI del cliente";
+            this.lblRegistroCliente.AutoSize = true;
+            this.lblRegistroCliente.LinkColor = System.Drawing.Color.Black;
+            this.lblRegistroCliente.Location = new System.Drawing.Point(73, 135);
+            this.lblRegistroCliente.Name = "lblRegistroCliente";
+            this.lblRegistroCliente.Size = new System.Drawing.Size(153, 13);
+            this.lblRegistroCliente.TabIndex = 7;
+            this.lblRegistroCliente.TabStop = true;
+            this.lblRegistroCliente.Text = "Cliente nuevo? Registrelo";
             // 
-            // txtDNICliente
+            // label1
             // 
-            this.txtDNICliente.Location = new System.Drawing.Point(76, 101);
-            this.txtDNICliente.Name = "txtDNICliente";
-            this.txtDNICliente.Size = new System.Drawing.Size(150, 21);
-            this.txtDNICliente.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(223, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(233, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Ingrese los productos a vender";
+            // 
+            // txtMontoParcial
+            // 
+            this.txtMontoParcial.Location = new System.Drawing.Point(190, 390);
+            this.txtMontoParcial.Name = "txtMontoParcial";
+            this.txtMontoParcial.ReadOnly = true;
+            this.txtMontoParcial.Size = new System.Drawing.Size(150, 21);
+            this.txtMontoParcial.TabIndex = 5;
+            // 
+            // lblMontoParcial
+            // 
+            this.lblMontoParcial.AutoSize = true;
+            this.lblMontoParcial.Location = new System.Drawing.Point(73, 393);
+            this.lblMontoParcial.Name = "lblMontoParcial";
+            this.lblMontoParcial.Size = new System.Drawing.Size(83, 13);
+            this.lblMontoParcial.TabIndex = 4;
+            this.lblMontoParcial.Text = "Monto parcial";
+            // 
+            // btnBuscarProducto
+            // 
+            this.btnBuscarProducto.Location = new System.Drawing.Point(470, 92);
+            this.btnBuscarProducto.Name = "btnBuscarProducto";
+            this.btnBuscarProducto.Size = new System.Drawing.Size(150, 30);
+            this.btnBuscarProducto.TabIndex = 3;
+            this.btnBuscarProducto.Text = "Buscar productos";
+            this.btnBuscarProducto.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -91,15 +122,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(544, 150);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // btnBuscarProducto
-            // 
-            this.btnBuscarProducto.Location = new System.Drawing.Point(470, 92);
-            this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(150, 30);
-            this.btnBuscarProducto.TabIndex = 3;
-            this.btnBuscarProducto.Text = "Buscar productos";
-            this.btnBuscarProducto.UseVisualStyleBackColor = true;
             // 
             // colCodProducto
             // 
@@ -129,49 +151,29 @@
             this.colQuitar.HeaderText = "Quitar";
             this.colQuitar.Name = "colQuitar";
             // 
-            // lblMontoParcial
+            // txtDNICliente
             // 
-            this.lblMontoParcial.AutoSize = true;
-            this.lblMontoParcial.Location = new System.Drawing.Point(73, 393);
-            this.lblMontoParcial.Name = "lblMontoParcial";
-            this.lblMontoParcial.Size = new System.Drawing.Size(83, 13);
-            this.lblMontoParcial.TabIndex = 4;
-            this.lblMontoParcial.Text = "Monto parcial";
+            this.txtDNICliente.Location = new System.Drawing.Point(76, 101);
+            this.txtDNICliente.Name = "txtDNICliente";
+            this.txtDNICliente.Size = new System.Drawing.Size(150, 21);
+            this.txtDNICliente.TabIndex = 1;
             // 
-            // txtMontoParcial
+            // lblDNI
             // 
-            this.txtMontoParcial.Location = new System.Drawing.Point(190, 390);
-            this.txtMontoParcial.Name = "txtMontoParcial";
-            this.txtMontoParcial.ReadOnly = true;
-            this.txtMontoParcial.Size = new System.Drawing.Size(150, 21);
-            this.txtMontoParcial.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(223, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Ingrese los productos a vender";
-            // 
-            // lblRegistroCliente
-            // 
-            this.lblRegistroCliente.AutoSize = true;
-            this.lblRegistroCliente.LinkColor = System.Drawing.Color.Black;
-            this.lblRegistroCliente.Location = new System.Drawing.Point(73, 135);
-            this.lblRegistroCliente.Name = "lblRegistroCliente";
-            this.lblRegistroCliente.Size = new System.Drawing.Size(153, 13);
-            this.lblRegistroCliente.TabIndex = 7;
-            this.lblRegistroCliente.TabStop = true;
-            this.lblRegistroCliente.Text = "Cliente nuevo? Registrelo";
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.Location = new System.Drawing.Point(73, 85);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(91, 13);
+            this.lblDNI.TabIndex = 0;
+            this.lblDNI.Text = "DNI del cliente";
             // 
             // realizar_venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
+            this.BackgroundImage = global::capa_presentacion.Properties.Resources.purple_grapes_vineyard_napa_valley_napa_vineyard;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(733, 466);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
