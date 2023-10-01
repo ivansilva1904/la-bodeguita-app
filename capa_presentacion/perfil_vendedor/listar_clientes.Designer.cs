@@ -31,6 +31,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvListadoClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtFiltroDni = new System.Windows.Forms.TextBox();
+            this.lblDNI = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoClientes)).BeginInit();
             this.SuspendLayout();
@@ -38,6 +41,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Controls.Add(this.lblDNI);
+            this.panel1.Controls.Add(this.txtFiltroDni);
+            this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.dgvListadoClientes);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -48,9 +54,9 @@
             // dgvListadoClientes
             // 
             this.dgvListadoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoClientes.Location = new System.Drawing.Point(29, 81);
+            this.dgvListadoClientes.Location = new System.Drawing.Point(29, 97);
             this.dgvListadoClientes.Name = "dgvListadoClientes";
-            this.dgvListadoClientes.Size = new System.Drawing.Size(644, 150);
+            this.dgvListadoClientes.Size = new System.Drawing.Size(644, 326);
             this.dgvListadoClientes.TabIndex = 1;
             // 
             // label1
@@ -63,11 +69,38 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Listado de los clientes registrados";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(226, 67);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(100, 21);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtFiltroDni
+            // 
+            this.txtFiltroDni.Location = new System.Drawing.Point(61, 68);
+            this.txtFiltroDni.Name = "txtFiltroDni";
+            this.txtFiltroDni.Size = new System.Drawing.Size(159, 21);
+            this.txtFiltroDni.TabIndex = 3;
+            // 
+            // lblDNI
+            // 
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.Location = new System.Drawing.Point(26, 71);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(29, 13);
+            this.lblDNI.TabIndex = 4;
+            this.lblDNI.Text = "DNI";
+            // 
             // listar_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
+            this.BackgroundImage = global::capa_presentacion.Properties.Resources.purple_grapes_vineyard_napa_valley_napa_vineyard;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(733, 466);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,5 +121,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvListadoClientes;
+        private System.Windows.Forms.Label lblDNI;
+        private System.Windows.Forms.TextBox txtFiltroDni;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
