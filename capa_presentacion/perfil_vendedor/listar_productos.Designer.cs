@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblListadoProductos = new System.Windows.Forms.Label();
             this.dgvListadoProductos = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,28 +38,27 @@
             this.colLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblListadoProductos = new System.Windows.Forms.Label();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.lblBuscar);
             this.panel1.Controls.Add(this.dgvListadoProductos);
             this.panel1.Controls.Add(this.lblListadoProductos);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
-            // 
-            // lblListadoProductos
-            // 
-            this.lblListadoProductos.AutoSize = true;
-            this.lblListadoProductos.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblListadoProductos.Location = new System.Drawing.Point(223, 19);
-            this.lblListadoProductos.Name = "lblListadoProductos";
-            this.lblListadoProductos.Size = new System.Drawing.Size(265, 16);
-            this.lblListadoProductos.TabIndex = 0;
-            this.lblListadoProductos.Text = "Listado de los productos registados";
             // 
             // dgvListadoProductos
             // 
@@ -74,9 +72,9 @@
             this.colLinea,
             this.colPrecio,
             this.colStock});
-            this.dgvListadoProductos.Location = new System.Drawing.Point(33, 64);
+            this.dgvListadoProductos.Location = new System.Drawing.Point(33, 78);
             this.dgvListadoProductos.Name = "dgvListadoProductos";
-            this.dgvListadoProductos.Size = new System.Drawing.Size(642, 337);
+            this.dgvListadoProductos.Size = new System.Drawing.Size(642, 347);
             this.dgvListadoProductos.TabIndex = 1;
             // 
             // colID
@@ -127,11 +125,61 @@
             this.colStock.Name = "colStock";
             this.colStock.ReadOnly = true;
             // 
+            // lblListadoProductos
+            // 
+            this.lblListadoProductos.AutoSize = true;
+            this.lblListadoProductos.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListadoProductos.Location = new System.Drawing.Point(223, 19);
+            this.lblListadoProductos.Name = "lblListadoProductos";
+            this.lblListadoProductos.Size = new System.Drawing.Size(265, 16);
+            this.lblListadoProductos.TabIndex = 0;
+            this.lblListadoProductos.Text = "Listado de los productos registados";
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Location = new System.Drawing.Point(35, 54);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(69, 13);
+            this.lblBuscar.TabIndex = 2;
+            this.lblBuscar.Text = "Buscar Por";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "ID Producto",
+            "Descripcion",
+            "Proveedor",
+            "Precio"});
+            this.comboBox1.Location = new System.Drawing.Point(110, 51);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(70, 21);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(186, 51);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(148, 21);
+            this.textBox1.TabIndex = 4;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(340, 49);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(116, 23);
+            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
             // listar_productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
+            this.BackgroundImage = global::capa_presentacion.Properties.Resources.purple_grapes_vineyard_napa_valley_napa_vineyard;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(733, 466);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,5 +207,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colLinea;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblBuscar;
     }
 }
