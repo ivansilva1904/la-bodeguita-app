@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,14 +27,6 @@ namespace capa_presentacion.perfil_supervisor
             }
         }
 
-        private void txtRubro_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
         private void txtCuit_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -46,7 +40,7 @@ namespace capa_presentacion.perfil_supervisor
         private void limpiarCampos()
         {
             txtCuit.Clear();
-            txtRubro.Clear();
+            txtEmail.Clear();
             txtDireccion.Clear();
             txtRazonSocial.Clear();
             txtTelefono.Clear();
@@ -62,9 +56,7 @@ namespace capa_presentacion.perfil_supervisor
             DialogResult ask;
             ask = DialogResult.No;// Inicializa una variable de tipo dialogResult para 
             // Falta hacer la validacion de que no exista otro proveedor con el mismo CUIT
-            if (
-                string.IsNullOrWhiteSpace(txtRubro.Text) &&
-                string.IsNullOrWhiteSpace(txtDireccion.Text) &&
+            if (string.IsNullOrWhiteSpace(txtDireccion.Text) &&
                 string.IsNullOrWhiteSpace(txtTelefono.Text) &&
                 string.IsNullOrWhiteSpace(txtRazonSocial.Text))
             {
@@ -73,14 +65,27 @@ namespace capa_presentacion.perfil_supervisor
 
             }
             else//Mensaje de Modificacion del proveedor
-            ask = MessageBox.Show("¿Seguro que desea Modificar el Proveedor?", "Confirmar Insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-            if (ask == DialogResult.Yes)
+            if (verificarEmail(txtEmail.Text))
             {
+                ask = MessageBox.Show("¿Seguro que desea Modificar el Proveedor?", "Confirmar Insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (ask == DialogResult.Yes)
+                {
 
-                //Mensaje de modificacion Correcta
-                MessageBox.Show("El Proveedor : se modifico correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //Mensaje de modificacion Correcta
+                    MessageBox.Show("El Proveedor " + txtRazonSocial.Text + " se modifico correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
+                }
             }
+            else
+            {
+                MessageBox.Show("El formato de email es invalido", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private static bool verificarEmail(string email)
+        {
+            return email != null && Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
         }
     }
 }

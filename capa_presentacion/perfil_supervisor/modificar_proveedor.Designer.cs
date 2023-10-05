@@ -45,11 +45,11 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.txtCuit = new System.Windows.Forms.TextBox();
-            this.txtRubro = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.baja = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -76,7 +76,7 @@
             this.pnlModificarProveedor.Controls.Add(this.txtDireccion);
             this.pnlModificarProveedor.Controls.Add(this.txtRazonSocial);
             this.pnlModificarProveedor.Controls.Add(this.txtCuit);
-            this.pnlModificarProveedor.Controls.Add(this.txtRubro);
+            this.pnlModificarProveedor.Controls.Add(this.txtEmail);
             this.pnlModificarProveedor.Controls.Add(this.dataGridView1);
             this.pnlModificarProveedor.Location = new System.Drawing.Point(12, 12);
             this.pnlModificarProveedor.Name = "pnlModificarProveedor";
@@ -143,7 +143,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(70, 159);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Telefono";
             // 
@@ -162,9 +162,9 @@
             this.lblRubro.AutoSize = true;
             this.lblRubro.Location = new System.Drawing.Point(70, 117);
             this.lblRubro.Name = "lblRubro";
-            this.lblRubro.Size = new System.Drawing.Size(41, 13);
+            this.lblRubro.Size = new System.Drawing.Size(38, 13);
             this.lblRubro.TabIndex = 9;
-            this.lblRubro.Text = "Rubro";
+            this.lblRubro.Text = "Email";
             // 
             // lblCuit
             // 
@@ -226,13 +226,12 @@
             this.txtCuit.TabIndex = 2;
             this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
-            // txtRubro
+            // txtEmail
             // 
-            this.txtRubro.Location = new System.Drawing.Point(135, 114);
-            this.txtRubro.Name = "txtRubro";
-            this.txtRubro.Size = new System.Drawing.Size(150, 21);
-            this.txtRubro.TabIndex = 1;
-            this.txtRubro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRubro_KeyPress);
+            this.txtEmail.Location = new System.Drawing.Point(135, 114);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(150, 21);
+            this.txtEmail.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -240,7 +239,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cuit,
             this.razonSocial,
-            this.rubro,
+            this.email,
             this.direccion,
             this.telefono,
             this.baja});
@@ -259,10 +258,10 @@
             this.razonSocial.HeaderText = "Razon Social";
             this.razonSocial.Name = "razonSocial";
             // 
-            // rubro
+            // email
             // 
-            this.rubro.HeaderText = "Rubro";
-            this.rubro.Name = "rubro";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
             // 
             // direccion
             // 
@@ -312,21 +311,21 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.TextBox txtCuit;
-        private System.Windows.Forms.TextBox txtRubro;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLimpiarCampos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rubro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewButtonColumn baja;
         private System.Windows.Forms.Label lblModificarProveedor;
         private System.Windows.Forms.ComboBox cbxFiltro;
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewButtonColumn baja;
     }
 }
