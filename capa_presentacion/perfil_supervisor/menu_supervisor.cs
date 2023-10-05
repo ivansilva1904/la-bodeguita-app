@@ -20,18 +20,18 @@ namespace capa_presentacion.perfil_supervisor
         private void btnAltaProovedor_Click(object sender, EventArgs e)
         {
             pnlFormsSupervisor.Controls.Clear();
-         
-                alta_proovedor altaprov = new alta_proovedor();
-                altaprov.TopLevel = false;
-                pnlFormsSupervisor.Controls.Add(altaprov);
-                altaprov.Show();
-        
-            
+
+            alta_proovedor altaprov = new alta_proovedor();
+            altaprov.TopLevel = false;
+            pnlFormsSupervisor.Controls.Add(altaprov);
+            altaprov.Show();
+
+
         }
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            pnlFormsSupervisor.Controls.Clear();        
+            pnlFormsSupervisor.Controls.Clear();
             modificar_producto modifProd = new modificar_producto();
             modifProd.TopLevel = false;
             pnlFormsSupervisor.Controls.Add(modifProd);
@@ -106,6 +106,26 @@ namespace capa_presentacion.perfil_supervisor
         private void picboxLogo_MouseLeave(object sender, EventArgs e)
         {
             picboxLogo.BackColor = Color.Tan;
+        }
+
+        private void btnInformeVentas_Click(object sender, EventArgs e)
+        {
+            pnlFormsSupervisor.Controls.Clear();
+
+            informes_ventas vistaInformeVentas = new informes_ventas();
+            vistaInformeVentas.TopLevel = false;
+            pnlFormsSupervisor.Controls.Add(vistaInformeVentas);
+            vistaInformeVentas.Show();
+        }
+
+        private void btnInformeVentas_MouseEnter(object sender, EventArgs e)
+        {
+            btnInformeVentas.BackColor = Color.Bisque;
+        }
+
+        private void btnInformeVentas_MouseLeave(object sender, EventArgs e)
+        {
+            btnInformeVentas.BackColor = Color.Tan;
         }
     }
 }

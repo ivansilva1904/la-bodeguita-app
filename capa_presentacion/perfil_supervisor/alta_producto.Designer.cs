@@ -30,7 +30,13 @@
         {
             this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.pnlNuevoProducto = new System.Windows.Forms.Panel();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.lblStock = new System.Windows.Forms.Label();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.btnGuardarProducto = new System.Windows.Forms.Button();
+            this.txtPrecioCompra = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtLinea = new System.Windows.Forms.TextBox();
@@ -38,17 +44,13 @@
             this.rbtCristaleria = new System.Windows.Forms.RadioButton();
             this.rbtBebida = new System.Windows.Forms.RadioButton();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblPrecioCompra = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblIdTipoProducto = new System.Windows.Forms.Label();
             this.lblLinea = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblIdProducto = new System.Windows.Forms.Label();
             this.lblNuevoProducto = new System.Windows.Forms.Label();
-            this.btnGuardarProducto = new System.Windows.Forms.Button();
-            this.txtStock = new System.Windows.Forms.TextBox();
-            this.lblStock = new System.Windows.Forms.Label();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.pnlNuevoProducto.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,11 +65,13 @@
             // pnlNuevoProducto
             // 
             this.pnlNuevoProducto.BackColor = System.Drawing.Color.Beige;
+            this.pnlNuevoProducto.Controls.Add(this.txtPrecioVenta);
+            this.pnlNuevoProducto.Controls.Add(this.label1);
             this.pnlNuevoProducto.Controls.Add(this.btnLimpiar);
             this.pnlNuevoProducto.Controls.Add(this.lblStock);
             this.pnlNuevoProducto.Controls.Add(this.txtStock);
             this.pnlNuevoProducto.Controls.Add(this.btnGuardarProducto);
-            this.pnlNuevoProducto.Controls.Add(this.txtPrecio);
+            this.pnlNuevoProducto.Controls.Add(this.txtPrecioCompra);
             this.pnlNuevoProducto.Controls.Add(this.txtDescripcion);
             this.pnlNuevoProducto.Controls.Add(this.txtMarca);
             this.pnlNuevoProducto.Controls.Add(this.txtLinea);
@@ -75,7 +79,7 @@
             this.pnlNuevoProducto.Controls.Add(this.rbtCristaleria);
             this.pnlNuevoProducto.Controls.Add(this.rbtBebida);
             this.pnlNuevoProducto.Controls.Add(this.lblDescripcion);
-            this.pnlNuevoProducto.Controls.Add(this.lblPrecio);
+            this.pnlNuevoProducto.Controls.Add(this.lblPrecioCompra);
             this.pnlNuevoProducto.Controls.Add(this.lblMarca);
             this.pnlNuevoProducto.Controls.Add(this.lblIdTipoProducto);
             this.pnlNuevoProducto.Controls.Add(this.lblLinea);
@@ -88,13 +92,67 @@
             this.pnlNuevoProducto.Size = new System.Drawing.Size(709, 442);
             this.pnlNuevoProducto.TabIndex = 1;
             // 
-            // txtPrecio
+            // txtPrecioVenta
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(162, 214);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(127, 21);
-            this.txtPrecio.TabIndex = 15;
-            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
+            this.txtPrecioVenta.Location = new System.Drawing.Point(490, 214);
+            this.txtPrecioVenta.Name = "txtPrecioVenta";
+            this.txtPrecioVenta.Size = new System.Drawing.Size(121, 21);
+            this.txtPrecioVenta.TabIndex = 21;
+            this.txtPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVenta_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(385, 217);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Precio Venta";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(420, 391);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(117, 23);
+            this.btnLimpiar.TabIndex = 19;
+            this.btnLimpiar.Text = "Limpiar Campos";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Location = new System.Drawing.Point(385, 175);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(39, 13);
+            this.lblStock.TabIndex = 18;
+            this.lblStock.Text = "Stock";
+            // 
+            // txtStock
+            // 
+            this.txtStock.Location = new System.Drawing.Point(490, 172);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(121, 21);
+            this.txtStock.TabIndex = 17;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
+            // 
+            // btnGuardarProducto
+            // 
+            this.btnGuardarProducto.Location = new System.Drawing.Point(556, 390);
+            this.btnGuardarProducto.Name = "btnGuardarProducto";
+            this.btnGuardarProducto.Size = new System.Drawing.Size(117, 24);
+            this.btnGuardarProducto.TabIndex = 16;
+            this.btnGuardarProducto.Text = "Guardar Producto";
+            this.btnGuardarProducto.UseVisualStyleBackColor = true;
+            this.btnGuardarProducto.Click += new System.EventHandler(this.btnGuardarProducto_Click);
+            // 
+            // txtPrecioCompra
+            // 
+            this.txtPrecioCompra.Location = new System.Drawing.Point(162, 214);
+            this.txtPrecioCompra.Name = "txtPrecioCompra";
+            this.txtPrecioCompra.Size = new System.Drawing.Size(127, 21);
+            this.txtPrecioCompra.TabIndex = 15;
+            this.txtPrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCompra_KeyPress);
             // 
             // txtDescripcion
             // 
@@ -156,14 +214,14 @@
             this.lblDescripcion.TabIndex = 8;
             this.lblDescripcion.Text = "Descripcion";
             // 
-            // lblPrecio
+            // lblPrecioCompra
             // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(71, 217);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(42, 13);
-            this.lblPrecio.TabIndex = 7;
-            this.lblPrecio.Text = "Precio";
+            this.lblPrecioCompra.AutoSize = true;
+            this.lblPrecioCompra.Location = new System.Drawing.Point(71, 217);
+            this.lblPrecioCompra.Name = "lblPrecioCompra";
+            this.lblPrecioCompra.Size = new System.Drawing.Size(89, 13);
+            this.lblPrecioCompra.TabIndex = 7;
+            this.lblPrecioCompra.Text = "Precio compra";
             // 
             // lblMarca
             // 
@@ -220,43 +278,6 @@
             this.lblNuevoProducto.TabIndex = 1;
             this.lblNuevoProducto.Text = "Nuevo Producto";
             // 
-            // btnGuardarProducto
-            // 
-            this.btnGuardarProducto.Location = new System.Drawing.Point(556, 390);
-            this.btnGuardarProducto.Name = "btnGuardarProducto";
-            this.btnGuardarProducto.Size = new System.Drawing.Size(117, 24);
-            this.btnGuardarProducto.TabIndex = 16;
-            this.btnGuardarProducto.Text = "Guardar Producto";
-            this.btnGuardarProducto.UseVisualStyleBackColor = true;
-            this.btnGuardarProducto.Click += new System.EventHandler(this.btnGuardarProducto_Click);
-            // 
-            // txtStock
-            // 
-            this.txtStock.Location = new System.Drawing.Point(490, 172);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(121, 21);
-            this.txtStock.TabIndex = 17;
-            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
-            // 
-            // lblStock
-            // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(385, 175);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(39, 13);
-            this.lblStock.TabIndex = 18;
-            this.lblStock.Text = "Stock";
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(420, 391);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(117, 23);
-            this.btnLimpiar.TabIndex = 19;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
             // alta_producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -282,7 +303,7 @@
 
         private System.Windows.Forms.TextBox txtIdProducto;
         private System.Windows.Forms.Panel pnlNuevoProducto;
-        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtPrecioCompra;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtLinea;
@@ -290,7 +311,7 @@
         private System.Windows.Forms.RadioButton rbtCristaleria;
         private System.Windows.Forms.RadioButton rbtBebida;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lblPrecioCompra;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblIdTipoProducto;
         private System.Windows.Forms.Label lblLinea;
@@ -301,5 +322,7 @@
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Button btnGuardarProducto;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.TextBox txtPrecioVenta;
+        private System.Windows.Forms.Label label1;
     }
 }

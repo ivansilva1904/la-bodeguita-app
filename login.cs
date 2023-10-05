@@ -20,24 +20,6 @@ namespace la_bodeguita
             InitializeComponent();
         }
 
-        private void BUT_ALTA_USUARIO_Click(object sender, EventArgs e)
-        {
-            Form vista_menu = new menu_administrador();
-            vista_menu.Show();
-        }
-
-        private void BUT_BAJA_USUARIO_Click(object sender, EventArgs e)
-        {
-            Form vista_bajaUsuario = new baja_usuario();
-            vista_bajaUsuario.Show();
-        }
-
-        private void BUT_MODIFICAR_USUARIO_Click(object sender, EventArgs e)
-        {
-            Form vista_modificarUsuario = new modificar_usuario();
-            vista_modificarUsuario.Show();
-        }
-
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))//(Si se quiere agregar puntos) && (e.KeyChar != '.'))
@@ -56,6 +38,7 @@ namespace la_bodeguita
             }
             else
             {
+                //this.Hide(); esto se puede usar para ocultar el form del login
                 //Checkear login con base de datos y entrar al menu de usuario correspondiente
                 lblTest.Text = "log correcto";
                 if(txtUsuario.Text == "1")

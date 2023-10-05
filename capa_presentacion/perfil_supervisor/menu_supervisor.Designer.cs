@@ -35,6 +35,7 @@
             this.btnModificarProveedor = new System.Windows.Forms.Button();
             this.btnModificarProducto = new System.Windows.Forms.Button();
             this.pnlFormsSupervisor = new System.Windows.Forms.Panel();
+            this.btnInformeVentas = new System.Windows.Forms.Button();
             this.menuSupervisor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +60,7 @@
             // 
             this.menuSupervisor.BackColor = System.Drawing.Color.Tan;
             this.menuSupervisor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.menuSupervisor.Controls.Add(this.btnInformeVentas);
             this.menuSupervisor.Controls.Add(this.picboxLogo);
             this.menuSupervisor.Controls.Add(this.btnAltaProducto);
             this.menuSupervisor.Controls.Add(this.btnModificarProveedor);
@@ -139,6 +141,21 @@
             this.pnlFormsSupervisor.Size = new System.Drawing.Size(733, 466);
             this.pnlFormsSupervisor.TabIndex = 0;
             // 
+            // btnInformeVentas
+            // 
+            this.btnInformeVentas.FlatAppearance.BorderSize = 0;
+            this.btnInformeVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformeVentas.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformeVentas.Location = new System.Drawing.Point(0, 347);
+            this.btnInformeVentas.Name = "btnInformeVentas";
+            this.btnInformeVentas.Size = new System.Drawing.Size(255, 50);
+            this.btnInformeVentas.TabIndex = 2;
+            this.btnInformeVentas.Text = "Informes Ventas";
+            this.btnInformeVentas.UseVisualStyleBackColor = true;
+            this.btnInformeVentas.Click += new System.EventHandler(this.btnInformeVentas_Click);
+            this.btnInformeVentas.MouseEnter += new System.EventHandler(this.btnInformeVentas_MouseEnter);
+            this.btnInformeVentas.MouseLeave += new System.EventHandler(this.btnInformeVentas_MouseLeave);
+            // 
             // menu_supervisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -166,5 +183,6 @@
         private System.Windows.Forms.Button btnModificarProveedor;
         private System.Windows.Forms.Button btnModificarProducto;
         private System.Windows.Forms.PictureBox picboxLogo;
+        private System.Windows.Forms.Button btnInformeVentas;
     }
 }

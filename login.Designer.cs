@@ -30,12 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelLogin = new System.Windows.Forms.Panel();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtContra = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.lblTest = new System.Windows.Forms.Label();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtContra = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.panelLogin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,41 +63,14 @@
             this.panelLogin.Size = new System.Drawing.Size(277, 273);
             this.panelLogin.TabIndex = 5;
             // 
-            // txtUsuario
+            // lblTest
             // 
-            this.txtUsuario.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtUsuario.Location = new System.Drawing.Point(47, 59);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(152, 27);
-            this.txtUsuario.TabIndex = 0;
-            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
-            // 
-            // txtContra
-            // 
-            this.txtContra.Location = new System.Drawing.Point(47, 135);
-            this.txtContra.Name = "txtContra";
-            this.txtContra.Size = new System.Drawing.Size(152, 27);
-            this.txtContra.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Usuario";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Contraseña";
+            this.lblTest.AutoSize = true;
+            this.lblTest.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTest.Location = new System.Drawing.Point(184, 239);
+            this.lblTest.Name = "lblTest";
+            this.lblTest.Size = new System.Drawing.Size(0, 13);
+            this.lblTest.TabIndex = 5;
             // 
             // btnLogin
             // 
@@ -110,14 +83,42 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // lblTest
+            // label2
             // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTest.Location = new System.Drawing.Point(184, 239);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(0, 13);
-            this.lblTest.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(44, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 18);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Contraseña";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(44, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Usuario";
+            // 
+            // txtContra
+            // 
+            this.txtContra.Location = new System.Drawing.Point(47, 135);
+            this.txtContra.Name = "txtContra";
+            this.txtContra.PasswordChar = '*';
+            this.txtContra.Size = new System.Drawing.Size(152, 27);
+            this.txtContra.TabIndex = 1;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtUsuario.Location = new System.Drawing.Point(47, 59);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(152, 27);
+            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // login
             // 
@@ -126,7 +127,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Beige;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(641, 309);
+            this.ClientSize = new System.Drawing.Size(641, 308);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;

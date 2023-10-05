@@ -23,7 +23,8 @@ namespace capa_presentacion.perfil_supervisor
             ask = DialogResult.No;
             if (!string.IsNullOrWhiteSpace(txtMarca.Text) &&
                 !string.IsNullOrWhiteSpace(txtLinea.Text) &&
-                !string.IsNullOrWhiteSpace(txtPrecio.Text) &&
+                !string.IsNullOrWhiteSpace(txtPrecioCompra.Text) &&
+                !string.IsNullOrWhiteSpace(txtPrecioVenta.Text) &&
                 !string.IsNullOrWhiteSpace(txtStock.Text) &&
                 !string.IsNullOrWhiteSpace(txtIdProducto.Text) &&
                 !string.IsNullOrWhiteSpace(txtDescripcion.Text) &&
@@ -53,7 +54,7 @@ namespace capa_presentacion.perfil_supervisor
                 rbtCristaleria.Checked = false;
                 rbtBebida.Checked = false;
                 txtMarca.Clear();
-                txtPrecio.Clear();
+                txtPrecioCompra.Clear();
                 txtStock.Clear();
                 txtDescripcion.Clear();
         }
@@ -78,7 +79,7 @@ namespace capa_presentacion.perfil_supervisor
             }
         }
         //Solo numeros y un punto en txtPrecio (nose si funciona)
-        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))//(Si se quiere agregar puntos) && (e.KeyChar != '.'))
             {
@@ -86,6 +87,20 @@ namespace capa_presentacion.perfil_supervisor
             }
 
             
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;

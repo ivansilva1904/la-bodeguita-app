@@ -17,7 +17,7 @@ namespace capa_presentacion.perfil_supervisor
             InitializeComponent();
         }
 
-        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
@@ -43,14 +43,25 @@ namespace capa_presentacion.perfil_supervisor
         {
             if (!string.IsNullOrWhiteSpace(txtMarca.Text) &&
                 !string.IsNullOrWhiteSpace(txtLinea.Text) &&
-                !string.IsNullOrWhiteSpace(txtPrecio.Text) &&
+                !string.IsNullOrWhiteSpace(txtPrecioCompra.Text) &&
+                !string.IsNullOrWhiteSpace(txtPrecioVenta.Text) &&
                 !string.IsNullOrWhiteSpace(txtStock.Text) &&
                 !string.IsNullOrWhiteSpace(txtDescripcion.Text) &&
                 (rbtCristaleria.Checked == true || rbtBebida.Checked == true))
             {
                 //Convertir a float precio
                 //Guardar los cambios
-                
+                DialogResult resp = MessageBox.Show("Esta seguro de modificar los datos del producto?",
+                    "Confirmar cambios",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+                if (resp == DialogResult.Yes)
+                {
+                    MessageBox.Show("Se ha modificado el producto",
+                        "Cambios realizados",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
                 
             }
             else
@@ -64,7 +75,7 @@ namespace capa_presentacion.perfil_supervisor
             txtIdProducto.Clear();
             rbtCristaleria.Checked = false;
             rbtBebida.Checked = false;
-            txtPrecio.Clear();
+            txtPrecioCompra.Clear();
             txtMarca.Clear();
             txtLinea.Clear();
             txtDescripcion.Clear();
@@ -77,5 +88,21 @@ namespace capa_presentacion.perfil_supervisor
         {
             limpiarCampos();
         }
+
+        private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+
     }
 }
