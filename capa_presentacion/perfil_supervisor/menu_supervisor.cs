@@ -21,7 +21,7 @@ namespace capa_presentacion.perfil_supervisor
         {
             pnlFormsSupervisor.Controls.Clear();
 
-            alta_proovedor altaprov = new alta_proovedor();
+            alta_proveedor altaprov = new alta_proveedor();
             altaprov.TopLevel = false;
             pnlFormsSupervisor.Controls.Add(altaprov);
             altaprov.Show();

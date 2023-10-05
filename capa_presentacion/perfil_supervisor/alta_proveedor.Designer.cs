@@ -1,6 +1,6 @@
 ﻿namespace capa_presentacion.perfil_supervisor
 {
-    partial class alta_proovedor
+    partial class alta_proveedor
     {
         /// <summary>
         /// Required designer variable.
@@ -99,7 +99,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(140, 21);
             this.txtEmail.TabIndex = 5;
-            
             // 
             // pnlAltaProovedor
             // 
@@ -146,7 +145,7 @@
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Location = new System.Drawing.Point(70, 223);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(56, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(55, 13);
             this.lblTelefono.TabIndex = 10;
             this.lblTelefono.Text = "Telefono";
             // 
@@ -168,7 +167,7 @@
             this.btnGuardarProveedor.Name = "btnGuardarProveedor";
             this.btnGuardarProveedor.Size = new System.Drawing.Size(125, 29);
             this.btnGuardarProveedor.TabIndex = 8;
-            this.btnGuardarProveedor.Text = "Guardar Proovedor";
+            this.btnGuardarProveedor.Text = "Guardar Proveedor";
             this.btnGuardarProveedor.UseVisualStyleBackColor = true;
             this.btnGuardarProveedor.Click += new System.EventHandler(this.btnGuardarProveedor_Click);
             // 

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace capa_presentacion.perfil_supervisor
 {
-    public partial class alta_proovedor : Form
+    public partial class alta_proveedor : Form
     {
-        public alta_proovedor()
+        public alta_proveedor()
         {
             InitializeComponent();
         }
@@ -23,11 +23,11 @@ namespace capa_presentacion.perfil_supervisor
             DialogResult ask;
             ask = DialogResult.No;// Inicializa una variable de tipo dialogResult para 
             // Falta hacer la validacion de que no exista otro proveedor con el mismo CUIT
-            if (string.IsNullOrWhiteSpace(txtCuit.Text) &&
-                string.IsNullOrWhiteSpace(txtEmail.Text) &&
-                string.IsNullOrWhiteSpace(txtDireccion.Text) &&
-                string.IsNullOrWhiteSpace(txtTelefono.Text) && 
-                string.IsNullOrWhiteSpace(txtRazonSocial.Text))
+            if (!string.IsNullOrWhiteSpace(txtCuit.Text) &&
+                !string.IsNullOrWhiteSpace(txtEmail.Text) &&
+                !string.IsNullOrWhiteSpace(txtDireccion.Text) &&
+                !string.IsNullOrWhiteSpace(txtTelefono.Text) && 
+                !string.IsNullOrWhiteSpace(txtRazonSocial.Text))
             {
                 if (validarCorreo(txtEmail.Text) == true)
                 {
