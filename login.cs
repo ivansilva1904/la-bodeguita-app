@@ -38,7 +38,7 @@ namespace la_bodeguita
             }
             else
             {
-                //this.Hide(); esto se puede usar para ocultar el form del login
+                this.Hide();
                 //Checkear login con base de datos y entrar al menu de usuario correspondiente
                 lblTest.Text = "log correcto";
                 if(txtUsuario.Text == "1")
