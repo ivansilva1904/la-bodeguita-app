@@ -22,7 +22,6 @@ namespace capa_presentacion.perfil_supervisor
             DialogResult ask;
             ask = DialogResult.No;
             if (!string.IsNullOrWhiteSpace(txtMarca.Text) &&
-                !string.IsNullOrWhiteSpace(txtLinea.Text) &&
                 !string.IsNullOrWhiteSpace(txtPrecioCompra.Text) &&
                 !string.IsNullOrWhiteSpace(txtPrecioVenta.Text) &&
                 !string.IsNullOrWhiteSpace(txtStock.Text) &&
@@ -30,19 +29,38 @@ namespace capa_presentacion.perfil_supervisor
                 !string.IsNullOrWhiteSpace(txtDescripcion.Text) &&
                 (rbtCristaleria.Checked == true || rbtBebida.Checked == true))
             {
+                float precioCompra = float.Parse(txtPrecioCompra.Text);
+                float precioVenta = float.Parse(txtPrecioVenta.Text);
+                if (precioCompra > precioVenta)
+                {
+                    ask = MessageBox.Show("Desea Insertar el Nuevo Producto?",
+                        "Confirmar Insercion",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+                    if (ask == DialogResult.Yes)
+                    {
+                        //Guardar los cambios
+                        limpiarCampos();
+                    }
+                }
+                else
+                {
+                MessageBox.Show("El precio de venta es menor que el precio de compra",
+                    "Errpr",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
                 //Convertir a float precio
                 //Fijarse que no haya otro producto con igual id en la db
-            ask = MessageBox.Show("Desea Insertar el Nuevo Producto?", "Confirmar Insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(ask == DialogResult.Yes)
-                {
-                    //Guardar los cambios
-                    limpiarCampos();
-                }
+           
 
             }
             else
             {
-                MessageBox.Show("Faltan campos por completar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Faltan campos por completar", 
+                    "Error", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
 
            
@@ -50,7 +68,6 @@ namespace capa_presentacion.perfil_supervisor
         private void limpiarCampos()
         {
                 txtIdProducto.Clear();
-                txtLinea.Clear();
                 rbtCristaleria.Checked = false;
                 rbtBebida.Checked = false;
                 txtMarca.Clear();
@@ -81,13 +98,7 @@ namespace capa_presentacion.perfil_supervisor
         //Solo numeros y un punto en txtPrecio (nose si funciona)
         private void txtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))//(Si se quiere agregar puntos) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
@@ -95,13 +106,7 @@ namespace capa_presentacion.perfil_supervisor
 
         private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }

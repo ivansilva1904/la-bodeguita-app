@@ -39,7 +39,6 @@
             this.txtPrecioCompra = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
-            this.txtLinea = new System.Windows.Forms.TextBox();
             this.cbxProveedor = new System.Windows.Forms.ComboBox();
             this.rbtCristaleria = new System.Windows.Forms.RadioButton();
             this.rbtBebida = new System.Windows.Forms.RadioButton();
@@ -47,7 +46,6 @@
             this.lblPrecioCompra = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblIdTipoProducto = new System.Windows.Forms.Label();
-            this.lblLinea = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblIdProducto = new System.Windows.Forms.Label();
             this.lblNuevoProducto = new System.Windows.Forms.Label();
@@ -74,7 +72,6 @@
             this.pnlNuevoProducto.Controls.Add(this.txtPrecioCompra);
             this.pnlNuevoProducto.Controls.Add(this.txtDescripcion);
             this.pnlNuevoProducto.Controls.Add(this.txtMarca);
-            this.pnlNuevoProducto.Controls.Add(this.txtLinea);
             this.pnlNuevoProducto.Controls.Add(this.cbxProveedor);
             this.pnlNuevoProducto.Controls.Add(this.rbtCristaleria);
             this.pnlNuevoProducto.Controls.Add(this.rbtBebida);
@@ -82,7 +79,6 @@
             this.pnlNuevoProducto.Controls.Add(this.lblPrecioCompra);
             this.pnlNuevoProducto.Controls.Add(this.lblMarca);
             this.pnlNuevoProducto.Controls.Add(this.lblIdTipoProducto);
-            this.pnlNuevoProducto.Controls.Add(this.lblLinea);
             this.pnlNuevoProducto.Controls.Add(this.label3);
             this.pnlNuevoProducto.Controls.Add(this.lblIdProducto);
             this.pnlNuevoProducto.Controls.Add(this.lblNuevoProducto);
@@ -122,7 +118,7 @@
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(385, 175);
+            this.lblStock.Location = new System.Drawing.Point(385, 129);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(39, 13);
             this.lblStock.TabIndex = 18;
@@ -130,7 +126,7 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(490, 172);
+            this.txtStock.Location = new System.Drawing.Point(490, 126);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(121, 21);
             this.txtStock.TabIndex = 17;
@@ -167,13 +163,6 @@
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(127, 21);
             this.txtMarca.TabIndex = 13;
-            // 
-            // txtLinea
-            // 
-            this.txtLinea.Location = new System.Drawing.Point(490, 126);
-            this.txtLinea.Name = "txtLinea";
-            this.txtLinea.Size = new System.Drawing.Size(121, 21);
-            this.txtLinea.TabIndex = 12;
             // 
             // cbxProveedor
             // 
@@ -241,15 +230,6 @@
             this.lblIdTipoProducto.TabIndex = 5;
             this.lblIdTipoProducto.Text = "Tipo Producto";
             // 
-            // lblLinea
-            // 
-            this.lblLinea.AutoSize = true;
-            this.lblLinea.Location = new System.Drawing.Point(385, 129);
-            this.lblLinea.Name = "lblLinea";
-            this.lblLinea.Size = new System.Drawing.Size(37, 13);
-            this.lblLinea.TabIndex = 4;
-            this.lblLinea.Text = "Linea";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -306,7 +286,6 @@
         private System.Windows.Forms.TextBox txtPrecioCompra;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.TextBox txtLinea;
         private System.Windows.Forms.ComboBox cbxProveedor;
         private System.Windows.Forms.RadioButton rbtCristaleria;
         private System.Windows.Forms.RadioButton rbtBebida;
@@ -314,7 +293,6 @@
         private System.Windows.Forms.Label lblPrecioCompra;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblIdTipoProducto;
-        private System.Windows.Forms.Label lblLinea;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblIdProducto;
         private System.Windows.Forms.Label lblNuevoProducto;
