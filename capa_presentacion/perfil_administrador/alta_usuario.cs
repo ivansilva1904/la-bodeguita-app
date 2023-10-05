@@ -83,7 +83,7 @@ namespace capa_presentacion.perfil_administrador
                     {
                         // ingresar en la base de datos // verificar que no este repetido en la b (poner try catch?)
                         // faltaria validacion de dni ya existente
-                        MessageBox.Show("Se ha registrado el empleado en la base de datos",
+                        MessageBox.Show("Se ha registrado el empleado",
                             "Aviso de Alta",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
