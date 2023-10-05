@@ -29,12 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMedioPago = new System.Windows.Forms.Label();
+            this.rbutTarjeta = new System.Windows.Forms.RadioButton();
+            this.rbutEfectivo = new System.Windows.Forms.RadioButton();
+            this.btnRealizarVenta = new System.Windows.Forms.Button();
             this.lblRegistroCliente = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMontoParcial = new System.Windows.Forms.TextBox();
             this.lblMontoParcial = new System.Windows.Forms.Label();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvVentaDetalle = new System.Windows.Forms.DataGridView();
             this.colCodProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,27 +46,74 @@
             this.colQuitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtDNICliente = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
-            this.btnRealizarVenta = new System.Windows.Forms.Button();
+            this.txtTarjetaNumero = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentaDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Controls.Add(this.txtTarjetaNumero);
+            this.panel1.Controls.Add(this.lblMedioPago);
+            this.panel1.Controls.Add(this.rbutTarjeta);
+            this.panel1.Controls.Add(this.rbutEfectivo);
             this.panel1.Controls.Add(this.btnRealizarVenta);
             this.panel1.Controls.Add(this.lblRegistroCliente);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtMontoParcial);
             this.panel1.Controls.Add(this.lblMontoParcial);
             this.panel1.Controls.Add(this.btnBuscarProducto);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvVentaDetalle);
             this.panel1.Controls.Add(this.txtDNICliente);
             this.panel1.Controls.Add(this.lblDNI);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
+            // 
+            // lblMedioPago
+            // 
+            this.lblMedioPago.AutoSize = true;
+            this.lblMedioPago.Location = new System.Drawing.Point(74, 180);
+            this.lblMedioPago.Name = "lblMedioPago";
+            this.lblMedioPago.Size = new System.Drawing.Size(90, 13);
+            this.lblMedioPago.TabIndex = 11;
+            this.lblMedioPago.Text = "Medio de pago";
+            // 
+            // rbutTarjeta
+            // 
+            this.rbutTarjeta.AutoSize = true;
+            this.rbutTarjeta.Location = new System.Drawing.Point(265, 178);
+            this.rbutTarjeta.Name = "rbutTarjeta";
+            this.rbutTarjeta.Size = new System.Drawing.Size(65, 17);
+            this.rbutTarjeta.TabIndex = 10;
+            this.rbutTarjeta.TabStop = true;
+            this.rbutTarjeta.Text = "Tarjeta";
+            this.rbutTarjeta.UseVisualStyleBackColor = true;
+            this.rbutTarjeta.CheckedChanged += new System.EventHandler(this.rbutTarjeta_CheckedChanged);
+            this.rbutTarjeta.Click += new System.EventHandler(this.rbutTarjeta_Click);
+            // 
+            // rbutEfectivo
+            // 
+            this.rbutEfectivo.AutoSize = true;
+            this.rbutEfectivo.Location = new System.Drawing.Point(189, 178);
+            this.rbutEfectivo.Name = "rbutEfectivo";
+            this.rbutEfectivo.Size = new System.Drawing.Size(70, 17);
+            this.rbutEfectivo.TabIndex = 9;
+            this.rbutEfectivo.TabStop = true;
+            this.rbutEfectivo.Text = "Efectivo";
+            this.rbutEfectivo.UseVisualStyleBackColor = true;
+            // 
+            // btnRealizarVenta
+            // 
+            this.btnRealizarVenta.Location = new System.Drawing.Point(470, 390);
+            this.btnRealizarVenta.Name = "btnRealizarVenta";
+            this.btnRealizarVenta.Size = new System.Drawing.Size(150, 24);
+            this.btnRealizarVenta.TabIndex = 8;
+            this.btnRealizarVenta.Text = "Realizar Venta";
+            this.btnRealizarVenta.UseVisualStyleBackColor = true;
+            this.btnRealizarVenta.Click += new System.EventHandler(this.btnRealizarVenta_Click);
             // 
             // lblRegistroCliente
             // 
@@ -111,19 +162,20 @@
             this.btnBuscarProducto.Text = "Buscar productos";
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvVentaDetalle
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvVentaDetalle.AllowUserToAddRows = false;
+            this.dgvVentaDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVentaDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCodProducto,
             this.colDescripcion,
             this.colCantidad,
             this.colPrecio,
             this.colQuitar});
-            this.dataGridView1.Location = new System.Drawing.Point(76, 208);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(544, 150);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvVentaDetalle.Location = new System.Drawing.Point(76, 222);
+            this.dgvVentaDetalle.Name = "dgvVentaDetalle";
+            this.dgvVentaDetalle.Size = new System.Drawing.Size(544, 150);
+            this.dgvVentaDetalle.TabIndex = 2;
             // 
             // colCodProducto
             // 
@@ -170,15 +222,14 @@
             this.lblDNI.TabIndex = 0;
             this.lblDNI.Text = "DNI del cliente";
             // 
-            // btnRealizarVenta
+            // txtTarjetaNumero
             // 
-            this.btnRealizarVenta.Location = new System.Drawing.Point(470, 390);
-            this.btnRealizarVenta.Name = "btnRealizarVenta";
-            this.btnRealizarVenta.Size = new System.Drawing.Size(150, 24);
-            this.btnRealizarVenta.TabIndex = 8;
-            this.btnRealizarVenta.Text = "Realizar Venta";
-            this.btnRealizarVenta.UseVisualStyleBackColor = true;
-            this.btnRealizarVenta.Click += new System.EventHandler(this.btnRealizarVenta_Click);
+            this.txtTarjetaNumero.Enabled = false;
+            this.txtTarjetaNumero.Location = new System.Drawing.Point(356, 177);
+            this.txtTarjetaNumero.Name = "txtTarjetaNumero";
+            this.txtTarjetaNumero.Size = new System.Drawing.Size(165, 21);
+            this.txtTarjetaNumero.TabIndex = 12;
+            this.txtTarjetaNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTarjetaNumero_KeyPress);
             // 
             // realizar_venta
             // 
@@ -197,7 +248,7 @@
             this.Text = "La bodeguita - Realizar venta";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentaDetalle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,7 +258,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblDNI;
         private System.Windows.Forms.TextBox txtDNICliente;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvVentaDetalle;
         private System.Windows.Forms.TextBox txtMontoParcial;
         private System.Windows.Forms.Label lblMontoParcial;
         private System.Windows.Forms.Button btnBuscarProducto;
@@ -219,5 +270,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel lblRegistroCliente;
         private System.Windows.Forms.Button btnRealizarVenta;
+        private System.Windows.Forms.Label lblMedioPago;
+        private System.Windows.Forms.RadioButton rbutTarjeta;
+        private System.Windows.Forms.RadioButton rbutEfectivo;
+        private System.Windows.Forms.TextBox txtTarjetaNumero;
     }
 }
