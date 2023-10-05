@@ -45,7 +45,7 @@ namespace capa_presentacion.perfil_vendedor
                         NegocioCliente negocioCliente = new NegocioCliente();
                         negocioCliente.crearCliente(int.Parse(dni), nombre, apellido, email, fechaNac);
                         
-                        MessageBox.Show("El nuevo cliente ha sido añadido a la base de datos",
+                        MessageBox.Show("El nuevo cliente ha sido añadido",
                             "Nuevo Cliente",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
