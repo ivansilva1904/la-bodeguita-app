@@ -126,5 +126,10 @@ namespace capa_presentacion.perfil_vendedor
             panVistasMenu.Controls.Add(vistaListaProductos);
             vistaListaProductos.Show();
         }
+
+        private void menu_vendedor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

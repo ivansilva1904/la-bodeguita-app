@@ -162,6 +162,7 @@
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "menu_vendedor";
             this.Text = "La bodeguita - Menu vendedor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_vendedor_FormClosing);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).EndInit();
             this.ResumeLayout(false);
