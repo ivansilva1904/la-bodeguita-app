@@ -26,31 +26,33 @@ namespace capa_presentacion.perfil_vendedor
                 int dnitomado = Int32.Parse(txtDNICliente.Text);
                 if (dnitomado == dnicliente)
                 {
-                    /*
-                    if(DataGrid !vacio){
-
-
-                    */
-                    DialogResult resp = MessageBox.Show("Desea completar la venta?",
-                            "Aviso", MessageBoxButtons.YesNo,
-                            MessageBoxIcon.Question);
-                    if (resp == DialogResult.Yes)
+                    if(dgvVentaDetalle.Rows.Count > 0)
                     {
-                        MessageBox.Show("Se ha realizado la venta",
-                            "Venta exitosa",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Exclamation);
+                        if (rbutEfectivo.Checked == true || rbutTarjeta.Checked == true)
+                        {
+                            DialogResult resp = MessageBox.Show("Desea completar la venta?",
+                                    "Aviso", MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Question);
+                            if (resp == DialogResult.Yes)
+                            {
+                                MessageBox.Show("Se ha realizado la venta",
+                                    "Venta exitosa",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Exclamation);
 
-                    }
-                    /*
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Debe agregar un metodo de pago", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("",
-                    "",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                    }*/
+                        MessageBox.Show("No ha agregado ningun producto al detalle",
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
@@ -70,6 +72,24 @@ namespace capa_presentacion.perfil_vendedor
         }
 
         private void txtDNICliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void rbutTarjeta_Click(object sender, EventArgs e)
+        {
+            txtTarjetaNumero.Enabled = true;
+        }
+
+        private void rbutTarjeta_CheckedChanged(object sender, EventArgs e)
+        {
+            txtTarjetaNumero.Enabled = false;
+        }
+
+        private void txtTarjetaNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
