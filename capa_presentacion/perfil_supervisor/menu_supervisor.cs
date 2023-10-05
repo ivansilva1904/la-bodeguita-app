@@ -127,5 +127,10 @@ namespace capa_presentacion.perfil_supervisor
         {
             btnInformeVentas.BackColor = Color.Tan;
         }
+
+        private void menu_supervisor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }
