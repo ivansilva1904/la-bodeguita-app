@@ -38,25 +38,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cbxFiltro = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbxProveedor = new System.Windows.Forms.ComboBox();
-            this.rbtBebida = new System.Windows.Forms.RadioButton();
-            this.rbtCristaleria = new System.Windows.Forms.RadioButton();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.txtIdProducto = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtLinea = new System.Windows.Forms.TextBox();
-            this.txtPrecioCompra = new System.Windows.Forms.TextBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.lblTipoProducto = new System.Windows.Forms.Label();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.lblPrecioCompra = new System.Windows.Forms.Label();
-            this.lblLinea = new System.Windows.Forms.Label();
-            this.lblMarca = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblProveedor = new System.Windows.Forms.Label();
-            this.lblModificarProducto = new System.Windows.Forms.Label();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proovedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +48,23 @@
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.baja = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbxProveedor = new System.Windows.Forms.ComboBox();
+            this.rbtBebida = new System.Windows.Forms.RadioButton();
+            this.rbtCristaleria = new System.Windows.Forms.RadioButton();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.txtIdProducto = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtPrecioCompra = new System.Windows.Forms.TextBox();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.lblTipoProducto = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblPrecioCompra = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblProveedor = new System.Windows.Forms.Label();
+            this.lblModificarProducto = new System.Windows.Forms.Label();
             this.pnlModificarProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -91,13 +89,11 @@
             this.pnlModificarProducto.Controls.Add(this.txtIdProducto);
             this.pnlModificarProducto.Controls.Add(this.textBox6);
             this.pnlModificarProducto.Controls.Add(this.txtDescripcion);
-            this.pnlModificarProducto.Controls.Add(this.txtLinea);
             this.pnlModificarProducto.Controls.Add(this.txtPrecioCompra);
             this.pnlModificarProducto.Controls.Add(this.txtMarca);
             this.pnlModificarProducto.Controls.Add(this.lblTipoProducto);
             this.pnlModificarProducto.Controls.Add(this.lblDescripcion);
             this.pnlModificarProducto.Controls.Add(this.lblPrecioCompra);
-            this.pnlModificarProducto.Controls.Add(this.lblLinea);
             this.pnlModificarProducto.Controls.Add(this.lblMarca);
             this.pnlModificarProducto.Controls.Add(this.label3);
             this.pnlModificarProducto.Controls.Add(this.lblProveedor);
@@ -201,6 +197,57 @@
             this.dataGridView1.Size = new System.Drawing.Size(703, 113);
             this.dataGridView1.TabIndex = 20;
             // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "ID";
+            this.idProducto.Name = "idProducto";
+            // 
+            // proovedor
+            // 
+            this.proovedor.HeaderText = "Proveedor";
+            this.proovedor.Name = "proovedor";
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            // 
+            // marca
+            // 
+            this.marca.HeaderText = "Marca";
+            this.marca.Name = "marca";
+            // 
+            // linea
+            // 
+            this.linea.HeaderText = "Linea";
+            this.linea.Name = "linea";
+            // 
+            // tipo
+            // 
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "Stock";
+            this.stock.Name = "stock";
+            // 
+            // baja
+            // 
+            this.baja.HeaderText = "Baja";
+            this.baja.Name = "baja";
+            this.baja.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // modificar
+            // 
+            this.modificar.HeaderText = "Modificar";
+            this.modificar.Name = "modificar";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -269,13 +316,6 @@
             this.txtDescripcion.Size = new System.Drawing.Size(261, 21);
             this.txtDescripcion.TabIndex = 12;
             // 
-            // txtLinea
-            // 
-            this.txtLinea.Location = new System.Drawing.Point(489, 110);
-            this.txtLinea.Name = "txtLinea";
-            this.txtLinea.Size = new System.Drawing.Size(132, 21);
-            this.txtLinea.TabIndex = 11;
-            // 
             // txtPrecioCompra
             // 
             this.txtPrecioCompra.Location = new System.Drawing.Point(166, 176);
@@ -318,15 +358,6 @@
             this.lblPrecioCompra.TabIndex = 5;
             this.lblPrecioCompra.Text = "Precio Compra";
             // 
-            // lblLinea
-            // 
-            this.lblLinea.AutoSize = true;
-            this.lblLinea.Location = new System.Drawing.Point(406, 113);
-            this.lblLinea.Name = "lblLinea";
-            this.lblLinea.Size = new System.Drawing.Size(37, 13);
-            this.lblLinea.TabIndex = 4;
-            this.lblLinea.Text = "Linea";
-            // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
@@ -364,57 +395,6 @@
             this.lblModificarProducto.TabIndex = 0;
             this.lblModificarProducto.Text = "Modificar Producto";
             // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "ID";
-            this.idProducto.Name = "idProducto";
-            // 
-            // proovedor
-            // 
-            this.proovedor.HeaderText = "Proveedor";
-            this.proovedor.Name = "proovedor";
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            // 
-            // marca
-            // 
-            this.marca.HeaderText = "Marca";
-            this.marca.Name = "marca";
-            // 
-            // linea
-            // 
-            this.linea.HeaderText = "Linea";
-            this.linea.Name = "linea";
-            // 
-            // tipo
-            // 
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            // 
-            // stock
-            // 
-            this.stock.HeaderText = "Stock";
-            this.stock.Name = "stock";
-            // 
-            // baja
-            // 
-            this.baja.HeaderText = "Baja";
-            this.baja.Name = "baja";
-            this.baja.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // modificar
-            // 
-            this.modificar.HeaderText = "Modificar";
-            this.modificar.Name = "modificar";
-            // 
             // modificar_producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -443,7 +423,6 @@
         private System.Windows.Forms.Label lblTipoProducto;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblPrecioCompra;
-        private System.Windows.Forms.Label lblLinea;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblProveedor;
@@ -460,7 +439,6 @@
         private System.Windows.Forms.TextBox txtIdProducto;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtLinea;
         private System.Windows.Forms.TextBox txtPrecioCompra;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Button btnCancelar;
