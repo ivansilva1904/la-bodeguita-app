@@ -42,6 +42,7 @@
             this.colQuitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtDNICliente = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
+            this.btnRealizarVenta = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +50,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Controls.Add(this.btnRealizarVenta);
             this.panel1.Controls.Add(this.lblRegistroCliente);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtMontoParcial);
@@ -157,6 +159,7 @@
             this.txtDNICliente.Name = "txtDNICliente";
             this.txtDNICliente.Size = new System.Drawing.Size(150, 21);
             this.txtDNICliente.TabIndex = 1;
+            this.txtDNICliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNICliente_KeyPress);
             // 
             // lblDNI
             // 
@@ -166,6 +169,16 @@
             this.lblDNI.Size = new System.Drawing.Size(91, 13);
             this.lblDNI.TabIndex = 0;
             this.lblDNI.Text = "DNI del cliente";
+            // 
+            // btnRealizarVenta
+            // 
+            this.btnRealizarVenta.Location = new System.Drawing.Point(470, 390);
+            this.btnRealizarVenta.Name = "btnRealizarVenta";
+            this.btnRealizarVenta.Size = new System.Drawing.Size(150, 24);
+            this.btnRealizarVenta.TabIndex = 8;
+            this.btnRealizarVenta.Text = "Realizar Venta";
+            this.btnRealizarVenta.UseVisualStyleBackColor = true;
+            this.btnRealizarVenta.Click += new System.EventHandler(this.btnRealizarVenta_Click);
             // 
             // realizar_venta
             // 
@@ -178,6 +191,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "realizar_venta";
             this.Text = "La bodeguita - Realizar venta";
@@ -204,5 +218,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn colQuitar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel lblRegistroCliente;
+        private System.Windows.Forms.Button btnRealizarVenta;
     }
 }
