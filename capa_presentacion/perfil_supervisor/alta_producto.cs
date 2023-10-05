@@ -31,7 +31,7 @@ namespace capa_presentacion.perfil_supervisor
             {
                 float precioCompra = float.Parse(txtPrecioCompra.Text);
                 float precioVenta = float.Parse(txtPrecioVenta.Text);
-                if (precioCompra > precioVenta)
+                if (precioCompra < precioVenta)
                 {
                     ask = MessageBox.Show("Desea Insertar el Nuevo Producto?",
                         "Confirmar Insercion",
@@ -67,13 +67,14 @@ namespace capa_presentacion.perfil_supervisor
         }
         private void limpiarCampos()
         {
-                txtIdProducto.Clear();
-                rbtCristaleria.Checked = false;
-                rbtBebida.Checked = false;
-                txtMarca.Clear();
-                txtPrecioCompra.Clear();
-                txtStock.Clear();
-                txtDescripcion.Clear();
+            txtIdProducto.Clear();
+            rbtCristaleria.Checked = false;
+            rbtBebida.Checked = false;
+            txtMarca.Clear();
+            txtPrecioCompra.Clear();
+            txtPrecioVenta.Clear();
+            txtStock.Clear();
+            txtDescripcion.Clear();
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
