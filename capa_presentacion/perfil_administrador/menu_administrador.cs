@@ -166,5 +166,10 @@ namespace capa_presentacion.perfil_administrador
         {
             btnListarEmpleados.BackColor = Color.Tan;
         }
+
+        private void menu_administrador_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

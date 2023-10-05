@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu_administrador));
             this.panOpciones = new System.Windows.Forms.Panel();
+            this.btnListarEmpleados = new System.Windows.Forms.Button();
             this.picboxLogo = new System.Windows.Forms.PictureBox();
             this.btnModEmpleado = new System.Windows.Forms.Button();
             this.btnAltaEmpleado = new System.Windows.Forms.Button();
             this.btnGenerarRespaldo = new System.Windows.Forms.Button();
             this.panFormsAdministrador = new System.Windows.Forms.Panel();
-            this.btnListarEmpleados = new System.Windows.Forms.Button();
             this.panOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +55,20 @@
             this.panOpciones.Name = "panOpciones";
             this.panOpciones.Size = new System.Drawing.Size(262, 468);
             this.panOpciones.TabIndex = 0;
+            // 
+            // btnListarEmpleados
+            // 
+            this.btnListarEmpleados.FlatAppearance.BorderSize = 0;
+            this.btnListarEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarEmpleados.Location = new System.Drawing.Point(-2, 235);
+            this.btnListarEmpleados.Name = "btnListarEmpleados";
+            this.btnListarEmpleados.Size = new System.Drawing.Size(257, 50);
+            this.btnListarEmpleados.TabIndex = 8;
+            this.btnListarEmpleados.Text = "Listar Empleados";
+            this.btnListarEmpleados.UseVisualStyleBackColor = true;
+            this.btnListarEmpleados.Click += new System.EventHandler(this.btnListarEmpleados_Click);
+            this.btnListarEmpleados.MouseEnter += new System.EventHandler(this.btnListarEmpleados_MouseEnter);
+            this.btnListarEmpleados.MouseLeave += new System.EventHandler(this.btnListarEmpleados_MouseLeave);
             // 
             // picboxLogo
             // 
@@ -120,20 +134,6 @@
             this.panFormsAdministrador.Size = new System.Drawing.Size(733, 466);
             this.panFormsAdministrador.TabIndex = 1;
             // 
-            // btnListarEmpleados
-            // 
-            this.btnListarEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnListarEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListarEmpleados.Location = new System.Drawing.Point(-2, 235);
-            this.btnListarEmpleados.Name = "btnListarEmpleados";
-            this.btnListarEmpleados.Size = new System.Drawing.Size(257, 50);
-            this.btnListarEmpleados.TabIndex = 8;
-            this.btnListarEmpleados.Text = "Listar Empleados";
-            this.btnListarEmpleados.UseVisualStyleBackColor = true;
-            this.btnListarEmpleados.Click += new System.EventHandler(this.btnListarEmpleados_Click);
-            this.btnListarEmpleados.MouseEnter += new System.EventHandler(this.btnListarEmpleados_MouseEnter);
-            this.btnListarEmpleados.MouseLeave += new System.EventHandler(this.btnListarEmpleados_MouseLeave);
-            // 
             // menu_administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -144,6 +144,7 @@
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "menu_administrador";
             this.Text = "menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_administrador_FormClosing);
             this.panOpciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).EndInit();
             this.ResumeLayout(false);
