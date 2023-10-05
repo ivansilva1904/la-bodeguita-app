@@ -230,10 +230,6 @@ capa_presentacion/obj
 
 capa_datos/bin
 capa_datos/obj
-capa_datos/bodeguitaBDDataSet.Designer.cs
-capa_datos/bodeguitaBDDataSet.xsc
-capa_datos/bodeguitaBDDataSet.xsd
-capa_datos/bodeguitaBDDataSet.xss
 
 capa_negocio/bin
 capa_negocio/obj
