@@ -30,10 +30,10 @@
         {
             this.lblRazonSocial = new System.Windows.Forms.Label();
             this.lblCuit = new System.Windows.Forms.Label();
-            this.lblRubro = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtCuit = new System.Windows.Forms.TextBox();
-            this.txtRubro = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.pnlAltaProovedor = new System.Windows.Forms.Panel();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -65,15 +65,15 @@
             this.lblCuit.TabIndex = 1;
             this.lblCuit.Text = "CUIT";
             // 
-            // lblRubro
+            // lblEmail
             // 
-            this.lblRubro.AutoSize = true;
-            this.lblRubro.Location = new System.Drawing.Point(70, 166);
-            this.lblRubro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblRubro.Name = "lblRubro";
-            this.lblRubro.Size = new System.Drawing.Size(41, 13);
-            this.lblRubro.TabIndex = 2;
-            this.lblRubro.Text = "Rubro";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(70, 166);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(38, 13);
+            this.lblEmail.TabIndex = 2;
+            this.lblEmail.Text = "Email";
             // 
             // txtDireccion
             // 
@@ -92,14 +92,14 @@
             this.txtCuit.TabIndex = 4;
             this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
-            // txtRubro
+            // txtEmail
             // 
-            this.txtRubro.Location = new System.Drawing.Point(146, 164);
-            this.txtRubro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtRubro.Name = "txtRubro";
-            this.txtRubro.Size = new System.Drawing.Size(140, 21);
-            this.txtRubro.TabIndex = 5;
-            this.txtRubro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRubro_KeyPress);
+            this.txtEmail.Location = new System.Drawing.Point(146, 164);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(140, 21);
+            this.txtEmail.TabIndex = 5;
+            
             // 
             // pnlAltaProovedor
             // 
@@ -112,11 +112,11 @@
             this.pnlAltaProovedor.Controls.Add(this.txtRazonSocial);
             this.pnlAltaProovedor.Controls.Add(this.lblDireccion);
             this.pnlAltaProovedor.Controls.Add(this.txtCuit);
-            this.pnlAltaProovedor.Controls.Add(this.txtRubro);
+            this.pnlAltaProovedor.Controls.Add(this.txtEmail);
             this.pnlAltaProovedor.Controls.Add(this.lblRazonSocial);
             this.pnlAltaProovedor.Controls.Add(this.lblCuit);
             this.pnlAltaProovedor.Controls.Add(this.txtDireccion);
-            this.pnlAltaProovedor.Controls.Add(this.lblRubro);
+            this.pnlAltaProovedor.Controls.Add(this.lblEmail);
             this.pnlAltaProovedor.Location = new System.Drawing.Point(14, 12);
             this.pnlAltaProovedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlAltaProovedor.Name = "pnlAltaProovedor";
@@ -219,10 +219,10 @@
 
         private System.Windows.Forms.Label lblRazonSocial;
         private System.Windows.Forms.Label lblCuit;
-        private System.Windows.Forms.Label lblRubro;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtCuit;
-        private System.Windows.Forms.TextBox txtRubro;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Panel pnlAltaProovedor;
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.Label lblDireccion;

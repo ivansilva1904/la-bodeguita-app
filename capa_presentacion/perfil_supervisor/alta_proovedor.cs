@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,23 +24,38 @@ namespace capa_presentacion.perfil_supervisor
             ask = DialogResult.No;// Inicializa una variable de tipo dialogResult para 
             // Falta hacer la validacion de que no exista otro proveedor con el mismo CUIT
             if (string.IsNullOrWhiteSpace(txtCuit.Text) &&
-                string.IsNullOrWhiteSpace(txtRubro.Text) &&
+                string.IsNullOrWhiteSpace(txtEmail.Text) &&
                 string.IsNullOrWhiteSpace(txtDireccion.Text) &&
-                string.IsNullOrWhiteSpace(txtTelefono.Text) &&
+                string.IsNullOrWhiteSpace(txtTelefono.Text) && 
                 string.IsNullOrWhiteSpace(txtRazonSocial.Text))
             {
-                MessageBox.Show("Existen Campos Vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (validarCorreo(txtEmail.Text) == true)
+                {
+                    ask = MessageBox.Show("¿Seguro que desea insertar un nuevo Proveedor?", "Confirmar Insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (ask == DialogResult.Yes)
+                    {
+
+                        //Mensaje de insercion correcta
+                        MessageBox.Show("El Proveedor se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Formato de Email Invalido",
+                        "Email Invalido",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
 
             }
-            else//Mensaje de insercion del nuevo cliente
-                ask = MessageBox.Show("¿Seguro que desea insertar un nuevo Proveedor?", "Confirmar Insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-            if (ask == DialogResult.Yes)
+            else
             {
-                
-                //Mensaje de insercion correcta
-                MessageBox.Show("El Proveedor : se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            }
+                MessageBox.Show("Existen Campos Vacios",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }            
         }
 
         private void txtCuit_KeyPress(object sender, KeyPressEventArgs e)
@@ -50,17 +66,11 @@ namespace capa_presentacion.perfil_supervisor
             }
         }
 
-        private void txtRubro_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+      
         private void limpiarCampos()
         {
             txtCuit.Clear();
-            txtRubro.Clear();
+            txtEmail.Clear();
             txtDireccion.Clear();
             txtRazonSocial.Clear();
             txtTelefono.Clear();
@@ -76,6 +86,10 @@ namespace capa_presentacion.perfil_supervisor
             {
                 e.Handled = true;
             }
+        }
+        public static bool validarCorreo(string comprobarCorreo)
+        {
+            return comprobarCorreo != null && Regex.IsMatch(comprobarCorreo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
         }
     }
 }
