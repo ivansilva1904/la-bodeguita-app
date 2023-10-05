@@ -20,7 +20,7 @@ namespace capa_presentacion.perfil_vendedor
         private void btnRealizarVenta_Click(object sender, EventArgs e)
         {
             //revisar que haya items en en datagrid que el campo dni cliente este completo y exista
-            if (string.IsNullOrWhiteSpace(txtDNICliente.Text))
+            if (!string.IsNullOrWhiteSpace(txtDNICliente.Text))
             {
                 int dnicliente = 11;
                 int dnitomado = Int32.Parse(txtDNICliente.Text);
