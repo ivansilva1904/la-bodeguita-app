@@ -32,3 +32,10 @@ CREATE TABLE clientes(
 	fechaNac DATE,
 	baja BIT
 );
+
+/* Datos de entidades accesorio */
+
+INSERT INTO tiposEmpleados(descripcion) VALUES('Vendedor');
+INSERT INTO tiposEmpleados(descripcion) VALUES('Supervisor');
+INSERT INTO tiposEmpleados(descripcion) VALUES('Administrador');
+
