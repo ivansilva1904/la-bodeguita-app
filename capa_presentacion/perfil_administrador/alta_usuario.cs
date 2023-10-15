@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
+using capa_negocio;
+
 namespace capa_presentacion.perfil_administrador
 {
     public partial class alta_usuario : Form
@@ -79,16 +81,15 @@ namespace capa_presentacion.perfil_administrador
                         DialogResult resp = MessageBox.Show("Desea Ingresar el nuevo Empleado?",
                             "Aviso",MessageBoxButtons.YesNo,
                             MessageBoxIcon.Question);
-                    if (resp == DialogResult.Yes)
-                    {
-                        // ingresar en la base de datos // verificar que no este repetido en la b (poner try catch?)
-                        // faltaria validacion de dni ya existente
-                        MessageBox.Show("Se ha registrado el empleado",
-                            "Aviso de Alta",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Exclamation);
+                        if (resp == DialogResult.Yes)
+                        {
+                            
+                            MessageBox.Show("Se ha registrado el empleado",
+                                "Aviso de Alta",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
                         
-                    }
+                        }
                     }
                     else
                     {
@@ -105,8 +106,6 @@ namespace capa_presentacion.perfil_administrador
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
-                    
-
             }
             else
             {
