@@ -20,7 +20,7 @@ CREATE TABLE empleados(
 	email VARCHAR(30),
 	contraseña VARCHAR(30),
 	idTipoEmpleado INT,
-	baja BIT,
+	baja BIT DEFAULT 0,
 	CONSTRAINT fk_tipoEmpleado FOREIGN KEY (idTipoEmpleado) REFERENCES tiposEmpleados(idTipoEmpleado)
 );
 
