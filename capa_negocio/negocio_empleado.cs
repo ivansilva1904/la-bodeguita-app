@@ -12,9 +12,22 @@ namespace capa_negocio
 {
     public class NegocioEmpleado
     {
-        public bool verificarDNIExistente()
+        DatosEmpleado datosEmpleado = new DatosEmpleado();
+
+        public bool verificarDNIExistente(int dni)
         {
-            return;
+            SqlDataReader resultado = datosEmpleado.buscarDNI(dni);
+
+            if (resultado.HasRows)
+            {
+                datosEmpleado.cerrarConexion();
+                return true;
+            }
+            else
+            {
+                datosEmpleado.cerrarConexion();
+                return false;
+            }
         }
 
     }

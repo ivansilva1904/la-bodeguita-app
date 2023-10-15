@@ -21,6 +21,8 @@ namespace capa_presentacion.perfil_administrador
             InitializeComponent();
         }
 
+        NegocioEmpleado negocioEmpleado = new NegocioEmpleado();
+
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
@@ -83,12 +85,17 @@ namespace capa_presentacion.perfil_administrador
                             MessageBoxIcon.Question);
                         if (resp == DialogResult.Yes)
                         {
-                            
-                            MessageBox.Show("Se ha registrado el empleado",
-                                "Aviso de Alta",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Exclamation);
-                        
+                            if (negocioEmpleado.verificarDNIExistente(int.Parse(dni)) == false)
+                            {
+                                MessageBox.Show("Se ha registrado el empleado",
+                                    "Aviso de Alta",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Exclamation);
+                            }
+                            else
+                            {
+                                MessageBox.Show("El cliente ya existe");
+                            }
                         }
                     }
                     else
