@@ -36,5 +36,39 @@ namespace capa_negocio
             datosEmpleado.insertEmpleado(dni, nombre, apellido, fechaNac, direccion, telefono, email, contraseña, tipoEmpleado);
         }
 
+        public List<EntidadEmpleado> listarEmpleados()
+        {
+            SqlDataReader tabla = datosEmpleado.selectEmpleados();
+
+            List<EntidadEmpleado> lista = new List<EntidadEmpleado>();
+
+            using(tabla)
+            {
+                while (tabla.Read())
+                {
+                    EntidadEmpleado empleado = new EntidadEmpleado()
+                    {
+                        DniEmpleado = tabla.GetInt32(0),
+                        Nombre = tabla.GetString(1),
+                        Apellido = tabla.GetString(2),
+                        FechaNac = tabla.GetDateTime(3),
+                        FechaIncorp = tabla.GetDateTime(4),
+                        FechaDeshab = tabla.GetDateTime(5),
+                        Direccion = tabla.GetString(6),
+                        Telefono = tabla.GetString(7),
+                        Email = tabla.GetString(8),
+                        Contraseña = tabla.GetString(9),
+                        IdTipoEmpleado = tabla.GetInt32(10),
+                        Baja = tabla.GetBoolean(11)
+                    };
+                    lista.Add(empleado);
+                }
+            }
+
+            datosEmpleado.cerrarConexion();
+
+            return lista;
+        }
+
     }
 }
