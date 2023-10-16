@@ -38,7 +38,3 @@ CREATE TABLE clientes(
 INSERT INTO tiposEmpleados(descripcion) VALUES('Vendedor');
 INSERT INTO tiposEmpleados(descripcion) VALUES('Supervisor');
 INSERT INTO tiposEmpleados(descripcion) VALUES('Administrador');
-
-INSERT INTO empleados (dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, direccion, telefono, email, contraseña, idTipoEmpleado)
-VALUES (41843297, 'Ivan', 'Silva', '1999-05-04', CONVERT(DATE, GETDATE()), 'Brasil 1450', '41843297', 'ivan.silva04599@gmail.com', '1234', 1);
-
