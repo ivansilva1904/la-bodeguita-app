@@ -53,7 +53,6 @@ namespace capa_negocio
                         Apellido = tabla.GetString(2),
                         FechaNac = tabla.GetDateTime(3),
                         FechaIncorp = tabla.GetDateTime(4),
-                        FechaDeshab = tabla.GetDateTime(5),
                         Direccion = tabla.GetString(6),
                         Telefono = tabla.GetString(7),
                         Email = tabla.GetString(8),

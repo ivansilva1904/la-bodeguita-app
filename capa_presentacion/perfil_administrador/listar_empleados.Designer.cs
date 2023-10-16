@@ -33,15 +33,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvListaEmpleados = new System.Windows.Forms.DataGridView();
             this.pnlListarEmpleados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlListarEmpleados
             // 
             this.pnlListarEmpleados.BackColor = System.Drawing.Color.Beige;
-            this.pnlListarEmpleados.Controls.Add(this.dataGridView1);
+            this.pnlListarEmpleados.Controls.Add(this.dgvListaEmpleados);
             this.pnlListarEmpleados.Controls.Add(this.lblDni);
             this.pnlListarEmpleados.Controls.Add(this.button1);
             this.pnlListarEmpleados.Controls.Add(this.textBox1);
@@ -86,13 +86,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Lista Empleados";
             // 
-            // dataGridView1
+            // dgvListaEmpleados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 117);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(654, 292);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvListaEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaEmpleados.Location = new System.Drawing.Point(26, 117);
+            this.dgvListaEmpleados.Name = "dgvListaEmpleados";
+            this.dgvListaEmpleados.Size = new System.Drawing.Size(654, 292);
+            this.dgvListaEmpleados.TabIndex = 5;
             // 
             // listar_empleados
             // 
@@ -111,7 +111,7 @@
             this.Load += new System.EventHandler(this.listar_empleados_Load);
             this.pnlListarEmpleados.ResumeLayout(false);
             this.pnlListarEmpleados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaEmpleados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -123,6 +123,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListaEmpleados;
     }
 }

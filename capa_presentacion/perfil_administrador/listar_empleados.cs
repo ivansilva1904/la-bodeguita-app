@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using capa_entidades;
 using capa_negocio;
 
 namespace capa_presentacion.perfil_administrador
@@ -21,7 +21,27 @@ namespace capa_presentacion.perfil_administrador
 
         private void listar_empleados_Load(object sender, EventArgs e)
         {
+            NegocioEmpleado negocioEmpleado = new NegocioEmpleado();
 
+            List<EntidadEmpleado> lista = negocioEmpleado.listarEmpleados();
+
+            dgvListaEmpleados.DataSource = lista;
+
+            /* Buscar como sacar la columna de fecha deshabilitacion
+             * Como mostrar la columna baja con string*/
+
+            dgvListaEmpleados.Columns[0].HeaderText = "DNI";
+            dgvListaEmpleados.Columns[1].HeaderText = "Nombre";
+            dgvListaEmpleados.Columns[2].HeaderText = "Apellido";
+            dgvListaEmpleados.Columns[3].HeaderText = "Fecha nacimiento";
+            dgvListaEmpleados.Columns[4].HeaderText = "Fecha incorporación";
+            dgvListaEmpleados.Columns[5].HeaderText = "Fecha deshabilitación";
+            dgvListaEmpleados.Columns[6].HeaderText = "Dirección";
+            dgvListaEmpleados.Columns[7].HeaderText = "Telefono";
+            dgvListaEmpleados.Columns[8].HeaderText = "Email";
+            dgvListaEmpleados.Columns[9].HeaderText = "Contraseña";
+            dgvListaEmpleados.Columns[10].HeaderText = "Tipo empleado";
+            dgvListaEmpleados.Columns[11].HeaderText = "Baja";
         }
     }
 }
