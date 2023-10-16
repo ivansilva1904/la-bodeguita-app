@@ -108,6 +108,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "listar_empleados";
             this.Text = "listar_empleados";
+            this.Load += new System.EventHandler(this.listar_empleados_Load);
             this.pnlListarEmpleados.ResumeLayout(false);
             this.pnlListarEmpleados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

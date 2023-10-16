@@ -43,5 +43,18 @@ namespace capa_datos
 
             cerrarConexion();
         }
+
+        public SqlDataReader selectEmpleados()
+        {
+            conexion.Open();
+
+            string query = "SELECT * FROM empleados";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            SqlDataReader tabla = comando.ExecuteReader();
+
+            return tabla;
+        }
     }
 }
