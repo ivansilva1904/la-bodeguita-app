@@ -62,8 +62,11 @@ namespace capa_presentacion.perfil_administrador
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
             string dni = txtDNI.Text;
+            DateTime fechaNac = dtpFechaNac.Value;
             string email = txtEmail.Text;
             string telefono = txtTelefono.Text;
+            string direccion = txtDireccion.Text;
+            int tipoEmpleado = radbtnVendedor.Checked == true ? 1 : 2;
             string contraseña = txtContraseña.Text;
             string contraseña2 = txtContraseña2.Text;
 
@@ -87,6 +90,7 @@ namespace capa_presentacion.perfil_administrador
                         {
                             if (negocioEmpleado.verificarDNIExistente(int.Parse(dni)) == false)
                             {
+                                negocioEmpleado.crearEmpleado(int.Parse(dni), nombre, apellido, fechaNac, direccion, telefono, email, contraseña, tipoEmpleado);
                                 MessageBox.Show("Se ha registrado el empleado",
                                     "Aviso de Alta",
                                     MessageBoxButtons.OK,

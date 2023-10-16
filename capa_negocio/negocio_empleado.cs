@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using capa_entidades;
 using capa_datos;
 using System.Data.SqlClient;
+using System.Net;
 
 namespace capa_negocio
 {
@@ -28,6 +29,11 @@ namespace capa_negocio
                 datosEmpleado.cerrarConexion();
                 return false;
             }
+        }
+
+        public void crearEmpleado(int dni, string nombre, string apellido, DateTime fechaNac, string direccion, string telefono, string email, string contraseña, int tipoEmpleado)
+        {
+            datosEmpleado.insertEmpleado(dni, nombre, apellido, fechaNac, direccion, telefono, email, contraseña, tipoEmpleado);
         }
 
     }

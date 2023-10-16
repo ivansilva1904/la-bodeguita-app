@@ -29,5 +29,13 @@ namespace capa_datos
 
             return resultado;
         }
+
+        public void insertEmpleado(int dni, string nombre, string apellido, DateTime fechaNac, string direccion, string telefono, string email, string contraseña, int tipoEmpleado)
+        {
+            conexion.Open();
+
+            string query = "INSERT INTO empleados (dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, direccion, telefono, email, contraseña, idTipoEmpleado) " +
+                "VALUES (41843297, 'Ivan', 'Silva', '1999-05-04', CONVERT(DATE, GETDATE()), 'Brasil 1450', '41843297', 'ivan.silva04599@gmail.com', '1234', 1);";
+        }
     }
 }
