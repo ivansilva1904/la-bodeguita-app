@@ -19,10 +19,10 @@ namespace capa_presentacion.perfil_administrador
             InitializeComponent();
         }
 
+        NegocioEmpleado negocioEmpleado = new NegocioEmpleado();
+
         private void listar_empleados_Load(object sender, EventArgs e)
         {
-            NegocioEmpleado negocioEmpleado = new NegocioEmpleado();
-
             List<EntidadEmpleado> lista = negocioEmpleado.listarEmpleados();
 
             dgvListaEmpleados.DataSource = lista;
@@ -46,7 +46,31 @@ namespace capa_presentacion.perfil_administrador
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            int dni = int.Parse(txtDNI.Text);
 
+            EntidadEmpleado empleado = negocioEmpleado.buscarEmpleadoPorDNI(dni);
+
+            if(empleado.DniEmpleado != 0)
+            {
+                dgvListaEmpleados.DataSource = empleado;
+
+                dgvListaEmpleados.Columns[0].HeaderText = "DNI";
+                dgvListaEmpleados.Columns[1].HeaderText = "Nombre";
+                dgvListaEmpleados.Columns[2].HeaderText = "Apellido";
+                dgvListaEmpleados.Columns[3].HeaderText = "Fecha nacimiento";
+                dgvListaEmpleados.Columns[4].HeaderText = "Fecha incorporación";
+                dgvListaEmpleados.Columns[5].HeaderText = "Fecha deshabilitación";
+                dgvListaEmpleados.Columns[6].HeaderText = "Dirección";
+                dgvListaEmpleados.Columns[7].HeaderText = "Telefono";
+                dgvListaEmpleados.Columns[8].HeaderText = "Email";
+                dgvListaEmpleados.Columns[9].HeaderText = "Contraseña";
+                dgvListaEmpleados.Columns[10].HeaderText = "Tipo empleado";
+                dgvListaEmpleados.Columns[11].HeaderText = "Baja";
+            }
+            else
+            {
+                MessageBox.Show("El empleado ingresado no se encuentra registrado");
+            }
         }
     }
 }
