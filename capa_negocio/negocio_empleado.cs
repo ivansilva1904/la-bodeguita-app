@@ -69,5 +69,9 @@ namespace capa_negocio
             return lista;
         }
 
+        public EntidadEmpleado buscarEmpleadoPorDNI()
+        {
+
+        }
     }
 }

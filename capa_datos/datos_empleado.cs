@@ -56,5 +56,18 @@ namespace capa_datos
 
             return tabla;
         }
+
+        public SqlDataReader selectEmpleadoDNI(int dni)
+        {
+            conexion.Open();
+
+            string query = "SELECT * FROM empleados WHERE dniEmpleado = "+ dni;
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            SqlDataReader empleado = comando.ExecuteReader();
+
+            return empleado;
+        }
     }
 }
