@@ -43,5 +43,10 @@ namespace capa_presentacion.perfil_administrador
             dgvListaEmpleados.Columns[10].HeaderText = "Tipo empleado";
             dgvListaEmpleados.Columns[11].HeaderText = "Baja";
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
