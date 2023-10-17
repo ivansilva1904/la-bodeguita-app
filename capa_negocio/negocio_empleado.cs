@@ -69,9 +69,42 @@ namespace capa_negocio
             return lista;
         }
 
-        public EntidadEmpleado buscarEmpleadoPorDNI()
+        public EntidadEmpleado buscarEmpleadoPorDNI(int dni)
         {
+            SqlDataReader empleadoReader = datosEmpleado.selectEmpleadoDNI(dni);
 
+            if (empleadoReader.HasRows)
+            {
+                EntidadEmpleado empleado = new EntidadEmpleado()
+                {
+                    DniEmpleado = empleadoReader.GetInt32(0),
+                    Nombre = empleadoReader.GetString(1),
+                    Apellido = empleadoReader.GetString(2),
+                    FechaNac = empleadoReader.GetDateTime(3),
+                    FechaIncorp = empleadoReader.GetDateTime(4),
+                    Direccion = empleadoReader.GetString(6),
+                    Telefono = empleadoReader.GetString(7),
+                    Email = empleadoReader.GetString(8),
+                    Contraseña = empleadoReader.GetString(9),
+                    IdTipoEmpleado = empleadoReader.GetInt32(10),
+                    Baja = empleadoReader.GetBoolean(11)
+                };
+
+                datosEmpleado.cerrarConexion();
+
+                return empleado;
+            }
+            else
+            {
+                EntidadEmpleado empleado = new EntidadEmpleado()
+                {
+                    DniEmpleado = 0
+                };
+
+                datosEmpleado.cerrarConexion();
+
+                return empleado;
+            }
         }
     }
 }
