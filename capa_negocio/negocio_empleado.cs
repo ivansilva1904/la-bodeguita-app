@@ -69,30 +69,37 @@ namespace capa_negocio
             return lista;
         }
 
-        public EntidadEmpleado buscarEmpleadoPorDNI(int dni)
+        public List<EntidadEmpleado> buscarEmpleadoPorDNI(int dni)
         {
             SqlDataReader empleadoReader = datosEmpleado.selectEmpleadoDNI(dni);
 
+            List<EntidadEmpleado> listaEmpleado = new List<EntidadEmpleado>();
+
             if (empleadoReader.HasRows)
             {
-                EntidadEmpleado empleado = new EntidadEmpleado()
+
+                while (empleadoReader.Read())
                 {
-                    DniEmpleado = empleadoReader.GetInt32(0),
-                    Nombre = empleadoReader.GetString(1),
-                    Apellido = empleadoReader.GetString(2),
-                    FechaNac = empleadoReader.GetDateTime(3),
-                    FechaIncorp = empleadoReader.GetDateTime(4),
-                    Direccion = empleadoReader.GetString(6),
-                    Telefono = empleadoReader.GetString(7),
-                    Email = empleadoReader.GetString(8),
-                    Contraseña = empleadoReader.GetString(9),
-                    IdTipoEmpleado = empleadoReader.GetInt32(10),
-                    Baja = empleadoReader.GetBoolean(11)
-                };
+                    EntidadEmpleado empleado = new EntidadEmpleado()
+                    {
+                        DniEmpleado = empleadoReader.GetInt32(0),
+                        Nombre = empleadoReader.GetString(1),
+                        Apellido = empleadoReader.GetString(2),
+                        FechaNac = empleadoReader.GetDateTime(3),
+                        FechaIncorp = empleadoReader.GetDateTime(4),
+                        Direccion = empleadoReader.GetString(6),
+                        Telefono = empleadoReader.GetString(7),
+                        Email = empleadoReader.GetString(8),
+                        Contraseña = empleadoReader.GetString(9),
+                        IdTipoEmpleado = empleadoReader.GetInt32(10),
+                        Baja = empleadoReader.GetBoolean(11)
+                    };
+                    listaEmpleado.Add(empleado);
+                }
 
                 datosEmpleado.cerrarConexion();
 
-                return empleado;
+                return listaEmpleado;
             }
             else
             {
@@ -100,10 +107,10 @@ namespace capa_negocio
                 {
                     DniEmpleado = 0
                 };
-
+                listaEmpleado.Add(empleado);
                 datosEmpleado.cerrarConexion();
 
-                return empleado;
+                return listaEmpleado;
             }
         }
     }

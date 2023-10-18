@@ -21,6 +21,23 @@ namespace capa_entidades
         private int idTipoEmpleado;
         private bool baja;
 
+        /*public EntidadEmpleado(int dniEmpleado, string nombre, string apellido, DateTime fechaNac, 
+            DateTime fechaIncorp, string direccion, string telefono, string email, 
+            string contraseña, int idTipoEmpleado, bool baja)
+        {
+            DniEmpleado = dniEmpleado;
+            Nombre = nombre;
+            Apellido = apellido;
+            FechaNac = fechaNac;
+            FechaIncorp = fechaIncorp;
+            Direccion = direccion;
+            Telefono = telefono;
+            Email = email;
+            Contraseña = contraseña;
+            IdTipoEmpleado = idTipoEmpleado;
+            Baja = baja;
+        }*/
+
         public int DniEmpleado { get => dniEmpleado; set => dniEmpleado = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }

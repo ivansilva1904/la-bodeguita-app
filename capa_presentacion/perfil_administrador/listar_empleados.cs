@@ -25,7 +25,9 @@ namespace capa_presentacion.perfil_administrador
         {
             List<EntidadEmpleado> lista = negocioEmpleado.listarEmpleados();
 
-            dgvListaEmpleados.DataSource = lista;
+            BindingList<EntidadEmpleado> listaBindeada = new BindingList<EntidadEmpleado>(lista);
+
+            dgvListaEmpleados.DataSource = listaBindeada;
 
             /* Buscar como sacar la columna de fecha deshabilitacion
              * Como mostrar la columna baja con string*/
@@ -48,13 +50,19 @@ namespace capa_presentacion.perfil_administrador
         {
             int dni = int.Parse(txtDNI.Text);
 
-            EntidadEmpleado empleado = negocioEmpleado.buscarEmpleadoPorDNI(dni);
+            List<EntidadEmpleado> empleado = negocioEmpleado.buscarEmpleadoPorDNI(dni);
 
-            if(empleado.DniEmpleado != 0)
+            BindingList<EntidadEmpleado> lista = new BindingList<EntidadEmpleado>(empleado);
+
+            if(lista.Count != 0)
             {
-                dgvListaEmpleados.DataSource = empleado;
+                dgvListaEmpleados.Rows.Clear();
 
-                dgvListaEmpleados.Columns[0].HeaderText = "DNI";
+                dgvListaEmpleados.Refresh();
+
+                dgvListaEmpleados.DataSource = lista;
+
+                /*dgvListaEmpleados.Columns[0].HeaderText = "DNI";
                 dgvListaEmpleados.Columns[1].HeaderText = "Nombre";
                 dgvListaEmpleados.Columns[2].HeaderText = "Apellido";
                 dgvListaEmpleados.Columns[3].HeaderText = "Fecha nacimiento";
@@ -65,7 +73,7 @@ namespace capa_presentacion.perfil_administrador
                 dgvListaEmpleados.Columns[8].HeaderText = "Email";
                 dgvListaEmpleados.Columns[9].HeaderText = "Contraseña";
                 dgvListaEmpleados.Columns[10].HeaderText = "Tipo empleado";
-                dgvListaEmpleados.Columns[11].HeaderText = "Baja";
+                dgvListaEmpleados.Columns[11].HeaderText = "Baja";*/
             }
             else
             {
