@@ -9,6 +9,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using capa_negocio;
+
 namespace capa_presentacion.perfil_administrador
 {
     public partial class modificar_usuario : Form
@@ -17,6 +19,8 @@ namespace capa_presentacion.perfil_administrador
         {
             InitializeComponent();
         }
+
+        NegocioEmpleado negocioEmpleado = new NegocioEmpleado();
 
         private void btnLimpiarCampos_Click(object sender, EventArgs e)
         {
@@ -160,6 +164,11 @@ namespace capa_presentacion.perfil_administrador
         public static bool validarCorreo(string comprobarCorreo)
         {
             return comprobarCorreo != null && Regex.IsMatch(comprobarCorreo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        }
+
+        private void modificar_usuario_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

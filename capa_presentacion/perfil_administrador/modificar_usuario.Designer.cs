@@ -188,7 +188,7 @@
             this.lblTelefono.Location = new System.Drawing.Point(255, 148);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(56, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(55, 13);
             this.lblTelefono.TabIndex = 6;
             this.lblTelefono.Text = "Telefono";
             // 
@@ -255,7 +255,7 @@
             this.radbtnVendedor.Location = new System.Drawing.Point(136, 182);
             this.radbtnVendedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radbtnVendedor.Name = "radbtnVendedor";
-            this.radbtnVendedor.Size = new System.Drawing.Size(80, 17);
+            this.radbtnVendedor.Size = new System.Drawing.Size(79, 17);
             this.radbtnVendedor.TabIndex = 13;
             this.radbtnVendedor.TabStop = true;
             this.radbtnVendedor.Text = "Vendedor";
@@ -416,6 +416,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "modificar_usuario";
             this.Text = "Modificar usuario";
+            this.Load += new System.EventHandler(this.modificar_usuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsersRegistrados)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
