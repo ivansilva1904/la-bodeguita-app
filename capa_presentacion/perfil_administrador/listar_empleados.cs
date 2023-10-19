@@ -23,27 +23,9 @@ namespace capa_presentacion.perfil_administrador
 
         private void listar_empleados_Load(object sender, EventArgs e)
         {
-            List<EntidadEmpleado> lista = negocioEmpleado.listarEmpleados();
+            DataTable tablaEmpleados = negocioEmpleado.listarTodosEmpleados();
 
-            BindingList<EntidadEmpleado> listaBindeada = new BindingList<EntidadEmpleado>(lista);
-
-            dgvListaEmpleados.DataSource = listaBindeada;
-
-            /* Buscar como sacar la columna de fecha deshabilitacion
-             * Como mostrar la columna baja con string*/
-
-            dgvListaEmpleados.Columns[0].HeaderText = "DNI";
-            dgvListaEmpleados.Columns[1].HeaderText = "Nombre";
-            dgvListaEmpleados.Columns[2].HeaderText = "Apellido";
-            dgvListaEmpleados.Columns[3].HeaderText = "Fecha nacimiento";
-            dgvListaEmpleados.Columns[4].HeaderText = "Fecha incorporación";
-            dgvListaEmpleados.Columns[5].HeaderText = "Fecha deshabilitación";
-            dgvListaEmpleados.Columns[6].HeaderText = "Dirección";
-            dgvListaEmpleados.Columns[7].HeaderText = "Telefono";
-            dgvListaEmpleados.Columns[8].HeaderText = "Email";
-            dgvListaEmpleados.Columns[9].HeaderText = "Contraseña";
-            dgvListaEmpleados.Columns[10].HeaderText = "Tipo empleado";
-            dgvListaEmpleados.Columns[11].HeaderText = "Baja";
+            dgvListaEmpleados.DataSource = tablaEmpleados;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -56,24 +38,9 @@ namespace capa_presentacion.perfil_administrador
 
             if(lista.Count != 0)
             {
-                dgvListaEmpleados.Rows.Clear();
-
-                dgvListaEmpleados.Refresh();
+                dgvListaEmpleados.DataSource = null;
 
                 dgvListaEmpleados.DataSource = lista;
-
-                /*dgvListaEmpleados.Columns[0].HeaderText = "DNI";
-                dgvListaEmpleados.Columns[1].HeaderText = "Nombre";
-                dgvListaEmpleados.Columns[2].HeaderText = "Apellido";
-                dgvListaEmpleados.Columns[3].HeaderText = "Fecha nacimiento";
-                dgvListaEmpleados.Columns[4].HeaderText = "Fecha incorporación";
-                dgvListaEmpleados.Columns[5].HeaderText = "Fecha deshabilitación";
-                dgvListaEmpleados.Columns[6].HeaderText = "Dirección";
-                dgvListaEmpleados.Columns[7].HeaderText = "Telefono";
-                dgvListaEmpleados.Columns[8].HeaderText = "Email";
-                dgvListaEmpleados.Columns[9].HeaderText = "Contraseña";
-                dgvListaEmpleados.Columns[10].HeaderText = "Tipo empleado";
-                dgvListaEmpleados.Columns[11].HeaderText = "Baja";*/
             }
             else
             {

@@ -37,48 +37,28 @@ namespace capa_negocio
             datosEmpleado.insertEmpleado(dni, nombre, apellido, fechaNac, direccion, telefono, email, contraseña, tipoEmpleado);
         }
 
-        public List<EntidadEmpleado> listarEmpleados()
+        public DataTable listarTodosEmpleados()
         {
-            SqlDataReader tabla = datosEmpleado.selectEmpleados();
+            SqlDataReader dataReaderEmpleados = datosEmpleado.selectTodosEmpleados();
 
-            List<EntidadEmpleado> lista = new List<EntidadEmpleado>();
-
-            using(tabla)
-            {
-                while (tabla.Read())
-                {
-                    EntidadEmpleado empleado = new EntidadEmpleado()
-                    {
-                        DniEmpleado = tabla.GetInt32(0),
-                        Nombre = tabla.GetString(1),
-                        Apellido = tabla.GetString(2),
-                        FechaNac = tabla.GetDateTime(3),
-                        FechaIncorp = tabla.GetDateTime(4),
-                        Direccion = tabla.GetString(5),
-                        Telefono = tabla.GetString(6),
-                        Email = tabla.GetString(7),
-                        Contraseña = tabla.GetString(8),
-                        IdTipoEmpleado = tabla.GetInt32(9),
-                        Baja = tabla.GetBoolean(10)
-                    };
-                    lista.Add(empleado);
-                }
-            }
+            DataTable tablaEmpleados = new DataTable();
+            tablaEmpleados.Load(dataReaderEmpleados);
 
             datosEmpleado.cerrarConexion();
 
-            return lista;
+            return tablaEmpleados;
         }
 
-        public DataTable listarEmpleadosDT()
+        public DataTable listarEmpleadosActivos()
         {
             /* Este metodo es igual al anterior, pero devolviendo otro tipo de dato para probar su funcionalidad */
 
-            SqlDataReader dataReaderEmpleados = datosEmpleado.selectEmpleados();
+            SqlDataReader dataReaderEmpleados = datosEmpleado.selectEmpleadosActivos();
 
             DataTable tablaEmpleados = new DataTable();
-
             tablaEmpleados.Load(dataReaderEmpleados);
+            tablaEmpleados.Columns.Remove("Fecha deshabilitacion");
+            tablaEmpleados.Columns.Remove("Baja");
 
             datosEmpleado.cerrarConexion();
 

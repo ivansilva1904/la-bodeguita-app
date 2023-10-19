@@ -168,7 +168,7 @@ namespace capa_presentacion.perfil_administrador
 
         private void modificar_usuario_Load(object sender, EventArgs e)
         {
-            DataTable tablaEmpleados = negocioEmpleado.listarEmpleadosDT();
+            DataTable tablaEmpleados = negocioEmpleado.listarEmpleadosActivos();
 
             dgvUsersRegistrados.DataSource = tablaEmpleados;
 
