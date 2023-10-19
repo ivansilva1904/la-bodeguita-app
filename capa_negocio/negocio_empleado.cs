@@ -54,12 +54,12 @@ namespace capa_negocio
                         Apellido = tabla.GetString(2),
                         FechaNac = tabla.GetDateTime(3),
                         FechaIncorp = tabla.GetDateTime(4),
-                        Direccion = tabla.GetString(6),
-                        Telefono = tabla.GetString(7),
-                        Email = tabla.GetString(8),
-                        Contraseña = tabla.GetString(9),
-                        IdTipoEmpleado = tabla.GetInt32(10),
-                        Baja = tabla.GetBoolean(11)
+                        Direccion = tabla.GetString(5),
+                        Telefono = tabla.GetString(6),
+                        Email = tabla.GetString(7),
+                        Contraseña = tabla.GetString(8),
+                        IdTipoEmpleado = tabla.GetInt32(9),
+                        Baja = tabla.GetBoolean(10)
                     };
                     lista.Add(empleado);
                 }
