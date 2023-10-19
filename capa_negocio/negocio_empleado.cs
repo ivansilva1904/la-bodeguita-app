@@ -8,6 +8,7 @@ using capa_entidades;
 using capa_datos;
 using System.Data.SqlClient;
 using System.Net;
+using System.Data;
 
 namespace capa_negocio
 {
@@ -67,6 +68,21 @@ namespace capa_negocio
             datosEmpleado.cerrarConexion();
 
             return lista;
+        }
+
+        public DataTable listarEmpleadosDT()
+        {
+            /* Este metodo es igual al anterior, pero devolviendo otro tipo de dato para probar su funcionalidad */
+
+            SqlDataReader dataReaderEmpleados = datosEmpleado.selectEmpleados();
+
+            DataTable tablaEmpleados = new DataTable();
+
+            tablaEmpleados.Load(dataReaderEmpleados);
+
+            datosEmpleado.cerrarConexion();
+
+            return tablaEmpleados;
         }
 
         public List<EntidadEmpleado> buscarEmpleadoPorDNI(int dni)
