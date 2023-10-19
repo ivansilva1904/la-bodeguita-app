@@ -71,7 +71,7 @@
             // dgvUsersRegistrados
             // 
             this.dgvUsersRegistrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsersRegistrados.Location = new System.Drawing.Point(15, 289);
+            this.dgvUsersRegistrados.Location = new System.Drawing.Point(15, 295);
             this.dgvUsersRegistrados.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvUsersRegistrados.Name = "dgvUsersRegistrados";
             this.dgvUsersRegistrados.Size = new System.Drawing.Size(672, 139);
