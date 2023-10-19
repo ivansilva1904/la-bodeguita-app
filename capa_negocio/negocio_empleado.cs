@@ -73,7 +73,6 @@ namespace capa_negocio
 
             if (empleadoReader.HasRows)
             {
-
                 while (empleadoReader.Read())
                 {
                     EntidadEmpleado empleado = new EntidadEmpleado()
@@ -99,11 +98,6 @@ namespace capa_negocio
             }
             else
             {
-                EntidadEmpleado empleado = new EntidadEmpleado()
-                {
-                    DniEmpleado = 0
-                };
-                listaEmpleado.Add(empleado);
                 datosEmpleado.cerrarConexion();
 
                 return listaEmpleado;
