@@ -30,14 +30,6 @@
         {
             this.lblUsersRegistrados = new System.Windows.Forms.Label();
             this.dgvUsersRegistrados = new System.Windows.Forms.DataGridView();
-            this.COL_DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_TIPO_USER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_MODIFICAR = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.baja = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lblDNI = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
@@ -79,68 +71,11 @@
             // dgvUsersRegistrados
             // 
             this.dgvUsersRegistrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsersRegistrados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.COL_DNI,
-            this.COL_NOMBRE,
-            this.COL_APELLIDO,
-            this.COL_EMAIL,
-            this.COL_TELEFONO,
-            this.COL_TIPO_USER,
-            this.COL_MODIFICAR,
-            this.baja});
-            this.dgvUsersRegistrados.Location = new System.Drawing.Point(4, 289);
+            this.dgvUsersRegistrados.Location = new System.Drawing.Point(15, 289);
             this.dgvUsersRegistrados.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvUsersRegistrados.Name = "dgvUsersRegistrados";
-            this.dgvUsersRegistrados.Size = new System.Drawing.Size(698, 150);
+            this.dgvUsersRegistrados.Size = new System.Drawing.Size(672, 139);
             this.dgvUsersRegistrados.TabIndex = 1;
-            // 
-            // COL_DNI
-            // 
-            this.COL_DNI.HeaderText = "DNI";
-            this.COL_DNI.Name = "COL_DNI";
-            this.COL_DNI.ReadOnly = true;
-            // 
-            // COL_NOMBRE
-            // 
-            this.COL_NOMBRE.HeaderText = "Nombre";
-            this.COL_NOMBRE.Name = "COL_NOMBRE";
-            this.COL_NOMBRE.ReadOnly = true;
-            // 
-            // COL_APELLIDO
-            // 
-            this.COL_APELLIDO.HeaderText = "Apellido";
-            this.COL_APELLIDO.Name = "COL_APELLIDO";
-            this.COL_APELLIDO.ReadOnly = true;
-            // 
-            // COL_EMAIL
-            // 
-            this.COL_EMAIL.HeaderText = "Email";
-            this.COL_EMAIL.Name = "COL_EMAIL";
-            this.COL_EMAIL.ReadOnly = true;
-            // 
-            // COL_TELEFONO
-            // 
-            this.COL_TELEFONO.HeaderText = "Telefono";
-            this.COL_TELEFONO.Name = "COL_TELEFONO";
-            this.COL_TELEFONO.ReadOnly = true;
-            // 
-            // COL_TIPO_USER
-            // 
-            this.COL_TIPO_USER.HeaderText = "Tipo usuario";
-            this.COL_TIPO_USER.Name = "COL_TIPO_USER";
-            this.COL_TIPO_USER.ReadOnly = true;
-            // 
-            // COL_MODIFICAR
-            // 
-            this.COL_MODIFICAR.HeaderText = "Modificar";
-            this.COL_MODIFICAR.Name = "COL_MODIFICAR";
-            // 
-            // baja
-            // 
-            this.baja.HeaderText = "De Baja";
-            this.baja.Name = "baja";
-            this.baja.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.baja.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // lblDNI
             // 
@@ -447,14 +382,6 @@
         private System.Windows.Forms.TextBox txtNuevaContraseña2;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_DNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_NOMBRE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_APELLIDO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_EMAIL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_TELEFONO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_TIPO_USER;
-        private System.Windows.Forms.DataGridViewButtonColumn COL_MODIFICAR;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn baja;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;

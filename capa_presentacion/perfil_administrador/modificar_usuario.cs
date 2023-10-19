@@ -168,7 +168,17 @@ namespace capa_presentacion.perfil_administrador
 
         private void modificar_usuario_Load(object sender, EventArgs e)
         {
-            
+            DataTable tablaEmpleados = negocioEmpleado.listarEmpleadosDT();
+
+            dgvUsersRegistrados.DataSource = tablaEmpleados;
+
+            DataGridViewButtonColumn columnaBotonMod = new DataGridViewButtonColumn();
+            columnaBotonMod.HeaderText = "Modificar";
+            columnaBotonMod.Name = "colModificar";
+            columnaBotonMod.Text = "Modificar";
+            columnaBotonMod.UseColumnTextForButtonValue = true;
+
+            dgvUsersRegistrados.Columns.Add(columnaBotonMod);
         }
     }
 }
