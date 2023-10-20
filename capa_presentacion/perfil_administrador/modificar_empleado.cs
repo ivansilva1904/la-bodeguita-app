@@ -126,7 +126,7 @@ namespace capa_presentacion.perfil_administrador
                             MessageBoxIcon.Question);
                         if (resp == DialogResult.Yes)
                         {
-                            negocioEmpleado.actualizarEmpleado(dni, nombre, apellido, email, telefono, direccion, tipoEmpleado, nuevaContraseña);
+                            negocioEmpleado.actualizarEmpleado(int.Parse(dni), nombre, apellido, email, telefono, direccion, tipoEmpleado, nuevaContraseña);
 
                             MessageBox.Show("Se han modificado los datos del empleado",
                                 "Aviso de Alta",

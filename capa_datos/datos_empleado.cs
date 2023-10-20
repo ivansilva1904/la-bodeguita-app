@@ -107,5 +107,44 @@ namespace capa_datos
 
             return empleado;
         }
+
+        public void updateEmpleado(int dni, string nombre, string apellido, string email, string telefono, string direccion, int tipoEmpleado, string nuevaContraseña)
+        {
+            conexion.Open();
+
+            string query = "";
+
+            if(nuevaContraseña != "")
+            {
+                query = "" +
+                    "UPDATE empleados " +
+                    "SET nombre = '"+ nombre + "', " +
+                    "apellido = '"+ apellido + "', " +
+                    "direccion = '"+ direccion + "', " +
+                    "telefono = '"+ telefono + "', " +
+                    "email = '"+ email + "', " +
+                    "idTipoEmpleado = "+ tipoEmpleado + ", " +
+                    "contraseña = '"+ nuevaContraseña + "' " +
+                    "WHERE dniEmpleado = "+ dni;
+            }
+            else
+            {
+                query = "" +
+                    "UPDATE empleados " +
+                    "SET nombre = '" + nombre + "', " +
+                    "apellido = '" + apellido + "', " +
+                    "direccion = '" + direccion + "', " +
+                    "telefono = '" + telefono + "', " +
+                    "email = '" + email + "', " +
+                    "idTipoEmpleado = " + tipoEmpleado + " " +
+                    "WHERE dniEmpleado = " + dni;
+            }
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            comando.ExecuteNonQuery();
+
+            cerrarConexion();
+        }
     }
 }
