@@ -79,7 +79,7 @@ namespace capa_presentacion.perfil_administrador
         private void btnModEmpleado_Click(object sender, EventArgs e)
         {
             panFormsAdministrador.Controls.Clear();
-            modificar_usuario vistaModUsuario = new modificar_usuario();
+            modificar_empleado vistaModUsuario = new modificar_empleado();
             vistaModUsuario.TopLevel = false;
             panFormsAdministrador.Controls.Add(vistaModUsuario);
             vistaModUsuario.Show();
