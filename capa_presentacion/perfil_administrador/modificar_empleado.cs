@@ -126,14 +126,8 @@ namespace capa_presentacion.perfil_administrador
                             MessageBoxIcon.Question);
                         if (resp == DialogResult.Yes)
                         {
-                            if(nuevaContraseña != null)
-                            {
-                                negocioEmpleado.actualizarEmpleadoConContraseña(dni, nombre, apellido, email, telefono, direccion, tipoEmpleado, nuevaContraseña);
-                            }
-                            else
-                            {
-                                negocioEmpleado.actualizarEmpleadoSinContraseña(dni, nombre, apellido, email, telefono, direccion, tipoEmpleado);
-                            }
+                            negocioEmpleado.actualizarEmpleado(dni, nombre, apellido, email, telefono, direccion, tipoEmpleado, nuevaContraseña);
+
                             MessageBox.Show("Se han modificado los datos del empleado",
                                 "Aviso de Alta",
                                 MessageBoxButtons.OK,

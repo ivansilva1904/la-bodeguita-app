@@ -103,5 +103,10 @@ namespace capa_negocio
                 return listaEmpleado;
             }
         }
+
+        public void actualizarEmpleado(int dni, string nombre, string apellido, string email, string telefono, string direccion, int tipoEmpleado, string nuevaContraseña)
+        {
+            datosEmpleado.updateEmpleado(dni, nombre, apellido, email, telefono, direccion, tipoEmpleado, nuevaContraseña);
+        }
     }
 }
