@@ -171,15 +171,15 @@ namespace capa_presentacion.perfil_administrador
         {
             DataTable tablaEmpleados = negocioEmpleado.listarEmpleadosActivos();
 
-            dgvUsersRegistrados.DataSource = tablaEmpleados;
-
             DataGridViewButtonColumn columnaBotonMod = new DataGridViewButtonColumn();
-            columnaBotonMod.HeaderText = "Modificar";
+            columnaBotonMod.HeaderText = "";
             columnaBotonMod.Name = "colModificar";
             columnaBotonMod.Text = "Modificar";
             columnaBotonMod.UseColumnTextForButtonValue = true;
 
             dgvUsersRegistrados.Columns.Add(columnaBotonMod);
+
+            dgvUsersRegistrados.DataSource = tablaEmpleados;
         }
 
         private void dgvUsersRegistrados_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -202,6 +202,25 @@ namespace capa_presentacion.perfil_administrador
                 {
                     radbtnSupervisor.Checked = true;
                 }
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DataTable empleado = negocioEmpleado.buscarEmpleadoPorDNI(int.Parse(txtBuscar.Text));
+
+            if(empleado.Rows.Count > 0)
+            {
+                empleado.Columns.Remove("Fecha deshabilitacion");
+                empleado.Columns.Remove("Baja");
+
+                dgvUsersRegistrados.DataSource = null;
+
+                dgvUsersRegistrados.DataSource = empleado;
+            }
+            else
+            {
+                MessageBox.Show("El DNI ingresado no pertenece a un empleado registrado");
             }
         }
     }

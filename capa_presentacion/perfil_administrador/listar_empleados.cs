@@ -32,19 +32,17 @@ namespace capa_presentacion.perfil_administrador
         {
             int dni = int.Parse(txtDNI.Text);
 
-            List<EntidadEmpleado> empleado = negocioEmpleado.buscarEmpleadoPorDNI(dni);
+            DataTable empleado = negocioEmpleado.buscarEmpleadoPorDNI(dni);
 
-            BindingList<EntidadEmpleado> lista = new BindingList<EntidadEmpleado>(empleado);
-
-            if(lista.Count != 0)
+            if(empleado.Rows.Count > 0)
             {
                 dgvListaEmpleados.DataSource = null;
 
-                dgvListaEmpleados.DataSource = lista;
+                dgvListaEmpleados.DataSource = empleado;
             }
             else
             {
-                MessageBox.Show("El empleado ingresado no se encuentra registrado");
+                MessageBox.Show("El DNI ingresado no pertenece a un empleado registrado");
             }
         }
     }

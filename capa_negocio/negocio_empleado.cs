@@ -51,8 +51,6 @@ namespace capa_negocio
 
         public DataTable listarEmpleadosActivos()
         {
-            /* Este metodo es igual al anterior, pero devolviendo otro tipo de dato para probar su funcionalidad */
-
             SqlDataReader dataReaderEmpleados = datosEmpleado.selectEmpleadosActivos();
 
             DataTable tablaEmpleados = new DataTable();
@@ -65,42 +63,24 @@ namespace capa_negocio
             return tablaEmpleados;
         }
 
-        public List<EntidadEmpleado> buscarEmpleadoPorDNI(int dni)
+        public DataTable buscarEmpleadoPorDNI(int dni)
         {
             SqlDataReader empleadoReader = datosEmpleado.selectEmpleadoDNI(dni);
 
-            List<EntidadEmpleado> listaEmpleado = new List<EntidadEmpleado>();
+            DataTable tablaEmpleado = new DataTable();
 
             if (empleadoReader.HasRows)
             {
-                while (empleadoReader.Read())
-                {
-                    EntidadEmpleado empleado = new EntidadEmpleado()
-                    {
-                        DniEmpleado = empleadoReader.GetInt32(0),
-                        Nombre = empleadoReader.GetString(1),
-                        Apellido = empleadoReader.GetString(2),
-                        FechaNac = empleadoReader.GetDateTime(3),
-                        FechaIncorp = empleadoReader.GetDateTime(4),
-                        Direccion = empleadoReader.GetString(6),
-                        Telefono = empleadoReader.GetString(7),
-                        Email = empleadoReader.GetString(8),
-                        Contraseña = empleadoReader.GetString(9),
-                        IdTipoEmpleado = empleadoReader.GetInt32(10),
-                        Baja = empleadoReader.GetBoolean(11)
-                    };
-                    listaEmpleado.Add(empleado);
-                }
-
+                tablaEmpleado.Load(empleadoReader);
                 datosEmpleado.cerrarConexion();
 
-                return listaEmpleado;
+                return tablaEmpleado;
             }
             else
             {
                 datosEmpleado.cerrarConexion();
 
-                return listaEmpleado;
+                return tablaEmpleado;
             }
         }
 

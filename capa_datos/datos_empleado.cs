@@ -99,7 +99,20 @@ namespace capa_datos
         {
             conexion.Open();
 
-            string query = "SELECT * FROM empleados WHERE dniEmpleado = "+ dni;
+            string query = "" +
+                "SELECT dniEmpleado AS DNI, " +
+                "nombre AS Nombre, " +
+                "apellido AS Apellido, " +
+                "fechaNac AS 'Fecha nacimiento', " +
+                "fechaIncorp AS 'Fecha incorporacion', " +
+                "fechaDeshab AS 'Fecha deshabilitacion', " +
+                "direccion AS Direccion, " +
+                "telefono AS Telefono, " +
+                "email AS Email, " +
+                "idTipoEmpleado AS 'Tipo empleado', " +
+                "baja AS Baja " +
+                "FROM empleados " +
+                "WHERE dniEmpleado = " + dni;
 
             SqlCommand comando = new SqlCommand(query, conexion);
 
