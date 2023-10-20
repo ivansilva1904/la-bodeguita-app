@@ -106,27 +106,34 @@ namespace capa_presentacion.perfil_administrador
             string dni = txtDNI.Text;
             string email = txtEmail.Text;
             string telefono = txtTelefono.Text;
-            string contraseña = txtNuevaContraseña.Text;
-            string contraseña2 = txtNuevaContraseña2.Text;
+            string direccion = txtDireccion.Text;
+            int tipoEmpleado = radbtnVendedor.Checked == true ? 1 : 2;
+            string nuevaContraseña = txtNuevaContraseña.Text;
+            string nuevaContraseña2 = txtNuevaContraseña2.Text;
 
             if (!string.IsNullOrWhiteSpace(nombre) &&
                 !string.IsNullOrWhiteSpace(apellido) &&
                 !string.IsNullOrWhiteSpace(email) &&
                 !string.IsNullOrWhiteSpace(telefono) &&
-                !string.IsNullOrWhiteSpace(contraseña) &&
-                !string.IsNullOrWhiteSpace(contraseña2) &&
-                (radbtnSupervisor.Checked == true || radbtnVendedor.Checked == true))
+                !string.IsNullOrWhiteSpace(direccion))
             {
                 if (validarCorreo(email) == true)
                 {
-                    if (contraseña == contraseña2)
+                    if (nuevaContraseña == nuevaContraseña2)
                     {
                         DialogResult resp = MessageBox.Show("Desea Modificar el Empleado?",
                             "Aviso", MessageBoxButtons.YesNo,
                             MessageBoxIcon.Question);
                         if (resp == DialogResult.Yes)
                         {
-                            // Modificar base de datos //
+                            if(nuevaContraseña != null)
+                            {
+                                negocioEmpleado.actualizarEmpleadoConContraseña(dni, nombre, apellido, email, telefono, direccion, tipoEmpleado, nuevaContraseña);
+                            }
+                            else
+                            {
+                                negocioEmpleado.actualizarEmpleadoSinContraseña(dni, nombre, apellido, email, telefono, direccion, tipoEmpleado);
+                            }
                             MessageBox.Show("Se han modificado los datos del empleado",
                                 "Aviso de Alta",
                                 MessageBoxButtons.OK,
