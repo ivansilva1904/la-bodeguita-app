@@ -1,4 +1,6 @@
-﻿using System;
+﻿using capa_entidades;
+using capa_negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace capa_presentacion.perfil_supervisor
 {
     public partial class modificar_proveedor : Form
@@ -18,6 +21,8 @@ namespace capa_presentacion.perfil_supervisor
         {
             InitializeComponent();
         }
+
+        NegocioProveedor negocioProveedor = new NegocioProveedor();
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -70,10 +75,10 @@ namespace capa_presentacion.perfil_supervisor
                 ask = MessageBox.Show("¿Seguro que desea Modificar el Proveedor?", "Confirmar Insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (ask == DialogResult.Yes)
                 {
-
+                    negocioProveedor.actualizarProveedor(long.Parse(txtCuit.Text), txtRazonSocial.Text,txtDireccion.Text,txtTelefono.Text,txtEmail.Text);
                     //Mensaje de modificacion Correcta
                     MessageBox.Show("El Proveedor " + txtRazonSocial.Text + " se modifico correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                    limpiarCampos();
                 }
             }
             else
@@ -86,6 +91,63 @@ namespace capa_presentacion.perfil_supervisor
         private static bool verificarEmail(string email)
         {
             return email != null && Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        }
+
+        private void modificar_proveedor_Load(object sender, EventArgs e)
+        {
+            DataTable tablaProveedor = negocioProveedor.listarProveedorActivos();
+
+            DataGridViewButtonColumn columnaBotonMod = new DataGridViewButtonColumn();
+            columnaBotonMod.HeaderText = "";
+            columnaBotonMod.Name = "colModificar";
+            columnaBotonMod.Text = "Modificar";
+            columnaBotonMod.UseColumnTextForButtonValue = true;
+
+            dgvModificarProveedor.Columns.Add(columnaBotonMod);
+
+            dgvModificarProveedor.DataSource = tablaProveedor;
+            /*
+            NegocioProveedor negocioProveedor = new NegocioProveedor();
+
+            List<EntidadProveedor> lista = negocioProveedor.listarProveedor();
+
+
+            dgvModificarProveedor.DataSource = lista;
+
+            // Buscar como sacar la columna de fecha deshabilitacion
+            // Como mostrar la columna baja con string
+
+            dgvModificarProveedor.Columns[0].HeaderText = "Cuit";
+            dgvModificarProveedor.Columns[1].HeaderText = "Razon Social";
+            dgvModificarProveedor.Columns[2].HeaderText = "Dirección";
+            dgvModificarProveedor.Columns[3].HeaderText = "Telefono";
+            dgvModificarProveedor.Columns[4].HeaderText = "Email";
+            dgvModificarProveedor.Columns[5].HeaderText = "Baja";
+
+
+            DataGridViewButtonColumn modificar = new DataGridViewButtonColumn();
+
+            dgvModificarProveedor.Columns.Add(modificar);
+            modificar.Text = "Modificar";
+            modificar.Name = "Modificar";
+            modificar.UseColumnTextForButtonValue = true;*/
+        }
+
+        private void dgvModificarProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            int indiceFila = e.RowIndex;
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                txtCuit.Text = dgvModificarProveedor.Rows[indiceFila].Cells[1].Value.ToString();
+                txtRazonSocial.Text = dgvModificarProveedor.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtDireccion.Text = dgvModificarProveedor.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtTelefono.Text = dgvModificarProveedor.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txtEmail.Text = dgvModificarProveedor.Rows[e.RowIndex].Cells[5].Value.ToString();
+               
+                //TODO - Button Clicked - Execute Code Here
+            }
         }
     }
 }

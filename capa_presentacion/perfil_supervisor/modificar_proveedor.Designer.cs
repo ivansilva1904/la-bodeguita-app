@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlModificarProveedor = new System.Windows.Forms.Panel();
+            this.dgvModificarProveedor = new System.Windows.Forms.DataGridView();
             this.cbxFiltro = new System.Windows.Forms.ComboBox();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
@@ -46,20 +47,14 @@
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.txtCuit = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baja = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlModificarProveedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModificarProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlModificarProveedor
             // 
             this.pnlModificarProveedor.BackColor = System.Drawing.Color.Beige;
+            this.pnlModificarProveedor.Controls.Add(this.dgvModificarProveedor);
             this.pnlModificarProveedor.Controls.Add(this.cbxFiltro);
             this.pnlModificarProveedor.Controls.Add(this.lblFiltro);
             this.pnlModificarProveedor.Controls.Add(this.txtFiltro);
@@ -77,11 +72,19 @@
             this.pnlModificarProveedor.Controls.Add(this.txtRazonSocial);
             this.pnlModificarProveedor.Controls.Add(this.txtCuit);
             this.pnlModificarProveedor.Controls.Add(this.txtEmail);
-            this.pnlModificarProveedor.Controls.Add(this.dataGridView1);
             this.pnlModificarProveedor.Location = new System.Drawing.Point(12, 12);
             this.pnlModificarProveedor.Name = "pnlModificarProveedor";
             this.pnlModificarProveedor.Size = new System.Drawing.Size(709, 442);
             this.pnlModificarProveedor.TabIndex = 0;
+            // 
+            // dgvModificarProveedor
+            // 
+            this.dgvModificarProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvModificarProveedor.Location = new System.Drawing.Point(3, 299);
+            this.dgvModificarProveedor.Name = "dgvModificarProveedor";
+            this.dgvModificarProveedor.Size = new System.Drawing.Size(703, 140);
+            this.dgvModificarProveedor.TabIndex = 18;
+            this.dgvModificarProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModificarProveedor_CellContentClick);
             // 
             // cbxFiltro
             // 
@@ -143,7 +146,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(70, 159);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Telefono";
             // 
@@ -233,52 +236,6 @@
             this.txtEmail.Size = new System.Drawing.Size(150, 21);
             this.txtEmail.TabIndex = 1;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cuit,
-            this.razonSocial,
-            this.email,
-            this.direccion,
-            this.telefono,
-            this.baja});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 304);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(703, 135);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // cuit
-            // 
-            this.cuit.HeaderText = "Cuit";
-            this.cuit.Name = "cuit";
-            // 
-            // razonSocial
-            // 
-            this.razonSocial.HeaderText = "Razon Social";
-            this.razonSocial.Name = "razonSocial";
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            // 
-            // direccion
-            // 
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            // 
-            // baja
-            // 
-            this.baja.HeaderText = "Dar Baja";
-            this.baja.Name = "baja";
-            this.baja.Text = "Dar Baja";
-            // 
             // modificar_proveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -293,9 +250,10 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "modificar_proveedor";
             this.Text = "modificar_proveedor";
+            this.Load += new System.EventHandler(this.modificar_proveedor_Load);
             this.pnlModificarProveedor.ResumeLayout(false);
             this.pnlModificarProveedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModificarProveedor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,7 +270,6 @@
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.TextBox txtCuit;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLimpiarCampos;
         private System.Windows.Forms.Label lblModificarProveedor;
@@ -321,11 +278,6 @@
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewButtonColumn baja;
+        private System.Windows.Forms.DataGridView dgvModificarProveedor;
     }
 }
