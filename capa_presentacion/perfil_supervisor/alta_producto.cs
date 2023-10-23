@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using capa_negocio;
 
 namespace capa_presentacion.perfil_supervisor
 {
@@ -17,6 +19,7 @@ namespace capa_presentacion.perfil_supervisor
             InitializeComponent();
         }
 
+        NegocioProveedor negocioProveedor = new NegocioProveedor();
         private void btnGuardarProducto_Click(object sender, EventArgs e)
         {
             DialogResult ask;
@@ -110,6 +113,18 @@ namespace capa_presentacion.perfil_supervisor
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void alta_producto_Load(object sender, EventArgs e)
+        {
+            DataTable tablaProveedor = negocioProveedor.listarProveedorActivos();
+
+            DataTableReader lector = new DataTableReader(tablaProveedor);
+
+            while (lector.Read())
+            {
+                cbxProveedor.Items.Add(lector.GetString(1));
             }
         }
     }

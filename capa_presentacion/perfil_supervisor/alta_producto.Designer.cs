@@ -273,6 +273,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "alta_producto";
             this.Text = "alta_producto";
+            this.Load += new System.EventHandler(this.alta_producto_Load);
             this.pnlNuevoProducto.ResumeLayout(false);
             this.pnlNuevoProducto.PerformLayout();
             this.ResumeLayout(false);
