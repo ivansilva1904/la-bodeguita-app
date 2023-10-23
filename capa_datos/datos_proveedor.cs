@@ -137,5 +137,21 @@ namespace capa_datos
 
             cerrarConexion();
         }
+
+        public SqlDataReader selectProveedorActivoRazonSocial()
+        {
+            conexion.Open();
+
+            string query = "" +
+                "SELECT razonSocial AS 'Razon Social, " +
+                " FROM proveedor" +
+                " WHERE Baja = 0";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            SqlDataReader tabla = comando.ExecuteReader();
+
+            return tabla;
+        }
     }
 }

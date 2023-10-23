@@ -85,5 +85,17 @@ namespace capa_negocio
         {
             datosProveedor.updateProveedor(cuitProveedor, razonSocial, direccion, telefono, email);
         }
-    }
+
+        public DataTable selecionRazonSocialProveedor()
+        { 
+            SqlDataReader dataReaderProveedor = datosProveedor.selectProveedorActivoRazonSocial();
+
+            DataTable tablaProveedor = new DataTable();
+            tablaProveedor.Load(dataReaderProveedor);
+
+            datosProveedor.cerrarConexion();
+
+            return tablaProveedor;
+        }
+}
 }
