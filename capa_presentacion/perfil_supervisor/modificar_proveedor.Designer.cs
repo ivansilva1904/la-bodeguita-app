@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlModificarProveedor = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbxEstado = new System.Windows.Forms.ComboBox();
             this.dgvModificarProveedor = new System.Windows.Forms.DataGridView();
             this.cbxFiltro = new System.Windows.Forms.ComboBox();
             this.lblFiltro = new System.Windows.Forms.Label();
@@ -54,6 +56,8 @@
             // pnlModificarProveedor
             // 
             this.pnlModificarProveedor.BackColor = System.Drawing.Color.Beige;
+            this.pnlModificarProveedor.Controls.Add(this.label2);
+            this.pnlModificarProveedor.Controls.Add(this.cbxEstado);
             this.pnlModificarProveedor.Controls.Add(this.dgvModificarProveedor);
             this.pnlModificarProveedor.Controls.Add(this.cbxFiltro);
             this.pnlModificarProveedor.Controls.Add(this.lblFiltro);
@@ -76,6 +80,26 @@
             this.pnlModificarProveedor.Name = "pnlModificarProveedor";
             this.pnlModificarProveedor.Size = new System.Drawing.Size(709, 442);
             this.pnlModificarProveedor.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(70, 199);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Estado";
+            // 
+            // cbxEstado
+            // 
+            this.cbxEstado.FormattingEnabled = true;
+            this.cbxEstado.Items.AddRange(new object[] {
+            "Habilitado\t",
+            "Deshabilitado"});
+            this.cbxEstado.Location = new System.Drawing.Point(135, 196);
+            this.cbxEstado.Name = "cbxEstado";
+            this.cbxEstado.Size = new System.Drawing.Size(150, 21);
+            this.cbxEstado.TabIndex = 19;
             // 
             // dgvModificarProveedor
             // 
@@ -279,5 +303,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.DataGridView dgvModificarProveedor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxEstado;
     }
 }

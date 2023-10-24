@@ -50,13 +50,13 @@ namespace capa_datos
 
             string query = "" +
                 "SELECT cuitProveedor AS CUIT, " +
-                "razonSocial AS Razon Social, " +
+                "razonSocial AS 'Razon Social', " +
                 "direccion AS Direccion, " +
                 "telefono AS Telefono, " +
                 "email AS Email, " +
                 "fechaAlta AS 'Fecha Alta', " +
                 "fechaBaja AS 'Fecha Baja', " +
-                "baja AS Baja, " +
+                "baja AS Baja " +
                 " FROM proveedor";
 
             SqlCommand comando = new SqlCommand(query, conexion);
@@ -113,23 +113,40 @@ namespace capa_datos
             return empleado;
         }
 
-        public void updateProveedor(long cuit, string razonSocial, string direccion, string telefono, string email)
+        public void updateProveedor(long cuit, string razonSocial, string direccion, string telefono, string email,bool baja)
         {
             conexion.Open();
 
             string query = "";
 
-           
+            if(baja == false){
+                string fechBaj = ""-;
+                    query = "" +
+                    "UPDATE proveedor " +
+                    "SET razonSocial = '" + razonSocial + "' ," +
+                    "direccion = '" + direccion + "' ," +
+                    "telefono = '" + telefono + "' ," +
+                    "email = '" + email + "' ," +
+                    "fechaBaja = '"+ fechBaj + "'," +
+                    "baja = '" + baja + "' " +
+                    "WHERE cuitProveedor = " + 
+                    cuit;
+            }
+            if (baja == true)
+            {
+                string fechBaj = DateTime.Now.ToString("yyyy-MM-dd");
                 query = "" +
                     "UPDATE proveedor " +
                     "SET razonSocial = '" + razonSocial + "' ," +
                     "direccion = '" + direccion + "' ," +
                     "telefono = '" + telefono + "' ," +
-                    "email = '" + email + " ' " +
-                    "WHERE cuitProveedor = " + 
+                    "email = '" + email + "' ," +
+                    "fechaBaja = '"+ fechBaj +"' ," +
+                    "baja = '" + baja + "' " +
+                    "WHERE cuitProveedor = " +
                     cuit;
-            
-        
+            }
+
 
             SqlCommand comando = new SqlCommand(query, conexion);
 

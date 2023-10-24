@@ -40,6 +40,7 @@ namespace capa_negocio
 
             DataTable tablaProveedor = new DataTable();
             tablaProveedor.Load(dataReaderProveedor);
+           
 
             datosProveedor.cerrarConexion();
 
@@ -81,9 +82,13 @@ namespace capa_negocio
             }
         }
 
-        public void actualizarProveedor(long cuitProveedor, string razonSocial, string direccion, string telefono, string email)
+        public void actualizarProveedor(long cuitProveedor, string razonSocial, string direccion, string telefono, string email,bool baja)
         {
-            datosProveedor.updateProveedor(cuitProveedor, razonSocial, direccion, telefono, email);
+          
+            
+               datosProveedor.updateProveedor(cuitProveedor, razonSocial, direccion, telefono, email,baja);
+            
+           
         }
 
         public DataTable selecionRazonSocialProveedor()

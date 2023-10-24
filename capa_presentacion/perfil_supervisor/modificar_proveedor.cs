@@ -75,10 +75,19 @@ namespace capa_presentacion.perfil_supervisor
                 ask = MessageBox.Show("¿Seguro que desea Modificar el Proveedor?", "Confirmar Insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (ask == DialogResult.Yes)
                 {
-                    negocioProveedor.actualizarProveedor(long.Parse(txtCuit.Text), txtRazonSocial.Text,txtDireccion.Text,txtTelefono.Text,txtEmail.Text);
+                    bool baja = false;
+                    if(cbxEstado.Text == "Habilitado"){
+                        baja = false;
+                    }
+                    else if (cbxEstado.Text == "Deshabilitado")
+                    {
+                        baja = true;
+                    }
+                    negocioProveedor.actualizarProveedor(long.Parse(txtCuit.Text), txtRazonSocial.Text,txtDireccion.Text,txtTelefono.Text,txtEmail.Text,baja);
                     //Mensaje de modificacion Correcta
                     MessageBox.Show("El Proveedor " + txtRazonSocial.Text + " se modifico correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     limpiarCampos();
+                    cargar_dvgModificarProveedor();
                 }
             }
             else
@@ -95,17 +104,21 @@ namespace capa_presentacion.perfil_supervisor
 
         private void modificar_proveedor_Load(object sender, EventArgs e)
         {
-            DataTable tablaProveedor = negocioProveedor.listarProveedorActivos();
+
 
             DataGridViewButtonColumn columnaBotonMod = new DataGridViewButtonColumn();
-            columnaBotonMod.HeaderText = "";
+            columnaBotonMod.HeaderText = "Modificar";
             columnaBotonMod.Name = "colModificar";
             columnaBotonMod.Text = "Modificar";
             columnaBotonMod.UseColumnTextForButtonValue = true;
 
             dgvModificarProveedor.Columns.Add(columnaBotonMod);
 
+            DataTable tablaProveedor = negocioProveedor.listarTodosProveedor();
+
             dgvModificarProveedor.DataSource = tablaProveedor;
+
+            dgvModificarProveedor.Columns["Baja"].Visible = false;
             /*
             NegocioProveedor negocioProveedor = new NegocioProveedor();
 
@@ -132,20 +145,45 @@ namespace capa_presentacion.perfil_supervisor
             modificar.Name = "Modificar";
             modificar.UseColumnTextForButtonValue = true;*/
         }
+        private void cargar_dvgModificarProveedor()
+        {
+            dgvModificarProveedor.DataSource = null;
+            
+            DataTable tablaProveedor = negocioProveedor.listarTodosProveedor();
 
+            dgvModificarProveedor.DataSource = tablaProveedor;
+
+
+            dgvModificarProveedor.Columns["Baja"].Visible = false;
+
+
+            // dgvModificarProveedor.Rows.Clear();
+            // dgvModificarProveedor.Columns.Clear();
+
+
+
+        }
         private void dgvModificarProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
-            int indiceFila = e.RowIndex;
+            //int indiceFila = e.RowIndex;
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-                txtCuit.Text = dgvModificarProveedor.Rows[indiceFila].Cells[1].Value.ToString();
+                txtCuit.Text = dgvModificarProveedor.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txtRazonSocial.Text = dgvModificarProveedor.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txtDireccion.Text = dgvModificarProveedor.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txtTelefono.Text = dgvModificarProveedor.Rows[e.RowIndex].Cells[4].Value.ToString();
                 txtEmail.Text = dgvModificarProveedor.Rows[e.RowIndex].Cells[5].Value.ToString();
-               
+                string estado = dgvModificarProveedor.Rows[e.RowIndex].Cells["Baja"].Value.ToString();
+                if(estado == "False"){
+                    cbxEstado.Text = "Habilitado";
+                }
+                else
+                {
+                    cbxEstado.Text = "Deshabilitado";
+                }
+                
                 //TODO - Button Clicked - Execute Code Here
             }
         }
