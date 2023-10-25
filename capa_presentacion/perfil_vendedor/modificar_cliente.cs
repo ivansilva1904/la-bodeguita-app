@@ -104,6 +104,11 @@ namespace capa_presentacion.perfil_vendedor
                 e.Handled = true;
             }
         }
+
+        private void modificar_cliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

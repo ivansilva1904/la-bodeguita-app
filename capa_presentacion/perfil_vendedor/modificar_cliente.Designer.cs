@@ -214,6 +214,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "modificar_cliente";
             this.Text = "La bodeguita - Modificar cliente";
+            this.Load += new System.EventHandler(this.modificar_cliente_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientesRegistrados)).EndInit();
