@@ -49,5 +49,26 @@ namespace capa_datos
 
             return tabla;
         }
+
+        public SqlDataReader selectClientePorDNI(int dni)
+        {
+            conexion.Open();
+
+            string query = "" +
+                "SELECT dniCliente AS DNI," +
+                "nombre AS Nombre," +
+                "apellido AS Apellido," +
+                "email AS Email," +
+                "fechaNac AS 'Fecha nacimiento'," +
+                "baja AS Estado " +
+                "FROM clientes " +
+                "WHERE dniCliente = " + dni;
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            SqlDataReader drTabla = comando.ExecuteReader();
+
+            return drTabla;
+        }
     }
 }
