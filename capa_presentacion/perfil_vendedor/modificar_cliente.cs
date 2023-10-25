@@ -22,6 +22,14 @@ namespace capa_presentacion.perfil_vendedor
 
         NegocioCliente negocioCliente = new NegocioCliente();
 
+        private void limpiarCampos()
+        {
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtEmail.Clear();
+            txtDNI.Clear();
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string nombre = txtNombre.Text;
@@ -32,7 +40,6 @@ namespace capa_presentacion.perfil_vendedor
 
             if (!string.IsNullOrWhiteSpace(nombre) &&
                 !string.IsNullOrWhiteSpace(apellido) &&
-                !string.IsNullOrWhiteSpace(dni) &&
                 !string.IsNullOrWhiteSpace(email))
             {
                 if (validarCorreo(email) == true)
@@ -42,16 +49,17 @@ namespace capa_presentacion.perfil_vendedor
                             MessageBoxIcon.Question);
                     if (resp == DialogResult.Yes)
                     {
-                        // ingresar en la base de datos // verificar que no este repetido en la b (poner try catch?)
-                        // faltaria validacion de dni ya existente
+                        negocioCliente.actualizarCliente(int.Parse(dni), nombre, apellido, email);
                         MessageBox.Show("Se ha Modificado en la base de datos",
                             "Aviso Modificacion",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
 
+                        dgvClientesRegistrados.DataSource = null;
+                        dgvClientesRegistrados.DataSource = negocioCliente.listarClientes();
+
+                        limpiarCampos();
                     }
-
-
                 }
                 else
                 {
@@ -91,14 +99,6 @@ namespace capa_presentacion.perfil_vendedor
             {
                 e.Handled = true;
             }
-        }
-        private void btnLimpiarCampos_Click(object sender, EventArgs e)
-        {
-            txtNombre.Clear();
-            txtApellido.Clear();
-            txtEmail.Clear();
-            txtDNI.Clear();
-
         }
 
         private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
@@ -150,6 +150,11 @@ namespace capa_presentacion.perfil_vendedor
             {
                 MessageBox.Show("El DNI ingresado no corresponde con ningun cliente registrado");
             }
+        }
+
+        private void btnLimpiarCampos_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
         }
     }
 

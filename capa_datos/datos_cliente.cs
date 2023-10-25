@@ -70,5 +70,23 @@ namespace capa_datos
 
             return drTabla;
         }
+
+        public void updateCliente(int dni, string nombre, string apellido, string email)
+        {
+            conexion.Open();
+
+            string query = "" +
+                "UPDATE clientes " +
+                "SET nombre = '"+ nombre + "', " +
+                "apellido = '"+ apellido + "', " +
+                "email = '"+ email + "' " +
+                "WHERE dniCliente = " + dni;
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            comando.ExecuteNonQuery();
+
+            cerrarConexion();
+        }
     }
 }

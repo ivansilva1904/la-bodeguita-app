@@ -104,8 +104,9 @@
             this.btnLimpiarCampos.Name = "btnLimpiarCampos";
             this.btnLimpiarCampos.Size = new System.Drawing.Size(143, 25);
             this.btnLimpiarCampos.TabIndex = 11;
-            this.btnLimpiarCampos.Text = "Limpiar Campos";
+            this.btnLimpiarCampos.Text = "Limpiar campos";
             this.btnLimpiarCampos.UseVisualStyleBackColor = true;
+            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
             // 
             // lblTitulo
             // 
