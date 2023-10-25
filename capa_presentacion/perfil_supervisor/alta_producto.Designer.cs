@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.pnlNuevoProducto = new System.Windows.Forms.Panel();
+            this.txtStockMinimo = new System.Windows.Forms.TextBox();
+            this.lblStockMinimo = new System.Windows.Forms.Label();
+            this.cbxTipoBebida = new System.Windows.Forms.ComboBox();
             this.txtPrecioVenta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -45,21 +47,9 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblIdTipoBebida = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblIdProducto = new System.Windows.Forms.Label();
             this.lblNuevoProducto = new System.Windows.Forms.Label();
-            this.cbxTipoBebida = new System.Windows.Forms.ComboBox();
-            this.lblStockMinimo = new System.Windows.Forms.Label();
-            this.txtStockMinimo = new System.Windows.Forms.TextBox();
             this.pnlNuevoProducto.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtIdProducto
-            // 
-            this.txtIdProducto.Location = new System.Drawing.Point(162, 82);
-            this.txtIdProducto.Name = "txtIdProducto";
-            this.txtIdProducto.Size = new System.Drawing.Size(127, 21);
-            this.txtIdProducto.TabIndex = 0;
-            this.txtIdProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdProducto_KeyPress);
             // 
             // pnlNuevoProducto
             // 
@@ -82,26 +72,49 @@
             this.pnlNuevoProducto.Controls.Add(this.lblMarca);
             this.pnlNuevoProducto.Controls.Add(this.lblIdTipoBebida);
             this.pnlNuevoProducto.Controls.Add(this.label3);
-            this.pnlNuevoProducto.Controls.Add(this.lblIdProducto);
             this.pnlNuevoProducto.Controls.Add(this.lblNuevoProducto);
-            this.pnlNuevoProducto.Controls.Add(this.txtIdProducto);
             this.pnlNuevoProducto.Location = new System.Drawing.Point(12, 12);
             this.pnlNuevoProducto.Name = "pnlNuevoProducto";
-            this.pnlNuevoProducto.Size = new System.Drawing.Size(709, 442);
+            this.pnlNuevoProducto.Size = new System.Drawing.Size(748, 442);
             this.pnlNuevoProducto.TabIndex = 1;
+            // 
+            // txtStockMinimo
+            // 
+            this.txtStockMinimo.Location = new System.Drawing.Point(480, 170);
+            this.txtStockMinimo.Name = "txtStockMinimo";
+            this.txtStockMinimo.Size = new System.Drawing.Size(176, 21);
+            this.txtStockMinimo.TabIndex = 24;
+            this.txtStockMinimo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStockMinimo_KeyPress);
+            // 
+            // lblStockMinimo
+            // 
+            this.lblStockMinimo.AutoSize = true;
+            this.lblStockMinimo.Location = new System.Drawing.Point(371, 174);
+            this.lblStockMinimo.Name = "lblStockMinimo";
+            this.lblStockMinimo.Size = new System.Drawing.Size(83, 13);
+            this.lblStockMinimo.TabIndex = 23;
+            this.lblStockMinimo.Text = "Stock Minimo";
+            // 
+            // cbxTipoBebida
+            // 
+            this.cbxTipoBebida.FormattingEnabled = true;
+            this.cbxTipoBebida.Location = new System.Drawing.Point(480, 126);
+            this.cbxTipoBebida.Name = "cbxTipoBebida";
+            this.cbxTipoBebida.Size = new System.Drawing.Size(176, 21);
+            this.cbxTipoBebida.TabIndex = 22;
             // 
             // txtPrecioVenta
             // 
-            this.txtPrecioVenta.Location = new System.Drawing.Point(490, 214);
+            this.txtPrecioVenta.Location = new System.Drawing.Point(480, 214);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
-            this.txtPrecioVenta.Size = new System.Drawing.Size(121, 21);
+            this.txtPrecioVenta.Size = new System.Drawing.Size(176, 21);
             this.txtPrecioVenta.TabIndex = 21;
             this.txtPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVenta_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(385, 217);
+            this.label1.Location = new System.Drawing.Point(372, 216);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 20;
@@ -120,7 +133,7 @@
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(385, 129);
+            this.lblStock.Location = new System.Drawing.Point(53, 174);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(39, 13);
             this.lblStock.TabIndex = 18;
@@ -128,9 +141,9 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(490, 126);
+            this.txtStock.Location = new System.Drawing.Point(148, 170);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(121, 21);
+            this.txtStock.Size = new System.Drawing.Size(166, 21);
             this.txtStock.TabIndex = 17;
             this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
@@ -146,38 +159,38 @@
             // 
             // txtPrecioCompra
             // 
-            this.txtPrecioCompra.Location = new System.Drawing.Point(162, 214);
+            this.txtPrecioCompra.Location = new System.Drawing.Point(148, 214);
             this.txtPrecioCompra.Name = "txtPrecioCompra";
-            this.txtPrecioCompra.Size = new System.Drawing.Size(127, 21);
+            this.txtPrecioCompra.Size = new System.Drawing.Size(166, 21);
             this.txtPrecioCompra.TabIndex = 15;
             this.txtPrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCompra_KeyPress);
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(162, 258);
+            this.txtDescripcion.Location = new System.Drawing.Point(148, 82);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(272, 21);
+            this.txtDescripcion.Size = new System.Drawing.Size(166, 21);
             this.txtDescripcion.TabIndex = 14;
             // 
             // txtMarca
             // 
-            this.txtMarca.Location = new System.Drawing.Point(162, 126);
+            this.txtMarca.Location = new System.Drawing.Point(148, 126);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(127, 21);
+            this.txtMarca.Size = new System.Drawing.Size(166, 21);
             this.txtMarca.TabIndex = 13;
             // 
             // cbxProveedor
             // 
             this.cbxProveedor.FormattingEnabled = true;
-            this.cbxProveedor.Location = new System.Drawing.Point(490, 82);
+            this.cbxProveedor.Location = new System.Drawing.Point(480, 82);
             this.cbxProveedor.Name = "cbxProveedor";
-            this.cbxProveedor.Size = new System.Drawing.Size(121, 21);
+            this.cbxProveedor.Size = new System.Drawing.Size(176, 21);
             this.cbxProveedor.TabIndex = 11;
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(71, 261);
+            this.lblDescripcion.Location = new System.Drawing.Point(53, 85);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(73, 13);
             this.lblDescripcion.TabIndex = 8;
@@ -186,7 +199,7 @@
             // lblPrecioCompra
             // 
             this.lblPrecioCompra.AutoSize = true;
-            this.lblPrecioCompra.Location = new System.Drawing.Point(71, 217);
+            this.lblPrecioCompra.Location = new System.Drawing.Point(53, 217);
             this.lblPrecioCompra.Name = "lblPrecioCompra";
             this.lblPrecioCompra.Size = new System.Drawing.Size(89, 13);
             this.lblPrecioCompra.TabIndex = 7;
@@ -195,7 +208,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(71, 129);
+            this.lblMarca.Location = new System.Drawing.Point(53, 129);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(41, 13);
             this.lblMarca.TabIndex = 6;
@@ -204,7 +217,7 @@
             // lblIdTipoBebida
             // 
             this.lblIdTipoBebida.AutoSize = true;
-            this.lblIdTipoBebida.Location = new System.Drawing.Point(71, 175);
+            this.lblIdTipoBebida.Location = new System.Drawing.Point(372, 132);
             this.lblIdTipoBebida.Name = "lblIdTipoBebida";
             this.lblIdTipoBebida.Size = new System.Drawing.Size(74, 13);
             this.lblIdTipoBebida.TabIndex = 5;
@@ -213,20 +226,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(385, 85);
+            this.label3.Location = new System.Drawing.Point(371, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Proveedor";
-            // 
-            // lblIdProducto
-            // 
-            this.lblIdProducto.AutoSize = true;
-            this.lblIdProducto.Location = new System.Drawing.Point(71, 85);
-            this.lblIdProducto.Name = "lblIdProducto";
-            this.lblIdProducto.Size = new System.Drawing.Size(75, 13);
-            this.lblIdProducto.TabIndex = 2;
-            this.lblIdProducto.Text = "ID Producto";
             // 
             // lblNuevoProducto
             // 
@@ -237,31 +241,6 @@
             this.lblNuevoProducto.Size = new System.Drawing.Size(110, 13);
             this.lblNuevoProducto.TabIndex = 1;
             this.lblNuevoProducto.Text = "Nuevo Producto";
-            // 
-            // cbxTipoBebida
-            // 
-            this.cbxTipoBebida.FormattingEnabled = true;
-            this.cbxTipoBebida.Location = new System.Drawing.Point(162, 172);
-            this.cbxTipoBebida.Name = "cbxTipoBebida";
-            this.cbxTipoBebida.Size = new System.Drawing.Size(127, 21);
-            this.cbxTipoBebida.TabIndex = 22;
-            // 
-            // lblStockMinimo
-            // 
-            this.lblStockMinimo.AutoSize = true;
-            this.lblStockMinimo.Location = new System.Drawing.Point(385, 175);
-            this.lblStockMinimo.Name = "lblStockMinimo";
-            this.lblStockMinimo.Size = new System.Drawing.Size(83, 13);
-            this.lblStockMinimo.TabIndex = 23;
-            this.lblStockMinimo.Text = "Stock Minimo";
-            // 
-            // txtStockMinimo
-            // 
-            this.txtStockMinimo.Location = new System.Drawing.Point(490, 172);
-            this.txtStockMinimo.Name = "txtStockMinimo";
-            this.txtStockMinimo.Size = new System.Drawing.Size(121, 21);
-            this.txtStockMinimo.TabIndex = 24;
-            this.txtStockMinimo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStockMinimo_KeyPress);
             // 
             // alta_producto
             // 
@@ -286,8 +265,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtIdProducto;
         private System.Windows.Forms.Panel pnlNuevoProducto;
         private System.Windows.Forms.TextBox txtPrecioCompra;
         private System.Windows.Forms.TextBox txtDescripcion;
@@ -298,7 +275,6 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblIdTipoBebida;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblIdProducto;
         private System.Windows.Forms.Label lblNuevoProducto;
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.TextBox txtStock;

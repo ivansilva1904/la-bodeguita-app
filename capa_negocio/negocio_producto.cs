@@ -12,7 +12,7 @@ namespace capa_negocio
     {
 
         DatosProducto datosProducto = new DatosProducto();
-
+        /*
         public bool verificarIdProductoExistente(int idProducto)
         {
             SqlDataReader resultado = datosProducto.buscarProducto(idProducto);
@@ -27,11 +27,11 @@ namespace capa_negocio
                 datosProducto.cerrarConexion();
                 return false;
             }
-        }
-        public void crearProducto(int idProducto, string descripcion, int idMarca, float precioCompra, float precioVenta,
+        }*/
+        public void crearProducto( string descripcion, int idMarca, float precioCompra, float precioVenta,
             int stockMinimo, int StockActual, long cuitProveedor, int idTipoBebida)
         {
-            datosProducto.insertProducto(idProducto, descripcion, idMarca,precioCompra, precioVenta,
+            datosProducto.insertProducto( descripcion, idMarca,precioCompra, precioVenta,
              stockMinimo, StockActual,cuitProveedor,idTipoBebida);
         }
     }

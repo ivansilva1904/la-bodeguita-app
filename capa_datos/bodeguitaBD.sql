@@ -79,7 +79,7 @@ INSERT INTO marca(descripcion) VALUES('Jack Daniels');
 INSERT INTO marca(descripcion) VALUES('Absolut');
 
 create table producto(
-	idProducto INT PRIMARY KEY,
+	idProducto INT IDENTITY PRIMARY KEY,
 	descripcion VARCHAR(50),
 	idMarca INT,
 	precioCompra float,
@@ -94,6 +94,6 @@ create table producto(
 	CONSTRAINT fk_tipoBebida FOREIGN KEY (idTipoBebida) REFERENCES tipoBebida(idTipoBebida)
 );
 
-INSERT INTO producto(idProducto,descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
-VALUES (1111,'Quilmes Bajo Cero 1L',1,1000.11,1250.50,5,30,77222222227,3)
+INSERT INTO producto(descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
+VALUES ('Quilmes Bajo Cero 1L',1,1000.11,1250.50,5,30,77222222227,3)
 /* hasta 24/10*/

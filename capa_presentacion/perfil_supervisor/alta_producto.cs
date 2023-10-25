@@ -30,7 +30,8 @@ namespace capa_presentacion.perfil_supervisor
                 !string.IsNullOrWhiteSpace(txtPrecioCompra.Text) &&
                 !string.IsNullOrWhiteSpace(txtPrecioVenta.Text) &&
                 !string.IsNullOrWhiteSpace(txtStock.Text) &&
-                !string.IsNullOrWhiteSpace(txtIdProducto.Text) &&
+                !string.IsNullOrWhiteSpace(cbxProveedor.Text) &&
+                !string.IsNullOrWhiteSpace(cbxTipoBebida.Text) &&
                 !string.IsNullOrWhiteSpace(txtDescripcion.Text) &&
                 !string.IsNullOrWhiteSpace(txtStockMinimo.Text))
             {
@@ -45,9 +46,9 @@ namespace capa_presentacion.perfil_supervisor
                     int stock = int.Parse(txtStock.Text);
                     if (stockMin < stock)
                     {
-                        int idProducto = int.Parse(txtIdProducto.Text);
-                        if (negocioProducto.verificarIdProductoExistente(idProducto) == false)
-                        {
+                        
+                      //if (negocioProducto.verificarIdProductoExistente(idProducto) == false)
+                     // {
                             // hacer carga
                             //1rp la marca
                             string marcaEx = txtMarca.Text;
@@ -89,21 +90,21 @@ namespace capa_presentacion.perfil_supervisor
                                                  MessageBoxIcon.Question);
                                 if (ask == DialogResult.Yes)
                                 {
-                                    negocioProducto.crearProducto(idProducto, txtDescripcion.Text,idMarca,
+                                    negocioProducto.crearProducto( txtDescripcion.Text,idMarca,
                                     precioCompra, precioVenta, stockMin, stock,cuitProveedor,idBebida);
                                     
                                     limpiarCampos();          
                                 }
                             }
-                        }                          
-                        else
+                     // }                          
+                      /*  else
                         {
                             MessageBox.Show("Ya existe un producto con la misma ID",
                        "Error",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
                         }
-
+                      */
 
                     }
                     else
@@ -146,8 +147,7 @@ namespace capa_presentacion.perfil_supervisor
            
         }
         private void limpiarCampos()
-        {
-            txtIdProducto.Clear();          
+        {          
             txtMarca.Clear();
             txtPrecioCompra.Clear();
             txtPrecioVenta.Clear();

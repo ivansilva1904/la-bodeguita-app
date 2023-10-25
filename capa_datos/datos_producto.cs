@@ -28,13 +28,13 @@ namespace capa_datos
             return resultado;
         }
 
-        public void insertProducto(int idProducto,string descripcion,int idMarca,float precioCompra,float precioVenta, 
+        public void insertProducto(string descripcion,int idMarca,float precioCompra,float precioVenta, 
             int stockMinimo, int StockActual, long cuitProveedor, int idTipoBebida)
         {
             conexion.Open();
 
-            string query = "INSERT INTO producto (idProducto,descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida) " +
-                "VALUES (" + idProducto + ",'" + descripcion + "'," + idMarca + "" +
+            string query = "INSERT INTO producto (descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida) " +
+                "VALUES ('" + descripcion + "'," + idMarca + "" +
                 "," + precioCompra + "," + precioVenta +"," + stockMinimo + "," + StockActual + 
                 "," + cuitProveedor + "," + idTipoBebida + ");";
 
