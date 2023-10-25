@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblDNI = new System.Windows.Forms.Label();
+            this.txtFiltroDni = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvListadoClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtFiltroDni = new System.Windows.Forms.TextBox();
-            this.lblDNI = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoClientes)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +51,32 @@
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
             // 
+            // lblDNI
+            // 
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.Location = new System.Drawing.Point(26, 71);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(29, 13);
+            this.lblDNI.TabIndex = 4;
+            this.lblDNI.Text = "DNI";
+            // 
+            // txtFiltroDni
+            // 
+            this.txtFiltroDni.Location = new System.Drawing.Point(61, 68);
+            this.txtFiltroDni.Name = "txtFiltroDni";
+            this.txtFiltroDni.Size = new System.Drawing.Size(159, 21);
+            this.txtFiltroDni.TabIndex = 3;
+            this.txtFiltroDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltroDni_KeyPress);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(226, 67);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(100, 21);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
             // dgvListadoClientes
             // 
             this.dgvListadoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -65,34 +91,9 @@
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(223, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 16);
+            this.label1.Size = new System.Drawing.Size(256, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Listado de los clientes registrados";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(226, 67);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(100, 21);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // txtFiltroDni
-            // 
-            this.txtFiltroDni.Location = new System.Drawing.Point(61, 68);
-            this.txtFiltroDni.Name = "txtFiltroDni";
-            this.txtFiltroDni.Size = new System.Drawing.Size(159, 21);
-            this.txtFiltroDni.TabIndex = 3;
-            // 
-            // lblDNI
-            // 
-            this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(26, 71);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(29, 13);
-            this.lblDNI.TabIndex = 4;
-            this.lblDNI.Text = "DNI";
             // 
             // listar_clientes
             // 
@@ -105,6 +106,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "listar_clientes";
             this.Text = "listar_clientes";

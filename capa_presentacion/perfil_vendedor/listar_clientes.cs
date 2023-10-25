@@ -26,5 +26,13 @@ namespace capa_presentacion.perfil_vendedor
         {
             dgvListadoClientes.DataSource = negocioCliente.listarClientes();
         }
+
+        private void txtFiltroDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
