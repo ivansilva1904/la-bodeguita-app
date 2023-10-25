@@ -59,3 +59,41 @@ INSERT INTO proveedor(cuitProveedor,razonSocial,direccion,telefono,email) VALUES
 INSERT INTO proveedor(cuitProveedor,razonSocial,direccion,telefono,email) VALUES(77333333337,'Viñedo tres','Calle Falsa 333','3794000333','viñedosTRES@gmail.com');
 
 /**/
+
+create table tipoBebida(
+	idTipoBebida INT IDENTITY PRIMARY KEY,
+	descripcion VARCHAR(30)
+);
+INSERT INTO tipoBebida(descripcion) VALUES('Licor');
+INSERT INTO tipoBebida(descripcion) VALUES('Gaseosa');
+INSERT INTO tipoBebida(descripcion) VALUES('Cerveza');
+INSERT INTO tipoBebida(descripcion) VALUES('Whisky');
+
+create table marca(
+	idMarca INT IDENTITY PRIMARY KEY,
+	descripcion VARCHAR(30)
+);
+
+INSERT INTO marca(descripcion) VALUES('Quilmes');
+INSERT INTO marca(descripcion) VALUES('Jack Daniels');
+INSERT INTO marca(descripcion) VALUES('Absolut');
+
+create table producto(
+	idProducto INT PRIMARY KEY,
+	descripcion VARCHAR(50),
+	idMarca INT,
+	precioCompra float,
+	precioVenta float,
+	stockMinimo int,
+	stockActual int,
+	cuitProveedor bigint,
+	idTipoBebida int,
+	baja bit default 0,
+	CONSTRAINT fk_idMarca FOREIGN KEY (idMarca) REFERENCES marca(idMarca),
+	CONSTRAINT fk_cuitProveedor FOREIGN KEY (cuitProveedor) REFERENCES proveedor(cuitProveedor),
+	CONSTRAINT fk_tipoBebida FOREIGN KEY (idTipoBebida) REFERENCES tipoBebida(idTipoBebida)
+);
+
+INSERT INTO producto(idProducto,descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
+VALUES (1111,'Quilmes Bajo Cero 1L',1,1000.11,1250.50,5,30,77222222227,3)
+/* hasta 24/10*/
