@@ -123,6 +123,19 @@ namespace capa_presentacion.perfil_vendedor
             dgvClientesRegistrados.Columns.Add(btnModificar);
             dgvClientesRegistrados.DataSource = dtClientes;
         }
+
+        private void dgvClientesRegistrados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var sendergrid = (DataGridView)sender;
+
+            if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                txtDNI.Text = dgvClientesRegistrados.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtNombre.Text = dgvClientesRegistrados.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtApellido.Text = dgvClientesRegistrados.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtEmail.Text = dgvClientesRegistrados.Rows[e.RowIndex].Cells[4].Value.ToString();
+            }
+        }
     }
 
 }

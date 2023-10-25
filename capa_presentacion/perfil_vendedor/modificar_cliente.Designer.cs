@@ -198,6 +198,7 @@
             this.dgvClientesRegistrados.Name = "dgvClientesRegistrados";
             this.dgvClientesRegistrados.Size = new System.Drawing.Size(650, 138);
             this.dgvClientesRegistrados.TabIndex = 0;
+            this.dgvClientesRegistrados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientesRegistrados_CellContentClick);
             // 
             // modificar_cliente
             // 
