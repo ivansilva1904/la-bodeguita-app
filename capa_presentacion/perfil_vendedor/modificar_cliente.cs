@@ -136,6 +136,21 @@ namespace capa_presentacion.perfil_vendedor
                 txtEmail.Text = dgvClientesRegistrados.Rows[e.RowIndex].Cells[4].Value.ToString();
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DataTable dtCliente = negocioCliente.listarClientePorDNI(int.Parse(txtFiltro.Text));
+
+            if(dtCliente.Rows.Count > 0)
+            {
+                dgvClientesRegistrados.DataSource = null;
+                dgvClientesRegistrados.DataSource = dtCliente;
+            }
+            else
+            {
+                MessageBox.Show("El DNI ingresado no corresponde con ningun cliente registrado");
+            }
+        }
     }
 
 }
