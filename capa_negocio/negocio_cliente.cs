@@ -32,5 +32,22 @@ namespace capa_negocio
 
             return dtCliente;
         }
+
+        public DataTable listarClientePorDNI(int dni)
+        {
+            SqlDataReader drCliente = datosCliente.selectClientePorDNI(dni);
+
+            DataTable dtCliente = new DataTable();
+
+            if (drCliente.HasRows)
+            {
+                dtCliente.Load(drCliente);
+                return dtCliente;
+            }
+            else
+            {
+                return dtCliente;
+            }
+        }
     }
 }
