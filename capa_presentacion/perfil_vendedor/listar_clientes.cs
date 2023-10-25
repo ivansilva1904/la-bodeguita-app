@@ -34,5 +34,20 @@ namespace capa_presentacion.perfil_vendedor
                 e.Handled = true;
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DataTable dtCliente = negocioCliente.listarClientePorDNI(int.Parse(txtFiltroDni.Text));
+
+            if(dtCliente.Rows.Count > 0)
+            {
+                dgvListadoClientes.DataSource = null;
+                dgvListadoClientes.DataSource = dtCliente;
+            }
+            else
+            {
+                MessageBox.Show("El DNI ingresado no corresponde con un cliente registrado");
+            }
+        }
     }
 }

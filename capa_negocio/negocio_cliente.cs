@@ -42,10 +42,14 @@ namespace capa_negocio
             if (drCliente.HasRows)
             {
                 dtCliente.Load(drCliente);
+                datosCliente.cerrarConexion();
+
                 return dtCliente;
             }
             else
             {
+                datosCliente.cerrarConexion();
+
                 return dtCliente;
             }
         }
