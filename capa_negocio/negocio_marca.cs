@@ -14,7 +14,7 @@ namespace capa_negocio
         DatosMarca datosMarca = new DatosMarca();
 
 
-        public void crearProveedor(string descripcion)
+        public void crearMarca(string descripcion)
         {
             datosMarca.insertMarca(descripcion);
         }
@@ -32,6 +32,26 @@ namespace capa_negocio
             {
                 datosMarca.cerrarConexion();
                 return false;
+            }
+        }
+        public DataTable obtenerMarca(string descripcion)
+        {
+            SqlDataReader marcaReader = datosMarca.buscarMarca(descripcion);
+
+            DataTable tablaMarca = new DataTable();
+
+            if (marcaReader.HasRows)
+            {
+                tablaMarca.Load(marcaReader);
+                datosMarca.cerrarConexion();
+
+                return tablaMarca;
+            }
+            else
+            {
+                datosMarca.cerrarConexion();
+
+                return tablaMarca;
             }
         }
     }

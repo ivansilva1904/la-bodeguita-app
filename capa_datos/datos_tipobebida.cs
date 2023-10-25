@@ -22,7 +22,8 @@ namespace capa_datos
             conexion.Open();
 
             string query = "" +
-                "SELECT descripcion AS Descripcion " +              
+                "SELECT idTipoBebida AS TipoBebida," +
+                "descripcion AS Descripcion " +              
                 " FROM tipoBebida";
 
             SqlCommand comando = new SqlCommand(query, conexion);
@@ -32,5 +33,21 @@ namespace capa_datos
             return tabla;
             //
         }
+        public SqlDataReader selectTipoBebidaPorDescripcion(string descripcion)
+        {
+            conexion.Open();
+
+            string query = "" +
+                "SELECT idTipoBebida AS 'Id Tipo Bebida', " +
+                "FROM tipoBebida" +
+                "WHERE descripcion = " + descripcion;
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            SqlDataReader tabla = comando.ExecuteReader();
+
+            return tabla;
+        }
+
     }
 }

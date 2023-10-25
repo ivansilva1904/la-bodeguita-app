@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="negocio_marca.cs" />
+    <Compile Include="negocio_producto.cs" />
     <Compile Include="negocio_tipobebida.cs" />
     <Compile Include="negocio_cliente.cs" />
     <Compile Include="negocio_empleado.cs" />

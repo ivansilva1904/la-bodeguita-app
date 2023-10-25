@@ -44,6 +44,7 @@
     <Compile Include="entidad_cliente.cs" />
     <Compile Include="entidad_empleado.cs" />
     <Compile Include="entidad_marca.cs" />
+    <Compile Include="entidad_producto.cs" />
     <Compile Include="entidad_proveedor.cs" />
     <Compile Include="entidad_tipobebida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -25,5 +25,25 @@ namespace capa_negocio
 
             return tablaTipoBebida;
         }
+        public DataTable buscarProveedorPorRazonSocial(string descripcion)
+        {
+            SqlDataReader tipoBebidaReader = datosTipoBebida.selectTipoBebidaPorDescripcion(descripcion);
+
+            DataTable tablaBebida = new DataTable();
+
+            if (tipoBebidaReader.HasRows)
+            {
+                tablaBebida.Load(tipoBebidaReader);
+                datosTipoBebida.cerrarConexion();
+
+                return tablaBebida;
+            }
+            else
+            {
+                datosTipoBebida.cerrarConexion();
+
+                return tablaBebida;
+            }
+        }
     }
 }

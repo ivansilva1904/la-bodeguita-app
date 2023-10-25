@@ -29,11 +29,14 @@ namespace capa_datos
 
             cerrarConexion();
         }
-        public SqlDataReader buscarMarca(string descripcion)
+        public SqlDataReader buscarMarca(string desc)
         {
             conexion.Open();
 
-            string query = "SELECT * FROM marca WHERE descripcion = " + descripcion;
+            string query = "SELECT idMarca AS 'IDMarca', " +
+                "descripcion AS 'Descripcion' " +
+                "FROM marca " +
+                "WHERE descripcion = '"+desc+"'";
 
             SqlCommand comando = new SqlCommand(query, conexion);
 
@@ -41,5 +44,7 @@ namespace capa_datos
 
             return resultado;
         }
+
+        
     }
 }

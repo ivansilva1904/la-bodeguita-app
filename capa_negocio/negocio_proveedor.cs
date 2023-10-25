@@ -91,16 +91,26 @@ namespace capa_negocio
            
         }
 
-        public DataTable selecionRazonSocialProveedor()
-        { 
-            SqlDataReader dataReaderProveedor = datosProveedor.selectProveedorActivoRazonSocial();
+        
+        public DataTable buscarProveedorPorRazonSocial(string razonSocial)
+        {
+            SqlDataReader proveedorReader = datosProveedor.selectProveedorPorRazonSocial(razonSocial);
 
             DataTable tablaProveedor = new DataTable();
-            tablaProveedor.Load(dataReaderProveedor);
 
-            datosProveedor.cerrarConexion();
+            if (proveedorReader.HasRows)
+            {
+                tablaProveedor.Load(proveedorReader);
+                datosProveedor.cerrarConexion();
 
-            return tablaProveedor;
+                return tablaProveedor;
+            }
+            else
+            {
+                datosProveedor.cerrarConexion();
+
+                return tablaProveedor;
+            }
         }
-}
+    }
 }

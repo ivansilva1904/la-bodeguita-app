@@ -120,7 +120,7 @@ namespace capa_datos
             string query = "";
 
             if(baja == false){
-                string fechBaj = ""-;
+                string fechBaj = "";
                     query = "" +
                     "UPDATE proveedor " +
                     "SET razonSocial = '" + razonSocial + "' ," +
@@ -155,14 +155,15 @@ namespace capa_datos
             cerrarConexion();
         }
 
-        public SqlDataReader selectProveedorActivoRazonSocial()
+        public SqlDataReader selectProveedorPorRazonSocial(string razonSocial)
         {
             conexion.Open();
 
             string query = "" +
-                "SELECT razonSocial AS 'Razon Social, " +
-                " FROM proveedor" +
-                " WHERE Baja = 0";
+                "SELECT cuitProveedor AS 'Cuit Proveedor', " +
+                "razonSocial AS 'Razon Social' " +
+                "FROM proveedor " +
+                "WHERE razonSocial = '"+razonSocial+"'";
 
             SqlCommand comando = new SqlCommand(query, conexion);
 

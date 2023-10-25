@@ -18,8 +18,10 @@ namespace capa_presentacion.perfil_supervisor
         {
             InitializeComponent();
         }
-
+        NegocioProducto negocioProducto = new NegocioProducto();
         NegocioProveedor negocioProveedor = new NegocioProveedor();
+        NegocioMarca negocioMarca = new NegocioMarca();
+        NegocioTipoBebida negocioTipoBebida = new NegocioTipoBebida();
         private void btnGuardarProducto_Click(object sender, EventArgs e)
         {
             DialogResult ask;
@@ -30,13 +32,88 @@ namespace capa_presentacion.perfil_supervisor
                 !string.IsNullOrWhiteSpace(txtStock.Text) &&
                 !string.IsNullOrWhiteSpace(txtIdProducto.Text) &&
                 !string.IsNullOrWhiteSpace(txtDescripcion.Text) &&
-                (rbtCristaleria.Checked == true || rbtBebida.Checked == true))
+                !string.IsNullOrWhiteSpace(txtStockMinimo.Text))
             {
                 float precioCompra = float.Parse(txtPrecioCompra.Text);
                 float precioVenta = float.Parse(txtPrecioVenta.Text);
+                int idMarca = 0;
+                long cuitProveedor = 0;
+                int idBebida = 0;
                 if (precioCompra < precioVenta)
                 {
-                    ask = MessageBox.Show("Desea Insertar el Nuevo Producto?",
+                    int stockMin = int.Parse(txtStockMinimo.Text);
+                    int stock = int.Parse(txtStock.Text);
+                    if (stockMin < stock)
+                    {
+                        int idProducto = int.Parse(txtIdProducto.Text);
+                        if (negocioProducto.verificarIdProductoExistente(idProducto) == false)
+                        {
+                            // hacer carga
+                            //1rp la marca
+                            string marcaEx = txtMarca.Text;
+                            if(negocioMarca.verificarMarcaExistente(marcaEx) == false)
+                            {
+                                negocioMarca.crearMarca(txtMarca.Text);
+                            }
+                            else
+                            {
+                                DataTable marca = negocioMarca.obtenerMarca(txtMarca.Text);
+                                DataTableReader marcaReader = new DataTableReader(marca);
+                                while (marcaReader.Read())
+                                {
+                                    idMarca = marcaReader.GetInt32(0);
+                                }
+                            }
+                            //esto para obterner id proveedor y bebida
+                            DataTable tablaProveedor = negocioProveedor.buscarProveedorPorRazonSocial(cbxProveedor.Text);
+                            DataTable tablaTipoBebida = negocioTipoBebida.listarTipoBebida();
+
+                            DataTableReader lectorProveedor = new DataTableReader(tablaProveedor);
+                            DataTableReader lectorTipoBebida = new DataTableReader(tablaTipoBebida);
+
+                            while (lectorProveedor.Read())
+                            {
+                                cuitProveedor = lectorProveedor.GetInt64(0);
+                            }
+                            while (lectorTipoBebida.Read())
+                            {
+                                idBebida = lectorTipoBebida.GetInt32(0);
+                            }
+                            //Final carga
+                            if(idBebida != 0 && idMarca != 0 && cuitProveedor != 0)
+                            {
+                                
+                                ask = MessageBox.Show("Desea Insertar el Nuevo Producto?",
+                                               "Confirmar Insercion",
+                                                MessageBoxButtons.YesNo,
+                                                 MessageBoxIcon.Question);
+                                if (ask == DialogResult.Yes)
+                                {
+                                    negocioProducto.crearProducto(idProducto, txtDescripcion.Text,idMarca,
+                                    precioCompra, precioVenta, stockMin, stock,cuitProveedor,idBebida);
+                                    
+                                    limpiarCampos();          
+                                }
+                            }
+                        }                          
+                        else
+                        {
+                            MessageBox.Show("Ya existe un producto con la misma ID",
+                       "Error",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                        }
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("El stock es menor que el stock minimo",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                    /*ask = MessageBox.Show("Desea Insertar el Nuevo Producto?",
                         "Confirmar Insercion",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question);
@@ -44,12 +121,12 @@ namespace capa_presentacion.perfil_supervisor
                     {
                         //Guardar los cambios
                         limpiarCampos();
-                    }
+                    }*/
                 }
                 else
                 {
                 MessageBox.Show("El precio de venta es menor que el precio de compra",
-                    "Errpr",
+                    "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 }
@@ -70,13 +147,12 @@ namespace capa_presentacion.perfil_supervisor
         }
         private void limpiarCampos()
         {
-            txtIdProducto.Clear();
-            rbtCristaleria.Checked = false;
-            rbtBebida.Checked = false;
+            txtIdProducto.Clear();          
             txtMarca.Clear();
             txtPrecioCompra.Clear();
             txtPrecioVenta.Clear();
             txtStock.Clear();
+            txtStockMinimo.Clear();
             txtDescripcion.Clear();
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -116,16 +192,30 @@ namespace capa_presentacion.perfil_supervisor
             }
         }
 
+        private void txtStockMinimo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
         private void alta_producto_Load(object sender, EventArgs e)
         {
             DataTable tablaProveedor = negocioProveedor.listarProveedorActivos();
+            DataTable tablaTipoBebida = negocioTipoBebida.listarTipoBebida();
 
-            DataTableReader lector = new DataTableReader(tablaProveedor);
+            DataTableReader lectorProveedor = new DataTableReader(tablaProveedor);
+            DataTableReader lectorTipoBebida = new DataTableReader(tablaTipoBebida);
 
-            while (lector.Read())
+            while (lectorProveedor.Read())
             {
-                cbxProveedor.Items.Add(lector.GetString(1));
+                cbxProveedor.Items.Add(lectorProveedor.GetString(1));
+            }
+            while (lectorTipoBebida.Read())
+            {
+                cbxTipoBebida.Items.Add(lectorTipoBebida.GetString(1));
             }
         }
+
     }
 }
