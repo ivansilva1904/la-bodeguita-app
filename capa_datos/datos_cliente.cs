@@ -34,13 +34,41 @@ namespace capa_datos
         {
             conexion.Open();
 
-            string query = "SELECT * FROM clientes";
+            string query = "" +
+                "SELECT dniCliente AS DNI," +
+                "nombre AS Nombre," +
+                "apellido AS Apellido," +
+                "email AS Email," +
+                "fechaNac AS 'Fecha nacimiento'," +
+                "baja AS Estado " +
+                "FROM clientes";
 
             SqlCommand comando = new SqlCommand(query, conexion);
 
             SqlDataReader tabla = comando.ExecuteReader();
 
             return tabla;
+        }
+
+        public SqlDataReader selectClientePorDNI(int dni)
+        {
+            conexion.Open();
+
+            string query = "" +
+                "SELECT dniCliente AS DNI," +
+                "nombre AS Nombre," +
+                "apellido AS Apellido," +
+                "email AS Email," +
+                "fechaNac AS 'Fecha nacimiento'," +
+                "baja AS Estado " +
+                "FROM clientes " +
+                "WHERE dniCliente = " + dni;
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            SqlDataReader drTabla = comando.ExecuteReader();
+
+            return drTabla;
         }
     }
 }

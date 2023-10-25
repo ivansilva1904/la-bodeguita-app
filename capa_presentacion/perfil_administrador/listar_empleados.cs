@@ -45,5 +45,13 @@ namespace capa_presentacion.perfil_administrador
                 MessageBox.Show("El DNI ingresado no pertenece a un empleado registrado");
             }
         }
+
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
