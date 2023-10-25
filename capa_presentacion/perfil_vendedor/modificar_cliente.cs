@@ -9,6 +9,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using capa_negocio;
+
 namespace capa_presentacion.perfil_vendedor
 {
     public partial class modificar_cliente : Form
@@ -17,6 +19,8 @@ namespace capa_presentacion.perfil_vendedor
         {
             InitializeComponent();
         }
+
+        NegocioCliente negocioCliente = new NegocioCliente();
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -107,7 +111,17 @@ namespace capa_presentacion.perfil_vendedor
 
         private void modificar_cliente_Load(object sender, EventArgs e)
         {
+            DataTable dtClientes = negocioCliente.listarClientes();
 
+            DataGridViewButtonColumn btnModificar = new DataGridViewButtonColumn();
+
+            btnModificar.HeaderText = "";
+            btnModificar.Name = "colModificar";
+            btnModificar.Text = "Modificar";
+            btnModificar.UseColumnTextForButtonValue = true;
+
+            dgvClientesRegistrados.Columns.Add(btnModificar);
+            dgvClientesRegistrados.DataSource = dtClientes;
         }
     }
 
