@@ -75,5 +75,32 @@ namespace capa_datos
             return tabla;
         }
 
+        public void updateProducto(int idProducto, string descripcion,
+            int idMarca, float precioCompra, float precioVenta, int stockMinimo,
+            int stockActual, long cuitProveedor, int idTipoBebida)
+        {
+            conexion.Open();
+
+            string query = "" +
+            "UPDATE producto " +
+                "SET descripcion = '" + descripcion + "'," +
+                "idMarca = " + idMarca + "," +
+                "precioCompra = " + precioCompra + "," +
+                "precioVenta = " + precioVenta + "," +
+                "stockMinimo = " + stockMinimo + "," +
+                "stockActual = " + stockActual + "," +
+                "cuitProveedor = " + cuitProveedor + "," +
+                "idTipoBebida = " + idTipoBebida  +
+                " WHERE idProducto = " + idProducto;
+
+
+
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            comando.ExecuteNonQuery();
+
+            cerrarConexion();
+        }
     }
 }

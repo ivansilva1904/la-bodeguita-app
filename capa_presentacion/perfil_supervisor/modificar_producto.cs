@@ -1,5 +1,6 @@
 ﻿using capa_negocio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,26 +47,77 @@ namespace capa_presentacion.perfil_supervisor
                 !string.IsNullOrWhiteSpace(txtPrecioCompra.Text) &&
                 !string.IsNullOrWhiteSpace(txtPrecioVenta.Text) &&
                 !string.IsNullOrWhiteSpace(txtStock.Text) &&
-                !string.IsNullOrWhiteSpace(txtDescripcion.Text))
+                !string.IsNullOrWhiteSpace(txtStockMinimo.Text) &&
+                !string.IsNullOrWhiteSpace(txtDescripcion.Text) &&
+                !string.IsNullOrWhiteSpace(cbxProveedor.Text) &&
+                !string.IsNullOrWhiteSpace(cbxTipoBebida.Text))
             {
                 float precioCompra = float.Parse(txtPrecioCompra.Text);
                 float precioVenta = float.Parse(txtPrecioVenta.Text);
+                int stockAc = Int32.Parse(txtStock.Text);
+                int stockMin = Int32.Parse(txtStockMinimo.Text);
+                long cuitProveedor = 0;
+                int idBebida = 0;
+                int idMarca = 0;
                 if (precioCompra < precioVenta)
                 {
-                    DialogResult resp = MessageBox.Show("Esta seguro de modificar los datos del producto?",
-                    "Confirmar cambios",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-
-
-                    if (resp == DialogResult.Yes)
+                    if (stockMin < stockAc)
                     {
-                        MessageBox.Show("Se ha modificado el producto",
-                            "Cambios realizados",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                        limpiarCampos();
+                        string marcaEx = txtMarca.Text;
+                        if (negocioMarca.verificarMarcaExistente(marcaEx) == false)
+                        {
+                            negocioMarca.crearMarca(txtMarca.Text);
+                        }
+                        else
+                        {
+                            DataTable marca = negocioMarca.obtenerMarca(txtMarca.Text);
+                            DataTableReader marcaReader = new DataTableReader(marca);
+                            while (marcaReader.Read())
+                            {
+                                idMarca = marcaReader.GetInt32(0);
+                            }
+                        }
+                        //esto para obterner id proveedor y bebida
+                        DataTable tablaProveedor = negocioProveedor.buscarProveedorPorRazonSocial(cbxProveedor.Text);
+                        DataTable tablaTipoBebida = negocioTipoBebida.listarTipoBebida();
+
+                        DataTableReader lectorProveedor = new DataTableReader(tablaProveedor);
+                        DataTableReader lectorTipoBebida = new DataTableReader(tablaTipoBebida);
+
+                        while (lectorProveedor.Read())
+                        {
+                            cuitProveedor = lectorProveedor.GetInt64(0);
+                        }
+                        while (lectorTipoBebida.Read())
+                        {
+                            idBebida = lectorTipoBebida.GetInt32(0);
+                        }
+                        //Final carga
+                        if (idBebida != 0 && idMarca != 0 && cuitProveedor != 0)
+                        {
+                            DialogResult ask = DialogResult.No;
+
+                            ask = MessageBox.Show("Desea Modificar el Producto?",
+                                           "Confirmar Modificacion",
+                                            MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+                            if (ask == DialogResult.Yes)
+                            {
+                                negocioProducto.modificacionProducto(Int32.Parse(txtIdProducto.Text), txtDescripcion.Text, idMarca,
+                                precioCompra, precioVenta, stockMin, stockAc, cuitProveedor, idBebida);
+
+                                limpiarCampos();
+                                carga_dgvModificarProducto();
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("El stock minimo no puede ser mayor stock cctual",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -75,7 +127,7 @@ namespace capa_presentacion.perfil_supervisor
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
-                             
+
             }
             else
             {
@@ -86,13 +138,14 @@ namespace capa_presentacion.perfil_supervisor
         private void limpiarCampos()
         {
             txtIdProducto.Clear();
-        
+            txtStockMinimo.Clear();
             txtPrecioCompra.Clear();
             txtPrecioVenta.Clear();
             txtMarca.Clear();
             txtDescripcion.Clear();
             txtStock.Clear();
-
+            cbxTipoBebida.Items.Clear();
+            cbxProveedor.Items.Clear();
 
         }
 
@@ -110,7 +163,7 @@ namespace capa_presentacion.perfil_supervisor
 
         }
 
-        
+
 
         public void carga_cbxTipoBebidaycbxProveedor()
         {
@@ -132,13 +185,6 @@ namespace capa_presentacion.perfil_supervisor
 
         private void modificar_producto_Load(object sender, EventArgs e)
         {
-            carga_cbxTipoBebidaycbxProveedor();
-            carga_dgvModificarProducto();
-        }
-
-        public void carga_dgvModificarProducto()
-        {
-
             DataGridViewButtonColumn columnaBotonMod = new DataGridViewButtonColumn();
             columnaBotonMod.HeaderText = "Modificar";
             columnaBotonMod.Name = "colModificar";
@@ -150,8 +196,60 @@ namespace capa_presentacion.perfil_supervisor
             DataTable tablaProductos = negocioProducto.listarTodosProductos();
 
             dgvModificarProducto.DataSource = tablaProductos;
+            carga_cbxTipoBebidaycbxProveedor();
+            dgvModificarProducto.Columns["Baja"].Visible = false;
+            
+        }
 
-     
+        public void carga_dgvModificarProducto()
+        {
+            carga_cbxTipoBebidaycbxProveedor();
+            dgvModificarProducto.DataSource = null;
+
+            DataTable tablaProveedor = negocioProducto.listarTodosProductos();
+
+            dgvModificarProducto.DataSource = tablaProveedor;
+
+
+
+
+        }
+
+        private void dgvModificarProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            //int indiceFila = e.RowIndex;
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                txtIdProducto.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtDescripcion.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtMarca.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtPrecioCompra.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txtPrecioVenta.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtStockMinimo.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[6].Value.ToString();
+                txtStock.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[7].Value.ToString();
+                cbxProveedor.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[8].Value.ToString();
+                cbxTipoBebida.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[9].Value.ToString();
+            }
         }
     }
 }
+/*
+  DialogResult resp = MessageBox.Show("Esta seguro de modificar los datos del producto?",
+                    "Confirmar cambios",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+
+
+                    if (resp == DialogResult.Yes)
+                    {
+                        MessageBox.Show("Se ha modificado el producto",
+                            "Cambios realizados",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        limpiarCampos();
+                    } 
+  */
+

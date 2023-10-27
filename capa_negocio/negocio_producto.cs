@@ -50,5 +50,17 @@ namespace capa_negocio
 
             return tablaProducto;
         }
+
+        public void modificacionProducto(int idProducto, string descripcion,
+           int idMarca, float precioCompra, float precioVenta, int stockMinimo,
+           int stockActual, long cuitProveedor, int idTipoBebida)
+        {
+
+            datosProducto.updateProducto(idProducto, descripcion, idMarca, precioCompra, precioVenta, stockMinimo, stockActual, cuitProveedor, idTipoBebida);
+
+
+
+        }
     }
 }
+
