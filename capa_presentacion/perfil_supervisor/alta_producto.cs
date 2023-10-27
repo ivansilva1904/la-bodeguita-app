@@ -201,6 +201,10 @@ namespace capa_presentacion.perfil_supervisor
         }
         private void alta_producto_Load(object sender, EventArgs e)
         {
+            carga_cbxTipoBebidaycbxProveedor();
+        }
+        public void carga_cbxTipoBebidaycbxProveedor()
+        {
             DataTable tablaProveedor = negocioProveedor.listarProveedorActivos();
             DataTable tablaTipoBebida = negocioTipoBebida.listarTipoBebida();
 

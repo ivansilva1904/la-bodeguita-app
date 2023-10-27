@@ -1,4 +1,5 @@
-﻿using System;
+﻿using capa_negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,11 @@ namespace capa_presentacion.perfil_supervisor
         {
             InitializeComponent();
         }
+
+        NegocioProducto negocioProducto = new NegocioProducto();
+        NegocioProveedor negocioProveedor = new NegocioProveedor();
+        NegocioMarca negocioMarca = new NegocioMarca();
+        NegocioTipoBebida negocioTipoBebida = new NegocioTipoBebida();
 
         private void txtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -40,8 +46,7 @@ namespace capa_presentacion.perfil_supervisor
                 !string.IsNullOrWhiteSpace(txtPrecioCompra.Text) &&
                 !string.IsNullOrWhiteSpace(txtPrecioVenta.Text) &&
                 !string.IsNullOrWhiteSpace(txtStock.Text) &&
-                !string.IsNullOrWhiteSpace(txtDescripcion.Text) &&
-                (rbtCristaleria.Checked == true || rbtBebida.Checked == true))
+                !string.IsNullOrWhiteSpace(txtDescripcion.Text))
             {
                 float precioCompra = float.Parse(txtPrecioCompra.Text);
                 float precioVenta = float.Parse(txtPrecioVenta.Text);
@@ -81,8 +86,7 @@ namespace capa_presentacion.perfil_supervisor
         private void limpiarCampos()
         {
             txtIdProducto.Clear();
-            rbtCristaleria.Checked = false;
-            rbtBebida.Checked = false;
+        
             txtPrecioCompra.Clear();
             txtPrecioVenta.Clear();
             txtMarca.Clear();
@@ -106,6 +110,48 @@ namespace capa_presentacion.perfil_supervisor
 
         }
 
+        
 
+        public void carga_cbxTipoBebidaycbxProveedor()
+        {
+            DataTable tablaProveedor = negocioProveedor.listarProveedorActivos();
+            DataTable tablaTipoBebida = negocioTipoBebida.listarTipoBebida();
+
+            DataTableReader lectorProveedor = new DataTableReader(tablaProveedor);
+            DataTableReader lectorTipoBebida = new DataTableReader(tablaTipoBebida);
+
+            while (lectorProveedor.Read())
+            {
+                cbxProveedor.Items.Add(lectorProveedor.GetString(1));
+            }
+            while (lectorTipoBebida.Read())
+            {
+                cbxTipoBebida.Items.Add(lectorTipoBebida.GetString(1));
+            }
+        }
+
+        private void modificar_producto_Load(object sender, EventArgs e)
+        {
+            carga_cbxTipoBebidaycbxProveedor();
+            carga_dgvModificarProducto();
+        }
+
+        public void carga_dgvModificarProducto()
+        {
+
+            DataGridViewButtonColumn columnaBotonMod = new DataGridViewButtonColumn();
+            columnaBotonMod.HeaderText = "Modificar";
+            columnaBotonMod.Name = "colModificar";
+            columnaBotonMod.Text = "Modificar";
+            columnaBotonMod.UseColumnTextForButtonValue = true;
+
+            dgvModificarProducto.Columns.Add(columnaBotonMod);
+
+            DataTable tablaProductos = negocioProducto.listarTodosProductos();
+
+            dgvModificarProducto.DataSource = tablaProductos;
+
+     
+        }
     }
 }

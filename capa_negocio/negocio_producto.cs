@@ -1,6 +1,7 @@
 ﻿using capa_datos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -28,11 +29,26 @@ namespace capa_negocio
                 return false;
             }
         }*/
-        public void crearProducto( string descripcion, int idMarca, float precioCompra, float precioVenta,
+        public void crearProducto(string descripcion, int idMarca, float precioCompra, float precioVenta,
             int stockMinimo, int StockActual, long cuitProveedor, int idTipoBebida)
         {
-            datosProducto.insertProducto( descripcion, idMarca,precioCompra, precioVenta,
-             stockMinimo, StockActual,cuitProveedor,idTipoBebida);
+            datosProducto.insertProducto(descripcion, idMarca, precioCompra, precioVenta,
+             stockMinimo, StockActual, cuitProveedor, idTipoBebida);
+        }
+
+
+        public DataTable listarTodosProductos()
+        {
+            SqlDataReader dataReaderProducto = datosProducto.selectTodosProductos();
+
+            DataTable tablaProducto = new DataTable();
+            tablaProducto.Load(dataReaderProducto);
+           
+
+
+            datosProducto.cerrarConexion();
+
+            return tablaProducto;
         }
     }
 }

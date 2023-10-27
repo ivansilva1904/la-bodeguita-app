@@ -75,7 +75,7 @@
             this.pnlNuevoProducto.Controls.Add(this.lblNuevoProducto);
             this.pnlNuevoProducto.Location = new System.Drawing.Point(12, 12);
             this.pnlNuevoProducto.Name = "pnlNuevoProducto";
-            this.pnlNuevoProducto.Size = new System.Drawing.Size(748, 442);
+            this.pnlNuevoProducto.Size = new System.Drawing.Size(709, 442);
             this.pnlNuevoProducto.TabIndex = 1;
             // 
             // txtStockMinimo

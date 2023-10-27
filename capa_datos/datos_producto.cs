@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
+using System.Security.Principal;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace capa_datos
@@ -28,14 +31,14 @@ namespace capa_datos
             return resultado;
         }
 
-        public void insertProducto(string descripcion,int idMarca,float precioCompra,float precioVenta, 
+        public void insertProducto(string descripcion, int idMarca, float precioCompra, float precioVenta,
             int stockMinimo, int StockActual, long cuitProveedor, int idTipoBebida)
         {
             conexion.Open();
 
             string query = "INSERT INTO producto (descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida) " +
                 "VALUES ('" + descripcion + "'," + idMarca + "" +
-                "," + precioCompra + "," + precioVenta +"," + stockMinimo + "," + StockActual + 
+                "," + precioCompra + "," + precioVenta + "," + stockMinimo + "," + StockActual +
                 "," + cuitProveedor + "," + idTipoBebida + ");";
 
             SqlCommand comando = new SqlCommand(query, conexion);
@@ -44,5 +47,33 @@ namespace capa_datos
 
             cerrarConexion();
         }
+        public SqlDataReader selectTodosProductos()
+        {
+            conexion.Open();
+            string query = "" +
+               "SELECT producto.idProducto AS 'ID Producto',producto.descripcion AS 'Descripcion',marca.descripcion AS 'Marca',"+
+               "producto.precioCompra AS 'Precio Compra',producto.precioVenta AS 'Precio Venta',producto.stockMinimo AS 'Stock Minimo',"+
+               "producto.stockActual AS 'Stock Actual',proveedor.razonSocial AS 'Nombre Proveedor',tipoBebida.descripcion AS 'Tipo Bebida',producto.baja AS 'Baja'"+
+               "FROM producto "+
+               "INNER JOIN marca ON(producto.idMarca = marca.idMarca) "+
+               "INNER JOIN proveedor ON(producto.cuitProveedor = proveedor.cuitProveedor) "+
+                "INNER JOIN tipoBebida ON(producto.idTipoBebida = tipoBebida.idTipoBebida) "+
+                "SELECT idProducto AS 'Id Producto', " +
+                "descripcion AS 'Descripcion', " +
+                "idMarca AS 'Marca', " +
+                "precioCompra AS 'Precio Compra', " +
+                "precioVenta AS 'Precio Venta', " +
+                "stockMinimo AS 'Stock Minimo', " +
+                "stockActual AS 'Stock', " +
+                "cuitProveedor AS 'Cuit Proveedor' " +
+                " FROM producto";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            SqlDataReader tabla = comando.ExecuteReader();
+
+            return tabla;
+        }
+
     }
 }
