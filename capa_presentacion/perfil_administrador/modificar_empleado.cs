@@ -176,6 +176,8 @@ namespace capa_presentacion.perfil_administrador
             columnaBotonMod.Name = "colModificar";
             columnaBotonMod.Text = "Modificar";
             columnaBotonMod.UseColumnTextForButtonValue = true;
+            tablaEmpleados.Columns.Remove("Fecha deshabilitacion");
+            tablaEmpleados.Columns.Remove("Baja");
 
             dgvUsersRegistrados.Columns.Add(columnaBotonMod);
 

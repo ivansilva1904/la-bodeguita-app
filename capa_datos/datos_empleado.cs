@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace capa_datos
 {
@@ -14,7 +15,14 @@ namespace capa_datos
 
         public void cerrarConexion()
         {
-            conexion.Close();
+            try
+            {
+                conexion.Close();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public SqlDataReader buscarDNI(int dni)
@@ -89,7 +97,31 @@ namespace capa_datos
                 " WHERE Baja = 0";
 
             SqlCommand comando = new SqlCommand(query, conexion);
+            SqlDataReader tabla = comando.ExecuteReader();
 
+            return tabla;
+        }
+
+        public SqlDataReader selectEmpleadosInactivos()
+        {
+            conexion.Open();
+
+            string query = "" +
+                "SELECT dniEmpleado AS DNI, " +
+                "nombre AS Nombre, " +
+                "apellido AS Apellido, " +
+                "fechaNac AS 'Fecha nacimiento', " +
+                "fechaIncorp AS 'Fecha incorporacion', " +
+                "fechaDeshab AS 'Fecha deshabilitacion', " +
+                "direccion AS Direccion, " +
+                "telefono AS Telefono, " +
+                "email AS Email, " +
+                "idTipoEmpleado AS 'Tipo empleado', " +
+                "baja AS Baja" +
+                " FROM empleados" +
+                " WHERE Baja = 1";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
             SqlDataReader tabla = comando.ExecuteReader();
 
             return tabla;
@@ -152,6 +184,38 @@ namespace capa_datos
                     "idTipoEmpleado = " + tipoEmpleado + " " +
                     "WHERE dniEmpleado = " + dni;
             }
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            comando.ExecuteNonQuery();
+
+            cerrarConexion();
+        }
+
+        public void deleteEmpleado(int dni)
+        {
+            conexion.Open();
+
+            string query = "" +
+                "UPDATE empleados " +
+                "SET baja = 1 " +
+                "WHERE dniEmpleado = "+ dni;
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            comando.ExecuteNonQuery();
+
+            cerrarConexion();
+        }
+
+        public void restoreEmpleado(int dni)
+        {
+            conexion.Open();
+
+            string query = "" +
+                "UPDATE empleados " +
+                "SET baja = 0 " +
+                "WHERE dniEmpleado = " + dni;
 
             SqlCommand comando = new SqlCommand(query, conexion);
 

@@ -55,12 +55,22 @@ namespace capa_negocio
 
             DataTable tablaEmpleados = new DataTable();
             tablaEmpleados.Load(dataReaderEmpleados);
-            tablaEmpleados.Columns.Remove("Fecha deshabilitacion");
-            tablaEmpleados.Columns.Remove("Baja");
 
             datosEmpleado.cerrarConexion();
 
             return tablaEmpleados;
+        }
+
+        public DataTable listarEmpleadosInactivos()
+        {
+            SqlDataReader drEmpleados = datosEmpleado.selectEmpleadosInactivos();
+
+            DataTable dtEmpleados = new DataTable();
+            dtEmpleados.Load(drEmpleados);
+
+            datosEmpleado.cerrarConexion();
+
+            return dtEmpleados;
         }
 
         public DataTable buscarEmpleadoPorDNI(int dni)
@@ -87,6 +97,16 @@ namespace capa_negocio
         public void actualizarEmpleado(int dni, string nombre, string apellido, string email, string telefono, string direccion, int tipoEmpleado, string nuevaContraseña)
         {
             datosEmpleado.updateEmpleado(dni, nombre, apellido, email, telefono, direccion, tipoEmpleado, nuevaContraseña);
+        }
+
+        public void bajaEmpleado(int dni)
+        {
+            datosEmpleado.deleteEmpleado(dni);
+        }
+
+        public void altaEmpleado(int dni)
+        {
+            datosEmpleado.restoreEmpleado(dni);
         }
     }
 }

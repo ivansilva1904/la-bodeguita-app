@@ -36,6 +36,7 @@
             this.btnAltaEmpleado = new System.Windows.Forms.Button();
             this.btnGenerarRespaldo = new System.Windows.Forms.Button();
             this.panFormsAdministrador = new System.Windows.Forms.Panel();
+            this.btnBajaEmpleado = new System.Windows.Forms.Button();
             this.panOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +46,7 @@
             this.panOpciones.AutoSize = true;
             this.panOpciones.BackColor = System.Drawing.Color.Tan;
             this.panOpciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panOpciones.Controls.Add(this.btnBajaEmpleado);
             this.panOpciones.Controls.Add(this.btnListarEmpleados);
             this.panOpciones.Controls.Add(this.picboxLogo);
             this.panOpciones.Controls.Add(this.btnModEmpleado);
@@ -134,6 +136,20 @@
             this.panFormsAdministrador.Size = new System.Drawing.Size(733, 466);
             this.panFormsAdministrador.TabIndex = 1;
             // 
+            // btnBajaEmpleado
+            // 
+            this.btnBajaEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnBajaEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBajaEmpleado.Location = new System.Drawing.Point(-2, 291);
+            this.btnBajaEmpleado.Name = "btnBajaEmpleado";
+            this.btnBajaEmpleado.Size = new System.Drawing.Size(257, 50);
+            this.btnBajaEmpleado.TabIndex = 9;
+            this.btnBajaEmpleado.Text = "Baja empleado";
+            this.btnBajaEmpleado.UseVisualStyleBackColor = true;
+            this.btnBajaEmpleado.Click += new System.EventHandler(this.btnBajaEmpleado_Click);
+            this.btnBajaEmpleado.MouseEnter += new System.EventHandler(this.btnBajaEmpleado_MouseEnter);
+            this.btnBajaEmpleado.MouseLeave += new System.EventHandler(this.btnBajaEmpleado_MouseLeave);
+            // 
             // menu_administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -161,5 +177,6 @@
         private System.Windows.Forms.Button btnModEmpleado;
         private System.Windows.Forms.PictureBox picboxLogo;
         private System.Windows.Forms.Button btnListarEmpleados;
+        private System.Windows.Forms.Button btnBajaEmpleado;
     }
 }

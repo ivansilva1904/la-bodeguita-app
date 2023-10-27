@@ -49,11 +49,11 @@
     <Compile Include="perfil_administrador\alta_usuario.Designer.cs">
       <DependentUpon>alta_usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="perfil_administrador\baja_usuario.cs">
+    <Compile Include="perfil_administrador\baja_empleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="perfil_administrador\baja_usuario.Designer.cs">
-      <DependentUpon>baja_usuario.cs</DependentUpon>
+    <Compile Include="perfil_administrador\baja_empleado.Designer.cs">
+      <DependentUpon>baja_empleado.cs</DependentUpon>
     </Compile>
     <Compile Include="perfil_administrador\generar_respaldo.cs">
       <SubType>Form</SubType>
@@ -168,8 +168,8 @@
     <EmbeddedResource Include="perfil_administrador\alta_usuario.resx">
       <DependentUpon>alta_usuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="perfil_administrador\baja_usuario.resx">
-      <DependentUpon>baja_usuario.cs</DependentUpon>
+    <EmbeddedResource Include="perfil_administrador\baja_empleado.resx">
+      <DependentUpon>baja_empleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_administrador\generar_respaldo.resx">
       <DependentUpon>generar_respaldo.cs</DependentUpon>
