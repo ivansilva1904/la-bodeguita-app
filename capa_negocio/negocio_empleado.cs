@@ -98,5 +98,15 @@ namespace capa_negocio
         {
             datosEmpleado.updateEmpleado(dni, nombre, apellido, email, telefono, direccion, tipoEmpleado, nuevaContraseña);
         }
+
+        public void bajaEmpleado(int dni)
+        {
+            datosEmpleado.deleteEmpleado(dni);
+        }
+
+        public void altaEmpleado(int dni)
+        {
+            datosEmpleado.restoreEmpleado(dni);
+        }
     }
 }
