@@ -97,3 +97,16 @@ create table producto(
 INSERT INTO producto(descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
 VALUES ('Quilmes Bajo Cero 1L',1,1000.11,1250.50,5,30,77222222227,3)
 /* hasta 24/10*/
+
+	
+SELECT producto.idProducto AS 'ID Producto',producto.descripcion AS 'Descripcion',marca.descripcion AS 'Marca',
+producto.precioCompra AS 'Precio Compra',producto.precioVenta AS 'Precio Venta',producto.stockMinimo AS 'Stock Minimo',
+producto.stockActual AS 'Stock Actual',proveedor.razonSocial AS 'Nombre Proveedor',tipoBebida.descripcion AS 'Tipo Bebida',producto.baja AS 'Baja'
+	FROM producto
+	INNER JOIN marca ON (producto.idMarca = marca.idMarca)
+	INNER JOIN proveedor ON (producto.cuitProveedor = proveedor.cuitProveedor)
+	INNER JOIN tipoBebida ON (producto.idTipoBebida = tipoBebida.idTipoBebida)
+	GROUP BY producto.idProducto,producto.descripcion,marca.descripcion
+	/*INNER JOIN marca.idMarc*/
+	
+	select * from producto
