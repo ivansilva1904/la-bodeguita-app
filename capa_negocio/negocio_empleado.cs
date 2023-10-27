@@ -55,8 +55,6 @@ namespace capa_negocio
 
             DataTable tablaEmpleados = new DataTable();
             tablaEmpleados.Load(dataReaderEmpleados);
-            tablaEmpleados.Columns.Remove("Fecha deshabilitacion");
-            tablaEmpleados.Columns.Remove("Baja");
 
             datosEmpleado.cerrarConexion();
 
