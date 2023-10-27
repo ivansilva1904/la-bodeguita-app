@@ -188,6 +188,7 @@ namespace capa_presentacion.perfil_administrador
             baja_empleado vistaBajaEmpleado = new baja_empleado();
             vistaBajaEmpleado.TopLevel = false;
             panFormsAdministrador.Controls.Add(vistaBajaEmpleado);
+            vistaBajaEmpleado.Location = new Point(12, 12);
             vistaBajaEmpleado.Show();
         }
     }
