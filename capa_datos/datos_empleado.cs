@@ -185,5 +185,33 @@ namespace capa_datos
 
             cerrarConexion();
         }
+
+        public void deleteEmpleado(int dni)
+        {
+            conexion.Open();
+
+            string query = "" +
+                "UPDATE empleados " +
+                "SET baja = 1 " +
+                "WHERE dniEmpleado = "+ dni;
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            comando.ExecuteNonQuery();
+        }
+
+        public void restoreEmpleado(int dni)
+        {
+            conexion.Open();
+
+            string query = "" +
+                "UPDATE empleados " +
+                "SET baja = 0 " +
+                "WHERE dniEmpleado = " + dni;
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            comando.ExecuteNonQuery();
+        }
     }
 }
