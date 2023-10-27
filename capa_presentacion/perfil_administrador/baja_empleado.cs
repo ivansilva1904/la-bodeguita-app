@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using capa_negocio;
+
 namespace capa_presentacion.perfil_administrador
 {
     public partial class baja_empleado : Form
@@ -15,6 +17,19 @@ namespace capa_presentacion.perfil_administrador
         public baja_empleado()
         {
             InitializeComponent();
+        }
+
+        NegocioEmpleado negocioEmpleado = new NegocioEmpleado();
+
+        private void baja_empleado_Load(object sender, EventArgs e)
+        {
+            DataTable dtEmpleadosActivos = negocioEmpleado.listarEmpleadosActivos();
+
+            DataTable dtEmpleadosInactivos = negocioEmpleado.listarEmpleadosInactivos();
+            dtEmpleadosInactivos.Columns.Remove("Baja");
+
+            dgvEmpleadosActivos.DataSource = dtEmpleadosActivos;
+            dgvEmpleadosInactivos.DataSource = dtEmpleadosInactivos;
         }
     }
 }

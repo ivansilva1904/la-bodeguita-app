@@ -63,6 +63,18 @@ namespace capa_negocio
             return tablaEmpleados;
         }
 
+        public DataTable listarEmpleadosInactivos()
+        {
+            SqlDataReader drEmpleados = datosEmpleado.selectEmpleadosInactivos();
+
+            DataTable dtEmpleados = new DataTable();
+            dtEmpleados.Load(drEmpleados);
+
+            datosEmpleado.cerrarConexion();
+
+            return dtEmpleados;
+        }
+
         public DataTable buscarEmpleadoPorDNI(int dni)
         {
             SqlDataReader empleadoReader = datosEmpleado.selectEmpleadoDNI(dni);

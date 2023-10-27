@@ -30,10 +30,10 @@
         {
             this.LBL_USER_ACTUAL = new System.Windows.Forms.Label();
             this.LBL_USER_DESHABILITADOS = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.dgvEmpleadosActivos = new System.Windows.Forms.DataGridView();
+            this.dgvEmpleadosInactivos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadosActivos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadosInactivos)).BeginInit();
             this.SuspendLayout();
             // 
             // LBL_USER_ACTUAL
@@ -56,23 +56,23 @@
             this.LBL_USER_DESHABILITADOS.TabIndex = 1;
             this.LBL_USER_DESHABILITADOS.Text = "Empleados deshabilitados";
             // 
-            // dataGridView1
+            // dgvEmpleadosActivos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 75);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(659, 130);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvEmpleadosActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleadosActivos.Location = new System.Drawing.Point(24, 75);
+            this.dgvEmpleadosActivos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dgvEmpleadosActivos.Name = "dgvEmpleadosActivos";
+            this.dgvEmpleadosActivos.Size = new System.Drawing.Size(659, 130);
+            this.dgvEmpleadosActivos.TabIndex = 2;
             // 
-            // dataGridView2
+            // dgvEmpleadosInactivos
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(24, 265);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(659, 150);
-            this.dataGridView2.TabIndex = 3;
+            this.dgvEmpleadosInactivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleadosInactivos.Location = new System.Drawing.Point(24, 265);
+            this.dgvEmpleadosInactivos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dgvEmpleadosInactivos.Name = "dgvEmpleadosInactivos";
+            this.dgvEmpleadosInactivos.Size = new System.Drawing.Size(659, 150);
+            this.dgvEmpleadosInactivos.TabIndex = 3;
             // 
             // baja_empleado
             // 
@@ -80,17 +80,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
             this.ClientSize = new System.Drawing.Size(706, 442);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvEmpleadosInactivos);
             this.Controls.Add(this.LBL_USER_DESHABILITADOS);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvEmpleadosActivos);
             this.Controls.Add(this.LBL_USER_ACTUAL);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "baja_empleado";
             this.Text = "Baja usuario";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Load += new System.EventHandler(this.baja_empleado_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadosActivos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadosInactivos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,7 +101,7 @@
 
         private System.Windows.Forms.Label LBL_USER_ACTUAL;
         private System.Windows.Forms.Label LBL_USER_DESHABILITADOS;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvEmpleadosActivos;
+        private System.Windows.Forms.DataGridView dgvEmpleadosInactivos;
     }
 }

@@ -95,6 +95,32 @@ namespace capa_datos
             return tabla;
         }
 
+        public SqlDataReader selectEmpleadosInactivos()
+        {
+            conexion.Open();
+
+            string query = "" +
+                "SELECT dniEmpleado AS DNI, " +
+                "nombre AS Nombre, " +
+                "apellido AS Apellido, " +
+                "fechaNac AS 'Fecha nacimiento', " +
+                "fechaIncorp AS 'Fecha incorporacion', " +
+                "fechaDeshab AS 'Fecha deshabilitacion', " +
+                "direccion AS Direccion, " +
+                "telefono AS Telefono, " +
+                "email AS Email, " +
+                "idTipoEmpleado AS 'Tipo empleado', " +
+                "baja AS Baja" +
+                " FROM empleados" +
+                " WHERE Baja = 1";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            SqlDataReader tabla = comando.ExecuteReader();
+
+            return tabla;
+        }
+
         public SqlDataReader selectEmpleadoDNI(int dni)
         {
             conexion.Open();
