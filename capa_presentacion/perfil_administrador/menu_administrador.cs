@@ -171,5 +171,24 @@ namespace capa_presentacion.perfil_administrador
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void btnBajaEmpleado_MouseEnter(object sender, EventArgs e)
+        {
+            btnBajaEmpleado.BackColor = Color.Bisque;
+        }
+
+        private void btnBajaEmpleado_MouseLeave(object sender, EventArgs e)
+        {
+            btnBajaEmpleado.BackColor = Color.Tan;
+        }
+
+        private void btnBajaEmpleado_Click(object sender, EventArgs e)
+        {
+            panFormsAdministrador.Controls.Clear();
+            baja_empleado vistaBajaEmpleado = new baja_empleado();
+            vistaBajaEmpleado.TopLevel = false;
+            panFormsAdministrador.Controls.Add(vistaBajaEmpleado);
+            vistaBajaEmpleado.Show();
+        }
     }
 }
