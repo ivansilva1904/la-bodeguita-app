@@ -46,5 +46,41 @@ namespace capa_presentacion.perfil_administrador
             dgvEmpleadosActivos.DataSource = dtEmpleadosActivos;
             dgvEmpleadosInactivos.DataSource = dtEmpleadosInactivos;
         }
+
+        private void dgvEmpleadosActivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var sendergrid = (DataGridView)sender;
+
+            if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                string dni = dgvEmpleadosActivos.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                negocioEmpleado.bajaEmpleado(int.Parse(dni));
+
+                dgvEmpleadosActivos.DataSource = null;
+                dgvEmpleadosActivos.DataSource = negocioEmpleado.listarEmpleadosActivos();
+
+                dgvEmpleadosInactivos.DataSource = null;
+                dgvEmpleadosInactivos.DataSource = negocioEmpleado.listarEmpleadosInactivos();
+            }
+        }
+
+        private void dgvEmpleadosInactivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var sendergrid = (DataGridView)sender;
+
+            if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                string dni = dgvEmpleadosInactivos.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                negocioEmpleado.altaEmpleado(int.Parse(dni));
+
+                dgvEmpleadosInactivos.DataSource = null;
+                dgvEmpleadosInactivos.DataSource = negocioEmpleado.listarEmpleadosInactivos();
+
+                dgvEmpleadosActivos.DataSource = null;
+                dgvEmpleadosActivos.DataSource = negocioEmpleado.listarEmpleadosActivos();
+            }
+        }
     }
 }

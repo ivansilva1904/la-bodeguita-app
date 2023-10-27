@@ -64,6 +64,7 @@
             this.dgvEmpleadosActivos.Name = "dgvEmpleadosActivos";
             this.dgvEmpleadosActivos.Size = new System.Drawing.Size(659, 130);
             this.dgvEmpleadosActivos.TabIndex = 2;
+            this.dgvEmpleadosActivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleadosActivos_CellContentClick);
             // 
             // dgvEmpleadosInactivos
             // 
@@ -73,6 +74,7 @@
             this.dgvEmpleadosInactivos.Name = "dgvEmpleadosInactivos";
             this.dgvEmpleadosInactivos.Size = new System.Drawing.Size(659, 150);
             this.dgvEmpleadosInactivos.TabIndex = 3;
+            this.dgvEmpleadosInactivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleadosInactivos_CellContentClick);
             // 
             // baja_empleado
             // 

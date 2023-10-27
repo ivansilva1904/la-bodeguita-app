@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace capa_datos
 {
@@ -14,7 +15,14 @@ namespace capa_datos
 
         public void cerrarConexion()
         {
-            conexion.Close();
+            try
+            {
+                conexion.Close();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public SqlDataReader buscarDNI(int dni)
@@ -89,7 +97,6 @@ namespace capa_datos
                 " WHERE Baja = 0";
 
             SqlCommand comando = new SqlCommand(query, conexion);
-
             SqlDataReader tabla = comando.ExecuteReader();
 
             return tabla;
@@ -115,7 +122,6 @@ namespace capa_datos
                 " WHERE Baja = 1";
 
             SqlCommand comando = new SqlCommand(query, conexion);
-
             SqlDataReader tabla = comando.ExecuteReader();
 
             return tabla;
@@ -198,6 +204,8 @@ namespace capa_datos
             SqlCommand comando = new SqlCommand(query, conexion);
 
             comando.ExecuteNonQuery();
+
+            cerrarConexion();
         }
 
         public void restoreEmpleado(int dni)
@@ -212,6 +220,8 @@ namespace capa_datos
             SqlCommand comando = new SqlCommand(query, conexion);
 
             comando.ExecuteNonQuery();
+
+            cerrarConexion();
         }
     }
 }
