@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using capa_negocio;
+
 namespace capa_presentacion.perfil_vendedor
 {
     public partial class productos : Form
@@ -15,6 +17,15 @@ namespace capa_presentacion.perfil_vendedor
         public productos()
         {
             InitializeComponent();
+        }
+
+        NegocioProducto negocioProducto = new NegocioProducto();
+
+        private void productos_Load(object sender, EventArgs e)
+        {
+            DataTable dtProductos = negocioProducto.listarTodosProductos();
+
+            dgvListaProductos.DataSource = dtProductos;
         }
     }
 }
