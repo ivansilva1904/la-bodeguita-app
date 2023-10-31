@@ -114,9 +114,9 @@ namespace capa_datos
                     "SELECT marca.descripcion AS 'Marca', " +
                     "producto.descripcion AS 'Descripcion', " +
                     "producto.precioVenta AS 'Precio', " +
-                    "producto.stockActual AS 'Stock', " +
+                    "producto.stockActual AS 'Stock' " +
                     "FROM producto " +
-                    "INNER JOIN marca ON producto.idMarca = marca.idMarca " +
+                    "JOIN marca ON producto.idMarca = marca.idMarca " +
                     "WHERE producto.baja = 0 AND producto.stockActual > producto.stockMinimo";
 
                 SqlCommand comando = new SqlCommand(query, conexion);

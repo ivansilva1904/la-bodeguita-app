@@ -61,6 +61,23 @@ namespace capa_negocio
 
 
         }
+
+        public DataTable listarProductosVenta()
+        {
+            SqlDataReader drProductos = datosProducto.selectProductosVenta();
+
+            DataTable dtProductos = new DataTable();
+
+            if (drProductos.HasRows)
+            {
+                dtProductos.Load(drProductos);
+                return dtProductos;
+            }
+            else
+            {
+                return dtProductos;
+            }
+        }
     }
 }
 

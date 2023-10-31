@@ -23,7 +23,7 @@ namespace capa_presentacion.perfil_vendedor
 
         private void productos_Load(object sender, EventArgs e)
         {
-            DataTable dtProductos = negocioProducto.listarTodosProductos();
+            DataTable dtProductos = negocioProducto.listarProductosVenta();
 
             dgvListaProductos.DataSource = dtProductos;
         }
