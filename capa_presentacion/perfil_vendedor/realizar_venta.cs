@@ -96,5 +96,11 @@ namespace capa_presentacion.perfil_vendedor
                 e.Handled = true;
             }
         }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            Form productos = new productos();
+            productos.Show();
+        }
     }
 }

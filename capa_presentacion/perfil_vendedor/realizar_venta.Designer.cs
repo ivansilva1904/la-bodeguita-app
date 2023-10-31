@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTarjetaNumero = new System.Windows.Forms.TextBox();
             this.lblMedioPago = new System.Windows.Forms.Label();
             this.rbutTarjeta = new System.Windows.Forms.RadioButton();
             this.rbutEfectivo = new System.Windows.Forms.RadioButton();
@@ -46,7 +47,6 @@
             this.colQuitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtDNICliente = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
-            this.txtTarjetaNumero = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentaDetalle)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +71,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
+            // 
+            // txtTarjetaNumero
+            // 
+            this.txtTarjetaNumero.Enabled = false;
+            this.txtTarjetaNumero.Location = new System.Drawing.Point(356, 177);
+            this.txtTarjetaNumero.Name = "txtTarjetaNumero";
+            this.txtTarjetaNumero.Size = new System.Drawing.Size(165, 21);
+            this.txtTarjetaNumero.TabIndex = 12;
+            this.txtTarjetaNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTarjetaNumero_KeyPress);
             // 
             // lblMedioPago
             // 
@@ -161,6 +170,7 @@
             this.btnBuscarProducto.TabIndex = 3;
             this.btnBuscarProducto.Text = "Buscar productos";
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // dgvVentaDetalle
             // 
@@ -221,15 +231,6 @@
             this.lblDNI.Size = new System.Drawing.Size(91, 13);
             this.lblDNI.TabIndex = 0;
             this.lblDNI.Text = "DNI del cliente";
-            // 
-            // txtTarjetaNumero
-            // 
-            this.txtTarjetaNumero.Enabled = false;
-            this.txtTarjetaNumero.Location = new System.Drawing.Point(356, 177);
-            this.txtTarjetaNumero.Name = "txtTarjetaNumero";
-            this.txtTarjetaNumero.Size = new System.Drawing.Size(165, 21);
-            this.txtTarjetaNumero.TabIndex = 12;
-            this.txtTarjetaNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTarjetaNumero_KeyPress);
             // 
             // realizar_venta
             // 
