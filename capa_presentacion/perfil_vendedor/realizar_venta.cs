@@ -99,8 +99,20 @@ namespace capa_presentacion.perfil_vendedor
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            Form productos = new productos();
+            Form productos = new productos(this);
             productos.Show();
+        }
+
+        public void cargaProductosDatagrid(DataTable producto)
+        {
+            DataGridViewButtonColumn colQuitar = new DataGridViewButtonColumn();
+            colQuitar.HeaderText = "";
+            colQuitar.Name = "colQuitar";
+            colQuitar.Text = "Quitar";
+            colQuitar.UseColumnTextForButtonValue = true;
+
+            dgvVentaDetalle.DataSource = producto;
+            dgvVentaDetalle.Columns.Add(colQuitar);
         }
     }
 }

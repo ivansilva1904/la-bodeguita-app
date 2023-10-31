@@ -14,9 +14,11 @@ namespace capa_presentacion.perfil_vendedor
 {
     public partial class productos : Form
     {
-        public productos()
+        realizar_venta formVenta;
+        public productos(realizar_venta formVenta)
         {
             InitializeComponent();
+            this.formVenta = formVenta;
         }
 
         NegocioProducto negocioProducto = new NegocioProducto();
@@ -33,6 +35,31 @@ namespace capa_presentacion.perfil_vendedor
 
             dgvListaProductos.Columns.Add(colAgregar);
             dgvListaProductos.DataSource = dtProductos;
+            dgvListaProductos.Columns["ID Producto"].Visible = false;
+        }
+
+        private void dgvListaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var sendergrid = (DataGridView)sender;
+
+            DataTable producto = new DataTable();
+
+            producto.Columns.Add("ID Producto");
+            producto.Columns.Add("Descripcion");
+            producto.Columns.Add("Precio unitario");
+            producto.Columns.Add("Cantidad");
+
+            if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+
+                string id = dgvListaProductos.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string descripcion = dgvListaProductos.Rows[e.RowIndex].Cells[3].Value.ToString();
+                string precio = dgvListaProductos.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+                producto.Rows.Add(id, descripcion, precio, 0);
+
+                formVenta.cargaProductosDatagrid(producto);
+            }
         }
     }
 }

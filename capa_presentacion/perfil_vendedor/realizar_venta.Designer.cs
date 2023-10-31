@@ -40,11 +40,6 @@
             this.lblMontoParcial = new System.Windows.Forms.Label();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.dgvVentaDetalle = new System.Windows.Forms.DataGridView();
-            this.colCodProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtDNICliente = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -176,44 +171,10 @@
             // 
             this.dgvVentaDetalle.AllowUserToAddRows = false;
             this.dgvVentaDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentaDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colCodProducto,
-            this.colDescripcion,
-            this.colCantidad,
-            this.colPrecio,
-            this.colQuitar});
             this.dgvVentaDetalle.Location = new System.Drawing.Point(76, 222);
             this.dgvVentaDetalle.Name = "dgvVentaDetalle";
             this.dgvVentaDetalle.Size = new System.Drawing.Size(544, 150);
             this.dgvVentaDetalle.TabIndex = 2;
-            // 
-            // colCodProducto
-            // 
-            this.colCodProducto.HeaderText = "Cod. Producto";
-            this.colCodProducto.Name = "colCodProducto";
-            this.colCodProducto.ReadOnly = true;
-            // 
-            // colDescripcion
-            // 
-            this.colDescripcion.HeaderText = "Descripcion";
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.HeaderText = "Precio unitario";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
-            // 
-            // colQuitar
-            // 
-            this.colQuitar.HeaderText = "Quitar";
-            this.colQuitar.Name = "colQuitar";
             // 
             // txtDNICliente
             // 
@@ -263,11 +224,6 @@
         private System.Windows.Forms.TextBox txtMontoParcial;
         private System.Windows.Forms.Label lblMontoParcial;
         private System.Windows.Forms.Button btnBuscarProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCodProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
-        private System.Windows.Forms.DataGridViewButtonColumn colQuitar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel lblRegistroCliente;
         private System.Windows.Forms.Button btnRealizarVenta;

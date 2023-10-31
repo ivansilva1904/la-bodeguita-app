@@ -111,7 +111,8 @@ namespace capa_datos
                 conexion.Open();
 
                 string query = "" +
-                    "SELECT marca.descripcion AS 'Marca', " +
+                    "SELECT producto.idProducto AS 'ID Producto', " +
+                    "marca.descripcion AS 'Marca', " +
                     "producto.descripcion AS 'Descripcion', " +
                     "producto.precioVenta AS 'Precio', " +
                     "producto.stockActual AS 'Stock' " +

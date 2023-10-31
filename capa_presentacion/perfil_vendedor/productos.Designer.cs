@@ -39,6 +39,7 @@
             this.dgvListaProductos.Name = "dgvListaProductos";
             this.dgvListaProductos.Size = new System.Drawing.Size(545, 437);
             this.dgvListaProductos.TabIndex = 0;
+            this.dgvListaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaProductos_CellContentClick);
             // 
             // productos
             // 
