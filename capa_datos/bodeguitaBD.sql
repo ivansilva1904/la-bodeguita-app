@@ -110,12 +110,3 @@ producto.stockActual AS 'Stock Actual',proveedor.razonSocial AS 'Nombre Proveedo
 	/*INNER JOIN marca.idMarc*/
 	
 	select * from producto
-
-
-SELECT marca.descripcion AS 'Marca',
-	producto.descripcion AS 'Descripcion',
-	producto.precioVenta AS 'Precio',
-	producto.stockActual AS 'Stock'
-FROM producto
-JOIN marca ON producto.idMarca = marca.idMarca
-WHERE producto.baja = 0 AND producto.stockActual > producto.stockMinimo;

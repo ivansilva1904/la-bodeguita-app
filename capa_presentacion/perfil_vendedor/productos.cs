@@ -25,6 +25,13 @@ namespace capa_presentacion.perfil_vendedor
         {
             DataTable dtProductos = negocioProducto.listarProductosVenta();
 
+            DataGridViewButtonColumn colAgregar = new DataGridViewButtonColumn();
+            colAgregar.HeaderText = "";
+            colAgregar.Name = "colAgregar";
+            colAgregar.Text = "Agregar";
+            colAgregar.UseColumnTextForButtonValue = true;
+
+            dgvListaProductos.Columns.Add(colAgregar);
             dgvListaProductos.DataSource = dtProductos;
         }
     }
