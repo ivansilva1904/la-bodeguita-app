@@ -124,7 +124,7 @@ namespace capa_datos
 
                 SqlDataReader drComando = comando.ExecuteReader();
 
-                return drComando;
+                return drComando;s
             }
             catch(Exception ex)
             {

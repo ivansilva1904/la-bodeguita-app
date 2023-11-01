@@ -112,6 +112,18 @@ namespace capa_presentacion.perfil_vendedor
             fila.Cells[dgvVentaDetalle.Columns["colPrecio"].Index].Value = producto.Columns["Precio"];
             fila.Cells[dgvVentaDetalle.Columns["colCantidad"].Index].Value = producto.Columns["Cantidad"];*/
 
+            /*int contProdRepetido = 0;
+            for(int i = 0; i < dgvVentaDetalle.Rows.Count; i++)
+            {
+                if(dgvVentaDetalle.Rows[i].Cells[0].Value == producto.Columns["ID Producto"])
+                {
+                    contProdRepetido++;
+                }
+            }*/
+
+            /*if(contProdRepetido > 0)
+            {
+            }*/
             dgvVentaDetalle.DataSource = producto;
 
             if (contBtnQuitar != 1)

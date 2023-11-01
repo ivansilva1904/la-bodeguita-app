@@ -40,6 +40,7 @@ namespace capa_presentacion.perfil_vendedor
 
         DataTable producto = new DataTable();
         int contColumnasDT = 0;
+        int[] productosAgregados;
         private void dgvListaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var sendergrid = (DataGridView)sender;
@@ -53,6 +54,8 @@ namespace capa_presentacion.perfil_vendedor
 
                 contColumnasDT++;
             }
+
+            //if(dgvListaProductos.Rows)
 
             if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
