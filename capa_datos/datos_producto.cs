@@ -128,7 +128,7 @@ namespace capa_datos
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Fallo la consulta: ", ex.Message);
+                MessageBox.Show(ex.Message);
                 return null;
             }
         }

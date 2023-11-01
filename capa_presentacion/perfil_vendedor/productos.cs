@@ -38,25 +38,35 @@ namespace capa_presentacion.perfil_vendedor
             dgvListaProductos.Columns["ID Producto"].Visible = false;
         }
 
+        DataTable producto = new DataTable();
+        int contColumnasDT = 0;
         private void dgvListaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var sendergrid = (DataGridView)sender;
 
-            DataTable producto = new DataTable();
+            if(contColumnasDT != 1)
+            {
+                producto.Columns.Add("ID Producto");
+                producto.Columns.Add("Descripcion");
+                producto.Columns.Add("Precio");
+                producto.Columns.Add("Cantidad");
 
-            producto.Columns.Add("ID Producto");
-            producto.Columns.Add("Descripcion");
-            producto.Columns.Add("Precio unitario");
-            producto.Columns.Add("Cantidad");
+                contColumnasDT++;
+            }
 
             if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-
                 string id = dgvListaProductos.Rows[e.RowIndex].Cells[1].Value.ToString();
                 string descripcion = dgvListaProductos.Rows[e.RowIndex].Cells[3].Value.ToString();
                 string precio = dgvListaProductos.Rows[e.RowIndex].Cells[4].Value.ToString();
 
-                producto.Rows.Add(id, descripcion, precio, 0);
+                DataRow fila = producto.NewRow();
+                fila["ID Producto"] = id;
+                fila["Descripcion"] = descripcion;
+                fila["Precio"] = precio;
+                fila["Cantidad"] = 0;
+
+                producto.Rows.Add(fila);
 
                 formVenta.cargaProductosDatagrid(producto);
             }

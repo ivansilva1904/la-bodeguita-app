@@ -136,7 +136,7 @@
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(223, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 16);
+            this.label1.Size = new System.Drawing.Size(234, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "Ingrese los productos a vender";
             // 

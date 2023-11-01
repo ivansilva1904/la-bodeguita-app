@@ -103,16 +103,30 @@ namespace capa_presentacion.perfil_vendedor
             productos.Show();
         }
 
+        int contBtnQuitar = 0;
         public void cargaProductosDatagrid(DataTable producto)
         {
-            DataGridViewButtonColumn colQuitar = new DataGridViewButtonColumn();
-            colQuitar.HeaderText = "";
-            colQuitar.Name = "colQuitar";
-            colQuitar.Text = "Quitar";
-            colQuitar.UseColumnTextForButtonValue = true;
+            /*DataGridViewRow fila = (DataGridViewRow)dgvVentaDetalle.RowTemplate;
+            fila.Cells[dgvVentaDetalle.Columns["colIDProducto"].Index].Value = producto.Columns["ID Producto"];
+            fila.Cells[dgvVentaDetalle.Columns["colNombre"].Index].Value = producto.Columns["Descripcion"];
+            fila.Cells[dgvVentaDetalle.Columns["colPrecio"].Index].Value = producto.Columns["Precio"];
+            fila.Cells[dgvVentaDetalle.Columns["colCantidad"].Index].Value = producto.Columns["Cantidad"];*/
 
             dgvVentaDetalle.DataSource = producto;
-            dgvVentaDetalle.Columns.Add(colQuitar);
+
+            if (contBtnQuitar != 1)
+            {
+                DataGridViewButtonColumn colQuitar = new DataGridViewButtonColumn();
+                colQuitar.HeaderText = "";
+                colQuitar.Name = "colQuitar";
+                colQuitar.Text = "Quitar";
+                colQuitar.UseColumnTextForButtonValue = true;
+            
+                dgvVentaDetalle.Columns.Add(colQuitar);
+
+                contBtnQuitar++;
+            }
+            
         }
     }
 }
