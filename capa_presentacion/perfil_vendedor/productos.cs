@@ -40,10 +40,10 @@ namespace capa_presentacion.perfil_vendedor
 
         DataTable producto = new DataTable();
         int contColumnasDT = 0;
-        int[] productosAgregados;
         private void dgvListaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var sendergrid = (DataGridView)sender;
+            int contProdRepetido = 0;
 
             if(contColumnasDT != 1)
             {
@@ -54,8 +54,6 @@ namespace capa_presentacion.perfil_vendedor
 
                 contColumnasDT++;
             }
-
-            //if(dgvListaProductos.Rows)
 
             if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
@@ -69,9 +67,19 @@ namespace capa_presentacion.perfil_vendedor
                 fila["Precio"] = precio;
                 fila["Cantidad"] = 0;
 
-                producto.Rows.Add(fila);
+                foreach(DataRow row in producto.Rows)
+                {
+                    if (row["ID Producto"].ToString() == fila["ID Producto"].ToString())
+                    {
+                        contProdRepetido++;
+                    }
+                }
 
-                formVenta.cargaProductosDatagrid(producto);
+                if(contProdRepetido == 0)
+                {
+                    producto.Rows.Add(fila);
+                    formVenta.cargaProductosDatagrid(producto);
+                }
             }
         }
     }

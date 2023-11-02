@@ -96,6 +96,9 @@ create table producto(
 
 INSERT INTO producto(descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
 VALUES ('Quilmes Bajo Cero 1L',1,1000.11,1250.50,5,30,77222222227,3)
+
+INSERT INTO producto(descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
+VALUES ('Old No 7 Tennessee', 2, 1500, 2500.50, 15, 30, 77333333337, 4);
 /* hasta 24/10*/
 
 	

@@ -106,39 +106,23 @@ namespace capa_presentacion.perfil_vendedor
         int contBtnQuitar = 0;
         public void cargaProductosDatagrid(DataTable producto)
         {
-            /*DataGridViewRow fila = (DataGridViewRow)dgvVentaDetalle.RowTemplate;
-            fila.Cells[dgvVentaDetalle.Columns["colIDProducto"].Index].Value = producto.Columns["ID Producto"];
-            fila.Cells[dgvVentaDetalle.Columns["colNombre"].Index].Value = producto.Columns["Descripcion"];
-            fila.Cells[dgvVentaDetalle.Columns["colPrecio"].Index].Value = producto.Columns["Precio"];
-            fila.Cells[dgvVentaDetalle.Columns["colCantidad"].Index].Value = producto.Columns["Cantidad"];*/
-
-            /*int contProdRepetido = 0;
-            for(int i = 0; i < dgvVentaDetalle.Rows.Count; i++)
-            {
-                if(dgvVentaDetalle.Rows[i].Cells[0].Value == producto.Columns["ID Producto"])
-                {
-                    contProdRepetido++;
-                }
-            }*/
-
-            /*if(contProdRepetido > 0)
-            {
-            }*/
             dgvVentaDetalle.DataSource = producto;
+            dgvVentaDetalle.Columns[0].ReadOnly = true;
+            dgvVentaDetalle.Columns[1].ReadOnly = true;
+            dgvVentaDetalle.Columns[2].ReadOnly = true;
 
-            if (contBtnQuitar != 1)
+            if (contBtnQuitar == 0)
             {
                 DataGridViewButtonColumn colQuitar = new DataGridViewButtonColumn();
                 colQuitar.HeaderText = "";
                 colQuitar.Name = "colQuitar";
                 colQuitar.Text = "Quitar";
                 colQuitar.UseColumnTextForButtonValue = true;
-            
+
                 dgvVentaDetalle.Columns.Add(colQuitar);
 
                 contBtnQuitar++;
             }
-            
         }
     }
 }
