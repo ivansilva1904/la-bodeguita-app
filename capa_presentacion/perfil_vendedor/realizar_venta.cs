@@ -12,9 +12,11 @@ namespace capa_presentacion.perfil_vendedor
 {
     public partial class realizar_venta : Form
     {
+        productos formProductos;
         public realizar_venta()
         {
             InitializeComponent();
+            formProductos = new productos(this);
         }
 
         private void btnRealizarVenta_Click(object sender, EventArgs e)
@@ -99,8 +101,7 @@ namespace capa_presentacion.perfil_vendedor
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            Form productos = new productos(this);
-            productos.Show();
+            formProductos.Show();
         }
 
         int contBtnQuitar = 0;
@@ -143,12 +144,23 @@ namespace capa_presentacion.perfil_vendedor
             float precio = float.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells[2].Value.ToString());
             int cantidad = int.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells[3].Value.ToString());
 
-            MessageBox.Show("precio: " + precio + " cantidad: " + cantidad);
+            //MessageBox.Show("precio: " + precio + " cantidad: " + cantidad);
 
             float montoParcial = precio * cantidad;
             montoParcial = montoParcial + float.Parse(txtMontoParcial.Text);
 
             txtMontoParcial.Text = montoParcial.ToString();
+        }
+
+        private void dgvVentaDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var sendergrid = (DataGridView)sender;
+
+            if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                string id = dgvVentaDetalle.Rows[e.RowIndex].Cells[0].Value.ToString();
+                formProductos.bajaProductoDatatable(id);
+            }
         }
     }
 }

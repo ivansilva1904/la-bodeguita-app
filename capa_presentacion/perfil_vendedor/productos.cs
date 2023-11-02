@@ -38,7 +38,7 @@ namespace capa_presentacion.perfil_vendedor
             dgvListaProductos.Columns["ID Producto"].Visible = false;
         }
 
-        DataTable producto = new DataTable();
+        DataTable dtProductos = new DataTable();
         int contColumnasDT = 0;
         private void dgvListaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -47,10 +47,10 @@ namespace capa_presentacion.perfil_vendedor
 
             if(contColumnasDT != 1)
             {
-                producto.Columns.Add("ID Producto");
-                producto.Columns.Add("Descripcion");
-                producto.Columns.Add("Precio");
-                producto.Columns.Add("Cantidad");
+                dtProductos.Columns.Add("ID Producto");
+                dtProductos.Columns.Add("Descripcion");
+                dtProductos.Columns.Add("Precio");
+                dtProductos.Columns.Add("Cantidad");
 
                 contColumnasDT++;
             }
@@ -61,13 +61,13 @@ namespace capa_presentacion.perfil_vendedor
                 string descripcion = dgvListaProductos.Rows[e.RowIndex].Cells[3].Value.ToString();
                 string precio = dgvListaProductos.Rows[e.RowIndex].Cells[4].Value.ToString();
 
-                DataRow fila = producto.NewRow();
+                DataRow fila = dtProductos.NewRow();
                 fila["ID Producto"] = id;
                 fila["Descripcion"] = descripcion;
                 fila["Precio"] = precio;
                 fila["Cantidad"] = 1;
 
-                foreach(DataRow row in producto.Rows)
+                foreach(DataRow row in dtProductos.Rows)
                 {
                     if (row["ID Producto"].ToString() == fila["ID Producto"].ToString())
                     {
@@ -77,10 +77,23 @@ namespace capa_presentacion.perfil_vendedor
 
                 if(contProdRepetido == 0)
                 {
-                    producto.Rows.Add(fila);
-                    formVenta.cargaProductosDatagrid(producto);
+                    dtProductos.Rows.Add(fila);
+                    formVenta.cargaProductosDatagrid(dtProductos);
                 }
             }
+        }
+
+        public void bajaProductoDatatable(string id)
+        {
+            dtProductos.AcceptChanges();
+            foreach (DataRow fila in dtProductos.Rows)
+            {
+                if (fila[0].ToString() == id)
+                {
+                    fila.Delete();
+                }
+            }
+            dtProductos.AcceptChanges();
         }
     }
 }
