@@ -171,5 +171,28 @@ namespace capa_datos
 
             return tabla;
         }
+
+        public SqlDataReader filtroProveedorRazonSocial(string razon)
+        {
+            conexion.Open();
+
+            string query = "" +
+                "SELECT cuitProveedor AS CUIT, " +
+                "razonSocial AS 'Razon Social', " +
+                "direccion AS Direccion, " +
+                "telefono AS Telefono, " +
+                "email AS Email, " +
+                "fechaAlta AS 'Fecha Alta', " +
+                "fechaBaja AS 'Fecha Baja', " +
+                "baja AS Baja " +
+                " FROM proveedor" +
+                " WHERE razonSocial like '%"+razon+"%'";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            SqlDataReader tabla = comando.ExecuteReader();
+
+            return tabla;
+        }
     }
 }

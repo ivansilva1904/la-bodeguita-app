@@ -187,5 +187,43 @@ namespace capa_presentacion.perfil_supervisor
                 //TODO - Button Clicked - Execute Code Here
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string filtro = txtFiltro.Text;
+            
+            if (String.IsNullOrWhiteSpace(filtro))
+            {
+                //gridview total
+                cargar_dvgModificarProveedor();
+            }
+            else if(cbxFiltro.Text == "Razon Social")
+            {
+                cargar_dvgModificarProveedorConFiltro(filtro);
+                //trae matchs con el string
+            }else if(cbxFiltro.Text == "Cuit")
+            {
+                // trae matchs con el cuit
+            }
+
+        }
+        private void cargar_dvgModificarProveedorConFiltro(string filtro)
+        {
+            dgvModificarProveedor.DataSource = null;
+
+            DataTable tablaProveedor = negocioProveedor.filtrarProveedorPorRazonSocial(filtro);
+
+            dgvModificarProveedor.DataSource = tablaProveedor;
+
+
+            dgvModificarProveedor.Columns["Baja"].Visible = false;
+
+
+            // dgvModificarProveedor.Rows.Clear();
+            // dgvModificarProveedor.Columns.Clear();
+
+
+
+        }
     }
 }

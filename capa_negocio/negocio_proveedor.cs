@@ -92,7 +92,7 @@ namespace capa_negocio
         }
 
         
-        public DataTable buscarProveedorPorRazonSocial(string razonSocial)
+        public DataTable buscarProveedorPorRazonSocial(string razonSocial) //Usado para obtener el registro a modificar
         {
             SqlDataReader proveedorReader = datosProveedor.selectProveedorPorRazonSocial(razonSocial);
 
@@ -112,5 +112,27 @@ namespace capa_negocio
                 return tablaProveedor;
             }
         }
+
+        public DataTable filtrarProveedorPorRazonSocial(string razon)
+        {
+            SqlDataReader proveedorReader = datosProveedor.filtroProveedorRazonSocial(razon);
+
+            DataTable tablaProveedor = new DataTable();
+
+            if (proveedorReader.HasRows)
+            {
+                tablaProveedor.Load(proveedorReader);
+                datosProveedor.cerrarConexion();
+
+                return tablaProveedor;
+            }
+            else
+            {
+                datosProveedor.cerrarConexion();
+
+                return tablaProveedor;
+            }
+        }
+
     }
 }

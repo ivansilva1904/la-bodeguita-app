@@ -99,7 +99,7 @@
             this.cbxEstado.Location = new System.Drawing.Point(135, 196);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(150, 21);
-            this.cbxEstado.TabIndex = 19;
+            this.cbxEstado.TabIndex = 5;
             // 
             // dgvModificarProveedor
             // 
@@ -115,8 +115,7 @@
             this.cbxFiltro.FormattingEnabled = true;
             this.cbxFiltro.Items.AddRange(new object[] {
             "Cuit",
-            "Razon Social",
-            "Rubro"});
+            "Razon Social"});
             this.cbxFiltro.Location = new System.Drawing.Point(117, 270);
             this.cbxFiltro.Name = "cbxFiltro";
             this.cbxFiltro.Size = new System.Drawing.Size(56, 21);
@@ -146,13 +145,15 @@
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(135, 156);
+            this.txtTelefono.MaxLength = 30;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(150, 21);
-            this.txtTelefono.TabIndex = 13;
+            this.txtTelefono.TabIndex = 4;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // lblModificarProveedor
@@ -179,7 +180,7 @@
             this.btnLimpiarCampos.Location = new System.Drawing.Point(481, 169);
             this.btnLimpiarCampos.Name = "btnLimpiarCampos";
             this.btnLimpiarCampos.Size = new System.Drawing.Size(119, 24);
-            this.btnLimpiarCampos.TabIndex = 10;
+            this.btnLimpiarCampos.TabIndex = 6;
             this.btnLimpiarCampos.Text = "Limpiar Campos";
             this.btnLimpiarCampos.UseVisualStyleBackColor = true;
             this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
@@ -225,7 +226,7 @@
             this.btnGuardarCambios.Location = new System.Drawing.Point(481, 199);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(119, 24);
-            this.btnGuardarCambios.TabIndex = 5;
+            this.btnGuardarCambios.TabIndex = 7;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
@@ -233,16 +234,18 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(444, 112);
+            this.txtDireccion.MaxLength = 30;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(156, 21);
-            this.txtDireccion.TabIndex = 4;
+            this.txtDireccion.TabIndex = 3;
             // 
             // txtRazonSocial
             // 
             this.txtRazonSocial.Location = new System.Drawing.Point(444, 72);
+            this.txtRazonSocial.MaxLength = 50;
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(156, 21);
-            this.txtRazonSocial.TabIndex = 3;
+            this.txtRazonSocial.TabIndex = 1;
             // 
             // txtCuit
             // 
@@ -256,9 +259,10 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(135, 114);
+            this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(150, 21);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 2;
             // 
             // modificar_proveedor
             // 

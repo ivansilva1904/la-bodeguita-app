@@ -79,26 +79,29 @@
             // 
             this.txtDireccion.Location = new System.Drawing.Point(473, 164);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtDireccion.MaxLength = 30;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(157, 21);
-            this.txtDireccion.TabIndex = 3;
+            this.txtDireccion.TabIndex = 4;
             // 
             // txtCuit
             // 
             this.txtCuit.Location = new System.Drawing.Point(146, 106);
             this.txtCuit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCuit.MaxLength = 11;
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(140, 21);
-            this.txtCuit.TabIndex = 4;
+            this.txtCuit.TabIndex = 1;
             this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(146, 164);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(140, 21);
-            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TabIndex = 3;
             // 
             // pnlAltaProovedor
             // 
@@ -127,7 +130,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(417, 383);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(125, 29);
-            this.btnLimpiar.TabIndex = 12;
+            this.btnLimpiar.TabIndex = 6;
             this.btnLimpiar.Text = "Limpiar Campos";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -135,9 +138,10 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(146, 222);
+            this.txtTelefono.MaxLength = 30;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(140, 21);
-            this.txtTelefono.TabIndex = 11;
+            this.txtTelefono.TabIndex = 5;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // lblTelefono
@@ -145,7 +149,7 @@
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Location = new System.Drawing.Point(70, 223);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(55, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(56, 13);
             this.lblTelefono.TabIndex = 10;
             this.lblTelefono.Text = "Telefono";
             // 
@@ -166,7 +170,7 @@
             this.btnGuardarProveedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGuardarProveedor.Name = "btnGuardarProveedor";
             this.btnGuardarProveedor.Size = new System.Drawing.Size(125, 29);
-            this.btnGuardarProveedor.TabIndex = 8;
+            this.btnGuardarProveedor.TabIndex = 7;
             this.btnGuardarProveedor.Text = "Guardar Proveedor";
             this.btnGuardarProveedor.UseVisualStyleBackColor = true;
             this.btnGuardarProveedor.Click += new System.EventHandler(this.btnGuardarProveedor_Click);
@@ -175,9 +179,10 @@
             // 
             this.txtRazonSocial.Location = new System.Drawing.Point(473, 106);
             this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtRazonSocial.MaxLength = 50;
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(157, 21);
-            this.txtRazonSocial.TabIndex = 7;
+            this.txtRazonSocial.TabIndex = 2;
             // 
             // lblDireccion
             // 
@@ -189,7 +194,7 @@
             this.lblDireccion.TabIndex = 6;
             this.lblDireccion.Text = "Direccion";
             // 
-            // alta_proovedor
+            // alta_proveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -203,7 +208,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "alta_proovedor";
+            this.Name = "alta_proveedor";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
