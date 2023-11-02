@@ -33,14 +33,6 @@ CREATE TABLE clientes(
 	baja BIT
 );
 
-/* Datos de entidades accesorio */
-
-INSERT INTO tiposEmpleados(descripcion) VALUES('Vendedor');
-INSERT INTO tiposEmpleados(descripcion) VALUES('Supervisor');
-INSERT INTO tiposEmpleados(descripcion) VALUES('Administrador');
-
-/* Agregada parte de proveedor 23/10/ */
-
 CREATE TABLE proveedor(
 	cuitProveedor BIGINT PRIMARY KEY,
 	razonSocial VARCHAR(50),
@@ -52,31 +44,15 @@ CREATE TABLE proveedor(
 	baja BIT DEFAULT 0
 );
 
-/* datos de prueba sin DATE*/
-
-INSERT INTO proveedor(cuitProveedor,razonSocial,direccion,telefono,email) VALUES(77111111117,'Whiskeria UNO','Calle Falsa 111','3794000111','whiskeriaUNO@gmail.com');
-INSERT INTO proveedor(cuitProveedor,razonSocial,direccion,telefono,email) VALUES(77222222227,'CERVECERIA DOS','Calle Falsa 222','3794000222','cerveceriaDOS@live.com');
-INSERT INTO proveedor(cuitProveedor,razonSocial,direccion,telefono,email) VALUES(77333333337,'Viñedo tres','Calle Falsa 333','3794000333','viñedosTRES@gmail.com');
-
-/**/
-
 create table tipoBebida(
 	idTipoBebida INT IDENTITY PRIMARY KEY,
 	descripcion VARCHAR(30)
 );
-INSERT INTO tipoBebida(descripcion) VALUES('Licor');
-INSERT INTO tipoBebida(descripcion) VALUES('Gaseosa');
-INSERT INTO tipoBebida(descripcion) VALUES('Cerveza');
-INSERT INTO tipoBebida(descripcion) VALUES('Whisky');
 
 create table marca(
 	idMarca INT IDENTITY PRIMARY KEY,
 	descripcion VARCHAR(30)
 );
-
-INSERT INTO marca(descripcion) VALUES('Quilmes');
-INSERT INTO marca(descripcion) VALUES('Jack Daniels');
-INSERT INTO marca(descripcion) VALUES('Absolut');
 
 create table producto(
 	idProducto INT IDENTITY PRIMARY KEY,
@@ -94,13 +70,76 @@ create table producto(
 	CONSTRAINT fk_tipoBebida FOREIGN KEY (idTipoBebida) REFERENCES tipoBebida(idTipoBebida)
 );
 
-INSERT INTO producto(descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
-VALUES ('Quilmes Bajo Cero 1L',1,1000.11,1250.50,5,30,77222222227,3)
+CREATE TABLE formasPago(
+	idFormaPago INT IDENTITY PRIMARY KEY,
+	descripcion VARCHAR(30)
+);
+
+CREATE TABLE ventasCabecera(
+	idVentaCabecera INT IDENTITY PRIMARY KEY,
+	fecha DATE,
+	idFormaPago INT,
+	nroTarjeta BIGINT DEFAULT NULL,
+	importeTotal FLOAT,
+	dniEmpleado INT,
+	dniCliente INT,
+	CONSTRAINT FK_formaPago FOREIGN KEY (idFormaPago) REFERENCES formasPago(idFormaPago),
+	CONSTRAINT FK_empleado FOREIGN KEY (dniEmpleado) REFERENCES empleados(dniEmpleado),
+	CONSTRAINT FK_cliente FOREIGN KEY (dniCliente) REFERENCES clientes(dniCliente)
+);
+
+CREATE TABLE ventasDetalle(
+	idVentaDetalle INT IDENTITY,
+	idVentaCabecera INT,
+	idProducto INT,
+	cantidad INT,
+	precioParcial FLOAT,
+	CONSTRAINT FK_ventaCabecera FOREIGN KEY (idVentaCabecera) REFERENCES ventasCabecera(idVentaCabecera),
+	CONSTRAINT PK_detalle_cabecera PRIMARY KEY (idVentaDetalle, idVentaCabecera),
+	CONSTRAINT FK_producto FOREIGN KEY (idProducto) REFERENCES producto(idProducto)
+);
+
+/* Datos de entidades accesorio */
+
+INSERT INTO tiposEmpleados(descripcion) VALUES('Vendedor');
+INSERT INTO tiposEmpleados(descripcion) VALUES('Supervisor');
+INSERT INTO tiposEmpleados(descripcion) VALUES('Administrador');
+
+/* datos de prueba sin DATE*/
+
+INSERT INTO proveedor(cuitProveedor,razonSocial,direccion,telefono,email) VALUES(77111111117,'Whiskeria UNO','Calle Falsa 111','3794000111','whiskeriaUNO@gmail.com');
+INSERT INTO proveedor(cuitProveedor,razonSocial,direccion,telefono,email) VALUES(77222222227,'CERVECERIA DOS','Calle Falsa 222','3794000222','cerveceriaDOS@live.com');
+INSERT INTO proveedor(cuitProveedor,razonSocial,direccion,telefono,email) VALUES(77333333337,'Viñedo tres','Calle Falsa 333','3794000333','viñedosTRES@gmail.com');
+
+INSERT INTO tipoBebida(descripcion) VALUES('Licor');
+INSERT INTO tipoBebida(descripcion) VALUES('Gaseosa');
+INSERT INTO tipoBebida(descripcion) VALUES('Cerveza');
+INSERT INTO tipoBebida(descripcion) VALUES('Whisky');
+INSERT INTO tipoBebida(descripcion) VALUES('Vino');
+
+INSERT INTO marca(descripcion) VALUES('Quilmes');
+INSERT INTO marca(descripcion) VALUES('Jack Daniels');
+INSERT INTO marca(descripcion) VALUES('Absolut');
+INSERT INTO marca(descripcion) VALUES('Torres');
+INSERT INTO marca(descripcion) VALUES('Antinori');
 
 INSERT INTO producto(descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
-VALUES ('Old No 7 Tennessee', 2, 1500, 2500.50, 15, 30, 77333333337, 4);
-/* hasta 24/10*/
+VALUES ('Quilmes Bajo Cero 1L',1,1000.11,1250.50,5,30,77222222227,3);
+INSERT INTO producto(descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
+VALUES ('Old No 7 Tennessee', 2, 1500, 2500.50, 15, 30, 77111111117, 4);
+INSERT INTO producto(descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
+VALUES ('Honey', 2, 1700, 3000.50, 5, 40, 77111111117, 4);
+INSERT INTO producto(descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
+VALUES ('Quilmes 1890', 1, 1500, 2100.50, 20, 50, 77222222227, 3);
+INSERT INTO producto(descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
+VALUES ('Malbec ultima cepa', 4, 3200, 5000, 10, 13, 77333333337, 5);
+INSERT INTO producto(descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
+VALUES ('Cosecha tardia y echada a perder', 5, 10000, 20000, 1, 100, 77333333337, 5);
 
+INSERT INTO formasPago(descripcion)
+VALUES('Efectivo');
+INSERT INTO formasPago(descripcion)
+VALUES('Tarjeta');
 	
 SELECT producto.idProducto AS 'ID Producto',producto.descripcion AS 'Descripcion',marca.descripcion AS 'Marca',
 producto.precioCompra AS 'Precio Compra',producto.precioVenta AS 'Precio Venta',producto.stockMinimo AS 'Stock Minimo',
