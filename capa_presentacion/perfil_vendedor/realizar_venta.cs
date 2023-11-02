@@ -131,9 +131,24 @@ namespace capa_presentacion.perfil_vendedor
             lblFecha.Text = "Fecha: " + fecha;
         }
 
-        private void dgvVentaDetalle_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        int contPrimerDetalle = 0;
+        private void dgvVentaDetalle_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            
+            if(contPrimerDetalle == 0)
+            {
+                contPrimerDetalle++;
+                return;
+            }
+
+            float precio = float.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells[2].Value.ToString());
+            int cantidad = int.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells[3].Value.ToString());
+
+            MessageBox.Show("precio: " + precio + " cantidad: " + cantidad);
+
+            float montoParcial = precio * cantidad;
+            montoParcial = montoParcial + float.Parse(txtMontoParcial.Text);
+
+            txtMontoParcial.Text = montoParcial.ToString();
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.txtTarjetaNumero = new System.Windows.Forms.TextBox();
             this.lblMedioPago = new System.Windows.Forms.Label();
             this.rbutTarjeta = new System.Windows.Forms.RadioButton();
@@ -42,7 +43,6 @@
             this.dgvVentaDetalle = new System.Windows.Forms.DataGridView();
             this.txtDNICliente = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
-            this.lblFecha = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentaDetalle)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +68,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(73, 59);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(24, 13);
+            this.lblFecha.TabIndex = 13;
+            this.lblFecha.Text = "ola";
             // 
             // txtTarjetaNumero
             // 
@@ -149,6 +158,7 @@
             this.txtMontoParcial.ReadOnly = true;
             this.txtMontoParcial.Size = new System.Drawing.Size(150, 21);
             this.txtMontoParcial.TabIndex = 5;
+            this.txtMontoParcial.Text = "0";
             // 
             // lblMontoParcial
             // 
@@ -177,7 +187,7 @@
             this.dgvVentaDetalle.Name = "dgvVentaDetalle";
             this.dgvVentaDetalle.Size = new System.Drawing.Size(544, 150);
             this.dgvVentaDetalle.TabIndex = 2;
-            this.dgvVentaDetalle.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvVentaDetalle_ColumnAdded);
+            this.dgvVentaDetalle.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvVentaDetalle_RowsAdded);
             // 
             // txtDNICliente
             // 
@@ -195,15 +205,6 @@
             this.lblDNI.Size = new System.Drawing.Size(91, 13);
             this.lblDNI.TabIndex = 0;
             this.lblDNI.Text = "DNI del cliente";
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(73, 59);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(24, 13);
-            this.lblFecha.TabIndex = 13;
-            this.lblFecha.Text = "ola";
             // 
             // realizar_venta
             // 
