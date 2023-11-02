@@ -124,5 +124,16 @@ namespace capa_presentacion.perfil_vendedor
                 contBtnQuitar++;
             }
         }
+
+        private void realizar_venta_Load(object sender, EventArgs e)
+        {
+            string fecha = DateTime.Now.ToString("dd-MM-yyyy");
+            lblFecha.Text = "Fecha: " + fecha;
+        }
+
+        private void dgvVentaDetalle_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            
+        }
     }
 }

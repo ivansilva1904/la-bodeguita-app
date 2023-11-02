@@ -42,6 +42,7 @@
             this.dgvVentaDetalle = new System.Windows.Forms.DataGridView();
             this.txtDNICliente = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentaDetalle)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +50,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Controls.Add(this.lblFecha);
             this.panel1.Controls.Add(this.txtTarjetaNumero);
             this.panel1.Controls.Add(this.lblMedioPago);
             this.panel1.Controls.Add(this.rbutTarjeta);
@@ -159,7 +161,7 @@
             // 
             // btnBuscarProducto
             // 
-            this.btnBuscarProducto.Location = new System.Drawing.Point(470, 92);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(470, 95);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(150, 30);
             this.btnBuscarProducto.TabIndex = 3;
@@ -175,6 +177,7 @@
             this.dgvVentaDetalle.Name = "dgvVentaDetalle";
             this.dgvVentaDetalle.Size = new System.Drawing.Size(544, 150);
             this.dgvVentaDetalle.TabIndex = 2;
+            this.dgvVentaDetalle.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvVentaDetalle_ColumnAdded);
             // 
             // txtDNICliente
             // 
@@ -193,6 +196,15 @@
             this.lblDNI.TabIndex = 0;
             this.lblDNI.Text = "DNI del cliente";
             // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(73, 59);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(24, 13);
+            this.lblFecha.TabIndex = 13;
+            this.lblFecha.Text = "ola";
+            // 
             // realizar_venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -208,6 +220,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "realizar_venta";
             this.Text = "La bodeguita - Realizar venta";
+            this.Load += new System.EventHandler(this.realizar_venta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentaDetalle)).EndInit();
@@ -231,5 +244,6 @@
         private System.Windows.Forms.RadioButton rbutTarjeta;
         private System.Windows.Forms.RadioButton rbutEfectivo;
         private System.Windows.Forms.TextBox txtTarjetaNumero;
+        private System.Windows.Forms.Label lblFecha;
     }
 }

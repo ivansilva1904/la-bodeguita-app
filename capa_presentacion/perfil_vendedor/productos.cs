@@ -65,7 +65,7 @@ namespace capa_presentacion.perfil_vendedor
                 fila["ID Producto"] = id;
                 fila["Descripcion"] = descripcion;
                 fila["Precio"] = precio;
-                fila["Cantidad"] = 0;
+                fila["Cantidad"] = 1;
 
                 foreach(DataRow row in producto.Rows)
                 {
