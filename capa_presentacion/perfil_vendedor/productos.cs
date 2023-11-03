@@ -95,5 +95,10 @@ namespace capa_presentacion.perfil_vendedor
             }
             dtProductos.AcceptChanges();
         }
+
+        private void productos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

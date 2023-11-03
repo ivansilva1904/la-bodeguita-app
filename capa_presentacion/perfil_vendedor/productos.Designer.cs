@@ -52,6 +52,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "productos";
             this.Text = "Productos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.productos_FormClosing);
             this.Load += new System.EventHandler(this.productos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).EndInit();
             this.ResumeLayout(false);
