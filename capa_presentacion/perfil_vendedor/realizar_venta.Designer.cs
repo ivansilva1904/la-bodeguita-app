@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblVerificarDNI = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.txtTarjetaNumero = new System.Windows.Forms.TextBox();
             this.lblMedioPago = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Controls.Add(this.lblVerificarDNI);
             this.panel1.Controls.Add(this.lblFecha);
             this.panel1.Controls.Add(this.txtTarjetaNumero);
             this.panel1.Controls.Add(this.lblMedioPago);
@@ -68,6 +70,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
+            // 
+            // lblVerificarDNI
+            // 
+            this.lblVerificarDNI.AutoSize = true;
+            this.lblVerificarDNI.Location = new System.Drawing.Point(232, 104);
+            this.lblVerificarDNI.Name = "lblVerificarDNI";
+            this.lblVerificarDNI.Size = new System.Drawing.Size(34, 13);
+            this.lblVerificarDNI.TabIndex = 14;
+            this.lblVerificarDNI.Text = "chau";
+            this.lblVerificarDNI.Visible = false;
             // 
             // lblFecha
             // 
@@ -198,6 +210,8 @@
             this.txtDNICliente.Size = new System.Drawing.Size(150, 21);
             this.txtDNICliente.TabIndex = 1;
             this.txtDNICliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNICliente_KeyPress);
+            this.txtDNICliente.Validating += new System.ComponentModel.CancelEventHandler(this.txtDNICliente_Validating);
+            this.txtDNICliente.Validated += new System.EventHandler(this.txtDNICliente_Validated);
             // 
             // lblDNI
             // 
@@ -248,5 +262,6 @@
         private System.Windows.Forms.RadioButton rbutEfectivo;
         private System.Windows.Forms.TextBox txtTarjetaNumero;
         private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label lblVerificarDNI;
     }
 }

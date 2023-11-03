@@ -53,6 +53,7 @@ namespace capa_negocio
                 return dtCliente;
             }
         }
+
         public void actualizarCliente(int dni, string nombre, string apellido, string email)
         {
             datosCliente.updateCliente(dni, nombre, apellido, email);
