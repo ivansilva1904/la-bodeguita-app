@@ -171,7 +171,7 @@ namespace capa_presentacion.perfil_administrador
 
         private void menu_administrador_FormClosing(object sender, FormClosingEventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            System.Windows.Forms.Application.ExitThread();
         }
 
         private void btnBajaEmpleado_MouseEnter(object sender, EventArgs e)

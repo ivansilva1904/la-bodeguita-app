@@ -131,7 +131,7 @@ namespace capa_presentacion.perfil_vendedor
 
         private void menu_vendedor_FormClosing(object sender, FormClosingEventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            System.Windows.Forms.Application.ExitThread();
         }
     }
 }

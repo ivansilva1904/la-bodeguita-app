@@ -98,6 +98,7 @@ namespace capa_presentacion.perfil_vendedor
 
         private void productos_FormClosing(object sender, FormClosingEventArgs e)
         {
+            e.Cancel = true;
             this.Hide();
         }
     }

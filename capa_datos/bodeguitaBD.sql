@@ -106,11 +106,11 @@ INSERT INTO tiposEmpleados(descripcion) VALUES('Supervisor');
 INSERT INTO tiposEmpleados(descripcion) VALUES('Administrador');
 
 INSERT INTO empleados(dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, direccion, telefono, email, contraseña, idTipoEmpleado)
-VALUES(11223344, 'El', 'Administrador', '1900-01-01', GETDATE(), 'Algun lugar', '3123-438283', 'eladmin@gmail.com', '1234', 3);
+VALUES(11111111, 'El', 'Vendedor', '1900-01-01', GETDATE(), 'el infierno', '3123-64754', 'elvendedor@gmail.com', '123456', 1);
 INSERT INTO empleados(dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, direccion, telefono, email, contraseña, idTipoEmpleado)
-VALUES(22334455, 'El', 'Supervisor', '1900-01-01', GETDATE(), 'Otro lugar', '3123-4382432', 'elsuper@gmail.com', '12345', 2);
+VALUES(22222222, 'El', 'Supervisor', '1900-01-01', GETDATE(), 'Otro lugar', '3123-4382432', 'elsuper@gmail.com', '12345', 2);
 INSERT INTO empleados(dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, direccion, telefono, email, contraseña, idTipoEmpleado)
-VALUES(33445566, 'El', 'Vendedor', '1900-01-01', GETDATE(), 'el infierno', '3123-64754', 'elvendedor@gmail.com', '123456', 1);
+VALUES(33333333, 'El', 'Administrador', '1900-01-01', GETDATE(), 'Algun lugar', '3123-438283', 'eladmin@gmail.com', '1234', 3);
 
 /* datos de prueba sin DATE*/
 
