@@ -37,7 +37,6 @@
             this.btnAltaEmpleado = new System.Windows.Forms.Button();
             this.btnGenerarRespaldo = new System.Windows.Forms.Button();
             this.panFormsAdministrador = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +46,6 @@
             this.panOpciones.AutoSize = true;
             this.panOpciones.BackColor = System.Drawing.Color.Tan;
             this.panOpciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panOpciones.Controls.Add(this.label1);
             this.panOpciones.Controls.Add(this.btnBajaEmpleado);
             this.panOpciones.Controls.Add(this.btnListarEmpleados);
             this.panOpciones.Controls.Add(this.picboxLogo);
@@ -152,15 +150,6 @@
             this.panFormsAdministrador.Size = new System.Drawing.Size(733, 466);
             this.panFormsAdministrador.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 365);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 18);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "label1";
-            // 
             // menu_administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -172,9 +161,7 @@
             this.Name = "menu_administrador";
             this.Text = "menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_administrador_FormClosing);
-            this.Load += new System.EventHandler(this.menu_administrador_Load);
             this.panOpciones.ResumeLayout(false);
-            this.panOpciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,6 +178,5 @@
         private System.Windows.Forms.PictureBox picboxLogo;
         private System.Windows.Forms.Button btnListarEmpleados;
         private System.Windows.Forms.Button btnBajaEmpleado;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -44,12 +44,13 @@ namespace la_bodeguita
                 if (existeEmpleado == true)
                 {
                     DataTable dtEmpleado = negocioEmpleado.buscarEmpleadoPorDNI(int.Parse(txtUsuario.Text));
-                    if(dtEmpleado.Columns["Baja"].ToString() == 0.ToString())
+                    //MessageBox.Show("estado: "  + dtEmpleado.Rows[0].Field<bool>("Baja").ToString());
+                    if(dtEmpleado.Rows[0].Field<bool>("Baja").ToString() == "False")
                     {
                         //Aca iria el if para verificar la contraseña
                         this.Hide();
                         lblTest.Text = "log correcto";
-                        switch(int.Parse(dtEmpleado.Columns["Tipo empleado"].ToString()))
+                        switch(dtEmpleado.Rows[0].Field<int>("Tipo empleado"))
                         {
                             case 1:
                             {

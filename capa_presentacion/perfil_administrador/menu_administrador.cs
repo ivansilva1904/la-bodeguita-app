@@ -193,11 +193,5 @@ namespace capa_presentacion.perfil_administrador
             vistaBajaEmpleado.Location = new Point(12, 12);
             vistaBajaEmpleado.Show();
         }
-
-        private void menu_administrador_Load(object sender, EventArgs e)
-        {
-            string nombre = dtEmpleadoLogueado.Columns["Nombre"].ToString() + " " + dtEmpleadoLogueado.Columns["Apellido"].ToString();
-            label1.Text = nombre;
-        }
     }
 }
