@@ -12,9 +12,11 @@ namespace capa_presentacion.perfil_vendedor
 {
     public partial class menu_vendedor : Form
     {
-        public menu_vendedor()
+        DataTable dtEmpleadoLogueado = new DataTable();
+        public menu_vendedor(DataTable dtEmpleado)
         {
             InitializeComponent();
+            dtEmpleadoLogueado = dtEmpleado;
         }
 
         private void btnAltaCliente_MouseEnter(object sender, EventArgs e)

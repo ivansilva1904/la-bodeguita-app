@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu_administrador));
             this.panOpciones = new System.Windows.Forms.Panel();
+            this.btnBajaEmpleado = new System.Windows.Forms.Button();
             this.btnListarEmpleados = new System.Windows.Forms.Button();
             this.picboxLogo = new System.Windows.Forms.PictureBox();
             this.btnModEmpleado = new System.Windows.Forms.Button();
             this.btnAltaEmpleado = new System.Windows.Forms.Button();
             this.btnGenerarRespaldo = new System.Windows.Forms.Button();
             this.panFormsAdministrador = new System.Windows.Forms.Panel();
-            this.btnBajaEmpleado = new System.Windows.Forms.Button();
             this.panOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +57,20 @@
             this.panOpciones.Name = "panOpciones";
             this.panOpciones.Size = new System.Drawing.Size(262, 468);
             this.panOpciones.TabIndex = 0;
+            // 
+            // btnBajaEmpleado
+            // 
+            this.btnBajaEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnBajaEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBajaEmpleado.Location = new System.Drawing.Point(-2, 291);
+            this.btnBajaEmpleado.Name = "btnBajaEmpleado";
+            this.btnBajaEmpleado.Size = new System.Drawing.Size(257, 50);
+            this.btnBajaEmpleado.TabIndex = 9;
+            this.btnBajaEmpleado.Text = "Baja empleado";
+            this.btnBajaEmpleado.UseVisualStyleBackColor = true;
+            this.btnBajaEmpleado.Click += new System.EventHandler(this.btnBajaEmpleado_Click);
+            this.btnBajaEmpleado.MouseEnter += new System.EventHandler(this.btnBajaEmpleado_MouseEnter);
+            this.btnBajaEmpleado.MouseLeave += new System.EventHandler(this.btnBajaEmpleado_MouseLeave);
             // 
             // btnListarEmpleados
             // 
@@ -135,20 +149,6 @@
             this.panFormsAdministrador.Name = "panFormsAdministrador";
             this.panFormsAdministrador.Size = new System.Drawing.Size(733, 466);
             this.panFormsAdministrador.TabIndex = 1;
-            // 
-            // btnBajaEmpleado
-            // 
-            this.btnBajaEmpleado.FlatAppearance.BorderSize = 0;
-            this.btnBajaEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBajaEmpleado.Location = new System.Drawing.Point(-2, 291);
-            this.btnBajaEmpleado.Name = "btnBajaEmpleado";
-            this.btnBajaEmpleado.Size = new System.Drawing.Size(257, 50);
-            this.btnBajaEmpleado.TabIndex = 9;
-            this.btnBajaEmpleado.Text = "Baja empleado";
-            this.btnBajaEmpleado.UseVisualStyleBackColor = true;
-            this.btnBajaEmpleado.Click += new System.EventHandler(this.btnBajaEmpleado_Click);
-            this.btnBajaEmpleado.MouseEnter += new System.EventHandler(this.btnBajaEmpleado_MouseEnter);
-            this.btnBajaEmpleado.MouseLeave += new System.EventHandler(this.btnBajaEmpleado_MouseLeave);
             // 
             // menu_administrador
             // 

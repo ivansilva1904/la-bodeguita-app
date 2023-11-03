@@ -14,9 +14,11 @@ namespace capa_presentacion.perfil_administrador
 {
     public partial class menu_administrador : Form
     {
-        public menu_administrador()
+        DataTable dtEmpleadoLogueado = new DataTable();
+        public menu_administrador(DataTable dtEmpleado)
         {
             InitializeComponent();
+            dtEmpleadoLogueado = dtEmpleado;
         }
         private void btnAltaEmpleado_MouseEnter(object sender, EventArgs e)
         {

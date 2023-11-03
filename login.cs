@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using capa_presentacion.perfil_administrador;
 using capa_presentacion.perfil_supervisor;
 using capa_presentacion.perfil_vendedor;
+using capa_negocio;
 
 namespace la_bodeguita
 {
     public partial class login : Form
     {
+        NegocioEmpleado negocioEmpleado = new NegocioEmpleado();
         public login()
         {
             InitializeComponent();
@@ -38,23 +40,46 @@ namespace la_bodeguita
             }
             else
             {
-                this.Hide();
-                //Checkear login con base de datos y entrar al menu de usuario correspondiente
-                lblTest.Text = "log correcto";
-                if(txtUsuario.Text == "1")
+                bool existeEmpleado = negocioEmpleado.verificarDNIExistente(int.Parse(txtUsuario.Text));
+                if (existeEmpleado == true)
                 {
-                    Form menu_administrador = new menu_administrador();
-                    menu_administrador.Show();
+                    DataTable dtEmpleado = negocioEmpleado.buscarEmpleadoPorDNI(int.Parse(txtUsuario.Text));
+                    if(dtEmpleado.Rows[0].Field<bool>("Baja").ToString() == "False")
+                    {
+                        //Aca iria el if para verificar la contraseña
+                        this.Hide();
+                        lblTest.Text = "log correcto";
+
+                        switch(dtEmpleado.Rows[0].Field<int>("Tipo empleado"))
+                        {
+                            case 1:
+                            {
+                                Form menu_vendedor = new menu_vendedor(dtEmpleado);
+                                menu_vendedor.Show();
+                                break;
+                            }
+                            case 2:
+                            {
+                                Form menu_supervisor = new menu_supervisor(dtEmpleado);
+                                menu_supervisor.Show();
+                                break;
+                            }
+                            case 3:
+                            {
+                                Form menu_administrador = new menu_administrador(dtEmpleado);
+                                menu_administrador.Show();
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El empleado existe, pero esta deshabilitado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                if(txtUsuario.Text == "2")
+                else
                 {
-                    Form menu_supervisor = new menu_supervisor();
-                    menu_supervisor.Show();
-                }
-                if(txtUsuario.Text == "3")
-                {
-                    Form menu_vendedor = new menu_vendedor();
-                    menu_vendedor.Show();
+                    MessageBox.Show("El empleado no existe. Contacte al administrador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
