@@ -105,6 +105,11 @@ INSERT INTO tiposEmpleados(descripcion) VALUES('Vendedor');
 INSERT INTO tiposEmpleados(descripcion) VALUES('Supervisor');
 INSERT INTO tiposEmpleados(descripcion) VALUES('Administrador');
 
+INSERT INTO empleados(dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, direccion, telefono, email, contraseña, idTipoEmpleado)
+VALUES(11223344, 'El', 'Administrador', '1900-01-01', GETDATE(), 'Algun lugar', '3123-438283', 'eladmin@gmail.com', '1234', 3);
+
+SELECT GETDATE();
+
 /* datos de prueba sin DATE*/
 
 INSERT INTO proveedor(cuitProveedor,razonSocial,direccion,telefono,email) VALUES(77111111117,'Whiskeria UNO','Calle Falsa 111','3794000111','whiskeriaUNO@gmail.com');

@@ -14,9 +14,11 @@ namespace capa_presentacion.perfil_administrador
 {
     public partial class menu_administrador : Form
     {
-        public menu_administrador()
+        DataTable dtEmpleadoLogueado = new DataTable();
+        public menu_administrador(DataTable dtEmpleado)
         {
             InitializeComponent();
+            dtEmpleadoLogueado = dtEmpleado;
         }
         private void btnAltaEmpleado_MouseEnter(object sender, EventArgs e)
         {
@@ -190,6 +192,12 @@ namespace capa_presentacion.perfil_administrador
             panFormsAdministrador.Controls.Add(vistaBajaEmpleado);
             vistaBajaEmpleado.Location = new Point(12, 12);
             vistaBajaEmpleado.Show();
+        }
+
+        private void menu_administrador_Load(object sender, EventArgs e)
+        {
+            string nombre = dtEmpleadoLogueado.Columns["Nombre"].ToString() + " " + dtEmpleadoLogueado.Columns["Apellido"].ToString();
+            label1.Text = nombre;
         }
     }
 }

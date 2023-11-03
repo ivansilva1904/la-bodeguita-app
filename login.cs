@@ -44,7 +44,7 @@ namespace la_bodeguita
                 if (existeEmpleado == true)
                 {
                     DataTable dtEmpleado = negocioEmpleado.buscarEmpleadoPorDNI(int.Parse(txtUsuario.Text));
-                    if(dtEmpleado.Columns["Baja"].ToString() == "0")
+                    if(dtEmpleado.Columns["Baja"].ToString() == 0.ToString())
                     {
                         //Aca iria el if para verificar la contraseña
                         this.Hide();
@@ -65,7 +65,7 @@ namespace la_bodeguita
                             }
                             case 3:
                             {
-                                Form menu_administrador = new menu_administrador();
+                                Form menu_administrador = new menu_administrador(dtEmpleado);
                                 menu_administrador.Show();
                                 break;
                             }
