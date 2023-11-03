@@ -40,24 +40,45 @@ namespace la_bodeguita
             }
             else
             {
-                bool existeEmpleado = negocioEmpleado.verificarEmpleado(int.Parse(txtUsuario.Text));
-                this.Hide();
-                //Checkear login con base de datos y entrar al menu de usuario correspondiente
-                lblTest.Text = "log correcto";
-                if(txtUsuario.Text == "1")
+                bool existeEmpleado = negocioEmpleado.verificarDNIExistente(int.Parse(txtUsuario.Text));
+                if (existeEmpleado == true)
                 {
-                    Form menu_administrador = new menu_administrador();
-                    menu_administrador.Show();
+                    DataTable dtEmpleado = negocioEmpleado.buscarEmpleadoPorDNI(int.Parse(txtUsuario.Text));
+                    if(dtEmpleado.Columns["Baja"].ToString() == "0")
+                    {
+                        //Aca iria el if para verificar la contraseña
+                        this.Hide();
+                        lblTest.Text = "log correcto";
+                        switch(int.Parse(dtEmpleado.Columns["Tipo empleado"].ToString()))
+                        {
+                            case 1:
+                            {
+                                Form menu_vendedor = new menu_vendedor();
+                                menu_vendedor.Show();
+                                break;
+                            }
+                            case 2:
+                            {
+                                Form menu_supervisor = new menu_supervisor();
+                                menu_supervisor.Show();
+                                break;
+                            }
+                            case 3:
+                            {
+                                Form menu_administrador = new menu_administrador();
+                                menu_administrador.Show();
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El empleado existe, pero esta deshabilitado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                if(txtUsuario.Text == "2")
+                else
                 {
-                    Form menu_supervisor = new menu_supervisor();
-                    menu_supervisor.Show();
-                }
-                if(txtUsuario.Text == "3")
-                {
-                    Form menu_vendedor = new menu_vendedor();
-                    menu_vendedor.Show();
+                    MessageBox.Show("El empleado no existe. Contacte al administrador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

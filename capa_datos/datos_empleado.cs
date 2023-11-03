@@ -38,19 +38,6 @@ namespace capa_datos
             return resultado;
         }
 
-        public SqlDataReader buscarDNIActivo(int dni)
-        {
-            conexion.Open();
-
-            string query = "SELECT * FROM empleados WHERE dniEmpleado = " + dni + " AND baja = 0";
-
-            SqlCommand comando = new SqlCommand(query, conexion);
-
-            SqlDataReader resultado = comando.ExecuteReader();
-
-            return resultado;
-        }
-
         public void insertEmpleado(int dni, string nombre, string apellido, DateTime fechaNac, string direccion, string telefono, string email, string contraseña, int tipoEmpleado)
         {
             conexion.Open();
