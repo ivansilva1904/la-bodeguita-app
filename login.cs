@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using capa_presentacion.perfil_administrador;
 using capa_presentacion.perfil_supervisor;
 using capa_presentacion.perfil_vendedor;
+using capa_negocio;
 
 namespace la_bodeguita
 {
     public partial class login : Form
     {
+        NegocioEmpleado negocioEmpleado = new NegocioEmpleado();
         public login()
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace la_bodeguita
             }
             else
             {
+                bool existeEmpleado = negocioEmpleado.verificarEmpleado(int.Parse(txtUsuario.Text));
                 this.Hide();
                 //Checkear login con base de datos y entrar al menu de usuario correspondiente
                 lblTest.Text = "log correcto";
