@@ -44,23 +44,23 @@ namespace la_bodeguita
                 if (existeEmpleado == true)
                 {
                     DataTable dtEmpleado = negocioEmpleado.buscarEmpleadoPorDNI(int.Parse(txtUsuario.Text));
-                    //MessageBox.Show("estado: "  + dtEmpleado.Rows[0].Field<bool>("Baja").ToString());
                     if(dtEmpleado.Rows[0].Field<bool>("Baja").ToString() == "False")
                     {
                         //Aca iria el if para verificar la contraseña
                         this.Hide();
                         lblTest.Text = "log correcto";
+
                         switch(dtEmpleado.Rows[0].Field<int>("Tipo empleado"))
                         {
                             case 1:
                             {
-                                Form menu_vendedor = new menu_vendedor();
+                                Form menu_vendedor = new menu_vendedor(dtEmpleado);
                                 menu_vendedor.Show();
                                 break;
                             }
                             case 2:
                             {
-                                Form menu_supervisor = new menu_supervisor();
+                                Form menu_supervisor = new menu_supervisor(dtEmpleado);
                                 menu_supervisor.Show();
                                 break;
                             }

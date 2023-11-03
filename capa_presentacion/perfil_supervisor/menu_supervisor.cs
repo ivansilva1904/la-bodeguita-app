@@ -12,9 +12,11 @@ namespace capa_presentacion.perfil_supervisor
 {
     public partial class menu_supervisor : Form
     {
-        public menu_supervisor()
+        DataTable dtEmpleadoLogueado = new DataTable();
+        public menu_supervisor(DataTable dtEmpleado)
         {
             InitializeComponent();
+            dtEmpleadoLogueado = dtEmpleado;
         }
 
         private void btnAltaProovedor_Click(object sender, EventArgs e)
