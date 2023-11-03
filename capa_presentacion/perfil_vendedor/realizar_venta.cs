@@ -162,5 +162,18 @@ namespace capa_presentacion.perfil_vendedor
                 formProductos.bajaProductoDatatable(id);
             }
         }
+
+        int contEliminarDetalle = 0;
+        private void dgvVentaDetalle_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if(contEliminarDetalle == 0)
+            {
+                contEliminarDetalle++;
+                return;
+            }
+            //No me pregunten como, pero esta linea arregla la cuenta del textbox magicamente
+            //Aunque le he encontrado problemas en momentos aleatorios ojo al piojo
+            txtMontoParcial.Text = 0.ToString();
+        }
     }
 }
