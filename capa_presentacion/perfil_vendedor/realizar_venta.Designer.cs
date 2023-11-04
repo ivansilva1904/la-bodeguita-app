@@ -200,6 +200,7 @@
             this.dgvVentaDetalle.Size = new System.Drawing.Size(544, 150);
             this.dgvVentaDetalle.TabIndex = 2;
             this.dgvVentaDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentaDetalle_CellContentClick);
+            this.dgvVentaDetalle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentaDetalle_CellEndEdit);
             this.dgvVentaDetalle.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvVentaDetalle_RowsAdded);
             this.dgvVentaDetalle.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvVentaDetalle_RowsRemoved);
             // 

@@ -192,17 +192,12 @@ namespace capa_presentacion.perfil_vendedor
             }
         }
 
-        //int contEliminarDetalle = 0;
         private void dgvVentaDetalle_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            /*if(contEliminarDetalle == 0)
-            {
-                contEliminarDetalle++;
-                return;
-            }*/
+            //txtMontoParcial.Text = (float.Parse(lblMontoParcial.Text) - float.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value.ToString())).ToString();
             //No me pregunten como, pero esta linea arregla la cuenta del textbox magicamente
-            //Aunque le he encontrado problemas en momentos aleatorios ojo al piojo
-            txtMontoParcial.Text = 0.ToString();
+            //Aunque le he encontrado problemas en momentos aleatorios ojo al piojo (mas info en el repo remoto)
+            txtMontoParcial.Text = "0";
         }
 
         private void txtDNICliente_Validating(object sender, CancelEventArgs e)
@@ -223,6 +218,17 @@ namespace capa_presentacion.perfil_vendedor
             lblVerificarDNI.ForeColor = Color.Green;
             lblVerificarDNI.Text = "El cliente esta registrado";
             lblVerificarDNI.Visible = true;
+        }
+
+        private void dgvVentaDetalle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            float precioUnitario = float.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value.ToString());
+            int nuevaCantidad = int.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString());
+
+            dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value = precioUnitario * nuevaCantidad;
+
+            float montoParcial = float.Parse(txtMontoParcial.Text) - precioUnitario;
+            txtMontoParcial.Text = (montoParcial + (precioUnitario * nuevaCantidad)).ToString();
         }
     }
 }

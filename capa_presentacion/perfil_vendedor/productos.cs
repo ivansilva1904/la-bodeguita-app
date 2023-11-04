@@ -15,10 +15,12 @@ namespace capa_presentacion.perfil_vendedor
     public partial class productos : Form
     {
         realizar_venta formVenta;
+        DataTable dtProductos;
         public productos(realizar_venta formVenta)
         {
             InitializeComponent();
             this.formVenta = formVenta;
+            dtProductos = new DataTable();
         }
 
         NegocioProducto negocioProducto = new NegocioProducto();
@@ -38,7 +40,6 @@ namespace capa_presentacion.perfil_vendedor
             dgvListaProductos.Columns["ID Producto"].Visible = false;
         }
 
-        DataTable dtProductos = new DataTable();
         int contColumnasDT = 0;
         private void dgvListaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
