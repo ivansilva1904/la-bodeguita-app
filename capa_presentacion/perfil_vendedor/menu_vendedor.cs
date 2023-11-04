@@ -100,7 +100,7 @@ namespace capa_presentacion.perfil_vendedor
         private void btnRealizarVenta_Click(object sender, EventArgs e)
         {
             panVistasMenu.Controls.Clear();
-            realizar_venta vistaVenta = new realizar_venta();
+            realizar_venta vistaVenta = new realizar_venta(dtEmpleadoLogueado);
             vistaVenta.TopLevel = false;
             panVistasMenu.Controls.Add(vistaVenta);
             vistaVenta.Show();
