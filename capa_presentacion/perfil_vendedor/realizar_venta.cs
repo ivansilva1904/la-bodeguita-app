@@ -187,18 +187,25 @@ namespace capa_presentacion.perfil_vendedor
 
             if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
+                float montoAcumulado = float.Parse(txtMontoParcial.Text);
+                float precioRemovido = float.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value.ToString());
+
                 string id = dgvVentaDetalle.Rows[e.RowIndex].Cells[0].Value.ToString();
                 formProductos.bajaProductoDatatable(id);
+
+                txtMontoParcial.Text = "0";
+                txtMontoParcial.Text = (montoAcumulado - precioRemovido).ToString();
             }
         }
 
-        private void dgvVentaDetalle_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        /*private void dgvVentaDetalle_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             //txtMontoParcial.Text = (float.Parse(lblMontoParcial.Text) - float.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value.ToString())).ToString();
             //No me pregunten como, pero esta linea arregla la cuenta del textbox magicamente
             //Aunque le he encontrado problemas en momentos aleatorios ojo al piojo (mas info en el repo remoto)
             txtMontoParcial.Text = "0";
-        }
+            
+        }*/
 
         private void txtDNICliente_Validating(object sender, CancelEventArgs e)
         {
