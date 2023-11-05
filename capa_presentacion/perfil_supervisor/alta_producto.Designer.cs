@@ -56,7 +56,6 @@
             this.pnlNuevoProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlNuevoProducto.AutoSize = true;
             this.pnlNuevoProducto.BackColor = System.Drawing.Color.Beige;
             this.pnlNuevoProducto.Controls.Add(this.cbxMarca);
             this.pnlNuevoProducto.Controls.Add(this.txtStockMinimo);
@@ -88,7 +87,7 @@
             this.cbxMarca.Location = new System.Drawing.Point(148, 124);
             this.cbxMarca.Name = "cbxMarca";
             this.cbxMarca.Size = new System.Drawing.Size(166, 21);
-            this.cbxMarca.TabIndex = 25;
+            this.cbxMarca.TabIndex = 3;
             // 
             // txtStockMinimo
             // 
@@ -96,7 +95,7 @@
             this.txtStockMinimo.Location = new System.Drawing.Point(480, 170);
             this.txtStockMinimo.Name = "txtStockMinimo";
             this.txtStockMinimo.Size = new System.Drawing.Size(176, 21);
-            this.txtStockMinimo.TabIndex = 24;
+            this.txtStockMinimo.TabIndex = 6;
             this.txtStockMinimo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStockMinimo_KeyPress);
             // 
             // lblStockMinimo
@@ -116,7 +115,7 @@
             this.cbxTipoBebida.Location = new System.Drawing.Point(480, 126);
             this.cbxTipoBebida.Name = "cbxTipoBebida";
             this.cbxTipoBebida.Size = new System.Drawing.Size(176, 21);
-            this.cbxTipoBebida.TabIndex = 22;
+            this.cbxTipoBebida.TabIndex = 4;
             // 
             // txtPrecioVenta
             // 
@@ -124,7 +123,7 @@
             this.txtPrecioVenta.Location = new System.Drawing.Point(480, 214);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Size = new System.Drawing.Size(176, 21);
-            this.txtPrecioVenta.TabIndex = 21;
+            this.txtPrecioVenta.TabIndex = 8;
             this.txtPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVenta_KeyPress);
             // 
             // label1
@@ -143,7 +142,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(420, 391);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(117, 23);
-            this.btnLimpiar.TabIndex = 19;
+            this.btnLimpiar.TabIndex = 9;
             this.btnLimpiar.Text = "Limpiar Campos";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -162,7 +161,7 @@
             this.txtStock.Location = new System.Drawing.Point(148, 170);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(166, 21);
-            this.txtStock.TabIndex = 17;
+            this.txtStock.TabIndex = 5;
             this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
             // btnGuardarProducto
@@ -171,7 +170,7 @@
             this.btnGuardarProducto.Location = new System.Drawing.Point(556, 390);
             this.btnGuardarProducto.Name = "btnGuardarProducto";
             this.btnGuardarProducto.Size = new System.Drawing.Size(117, 24);
-            this.btnGuardarProducto.TabIndex = 16;
+            this.btnGuardarProducto.TabIndex = 10;
             this.btnGuardarProducto.Text = "Guardar Producto";
             this.btnGuardarProducto.UseVisualStyleBackColor = true;
             this.btnGuardarProducto.Click += new System.EventHandler(this.btnGuardarProducto_Click);
@@ -181,15 +180,16 @@
             this.txtPrecioCompra.Location = new System.Drawing.Point(148, 214);
             this.txtPrecioCompra.Name = "txtPrecioCompra";
             this.txtPrecioCompra.Size = new System.Drawing.Size(166, 21);
-            this.txtPrecioCompra.TabIndex = 15;
+            this.txtPrecioCompra.TabIndex = 7;
             this.txtPrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCompra_KeyPress);
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(148, 82);
+            this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(166, 21);
-            this.txtDescripcion.TabIndex = 14;
+            this.txtDescripcion.TabIndex = 1;
             // 
             // cbxProveedor
             // 
@@ -198,7 +198,7 @@
             this.cbxProveedor.Location = new System.Drawing.Point(480, 82);
             this.cbxProveedor.Name = "cbxProveedor";
             this.cbxProveedor.Size = new System.Drawing.Size(176, 21);
-            this.cbxProveedor.TabIndex = 11;
+            this.cbxProveedor.TabIndex = 2;
             // 
             // lblDescripcion
             // 
@@ -278,7 +278,6 @@
             this.pnlNuevoProducto.ResumeLayout(false);
             this.pnlNuevoProducto.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

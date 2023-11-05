@@ -17,16 +17,19 @@ namespace capa_presentacion.perfil_supervisor
         {
             InitializeComponent();
             dtEmpleadoLogueado = dtEmpleado;
+            
             this.SizeChanged += menu_supervisor_SizeChanged;
 
         }
-
+        
         private void btnAltaProovedor_Click(object sender, EventArgs e)
         {
             pnlFormsSupervisor.Controls.Clear();
 
             alta_proveedor altaprov = new alta_proveedor();
             altaprov.TopLevel = false;
+            altaprov.FormBorderStyle = FormBorderStyle.None;
+            altaprov.Dock = DockStyle.Fill;
             pnlFormsSupervisor.Controls.Add(altaprov);
             altaprov.Show();
 
@@ -38,6 +41,8 @@ namespace capa_presentacion.perfil_supervisor
             pnlFormsSupervisor.Controls.Clear();
             modificar_producto modifProd = new modificar_producto();
             modifProd.TopLevel = false;
+            modifProd.FormBorderStyle = FormBorderStyle.None;
+            modifProd.Dock = DockStyle.Fill;
             pnlFormsSupervisor.Controls.Add(modifProd);
             modifProd.Show();
         }
@@ -48,6 +53,8 @@ namespace capa_presentacion.perfil_supervisor
 
             modificar_proveedor modifprov = new modificar_proveedor();
             modifprov.TopLevel = false;
+            modifprov.FormBorderStyle = FormBorderStyle.None;
+            modifprov.Dock = DockStyle.Fill;
             pnlFormsSupervisor.Controls.Add(modifprov);
             modifprov.Show();
         }
@@ -55,16 +62,14 @@ namespace capa_presentacion.perfil_supervisor
         private void btnAltaProducto_Click(object sender, EventArgs e)
         {
             pnlFormsSupervisor.Controls.Clear();
-
+           
             alta_producto altaprod = new alta_producto();
             altaprod.TopLevel = false;
             altaprod.FormBorderStyle = FormBorderStyle.None;
             altaprod.Dock = DockStyle.Fill; 
             pnlFormsSupervisor.Controls.Add(altaprod);
-
-
-
             altaprod.Show();
+          
             
         }
 
@@ -124,6 +129,8 @@ namespace capa_presentacion.perfil_supervisor
 
             informes_ventas vistaInformeVentas = new informes_ventas();
             vistaInformeVentas.TopLevel = false;
+            vistaInformeVentas.FormBorderStyle = FormBorderStyle.None;
+            vistaInformeVentas.Dock = DockStyle.Fill;
             pnlFormsSupervisor.Controls.Add(vistaInformeVentas);
             vistaInformeVentas.Show();
         }
@@ -151,15 +158,36 @@ namespace capa_presentacion.perfil_supervisor
                 formularioInterno = (Form)control;
                 if (formularioInterno is alta_producto)
                 {
-
                     formularioInterno.Size = pnlFormsSupervisor.Size;
-                    // formularioInterno.Width = pnlFormsSupervisor.Width;
-                    //formularioInterno.Height = pnlFormsSupervisor.Height;
-
-
+                    formularioInterno.WindowState = FormWindowState.Normal;
+                    formularioInterno.WindowState = FormWindowState.Maximized;
+                }
+                if (formularioInterno is modificar_producto)
+                {
+                    formularioInterno.Size = pnlFormsSupervisor.Size;
+                    formularioInterno.WindowState = FormWindowState.Normal;
+                    formularioInterno.WindowState = FormWindowState.Maximized;
+                }
+                if (formularioInterno is alta_proveedor)
+                {
+                    formularioInterno.Size = pnlFormsSupervisor.Size;
+                    formularioInterno.WindowState = FormWindowState.Normal;
+                    formularioInterno.WindowState = FormWindowState.Maximized;
+                }
+                if (formularioInterno is modificar_proveedor)
+                {
+                    formularioInterno.Size = pnlFormsSupervisor.Size;
+                    formularioInterno.WindowState = FormWindowState.Normal;
+                    formularioInterno.WindowState = FormWindowState.Maximized;
+                }
+                if (formularioInterno is informes_ventas)
+                {
+                    formularioInterno.Size = pnlFormsSupervisor.Size;
+                    formularioInterno.WindowState = FormWindowState.Normal;
+                    formularioInterno.WindowState = FormWindowState.Maximized;
                 }
             }
-           // pnlFormsSupervisor.Size = new Size(pnlFormsSupervisor.Width, pnlFormsSupervisor.Height);
+
         }
 
 

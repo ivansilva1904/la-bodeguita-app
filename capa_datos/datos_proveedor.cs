@@ -49,14 +49,13 @@ namespace capa_datos
             conexion.Open();
 
             string query = "" +
-                "SELECT cuitProveedor AS CUIT, " +
+                "SELECT cuitProveedor AS 'CUIT', " +
                 "razonSocial AS 'Razon Social', " +
-                "direccion AS Direccion, " +
-                "telefono AS Telefono, " +
-                "email AS Email, " +
+                "direccion AS 'Direccion', " +
+                "telefono AS 'Telefono', " +
+                "email AS 'Email', " +
                 "fechaAlta AS 'Fecha Alta', " +
-                "fechaBaja AS 'Fecha Baja', " +
-                "baja AS Baja " +
+                "fechaBaja AS 'Fecha Baja'" +
                 " FROM proveedor";
 
             SqlCommand comando = new SqlCommand(query, conexion);
@@ -72,14 +71,13 @@ namespace capa_datos
             conexion.Open();
 
             string query = "" +
-                "SELECT cuitProveedor AS CUIT, " +
+                "SELECT cuitProveedor AS 'CUIT', " +
                 "razonSocial AS 'Razon Social', " +
-                "direccion AS Direccion, " +
-                "telefono AS Telefono, " +
-                "email AS Email, " +
+                "direccion AS 'Direccion', " +
+                "telefono AS 'Telefono', " +
+                "email AS 'Email', " +
                 "fechaAlta AS 'Fecha Alta', " +
-                "fechaBaja AS 'Fecha Baja', " +
-                "baja AS Baja " +
+                "fechaBaja AS 'Fecha Baja'" +
                 " FROM proveedor" +
                 " WHERE Baja = 0";
 
@@ -96,14 +94,13 @@ namespace capa_datos
 
             string query = "" +
                 "SELECT cuitProveedor AS CUIT," +
-                "razonSocial AS Razon Social," +
-                "direccion AS Direccion," +
-                "telefono AS Telefono," +
-                "email AS Email, " +
+                "razonSocial AS 'Razon Social'," +
+                "direccion AS 'Direccion'," +
+                "telefono AS 'Telefono'," +
+                "email AS 'Email', " +
                 "fechaAlta AS 'Fecha Alta'," +
-                "fechaBaja AS 'Fecha Baja'," +
-                "baja AS Baja," +
-                " FROM proveedor " + 
+                "fechaBaja AS 'Fecha Baja'" +     
+                " FROM proveedor" + 
                 " WHERE cuitProveedor = " + cuit;
 
             SqlCommand comando = new SqlCommand(query, conexion);
@@ -183,8 +180,7 @@ namespace capa_datos
                 "telefono AS Telefono, " +
                 "email AS Email, " +
                 "fechaAlta AS 'Fecha Alta', " +
-                "fechaBaja AS 'Fecha Baja', " +
-                "baja AS Baja " +
+                "fechaBaja AS 'Fecha Baja' " +
                 " FROM proveedor" +
                 " WHERE razonSocial like '%"+razon+"%'";
 

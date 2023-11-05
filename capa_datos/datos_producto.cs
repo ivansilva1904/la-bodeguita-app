@@ -71,8 +71,9 @@ namespace capa_datos
                 "precioCompra AS 'Precio Compra', " +
                 "precioVenta AS 'Precio Venta', " +
                 "stockMinimo AS 'Stock Minimo', " +
-                "stockActual AS 'Stock', " +
-                "cuitProveedor AS 'Cuit Proveedor' " +
+                "stockActual AS 'Stock Actual', " +
+                "cuitProveedor AS 'Cuit Proveedor'," +
+                "baja AS 'Baja'" +
                 " FROM producto";
 
             SqlCommand comando = new SqlCommand(query, conexion);

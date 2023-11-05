@@ -118,50 +118,15 @@ namespace capa_presentacion.perfil_supervisor
 
             dgvModificarProveedor.DataSource = tablaProveedor;
 
-            dgvModificarProveedor.Columns["Baja"].Visible = false;
-            /*
-            NegocioProveedor negocioProveedor = new NegocioProveedor();
-
-            List<EntidadProveedor> lista = negocioProveedor.listarProveedor();
-
-
-            dgvModificarProveedor.DataSource = lista;
-
-            // Buscar como sacar la columna de fecha deshabilitacion
-            // Como mostrar la columna baja con string
-
-            dgvModificarProveedor.Columns[0].HeaderText = "Cuit";
-            dgvModificarProveedor.Columns[1].HeaderText = "Razon Social";
-            dgvModificarProveedor.Columns[2].HeaderText = "Dirección";
-            dgvModificarProveedor.Columns[3].HeaderText = "Telefono";
-            dgvModificarProveedor.Columns[4].HeaderText = "Email";
-            dgvModificarProveedor.Columns[5].HeaderText = "Baja";
-
-
-            DataGridViewButtonColumn modificar = new DataGridViewButtonColumn();
-
-            dgvModificarProveedor.Columns.Add(modificar);
-            modificar.Text = "Modificar";
-            modificar.Name = "Modificar";
-            modificar.UseColumnTextForButtonValue = true;*/
+           
+           
         }
         private void cargar_dvgModificarProveedor()
         {
             dgvModificarProveedor.DataSource = null;
-            
             DataTable tablaProveedor = negocioProveedor.listarTodosProveedor();
-
             dgvModificarProveedor.DataSource = tablaProveedor;
-
-
-            dgvModificarProveedor.Columns["Baja"].Visible = false;
-
-
-            // dgvModificarProveedor.Rows.Clear();
-            // dgvModificarProveedor.Columns.Clear();
-
-
-
+            
         }
         private void dgvModificarProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -203,6 +168,9 @@ namespace capa_presentacion.perfil_supervisor
                 //trae matchs con el string
             }else if(cbxFiltro.Text == "Cuit")
             {
+                long filt = Int64.Parse(filtro);
+                cargar_dvgModificarProveedorConFiltroCuit(filt);
+            
                 // trae matchs con el cuit
             }
 
@@ -210,20 +178,16 @@ namespace capa_presentacion.perfil_supervisor
         private void cargar_dvgModificarProveedorConFiltro(string filtro)
         {
             dgvModificarProveedor.DataSource = null;
-
             DataTable tablaProveedor = negocioProveedor.filtrarProveedorPorRazonSocial(filtro);
-
             dgvModificarProveedor.DataSource = tablaProveedor;
-
-
-            dgvModificarProveedor.Columns["Baja"].Visible = false;
-
-
-            // dgvModificarProveedor.Rows.Clear();
-            // dgvModificarProveedor.Columns.Clear();
-
-
-
+           
+        }
+        private void cargar_dvgModificarProveedorConFiltroCuit(long cuit)
+        {
+            dgvModificarProveedor.DataSource = null;
+            DataTable tablaProveedor = negocioProveedor.buscarProveedorPorCuit(cuit);
+            dgvModificarProveedor.DataSource = tablaProveedor;
+           
         }
     }
 }

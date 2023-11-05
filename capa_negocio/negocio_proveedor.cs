@@ -54,7 +54,6 @@ namespace capa_negocio
             DataTable tablaProveedor = new DataTable();
             tablaProveedor.Load(dataReaderProveedor);
             tablaProveedor.Columns.Remove("Fecha baja");
-            tablaProveedor.Columns.Remove("Baja");
 
             datosProveedor.cerrarConexion();
 
@@ -84,11 +83,7 @@ namespace capa_negocio
 
         public void actualizarProveedor(long cuitProveedor, string razonSocial, string direccion, string telefono, string email,bool baja)
         {
-          
-            
-               datosProveedor.updateProveedor(cuitProveedor, razonSocial, direccion, telefono, email,baja);
-            
-           
+               datosProveedor.updateProveedor(cuitProveedor, razonSocial, direccion, telefono, email,baja);        
         }
 
         
@@ -123,7 +118,7 @@ namespace capa_negocio
             {
                 tablaProveedor.Load(proveedorReader);
                 datosProveedor.cerrarConexion();
-
+                
                 return tablaProveedor;
             }
             else

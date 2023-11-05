@@ -193,8 +193,9 @@ namespace capa_presentacion.perfil_supervisor
             DataTable tablaProductos = negocioProducto.listarTodosProductos();
 
             dgvModificarProducto.DataSource = tablaProductos;
+           // cambiacolorafilasdelDGV();
             carga_cbxTipoBebidaycbxProveedorycbxMarca();
-            dgvModificarProducto.Columns["Baja"].Visible = false;
+            
             
         }
 
@@ -206,9 +207,7 @@ namespace capa_presentacion.perfil_supervisor
             DataTable tablaProveedor = negocioProducto.listarTodosProductos();
 
             dgvModificarProducto.DataSource = tablaProveedor;
-
-
-
+           // cambiacolorafilasdelDGV();
 
         }
 
@@ -230,6 +229,47 @@ namespace capa_presentacion.perfil_supervisor
                 cbxTipoBebida.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[9].Value.ToString();
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string filtro = txtFiltro.Text;
+
+            if (String.IsNullOrWhiteSpace(filtro))
+            {
+                //gridview total
+                
+            }
+            else if (cbxFiltro.Text == "Razon Social")
+            {
+                
+                //trae matchs con el string
+            }
+            else if (cbxFiltro.Text == "ID")
+            {
+                
+
+                // trae matchs con el cuit
+            }
+            else if (cbxFiltro.Text == "Tipo")
+            {
+
+
+                // trae matchs con el cuit
+            }
+        }
+
+        /*private void cambiacolorafilasdelDGV()
+        {
+            foreach (DataGridViewRow row in dgvModificarProducto.Rows)
+            {
+                string baja = row.Cells["Baja"].Value.ToString();
+                
+                if (baja == "True")
+                {
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                }
+            }
+        }*/
     }
 }
 /*

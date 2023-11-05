@@ -55,6 +55,9 @@
             // 
             // pnlModificarProveedor
             // 
+            this.pnlModificarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlModificarProveedor.BackColor = System.Drawing.Color.Beige;
             this.pnlModificarProveedor.Controls.Add(this.label2);
             this.pnlModificarProveedor.Controls.Add(this.cbxEstado);
@@ -84,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 199);
+            this.label2.Location = new System.Drawing.Point(40, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 20;
@@ -96,13 +99,15 @@
             this.cbxEstado.Items.AddRange(new object[] {
             "Habilitado\t",
             "Deshabilitado"});
-            this.cbxEstado.Location = new System.Drawing.Point(135, 196);
+            this.cbxEstado.Location = new System.Drawing.Point(105, 196);
             this.cbxEstado.Name = "cbxEstado";
-            this.cbxEstado.Size = new System.Drawing.Size(150, 21);
+            this.cbxEstado.Size = new System.Drawing.Size(210, 21);
             this.cbxEstado.TabIndex = 5;
             // 
             // dgvModificarProveedor
             // 
+            this.dgvModificarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvModificarProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvModificarProveedor.Location = new System.Drawing.Point(3, 299);
             this.dgvModificarProveedor.Name = "dgvModificarProveedor";
@@ -112,19 +117,21 @@
             // 
             // cbxFiltro
             // 
+            this.cbxFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbxFiltro.FormattingEnabled = true;
             this.cbxFiltro.Items.AddRange(new object[] {
             "Cuit",
             "Razon Social"});
-            this.cbxFiltro.Location = new System.Drawing.Point(117, 270);
+            this.cbxFiltro.Location = new System.Drawing.Point(64, 270);
             this.cbxFiltro.Name = "cbxFiltro";
-            this.cbxFiltro.Size = new System.Drawing.Size(56, 21);
+            this.cbxFiltro.Size = new System.Drawing.Size(93, 21);
             this.cbxFiltro.TabIndex = 17;
             // 
             // lblFiltro
             // 
+            this.lblFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(76, 273);
+            this.lblFiltro.Location = new System.Drawing.Point(23, 273);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(35, 13);
             this.lblFiltro.TabIndex = 16;
@@ -132,16 +139,18 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(186, 270);
+            this.txtFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtFiltro.Location = new System.Drawing.Point(163, 270);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(205, 21);
             this.txtFiltro.TabIndex = 15;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(397, 270);
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBuscar.Location = new System.Drawing.Point(374, 270);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(119, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(114, 23);
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -149,15 +158,16 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(135, 156);
+            this.txtTelefono.Location = new System.Drawing.Point(105, 156);
             this.txtTelefono.MaxLength = 30;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(150, 21);
+            this.txtTelefono.Size = new System.Drawing.Size(210, 21);
             this.txtTelefono.TabIndex = 4;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // lblModificarProveedor
             // 
+            this.lblModificarProveedor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblModificarProveedor.AutoSize = true;
             this.lblModificarProveedor.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModificarProveedor.Location = new System.Drawing.Point(282, 20);
@@ -169,7 +179,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 159);
+            this.label1.Location = new System.Drawing.Point(40, 159);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 11;
@@ -177,7 +187,8 @@
             // 
             // btnLimpiarCampos
             // 
-            this.btnLimpiarCampos.Location = new System.Drawing.Point(481, 169);
+            this.btnLimpiarCampos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(540, 212);
             this.btnLimpiarCampos.Name = "btnLimpiarCampos";
             this.btnLimpiarCampos.Size = new System.Drawing.Size(119, 24);
             this.btnLimpiarCampos.TabIndex = 6;
@@ -188,7 +199,7 @@
             // lblRubro
             // 
             this.lblRubro.AutoSize = true;
-            this.lblRubro.Location = new System.Drawing.Point(70, 117);
+            this.lblRubro.Location = new System.Drawing.Point(40, 117);
             this.lblRubro.Name = "lblRubro";
             this.lblRubro.Size = new System.Drawing.Size(38, 13);
             this.lblRubro.TabIndex = 9;
@@ -197,7 +208,7 @@
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(70, 75);
+            this.lblCuit.Location = new System.Drawing.Point(40, 75);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(30, 13);
             this.lblCuit.TabIndex = 8;
@@ -205,8 +216,9 @@
             // 
             // lblDireccion
             // 
+            this.lblDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(341, 115);
+            this.lblDireccion.Location = new System.Drawing.Point(354, 117);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(60, 13);
             this.lblDireccion.TabIndex = 7;
@@ -214,8 +226,9 @@
             // 
             // lblRazonSocial
             // 
+            this.lblRazonSocial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.Location = new System.Drawing.Point(341, 75);
+            this.lblRazonSocial.Location = new System.Drawing.Point(354, 75);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(80, 13);
             this.lblRazonSocial.TabIndex = 6;
@@ -223,7 +236,8 @@
             // 
             // btnGuardarCambios
             // 
-            this.btnGuardarCambios.Location = new System.Drawing.Point(481, 199);
+            this.btnGuardarCambios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardarCambios.Location = new System.Drawing.Point(540, 242);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(119, 24);
             this.btnGuardarCambios.TabIndex = 7;
@@ -233,41 +247,43 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(444, 112);
+            this.txtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDireccion.Location = new System.Drawing.Point(440, 114);
             this.txtDireccion.MaxLength = 30;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(156, 21);
+            this.txtDireccion.Size = new System.Drawing.Size(219, 21);
             this.txtDireccion.TabIndex = 3;
             // 
             // txtRazonSocial
             // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(444, 72);
+            this.txtRazonSocial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRazonSocial.Location = new System.Drawing.Point(440, 72);
             this.txtRazonSocial.MaxLength = 50;
             this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(156, 21);
+            this.txtRazonSocial.Size = new System.Drawing.Size(219, 21);
             this.txtRazonSocial.TabIndex = 1;
             // 
             // txtCuit
             // 
-            this.txtCuit.Location = new System.Drawing.Point(135, 72);
+            this.txtCuit.Location = new System.Drawing.Point(105, 72);
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.ReadOnly = true;
-            this.txtCuit.Size = new System.Drawing.Size(150, 21);
+            this.txtCuit.Size = new System.Drawing.Size(210, 21);
             this.txtCuit.TabIndex = 2;
             this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(135, 114);
+            this.txtEmail.Location = new System.Drawing.Point(105, 114);
             this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(150, 21);
+            this.txtEmail.Size = new System.Drawing.Size(210, 21);
             this.txtEmail.TabIndex = 2;
             // 
             // modificar_proveedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Cornsilk;
             this.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_wine_barrel;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -278,6 +294,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "modificar_proveedor";
             this.Text = "modificar_proveedor";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.modificar_proveedor_Load);
             this.pnlModificarProveedor.ResumeLayout(false);
             this.pnlModificarProveedor.PerformLayout();

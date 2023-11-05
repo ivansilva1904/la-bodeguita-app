@@ -101,5 +101,6 @@ namespace capa_presentacion.perfil_supervisor
         {
             return comprobarCorreo != null && Regex.IsMatch(comprobarCorreo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
         }
+
     }
 }
