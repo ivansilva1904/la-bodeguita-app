@@ -143,6 +143,7 @@ VALUES ('Malbec ultima cepa', 4, 3200, 5000, 10, 13, 77333333337, 5);
 INSERT INTO producto(descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida)
 VALUES ('Cosecha tardia y echada a perder', 5, 10000, 20000, 1, 100, 77333333337, 5);
 
+ 
 INSERT INTO formasPago(descripcion)
 VALUES('Efectivo');
 INSERT INTO formasPago(descripcion)
@@ -157,5 +158,35 @@ producto.stockActual AS 'Stock Actual',proveedor.razonSocial AS 'Nombre Proveedo
 	INNER JOIN tipoBebida ON (producto.idTipoBebida = tipoBebida.idTipoBebida)
 	GROUP BY producto.idProducto,producto.descripcion,marca.descripcion
 	/*INNER JOIN marca.idMarc*/
-	
-	select * from producto
+
+
+CREATE TRIGGER trg_ActualizarBaja
+ON producto
+AFTER UPDATE
+AS
+BEGIN
+    IF UPDATE(stockActual)
+    BEGIN
+        UPDATE producto
+        SET baja = 1
+        FROM producto p
+        INNER JOIN INSERTED i ON p.idProducto = i.idProducto
+        WHERE p.stockActual < p.stockMinimo;
+    END
+END;
+
+CREATE TRIGGER trg_RestaurarBaja
+ON producto
+AFTER UPDATE
+AS
+BEGIN
+    IF UPDATE(stockActual)
+    BEGIN
+        UPDATE producto
+        SET baja = 0
+        FROM producto p
+        INNER JOIN INSERTED i ON p.idProducto = i.idProducto
+        WHERE p.stockActual >= p.stockMinimo;
+    END
+END;
+
