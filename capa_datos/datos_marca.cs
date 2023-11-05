@@ -45,6 +45,23 @@ namespace capa_datos
             return resultado;
         }
 
-        
+        public SqlDataReader selectMarcas()
+        {
+            //
+            conexion.Open();
+
+            string query = "" +
+                "SELECT idMarca AS Marca," +
+                "descripcion AS Descripcion " +
+                " FROM marca";
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+
+            SqlDataReader tabla = comando.ExecuteReader();
+
+            return tabla;
+            //
+        }
+
     }
 }

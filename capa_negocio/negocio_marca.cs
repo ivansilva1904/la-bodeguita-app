@@ -54,5 +54,17 @@ namespace capa_negocio
                 return tablaMarca;
             }
         }
+        public DataTable listarMarca()
+        {
+            SqlDataReader dataReaderMarca = datosMarca.selectMarcas();
+
+            DataTable tablaMarca = new DataTable();
+            tablaMarca.Load(dataReaderMarca);
+
+
+            datosMarca.cerrarConexion();
+
+            return tablaMarca;
+        }
     }
 }

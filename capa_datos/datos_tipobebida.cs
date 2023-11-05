@@ -38,9 +38,9 @@ namespace capa_datos
             conexion.Open();
 
             string query = "" +
-                "SELECT idTipoBebida AS 'Id Tipo Bebida', " +
-                "FROM tipoBebida" +
-                "WHERE descripcion = " + descripcion;
+                "SELECT idTipoBebida AS 'Id Tipo Bebida' " +
+                "FROM tipoBebida " +
+                "WHERE descripcion = '" + descripcion + "'";
 
             SqlCommand comando = new SqlCommand(query, conexion);
 

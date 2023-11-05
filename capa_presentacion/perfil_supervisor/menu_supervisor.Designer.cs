@@ -58,6 +58,7 @@
             // 
             // menuSupervisor
             // 
+            this.menuSupervisor.AutoSize = true;
             this.menuSupervisor.BackColor = System.Drawing.Color.Tan;
             this.menuSupervisor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.menuSupervisor.Controls.Add(this.btnInformeVentas);
@@ -66,10 +67,11 @@
             this.menuSupervisor.Controls.Add(this.btnModificarProveedor);
             this.menuSupervisor.Controls.Add(this.btnModificarProducto);
             this.menuSupervisor.Controls.Add(this.btnAltaProovedor);
-            this.menuSupervisor.Location = new System.Drawing.Point(1, 0);
+            this.menuSupervisor.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuSupervisor.Location = new System.Drawing.Point(0, 0);
             this.menuSupervisor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.menuSupervisor.Name = "menuSupervisor";
-            this.menuSupervisor.Size = new System.Drawing.Size(257, 466);
+            this.menuSupervisor.Size = new System.Drawing.Size(262, 461);
             this.menuSupervisor.TabIndex = 1;
             // 
             // btnInformeVentas
@@ -146,32 +148,36 @@
             // 
             // pnlFormsSupervisor
             // 
-            this.pnlFormsSupervisor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFormsSupervisor.AutoSize = true;
+            this.pnlFormsSupervisor.BackColor = System.Drawing.SystemColors.Control;
             this.pnlFormsSupervisor.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_wine_barrel;
             this.pnlFormsSupervisor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlFormsSupervisor.Location = new System.Drawing.Point(256, -1);
+            this.pnlFormsSupervisor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFormsSupervisor.Location = new System.Drawing.Point(262, 0);
             this.pnlFormsSupervisor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlFormsSupervisor.Name = "pnlFormsSupervisor";
-            this.pnlFormsSupervisor.Size = new System.Drawing.Size(733, 466);
+            this.pnlFormsSupervisor.Size = new System.Drawing.Size(722, 461);
             this.pnlFormsSupervisor.TabIndex = 0;
             // 
             // menu_supervisor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.pnlFormsSupervisor);
             this.Controls.Add(this.menuSupervisor);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "menu_supervisor";
             this.Text = "Supervisor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_supervisor_FormClosing);
+            this.SizeChanged += new System.EventHandler(this.menu_supervisor_SizeChanged);
             this.menuSupervisor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

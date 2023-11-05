@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlModificarProducto = new System.Windows.Forms.Panel();
+            this.lblStockMinimo = new System.Windows.Forms.Label();
             this.txtStockMinimo = new System.Windows.Forms.TextBox();
             this.cbxTipoBebida = new System.Windows.Forms.ComboBox();
             this.txtPrecioVenta = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtPrecioCompra = new System.Windows.Forms.TextBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
             this.lblTipoBebida = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblPrecioCompra = new System.Windows.Forms.Label();
@@ -55,14 +55,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblProveedor = new System.Windows.Forms.Label();
             this.lblModificarProducto = new System.Windows.Forms.Label();
-            this.lblStockMinimo = new System.Windows.Forms.Label();
+            this.cbxMarca = new System.Windows.Forms.ComboBox();
             this.pnlModificarProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModificarProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlModificarProducto
             // 
+            this.pnlModificarProducto.AutoSize = true;
             this.pnlModificarProducto.BackColor = System.Drawing.Color.Beige;
+            this.pnlModificarProducto.Controls.Add(this.cbxMarca);
             this.pnlModificarProducto.Controls.Add(this.lblStockMinimo);
             this.pnlModificarProducto.Controls.Add(this.txtStockMinimo);
             this.pnlModificarProducto.Controls.Add(this.cbxTipoBebida);
@@ -82,7 +84,6 @@
             this.pnlModificarProducto.Controls.Add(this.textBox6);
             this.pnlModificarProducto.Controls.Add(this.txtDescripcion);
             this.pnlModificarProducto.Controls.Add(this.txtPrecioCompra);
-            this.pnlModificarProducto.Controls.Add(this.txtMarca);
             this.pnlModificarProducto.Controls.Add(this.lblTipoBebida);
             this.pnlModificarProducto.Controls.Add(this.lblDescripcion);
             this.pnlModificarProducto.Controls.Add(this.lblPrecioCompra);
@@ -95,9 +96,18 @@
             this.pnlModificarProducto.Size = new System.Drawing.Size(709, 442);
             this.pnlModificarProducto.TabIndex = 0;
             // 
+            // lblStockMinimo
+            // 
+            this.lblStockMinimo.AutoSize = true;
+            this.lblStockMinimo.Location = new System.Drawing.Point(380, 116);
+            this.lblStockMinimo.Name = "lblStockMinimo";
+            this.lblStockMinimo.Size = new System.Drawing.Size(83, 13);
+            this.lblStockMinimo.TabIndex = 31;
+            this.lblStockMinimo.Text = "Stock Minimo";
+            // 
             // txtStockMinimo
             // 
-            this.txtStockMinimo.Location = new System.Drawing.Point(473, 142);
+            this.txtStockMinimo.Location = new System.Drawing.Point(480, 113);
             this.txtStockMinimo.Name = "txtStockMinimo";
             this.txtStockMinimo.Size = new System.Drawing.Size(159, 21);
             this.txtStockMinimo.TabIndex = 30;
@@ -105,14 +115,14 @@
             // cbxTipoBebida
             // 
             this.cbxTipoBebida.FormattingEnabled = true;
-            this.cbxTipoBebida.Location = new System.Drawing.Point(166, 146);
+            this.cbxTipoBebida.Location = new System.Drawing.Point(173, 117);
             this.cbxTipoBebida.Name = "cbxTipoBebida";
             this.cbxTipoBebida.Size = new System.Drawing.Size(160, 21);
             this.cbxTipoBebida.TabIndex = 29;
             // 
             // txtPrecioVenta
             // 
-            this.txtPrecioVenta.Location = new System.Drawing.Point(166, 203);
+            this.txtPrecioVenta.Location = new System.Drawing.Point(173, 174);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Size = new System.Drawing.Size(160, 21);
             this.txtPrecioVenta.TabIndex = 28;
@@ -121,7 +131,7 @@
             // lblPrecioVenta
             // 
             this.lblPrecioVenta.AutoSize = true;
-            this.lblPrecioVenta.Location = new System.Drawing.Point(60, 203);
+            this.lblPrecioVenta.Location = new System.Drawing.Point(67, 174);
             this.lblPrecioVenta.Name = "lblPrecioVenta";
             this.lblPrecioVenta.Size = new System.Drawing.Size(79, 13);
             this.lblPrecioVenta.TabIndex = 27;
@@ -129,7 +139,7 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(473, 113);
+            this.txtStock.Location = new System.Drawing.Point(480, 84);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(159, 21);
             this.txtStock.TabIndex = 26;
@@ -138,7 +148,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(373, 116);
+            this.label2.Location = new System.Drawing.Point(380, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 25;
@@ -146,7 +156,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(511, 224);
+            this.btnCancelar.Location = new System.Drawing.Point(518, 195);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(121, 23);
             this.btnCancelar.TabIndex = 24;
@@ -156,7 +166,7 @@
             // 
             // btnGuardarCambios
             // 
-            this.btnGuardarCambios.Location = new System.Drawing.Point(511, 195);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(518, 166);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(121, 23);
             this.btnGuardarCambios.TabIndex = 23;
@@ -166,7 +176,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(406, 287);
+            this.btnBuscar.Location = new System.Drawing.Point(419, 249);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 22;
@@ -180,7 +190,7 @@
             "ID",
             "Descripcion",
             "Tipo"});
-            this.cbxFiltro.Location = new System.Drawing.Point(98, 289);
+            this.cbxFiltro.Location = new System.Drawing.Point(111, 251);
             this.cbxFiltro.Name = "cbxFiltro";
             this.cbxFiltro.Size = new System.Drawing.Size(43, 21);
             this.cbxFiltro.TabIndex = 21;
@@ -188,16 +198,16 @@
             // dgvModificarProducto
             // 
             this.dgvModificarProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvModificarProducto.Location = new System.Drawing.Point(3, 326);
+            this.dgvModificarProducto.Location = new System.Drawing.Point(3, 278);
             this.dgvModificarProducto.Name = "dgvModificarProducto";
-            this.dgvModificarProducto.Size = new System.Drawing.Size(703, 113);
+            this.dgvModificarProducto.Size = new System.Drawing.Size(703, 161);
             this.dgvModificarProducto.TabIndex = 20;
             this.dgvModificarProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModificarProducto_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 292);
+            this.label1.Location = new System.Drawing.Point(65, 254);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 19;
@@ -206,21 +216,21 @@
             // cbxProveedor
             // 
             this.cbxProveedor.FormattingEnabled = true;
-            this.cbxProveedor.Location = new System.Drawing.Point(473, 87);
+            this.cbxProveedor.Location = new System.Drawing.Point(480, 58);
             this.cbxProveedor.Name = "cbxProveedor";
             this.cbxProveedor.Size = new System.Drawing.Size(159, 21);
             this.cbxProveedor.TabIndex = 18;
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(154, 289);
+            this.txtFiltro.Location = new System.Drawing.Point(167, 251);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(246, 21);
             this.txtFiltro.TabIndex = 15;
             // 
             // txtIdProducto
             // 
-            this.txtIdProducto.Location = new System.Drawing.Point(166, 87);
+            this.txtIdProducto.Location = new System.Drawing.Point(173, 58);
             this.txtIdProducto.Name = "txtIdProducto";
             this.txtIdProducto.ReadOnly = true;
             this.txtIdProducto.Size = new System.Drawing.Size(160, 21);
@@ -235,30 +245,23 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(166, 231);
+            this.txtDescripcion.Location = new System.Drawing.Point(173, 202);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(261, 21);
             this.txtDescripcion.TabIndex = 12;
             // 
             // txtPrecioCompra
             // 
-            this.txtPrecioCompra.Location = new System.Drawing.Point(166, 176);
+            this.txtPrecioCompra.Location = new System.Drawing.Point(173, 147);
             this.txtPrecioCompra.Name = "txtPrecioCompra";
             this.txtPrecioCompra.Size = new System.Drawing.Size(160, 21);
             this.txtPrecioCompra.TabIndex = 10;
             this.txtPrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCompra_KeyPress);
             // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(166, 115);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(160, 21);
-            this.txtMarca.TabIndex = 9;
-            // 
             // lblTipoBebida
             // 
             this.lblTipoBebida.AutoSize = true;
-            this.lblTipoBebida.Location = new System.Drawing.Point(60, 145);
+            this.lblTipoBebida.Location = new System.Drawing.Point(67, 116);
             this.lblTipoBebida.Name = "lblTipoBebida";
             this.lblTipoBebida.Size = new System.Drawing.Size(74, 13);
             this.lblTipoBebida.TabIndex = 7;
@@ -267,7 +270,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(60, 232);
+            this.lblDescripcion.Location = new System.Drawing.Point(67, 203);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(73, 13);
             this.lblDescripcion.TabIndex = 6;
@@ -276,7 +279,7 @@
             // lblPrecioCompra
             // 
             this.lblPrecioCompra.AutoSize = true;
-            this.lblPrecioCompra.Location = new System.Drawing.Point(60, 174);
+            this.lblPrecioCompra.Location = new System.Drawing.Point(67, 145);
             this.lblPrecioCompra.Name = "lblPrecioCompra";
             this.lblPrecioCompra.Size = new System.Drawing.Size(92, 13);
             this.lblPrecioCompra.TabIndex = 5;
@@ -285,7 +288,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(60, 116);
+            this.lblMarca.Location = new System.Drawing.Point(67, 87);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(41, 13);
             this.lblMarca.TabIndex = 3;
@@ -294,7 +297,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 87);
+            this.label3.Location = new System.Drawing.Point(67, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 2;
@@ -303,7 +306,7 @@
             // lblProveedor
             // 
             this.lblProveedor.AutoSize = true;
-            this.lblProveedor.Location = new System.Drawing.Point(373, 87);
+            this.lblProveedor.Location = new System.Drawing.Point(380, 58);
             this.lblProveedor.Name = "lblProveedor";
             this.lblProveedor.Size = new System.Drawing.Size(66, 13);
             this.lblProveedor.TabIndex = 1;
@@ -319,19 +322,19 @@
             this.lblModificarProducto.TabIndex = 0;
             this.lblModificarProducto.Text = "Modificar Producto";
             // 
-            // lblStockMinimo
+            // cbxMarca
             // 
-            this.lblStockMinimo.AutoSize = true;
-            this.lblStockMinimo.Location = new System.Drawing.Point(373, 145);
-            this.lblStockMinimo.Name = "lblStockMinimo";
-            this.lblStockMinimo.Size = new System.Drawing.Size(83, 13);
-            this.lblStockMinimo.TabIndex = 31;
-            this.lblStockMinimo.Text = "Stock Minimo";
+            this.cbxMarca.FormattingEnabled = true;
+            this.cbxMarca.Location = new System.Drawing.Point(173, 87);
+            this.cbxMarca.Name = "cbxMarca";
+            this.cbxMarca.Size = new System.Drawing.Size(160, 21);
+            this.cbxMarca.TabIndex = 32;
             // 
             // modificar_producto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Cornsilk;
             this.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_wine_barrel;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -343,11 +346,13 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "modificar_producto";
             this.Text = "modificar_producto";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.modificar_producto_Load);
             this.pnlModificarProducto.ResumeLayout(false);
             this.pnlModificarProducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModificarProducto)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -372,7 +377,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtPrecioCompra;
-        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label label2;
@@ -381,5 +385,6 @@
         private System.Windows.Forms.TextBox txtStockMinimo;
         private System.Windows.Forms.ComboBox cbxTipoBebida;
         private System.Windows.Forms.Label lblStockMinimo;
+        private System.Windows.Forms.ComboBox cbxMarca;
     }
 }

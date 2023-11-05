@@ -25,7 +25,7 @@ namespace capa_negocio
 
             return tablaTipoBebida;
         }
-        public DataTable buscarProveedorPorRazonSocial(string descripcion)
+        public DataTable buscarTipoBebida(string descripcion)
         {
             SqlDataReader tipoBebidaReader = datosTipoBebida.selectTipoBebidaPorDescripcion(descripcion);
 

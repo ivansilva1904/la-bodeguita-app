@@ -17,6 +17,8 @@ namespace capa_presentacion.perfil_supervisor
         {
             InitializeComponent();
             dtEmpleadoLogueado = dtEmpleado;
+            this.SizeChanged += menu_supervisor_SizeChanged;
+
         }
 
         private void btnAltaProovedor_Click(object sender, EventArgs e)
@@ -56,8 +58,14 @@ namespace capa_presentacion.perfil_supervisor
 
             alta_producto altaprod = new alta_producto();
             altaprod.TopLevel = false;
+            altaprod.FormBorderStyle = FormBorderStyle.None;
+            altaprod.Dock = DockStyle.Fill; 
             pnlFormsSupervisor.Controls.Add(altaprod);
+
+
+
             altaprod.Show();
+            
         }
 
         private void btnAltaProovedor_MouseEnter(object sender, EventArgs e)
@@ -134,5 +142,26 @@ namespace capa_presentacion.perfil_supervisor
         {
             System.Windows.Forms.Application.ExitThread();
         }
+
+        private void menu_supervisor_SizeChanged(object sender, EventArgs e)
+        {
+            Form formularioInterno = null;
+            foreach(Control control in pnlFormsSupervisor.Controls)
+            {
+                formularioInterno = (Form)control;
+                if (formularioInterno is alta_producto)
+                {
+
+                    formularioInterno.Size = pnlFormsSupervisor.Size;
+                    // formularioInterno.Width = pnlFormsSupervisor.Width;
+                    //formularioInterno.Height = pnlFormsSupervisor.Height;
+
+
+                }
+            }
+           // pnlFormsSupervisor.Size = new Size(pnlFormsSupervisor.Width, pnlFormsSupervisor.Height);
+        }
+
+
     }
 }

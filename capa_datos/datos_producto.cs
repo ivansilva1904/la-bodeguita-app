@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Security.Principal;
@@ -37,9 +38,14 @@ namespace capa_datos
         {
             conexion.Open();
 
+            float compra = precioCompra;
+            string pCompraFormateado = precioCompra.ToString("0.00", CultureInfo.InvariantCulture);
+            float venta = precioVenta;
+            string pVentaFormateado = precioVenta.ToString("0.00", CultureInfo.InvariantCulture);
+
             string query = "INSERT INTO producto (descripcion,idMarca,precioCompra,precioVenta,stockMinimo,StockActual,cuitProveedor,idTipoBebida) " +
                 "VALUES ('" + descripcion + "'," + idMarca + "" +
-                "," + precioCompra + "," + precioVenta + "," + stockMinimo + "," + StockActual +
+                "," + pCompraFormateado + "," + pVentaFormateado + "," + stockMinimo + "," + StockActual +
                 "," + cuitProveedor + "," + idTipoBebida + ");";
 
             SqlCommand comando = new SqlCommand(query, conexion);
@@ -81,13 +87,17 @@ namespace capa_datos
             int stockActual, long cuitProveedor, int idTipoBebida)
         {
             conexion.Open();
+            float compra = precioCompra;
+            string pCompraFormateado = precioCompra.ToString("0.00", CultureInfo.InvariantCulture);
+            float venta = precioVenta;
+            string pVentaFormateado = precioVenta.ToString("0.00", CultureInfo.InvariantCulture);
 
             string query = "" +
             "UPDATE producto " +
                 "SET descripcion = '" + descripcion + "'," +
                 "idMarca = " + idMarca + "," +
-                "precioCompra = " + precioCompra + "," +
-                "precioVenta = " + precioVenta + "," +
+                "precioCompra = " + pCompraFormateado + "," +
+                "precioVenta = " + pVentaFormateado + "," +
                 "stockMinimo = " + stockMinimo + "," +
                 "stockActual = " + stockActual + "," +
                 "cuitProveedor = " + cuitProveedor + "," +

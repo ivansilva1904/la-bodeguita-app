@@ -26,7 +26,7 @@ namespace capa_presentacion.perfil_supervisor
         {
             DialogResult ask;
             ask = DialogResult.No;
-            if (!string.IsNullOrWhiteSpace(txtMarca.Text) &&
+            if (!string.IsNullOrWhiteSpace(cbxMarca.Text) &&
                 !string.IsNullOrWhiteSpace(txtPrecioCompra.Text) &&
                 !string.IsNullOrWhiteSpace(txtPrecioVenta.Text) &&
                 !string.IsNullOrWhiteSpace(txtStock.Text) &&
@@ -51,27 +51,14 @@ namespace capa_presentacion.perfil_supervisor
                      // {
                             // hacer carga
                             //1rp la marca
-                            string marcaEx = txtMarca.Text;
-                            if(negocioMarca.verificarMarcaExistente(marcaEx) == false)
-                            {
-                                negocioMarca.crearMarca(txtMarca.Text);
-                            }
-                            else
-                            {
-                                DataTable marca = negocioMarca.obtenerMarca(txtMarca.Text);
-                                DataTableReader marcaReader = new DataTableReader(marca);
-                                while (marcaReader.Read())
-                                {
-                                    idMarca = marcaReader.GetInt32(0);
-                                }
-                            }
+                            
                             //esto para obterner id proveedor y bebida
                             DataTable tablaProveedor = negocioProveedor.buscarProveedorPorRazonSocial(cbxProveedor.Text);
-                            DataTable tablaTipoBebida = negocioTipoBebida.listarTipoBebida();
-
+                            DataTable tablaTipoBebida = negocioTipoBebida.buscarTipoBebida(cbxTipoBebida.Text);
+                            DataTable tablaMarca = negocioMarca.obtenerMarca(cbxMarca.Text);
                             DataTableReader lectorProveedor = new DataTableReader(tablaProveedor);
                             DataTableReader lectorTipoBebida = new DataTableReader(tablaTipoBebida);
-
+                            DataTableReader lectorMarca = new DataTableReader(tablaMarca);
                             while (lectorProveedor.Read())
                             {
                                 cuitProveedor = lectorProveedor.GetInt64(0);
@@ -79,6 +66,10 @@ namespace capa_presentacion.perfil_supervisor
                             while (lectorTipoBebida.Read())
                             {
                                 idBebida = lectorTipoBebida.GetInt32(0);
+                            }
+                            while (lectorMarca.Read())
+                            {
+                                idMarca = lectorMarca.GetInt32(0);
                             }
                             //Final carga
                             if(idBebida != 0 && idMarca != 0 && cuitProveedor != 0)
@@ -147,8 +138,9 @@ namespace capa_presentacion.perfil_supervisor
            
         }
         private void limpiarCampos()
-        {          
-            txtMarca.Clear();
+        {
+            cbxProveedor.Items.Clear();
+            cbxMarca.Items.Clear();
             txtPrecioCompra.Clear();
             txtPrecioVenta.Clear();
             txtStock.Clear();
@@ -201,15 +193,16 @@ namespace capa_presentacion.perfil_supervisor
         }
         private void alta_producto_Load(object sender, EventArgs e)
         {
-            carga_cbxTipoBebidaycbxProveedor();
+            carga_cbxTipoBebidaycbxProveedorycbxMarca();
         }
-        public void carga_cbxTipoBebidaycbxProveedor()
+        public void carga_cbxTipoBebidaycbxProveedorycbxMarca()
         {
             DataTable tablaProveedor = negocioProveedor.listarProveedorActivos();
             DataTable tablaTipoBebida = negocioTipoBebida.listarTipoBebida();
-
+            DataTable tablaMarca = negocioMarca.listarMarca();
             DataTableReader lectorProveedor = new DataTableReader(tablaProveedor);
             DataTableReader lectorTipoBebida = new DataTableReader(tablaTipoBebida);
+            DataTableReader lectorMarca = new DataTableReader(tablaMarca);
 
             while (lectorProveedor.Read())
             {
@@ -219,7 +212,12 @@ namespace capa_presentacion.perfil_supervisor
             {
                 cbxTipoBebida.Items.Add(lectorTipoBebida.GetString(1));
             }
+            while (lectorMarca.Read())
+            {
+                cbxMarca.Items.Add(lectorMarca.GetString(1));
+            }
         }
 
+        
     }
 }

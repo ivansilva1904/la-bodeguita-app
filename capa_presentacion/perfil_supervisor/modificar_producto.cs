@@ -43,7 +43,7 @@ namespace capa_presentacion.perfil_supervisor
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtMarca.Text) &&
+            if (!string.IsNullOrWhiteSpace(cbxMarca.Text) &&
                 !string.IsNullOrWhiteSpace(txtPrecioCompra.Text) &&
                 !string.IsNullOrWhiteSpace(txtPrecioVenta.Text) &&
                 !string.IsNullOrWhiteSpace(txtStock.Text) &&
@@ -63,27 +63,15 @@ namespace capa_presentacion.perfil_supervisor
                 {
                     if (stockMin < stockAc)
                     {
-                        string marcaEx = txtMarca.Text;
-                        if (negocioMarca.verificarMarcaExistente(marcaEx) == false)
-                        {
-                            negocioMarca.crearMarca(txtMarca.Text);
-                        }
-                        else
-                        {
-                            DataTable marca = negocioMarca.obtenerMarca(txtMarca.Text);
-                            DataTableReader marcaReader = new DataTableReader(marca);
-                            while (marcaReader.Read())
-                            {
-                                idMarca = marcaReader.GetInt32(0);
-                            }
-                        }
+                        
+                        
                         //esto para obterner id proveedor y bebida
                         DataTable tablaProveedor = negocioProveedor.buscarProveedorPorRazonSocial(cbxProveedor.Text);
-                        DataTable tablaTipoBebida = negocioTipoBebida.listarTipoBebida();
-
+                        DataTable tablaTipoBebida = negocioTipoBebida.buscarTipoBebida(cbxTipoBebida.Text);
+                        DataTable tablaMarca = negocioMarca.obtenerMarca(cbxMarca.Text);
                         DataTableReader lectorProveedor = new DataTableReader(tablaProveedor);
                         DataTableReader lectorTipoBebida = new DataTableReader(tablaTipoBebida);
-
+                        DataTableReader lectorMarca = new DataTableReader(tablaMarca);
                         while (lectorProveedor.Read())
                         {
                             cuitProveedor = lectorProveedor.GetInt64(0);
@@ -91,6 +79,10 @@ namespace capa_presentacion.perfil_supervisor
                         while (lectorTipoBebida.Read())
                         {
                             idBebida = lectorTipoBebida.GetInt32(0);
+                        }
+                        while (lectorMarca.Read())
+                        {
+                            idMarca = lectorMarca.GetInt32(0);
                         }
                         //Final carga
                         if (idBebida != 0 && idMarca != 0 && cuitProveedor != 0)
@@ -141,7 +133,7 @@ namespace capa_presentacion.perfil_supervisor
             txtStockMinimo.Clear();
             txtPrecioCompra.Clear();
             txtPrecioVenta.Clear();
-            txtMarca.Clear();
+            cbxMarca.Items.Clear();
             txtDescripcion.Clear();
             txtStock.Clear();
             cbxTipoBebida.Items.Clear();
@@ -165,13 +157,14 @@ namespace capa_presentacion.perfil_supervisor
 
 
 
-        public void carga_cbxTipoBebidaycbxProveedor()
+        public void carga_cbxTipoBebidaycbxProveedorycbxMarca()
         {
             DataTable tablaProveedor = negocioProveedor.listarProveedorActivos();
             DataTable tablaTipoBebida = negocioTipoBebida.listarTipoBebida();
-
+            DataTable tablaMarca = negocioMarca.listarMarca();
             DataTableReader lectorProveedor = new DataTableReader(tablaProveedor);
             DataTableReader lectorTipoBebida = new DataTableReader(tablaTipoBebida);
+            DataTableReader lectorMarca = new DataTableReader(tablaMarca);
 
             while (lectorProveedor.Read())
             {
@@ -180,6 +173,10 @@ namespace capa_presentacion.perfil_supervisor
             while (lectorTipoBebida.Read())
             {
                 cbxTipoBebida.Items.Add(lectorTipoBebida.GetString(1));
+            }
+            while (lectorMarca.Read())
+            {
+                cbxMarca.Items.Add(lectorMarca.GetString(1));
             }
         }
 
@@ -196,14 +193,14 @@ namespace capa_presentacion.perfil_supervisor
             DataTable tablaProductos = negocioProducto.listarTodosProductos();
 
             dgvModificarProducto.DataSource = tablaProductos;
-            carga_cbxTipoBebidaycbxProveedor();
+            carga_cbxTipoBebidaycbxProveedorycbxMarca();
             dgvModificarProducto.Columns["Baja"].Visible = false;
             
         }
 
         public void carga_dgvModificarProducto()
         {
-            carga_cbxTipoBebidaycbxProveedor();
+            carga_cbxTipoBebidaycbxProveedorycbxMarca();
             dgvModificarProducto.DataSource = null;
 
             DataTable tablaProveedor = negocioProducto.listarTodosProductos();
@@ -224,7 +221,7 @@ namespace capa_presentacion.perfil_supervisor
             {
                 txtIdProducto.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txtDescripcion.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txtMarca.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[3].Value.ToString();
+                cbxMarca.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txtPrecioCompra.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[4].Value.ToString();
                 txtPrecioVenta.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[5].Value.ToString();
                 txtStockMinimo.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[6].Value.ToString();
