@@ -44,6 +44,7 @@
             this.dgvVentaDetalle = new System.Windows.Forms.DataGridView();
             this.txtDNICliente = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
+            this.lblVendedorDNI = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentaDetalle)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Controls.Add(this.lblVendedorDNI);
             this.panel1.Controls.Add(this.lblVerificarDNI);
             this.panel1.Controls.Add(this.lblFecha);
             this.panel1.Controls.Add(this.txtTarjetaNumero);
@@ -201,8 +203,7 @@
             this.dgvVentaDetalle.TabIndex = 2;
             this.dgvVentaDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentaDetalle_CellContentClick);
             this.dgvVentaDetalle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentaDetalle_CellEndEdit);
-            this.dgvVentaDetalle.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvVentaDetalle_RowsAdded);
-            this.dgvVentaDetalle.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvVentaDetalle_RowsRemoved);
+            //this.dgvVentaDetalle.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvVentaDetalle_RowsAdded);
             // 
             // txtDNICliente
             // 
@@ -222,6 +223,15 @@
             this.lblDNI.Size = new System.Drawing.Size(91, 13);
             this.lblDNI.TabIndex = 0;
             this.lblDNI.Text = "DNI del cliente";
+            // 
+            // lblVendedorDNI
+            // 
+            this.lblVendedorDNI.AutoSize = true;
+            this.lblVendedorDNI.Location = new System.Drawing.Point(232, 59);
+            this.lblVendedorDNI.Name = "lblVendedorDNI";
+            this.lblVendedorDNI.Size = new System.Drawing.Size(119, 13);
+            this.lblVendedorDNI.TabIndex = 15;
+            this.lblVendedorDNI.Text = "acaben esta tortura";
             // 
             // realizar_venta
             // 
@@ -264,5 +274,6 @@
         private System.Windows.Forms.TextBox txtTarjetaNumero;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblVerificarDNI;
+        private System.Windows.Forms.Label lblVendedorDNI;
     }
 }

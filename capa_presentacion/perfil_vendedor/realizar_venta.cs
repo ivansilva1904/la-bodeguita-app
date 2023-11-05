@@ -16,10 +16,15 @@ namespace capa_presentacion.perfil_vendedor
     public partial class realizar_venta : Form
     {
         productos formProductos;
-        public realizar_venta()
+        DataTable dtDetalleCopia = new DataTable(); //Esta copia es solo necesaria para el correcto calculo del monto final de la venta
+
+        DataTable dtEmpleadoLogueado = new DataTable();
+
+        public realizar_venta(DataTable dtEmpleado)
         {
             InitializeComponent();
             formProductos = new productos(this);
+            dtEmpleadoLogueado = dtEmpleado;
         }
 
         NegocioCliente negocioCliente = new NegocioCliente();
@@ -85,30 +90,7 @@ namespace capa_presentacion.perfil_vendedor
             {
                 e.Handled = true;
             }
-
-            /*timer = new System.Timers.Timer();
-            timer.Elapsed += new ElapsedEventHandler(verificarDNI);
-            timer.Interval = 5000;
-            timer.AutoReset = false;
-            timer.Enabled = true;*/
         }
-
-        /*private void verificarDNI(Object source, ElapsedEventArgs e)
-        {
-            DataTable cliente = negocioCliente.listarClientePorDNI(int.Parse(txtDNICliente.Text));
-            if(cliente.Rows.Count > 0)
-            {
-                lblVerificarDNI.ForeColor = Color.Green;
-                lblVerificarDNI.Text = "El cliente esta registrado";
-                lblVerificarDNI.Visible = true;
-            }
-            else
-            {
-                lblVerificarDNI.ForeColor = Color.Red;
-                lblVerificarDNI.Text = "El cliente no esta registrado";
-                lblVerificarDNI.Visible = true;
-            }
-        }*/
 
         private void rbutTarjeta_Click(object sender, EventArgs e)
         {
@@ -141,6 +123,21 @@ namespace capa_presentacion.perfil_vendedor
             dgvVentaDetalle.Columns[1].ReadOnly = true;
             dgvVentaDetalle.Columns[2].ReadOnly = true;
 
+            dtDetalleCopia.Clear();
+            dtDetalleCopia = producto.Clone();
+            foreach(DataRow fila in producto.Rows)
+            {
+                dtDetalleCopia.Rows.Add(fila.ItemArray);
+            }
+
+            float precio = float.Parse(dgvVentaDetalle.Rows[dgvVentaDetalle.Rows.Count - 1].Cells[2].Value.ToString());
+            int cantidad = int.Parse(dgvVentaDetalle.Rows[dgvVentaDetalle.Rows.Count - 1].Cells[3].Value.ToString());
+
+            float montoParcial = precio * cantidad;
+            montoParcial = montoParcial + float.Parse(txtMontoParcial.Text);
+
+            txtMontoParcial.Text = montoParcial.ToString();
+
             if (contBtnQuitar == 0)
             {
                 DataGridViewButtonColumn colQuitar = new DataGridViewButtonColumn();
@@ -159,26 +156,9 @@ namespace capa_presentacion.perfil_vendedor
         {
             string fecha = DateTime.Now.ToString("dd-MM-yyyy");
             lblFecha.Text = "Fecha: " + fecha;
-        }
 
-        int contPrimerDetalle = 0;
-        private void dgvVentaDetalle_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            if(contPrimerDetalle == 0)
-            {
-                contPrimerDetalle++;
-                return;
-            }
-
-            float precio = float.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells[2].Value.ToString());
-            int cantidad = int.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells[3].Value.ToString());
-
-            //MessageBox.Show("precio: " + precio + " cantidad: " + cantidad);
-
-            float montoParcial = precio * cantidad;
-            montoParcial = montoParcial + float.Parse(txtMontoParcial.Text);
-
-            txtMontoParcial.Text = montoParcial.ToString();
+            string dniVendedor = dtEmpleadoLogueado.Rows[0].Field<int>("DNI").ToString();
+            lblVendedorDNI.Text = "DNI del vendedor: " + dniVendedor;
         }
 
         private void dgvVentaDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -187,17 +167,15 @@ namespace capa_presentacion.perfil_vendedor
 
             if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
+                float montoAcumulado = float.Parse(txtMontoParcial.Text);
+                float precioRemovido = float.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value.ToString());
+
                 string id = dgvVentaDetalle.Rows[e.RowIndex].Cells[0].Value.ToString();
                 formProductos.bajaProductoDatatable(id);
-            }
-        }
 
-        private void dgvVentaDetalle_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            //txtMontoParcial.Text = (float.Parse(lblMontoParcial.Text) - float.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value.ToString())).ToString();
-            //No me pregunten como, pero esta linea arregla la cuenta del textbox magicamente
-            //Aunque le he encontrado problemas en momentos aleatorios ojo al piojo (mas info en el repo remoto)
-            txtMontoParcial.Text = "0";
+                txtMontoParcial.Text = "0";
+                txtMontoParcial.Text = (montoAcumulado - precioRemovido).ToString();
+            }
         }
 
         private void txtDNICliente_Validating(object sender, CancelEventArgs e)
@@ -222,12 +200,20 @@ namespace capa_presentacion.perfil_vendedor
 
         private void dgvVentaDetalle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            float precioUnitario = float.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value.ToString());
+            //Obtengo el precio unitario del producto por medio de la copia del datatable
+            //No se puede usar el valor del original porque esta bindeado a los cambios que se hagan dentro del datagrid
+            float precioUnitario = float.Parse(dtDetalleCopia.Rows[e.RowIndex].Field<string>("Precio"));
+
+            //Obtengo el valor del producto acumulado, por si ya se haya agregado mas de una unidad del mismo
+            float precioProductoAcumulado = float.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value.ToString());
             int nuevaCantidad = int.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString());
 
+            //Esto actualiza en el datagrid y, consecuentemente, tambien en el datatable recibido por el form productos
             dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value = precioUnitario * nuevaCantidad;
 
-            float montoParcial = float.Parse(txtMontoParcial.Text) - precioUnitario;
+            //Todo el calculo final de la operacion para actualizar el txtMontoParcial
+            float montoAcumulado = float.Parse(txtMontoParcial.Text);
+            float montoParcial = montoAcumulado - precioProductoAcumulado;
             txtMontoParcial.Text = (montoParcial + (precioUnitario * nuevaCantidad)).ToString();
         }
     }
