@@ -148,7 +148,8 @@ INSERT INTO formasPago(descripcion)
 VALUES('Efectivo');
 INSERT INTO formasPago(descripcion)
 VALUES('Tarjeta');
-	
+
+/* Consulta inner join de ejemplo*/	
 SELECT producto.idProducto AS 'ID Producto',producto.descripcion AS 'Descripcion',marca.descripcion AS 'Marca',
 producto.precioCompra AS 'Precio Compra',producto.precioVenta AS 'Precio Venta',producto.stockMinimo AS 'Stock Minimo',
 producto.stockActual AS 'Stock Actual',proveedor.razonSocial AS 'Nombre Proveedor',tipoBebida.descripcion AS 'Tipo Bebida',producto.baja AS 'Baja'
@@ -156,6 +157,7 @@ producto.stockActual AS 'Stock Actual',proveedor.razonSocial AS 'Nombre Proveedo
 	INNER JOIN marca ON (producto.idMarca = marca.idMarca)
 	INNER JOIN proveedor ON (producto.cuitProveedor = proveedor.cuitProveedor)
 	INNER JOIN tipoBebida ON (producto.idTipoBebida = tipoBebida.idTipoBebida)
+	WHERE tipoBebida.descripcion like '%erveza%'
 	GROUP BY producto.idProducto,producto.descripcion,marca.descripcion
 	/*INNER JOIN marca.idMarc*/
 
@@ -189,4 +191,6 @@ BEGIN
         WHERE p.stockActual >= p.stockMinimo;
     END
 END;
+
+
 

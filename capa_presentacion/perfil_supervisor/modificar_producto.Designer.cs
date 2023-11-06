@@ -206,7 +206,7 @@
             this.cbxFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbxFiltro.FormattingEnabled = true;
             this.cbxFiltro.Items.AddRange(new object[] {
-            "ID",
+            "Deshabilitados",
             "Descripcion",
             "Tipo"});
             this.cbxFiltro.Location = new System.Drawing.Point(62, 251);
@@ -224,6 +224,7 @@
             this.dgvModificarProducto.Size = new System.Drawing.Size(703, 161);
             this.dgvModificarProducto.TabIndex = 20;
             this.dgvModificarProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModificarProducto_CellContentClick);
+            this.dgvModificarProducto.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvModificarProducto_CellFormatting);
             // 
             // label1
             // 

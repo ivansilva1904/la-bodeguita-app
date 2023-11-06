@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Globalization;
-using System.Linq;
-using System.Reflection;
-using System.Security.Principal;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace capa_datos
@@ -56,6 +49,42 @@ namespace capa_datos
         }
         public SqlDataReader selectTodosProductos()
         {
+            try
+            {
+                conexion.Open();
+
+                string query = "" +
+               "SELECT producto.idProducto AS 'ID Producto',producto.descripcion AS 'Descripcion',marca.descripcion AS 'Marca'," +
+               "producto.precioCompra AS 'Precio Compra',producto.precioVenta AS 'Precio Venta',producto.stockMinimo AS 'Stock Minimo'," +
+               "producto.stockActual AS 'Stock Actual',proveedor.razonSocial AS 'Nombre Proveedor',tipoBebida.descripcion AS 'Tipo Bebida',producto.baja AS 'Baja'" +
+               "FROM producto " +
+               "INNER JOIN marca ON(producto.idMarca = marca.idMarca) " +
+               "INNER JOIN proveedor ON(producto.cuitProveedor = proveedor.cuitProveedor) " +
+                "INNER JOIN tipoBebida ON(producto.idTipoBebida = tipoBebida.idTipoBebida) "; //+
+                /*"SELECT idProducto AS 'Id Producto', " +
+                "descripcion AS 'Descripcion', " +
+                "idMarca AS 'Marca', " +
+                "precioCompra AS 'Precio Compra', " +
+                "precioVenta AS 'Precio Venta', " +
+                "stockMinimo AS 'Stock Minimo', " +
+                "stockActual AS 'Stock Actual', " +
+                "cuitProveedor AS 'Cuit Proveedor'," +
+                "baja AS 'Baja'" +
+                " FROM producto";*/
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                SqlDataReader drComando = comando.ExecuteReader();
+
+                return drComando;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
+            /*
             conexion.Open();
             string query = "" +
                "SELECT producto.idProducto AS 'ID Producto',producto.descripcion AS 'Descripcion',marca.descripcion AS 'Marca',"+
@@ -80,7 +109,7 @@ namespace capa_datos
 
             SqlDataReader tabla = comando.ExecuteReader();
 
-            return tabla;
+            return tabla;*/
         }
 
         public void updateProducto(int idProducto, string descripcion,
@@ -143,5 +172,120 @@ namespace capa_datos
                 return null;
             }
         }
+        public SqlDataReader selectProductosDebaja()
+        {
+            try { 
+            conexion.Open();
+                string query = "" +
+                    "SELECT producto.idProducto AS 'ID Producto',producto.descripcion AS 'Descripcion',marca.descripcion AS 'Marca'," +
+                    "producto.precioCompra AS 'Precio Compra',producto.precioVenta AS 'Precio Venta',producto.stockMinimo AS 'Stock Minimo'," +
+                    "producto.stockActual AS 'Stock Actual',proveedor.razonSocial AS 'Nombre Proveedor',tipoBebida.descripcion AS 'Tipo Bebida',producto.baja AS 'Baja'" +
+                    "FROM producto " +
+                    "INNER JOIN marca ON(producto.idMarca = marca.idMarca) " +
+                    "INNER JOIN proveedor ON(producto.cuitProveedor = proveedor.cuitProveedor) " +
+                        "INNER JOIN tipoBebida ON(producto.idTipoBebida = tipoBebida.idTipoBebida) " +
+                        "WHERE producto.baja = 1 "; //+
+                   /* "SELECT idProducto AS 'Id Producto', " +
+                    "descripcion AS 'Descripcion', " +
+                    "idMarca AS 'Marca', " +
+                    "precioCompra AS 'Precio Compra', " +
+                    "precioVenta AS 'Precio Venta', " +
+                    "stockMinimo AS 'Stock Minimo', " +
+                    "stockActual AS 'Stock Actual', " +
+                    "cuitProveedor AS 'Cuit Proveedor'," +
+                    "baja AS 'Baja'" +
+                    " FROM producto";*/
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                SqlDataReader tabla = comando.ExecuteReader();
+
+                return tabla;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+    
+        }
+        public SqlDataReader selectProductosPorDescripcion(string desc)
+        {
+            try
+            {
+                conexion.Open();
+                string query = "" +
+                    "SELECT producto.idProducto AS 'ID Producto',producto.descripcion AS 'Descripcion',marca.descripcion AS 'Marca'," +
+                    "producto.precioCompra AS 'Precio Compra',producto.precioVenta AS 'Precio Venta',producto.stockMinimo AS 'Stock Minimo'," +
+                    "producto.stockActual AS 'Stock Actual',proveedor.razonSocial AS 'Nombre Proveedor',tipoBebida.descripcion AS 'Tipo Bebida',producto.baja AS 'Baja'" +
+                    "FROM producto " +
+                    "INNER JOIN marca ON(producto.idMarca = marca.idMarca) " +
+                    "INNER JOIN proveedor ON(producto.cuitProveedor = proveedor.cuitProveedor) " +
+                        "INNER JOIN tipoBebida ON(producto.idTipoBebida = tipoBebida.idTipoBebida) " +
+                        "WHERE producto.descripcion like '%"+desc+"%' "; //+
+                /* "SELECT idProducto AS 'Id Producto', " +
+                 "descripcion AS 'Descripcion', " +
+                 "idMarca AS 'Marca', " +
+                 "precioCompra AS 'Precio Compra', " +
+                 "precioVenta AS 'Precio Venta', " +
+                 "stockMinimo AS 'Stock Minimo', " +
+                 "stockActual AS 'Stock Actual', " +
+                 "cuitProveedor AS 'Cuit Proveedor'," +
+                 "baja AS 'Baja'" +
+                 " FROM producto";*/
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                SqlDataReader tabla = comando.ExecuteReader();
+
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+        public SqlDataReader selectProductosPorTipo(string desc)
+        {
+            try
+            {
+                conexion.Open();
+                string query = "" +
+                    "SELECT producto.idProducto AS 'ID Producto',producto.descripcion AS 'Descripcion',marca.descripcion AS 'Marca'," +
+                    "producto.precioCompra AS 'Precio Compra',producto.precioVenta AS 'Precio Venta',producto.stockMinimo AS 'Stock Minimo'," +
+                    "producto.stockActual AS 'Stock Actual',proveedor.razonSocial AS 'Nombre Proveedor',tipoBebida.descripcion AS 'Tipo Bebida',producto.baja AS 'Baja'" +
+                    "FROM producto " +
+                    "INNER JOIN marca ON(producto.idMarca = marca.idMarca) " +
+                    "INNER JOIN proveedor ON(producto.cuitProveedor = proveedor.cuitProveedor) " +
+                        "INNER JOIN tipoBebida ON(producto.idTipoBebida = tipoBebida.idTipoBebida) " +
+                        "WHERE tipoBebida.descripcion like '%"+ desc +"%'"; //+
+                /* "SELECT idProducto AS 'Id Producto', " +
+                 "descripcion AS 'Descripcion', " +
+                 "idMarca AS 'Marca', " +
+                 "precioCompra AS 'Precio Compra', " +
+                 "precioVenta AS 'Precio Venta', " +
+                 "stockMinimo AS 'Stock Minimo', " +
+                 "stockActual AS 'Stock Actual', " +
+                 "cuitProveedor AS 'Cuit Proveedor'," +
+                 "baja AS 'Baja'" +
+                 " FROM producto";*/
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                SqlDataReader tabla = comando.ExecuteReader();
+
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
     }
+
+
+
 }

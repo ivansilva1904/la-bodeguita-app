@@ -193,22 +193,29 @@ namespace capa_presentacion.perfil_supervisor
             DataTable tablaProductos = negocioProducto.listarTodosProductos();
 
             dgvModificarProducto.DataSource = tablaProductos;
-           // cambiacolorafilasdelDGV();
-            carga_cbxTipoBebidaycbxProveedorycbxMarca();
-            
-            
+            /*
+            if (dgvModificarProducto.DataSource != null)
+            {
+                dgvModificarProducto.Columns["Baja"].Visible = false;
+            }*/
+            //
+
+            //
+            AplicarColorFondoSegunBaja();
+            carga_cbxTipoBebidaycbxProveedorycbxMarca();        
         }
 
         public void carga_dgvModificarProducto()
         {
             carga_cbxTipoBebidaycbxProveedorycbxMarca();
             dgvModificarProducto.DataSource = null;
-
             DataTable tablaProveedor = negocioProducto.listarTodosProductos();
-
             dgvModificarProducto.DataSource = tablaProveedor;
-           // cambiacolorafilasdelDGV();
-
+           /* if (dgvModificarProducto.DataSource != null)
+            {
+                dgvModificarProducto.Columns["Baja"].Visible = false;
+            }
+            */
         }
 
         private void dgvModificarProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -233,60 +240,82 @@ namespace capa_presentacion.perfil_supervisor
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string filtro = txtFiltro.Text;
-
-            if (String.IsNullOrWhiteSpace(filtro))
+            
+            if(cbxFiltro.Text == "Deshabilitados")
+            {
+                cargaDGVDeshabilitado();
+            }
+            else if (String.IsNullOrWhiteSpace(filtro))
             {
                 //gridview total
-                
+                carga_dgvModificarProducto();
             }
-            else if (cbxFiltro.Text == "Razon Social")
+            else if (cbxFiltro.Text == "Descripcion")
             {
-                
-                //trae matchs con el string
-            }
-            else if (cbxFiltro.Text == "ID")
-            {
-                
 
-                // trae matchs con el cuit
+                //trae matchs con el string
+                cargaDGVporDescripcion(filtro);
             }
+            
             else if (cbxFiltro.Text == "Tipo")
             {
-
-
-                // trae matchs con el cuit
+                cargaDGVporTipo(filtro);
+                // trae matchs con nombre del tipo
             }
         }
 
-        /*private void cambiacolorafilasdelDGV()
+        private void cargaDGVDeshabilitado()
         {
-            foreach (DataGridViewRow row in dgvModificarProducto.Rows)
+            carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            dgvModificarProducto.DataSource = null;
+            DataTable tablaProveedor = negocioProducto.listarProductosDeBaja();
+            dgvModificarProducto.DataSource = tablaProveedor;
+        }
+        private void cargaDGVporDescripcion(string filtro)
+        {
+            carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            dgvModificarProducto.DataSource = null;
+            DataTable tablaProveedor = negocioProducto.listarProductosPorDescripcion(filtro);
+            dgvModificarProducto.DataSource = tablaProveedor;
+        }
+        private void cargaDGVporTipo(string filtro)
+        {
+            carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            dgvModificarProducto.DataSource = null;
+            DataTable tablaProveedor = negocioProducto.listarProductosPorTipo(filtro);
+            dgvModificarProducto.DataSource = tablaProveedor;
+        }
+
+        private void dgvModificarProducto_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            AplicarColorFondoSegunBaja();
+            
+        }
+
+        private void AplicarColorFondoSegunBaja()
+        {
+            if(dgvModificarProducto.DataSource != null)
             {
-                string baja = row.Cells["Baja"].Value.ToString();
-                
-                if (baja == "True")
+
+
+                foreach (DataGridViewRow row in dgvModificarProducto.Rows)
                 {
-                    row.DefaultCellStyle.BackColor = Color.Red;
+                    if (row.Cells["Baja"].Value != null)
+                    {
+                        string estado = row.Cells["Baja"].Value.ToString();
+
+                        if (estado == "True")
+                        {
+                            row.DefaultCellStyle.BackColor = Color.Red;
+                        }
+                        else
+                        {
+                            row.DefaultCellStyle.BackColor = dgvModificarProducto.DefaultCellStyle.BackColor;
+                        }
+                    }
                 }
             }
-        }*/
+        }
+
     }
 }
-/*
-  DialogResult resp = MessageBox.Show("Esta seguro de modificar los datos del producto?",
-                    "Confirmar cambios",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-
-
-                    if (resp == DialogResult.Yes)
-                    {
-                        MessageBox.Show("Se ha modificado el producto",
-                            "Cambios realizados",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                        limpiarCampos();
-                    } 
-  */
-

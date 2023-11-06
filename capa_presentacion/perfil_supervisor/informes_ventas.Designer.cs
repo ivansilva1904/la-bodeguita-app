@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.pnlInformeVentas = new System.Windows.Forms.Panel();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.idVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dniEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dniCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalleVenta = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDniCliente = new System.Windows.Forms.TextBox();
             this.txtDniEmpleado = new System.Windows.Forms.TextBox();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
@@ -40,24 +48,19 @@
             this.lblHasta = new System.Windows.Forms.Label();
             this.lblDniCliente = new System.Windows.Forms.Label();
             this.lblInformeVentas = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dniEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dniCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalleVenta = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnFiltrar = new System.Windows.Forms.Button();
             this.pnlInformeVentas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlInformeVentas
             // 
+            this.pnlInformeVentas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlInformeVentas.BackColor = System.Drawing.Color.Beige;
             this.pnlInformeVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlInformeVentas.Controls.Add(this.btnFiltrar);
-            this.pnlInformeVentas.Controls.Add(this.dataGridView1);
+            this.pnlInformeVentas.Controls.Add(this.dgvVentas);
             this.pnlInformeVentas.Controls.Add(this.txtDniCliente);
             this.pnlInformeVentas.Controls.Add(this.txtDniEmpleado);
             this.pnlInformeVentas.Controls.Add(this.dtpHasta);
@@ -74,118 +77,32 @@
             this.pnlInformeVentas.Size = new System.Drawing.Size(709, 442);
             this.pnlInformeVentas.TabIndex = 0;
             // 
-            // txtDniCliente
+            // btnFiltrar
             // 
-            this.txtDniCliente.Location = new System.Drawing.Point(176, 155);
-            this.txtDniCliente.Name = "txtDniCliente";
-            this.txtDniCliente.Size = new System.Drawing.Size(156, 21);
-            this.txtDniCliente.TabIndex = 10;
+            this.btnFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFiltrar.Location = new System.Drawing.Point(530, 215);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(122, 28);
+            this.btnFiltrar.TabIndex = 12;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
             // 
-            // txtDniEmpleado
+            // dgvVentas
             // 
-            this.txtDniEmpleado.Location = new System.Drawing.Point(176, 104);
-            this.txtDniEmpleado.Name = "txtDniEmpleado";
-            this.txtDniEmpleado.Size = new System.Drawing.Size(156, 21);
-            this.txtDniEmpleado.TabIndex = 9;
-            // 
-            // dtpHasta
-            // 
-            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(486, 155);
-            this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(97, 21);
-            this.dtpHasta.TabIndex = 8;
-            // 
-            // dtpDesde
-            // 
-            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(486, 104);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(97, 21);
-            this.dtpDesde.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Beige;
-            this.label7.ForeColor = System.Drawing.Color.IndianRed;
-            this.label7.Location = new System.Drawing.Point(21, 236);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Nombre Empleado :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Beige;
-            this.label6.ForeColor = System.Drawing.Color.IndianRed;
-            this.label6.Location = new System.Drawing.Point(21, 223);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Nombre Cliente :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(513, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Desde";
-            // 
-            // lblDniEmpleado
-            // 
-            this.lblDniEmpleado.AutoSize = true;
-            this.lblDniEmpleado.Location = new System.Drawing.Point(71, 107);
-            this.lblDniEmpleado.Name = "lblDniEmpleado";
-            this.lblDniEmpleado.Size = new System.Drawing.Size(89, 13);
-            this.lblDniEmpleado.TabIndex = 3;
-            this.lblDniEmpleado.Text = "DNI Empleado";
-            // 
-            // lblHasta
-            // 
-            this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(513, 139);
-            this.lblHasta.Name = "lblHasta";
-            this.lblHasta.Size = new System.Drawing.Size(39, 13);
-            this.lblHasta.TabIndex = 2;
-            this.lblHasta.Text = "Hasta";
-            // 
-            // lblDniCliente
-            // 
-            this.lblDniCliente.AutoSize = true;
-            this.lblDniCliente.Location = new System.Drawing.Point(81, 158);
-            this.lblDniCliente.Name = "lblDniCliente";
-            this.lblDniCliente.Size = new System.Drawing.Size(70, 13);
-            this.lblDniCliente.TabIndex = 1;
-            this.lblDniCliente.Text = "Dni Cliente";
-            // 
-            // lblInformeVentas
-            // 
-            this.lblInformeVentas.AutoSize = true;
-            this.lblInformeVentas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInformeVentas.Location = new System.Drawing.Point(297, 31);
-            this.lblInformeVentas.Name = "lblInformeVentas";
-            this.lblInformeVentas.Size = new System.Drawing.Size(108, 13);
-            this.lblInformeVentas.TabIndex = 0;
-            this.lblInformeVentas.Text = "Informe Ventas";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvVentas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idVenta,
             this.dniEmpleado,
             this.dniCliente,
             this.fecha,
             this.detalleVenta,
             this.total});
-            this.dataGridView1.Location = new System.Drawing.Point(24, 252);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(666, 150);
-            this.dataGridView1.TabIndex = 11;
+            this.dgvVentas.Location = new System.Drawing.Point(3, 269);
+            this.dgvVentas.Name = "dgvVentas";
+            this.dgvVentas.Size = new System.Drawing.Size(703, 170);
+            this.dgvVentas.TabIndex = 11;
             // 
             // idVenta
             // 
@@ -217,19 +134,115 @@
             this.total.HeaderText = "Total Venta";
             this.total.Name = "total";
             // 
-            // btnFiltrar
+            // txtDniCliente
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(474, 208);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(122, 28);
-            this.btnFiltrar.TabIndex = 12;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.txtDniCliente.Location = new System.Drawing.Point(176, 155);
+            this.txtDniCliente.Name = "txtDniCliente";
+            this.txtDniCliente.Size = new System.Drawing.Size(181, 21);
+            this.txtDniCliente.TabIndex = 10;
+            // 
+            // txtDniEmpleado
+            // 
+            this.txtDniEmpleado.Location = new System.Drawing.Point(176, 104);
+            this.txtDniEmpleado.Name = "txtDniEmpleado";
+            this.txtDniEmpleado.Size = new System.Drawing.Size(181, 21);
+            this.txtDniEmpleado.TabIndex = 9;
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(455, 155);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(97, 21);
+            this.dtpHasta.TabIndex = 8;
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(455, 104);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(97, 21);
+            this.dtpDesde.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Beige;
+            this.label7.ForeColor = System.Drawing.Color.IndianRed;
+            this.label7.Location = new System.Drawing.Point(21, 236);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(121, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Nombre Empleado :";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Beige;
+            this.label6.ForeColor = System.Drawing.Color.IndianRed;
+            this.label6.Location = new System.Drawing.Point(21, 223);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Nombre Cliente :";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(482, 88);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Desde";
+            // 
+            // lblDniEmpleado
+            // 
+            this.lblDniEmpleado.AutoSize = true;
+            this.lblDniEmpleado.Location = new System.Drawing.Point(71, 107);
+            this.lblDniEmpleado.Name = "lblDniEmpleado";
+            this.lblDniEmpleado.Size = new System.Drawing.Size(89, 13);
+            this.lblDniEmpleado.TabIndex = 3;
+            this.lblDniEmpleado.Text = "DNI Empleado";
+            // 
+            // lblHasta
+            // 
+            this.lblHasta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHasta.AutoSize = true;
+            this.lblHasta.Location = new System.Drawing.Point(482, 139);
+            this.lblHasta.Name = "lblHasta";
+            this.lblHasta.Size = new System.Drawing.Size(39, 13);
+            this.lblHasta.TabIndex = 2;
+            this.lblHasta.Text = "Hasta";
+            // 
+            // lblDniCliente
+            // 
+            this.lblDniCliente.AutoSize = true;
+            this.lblDniCliente.Location = new System.Drawing.Point(81, 158);
+            this.lblDniCliente.Name = "lblDniCliente";
+            this.lblDniCliente.Size = new System.Drawing.Size(70, 13);
+            this.lblDniCliente.TabIndex = 1;
+            this.lblDniCliente.Text = "Dni Cliente";
+            // 
+            // lblInformeVentas
+            // 
+            this.lblInformeVentas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblInformeVentas.AutoSize = true;
+            this.lblInformeVentas.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformeVentas.Location = new System.Drawing.Point(297, 31);
+            this.lblInformeVentas.Name = "lblInformeVentas";
+            this.lblInformeVentas.Size = new System.Drawing.Size(108, 13);
+            this.lblInformeVentas.TabIndex = 0;
+            this.lblInformeVentas.Text = "Informe Ventas";
             // 
             // informes_ventas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_wine_barrel;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(733, 466);
@@ -240,9 +253,10 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "informes_ventas";
             this.Text = "informes_ventas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlInformeVentas.ResumeLayout(false);
             this.pnlInformeVentas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,7 +276,7 @@
         private System.Windows.Forms.Label lblDniCliente;
         private System.Windows.Forms.Label lblInformeVentas;
         private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvVentas;
         private System.Windows.Forms.DataGridViewTextBoxColumn idVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn dniEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn dniCliente;

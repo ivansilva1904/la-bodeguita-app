@@ -67,16 +67,52 @@ namespace capa_negocio
             SqlDataReader drProductos = datosProducto.selectProductosVenta();
 
             DataTable dtProductos = new DataTable();
-
+            datosProducto.cerrarConexion();
             if (drProductos.HasRows)
             {
                 dtProductos.Load(drProductos);
                 return dtProductos;
+                
             }
             else
             {
                 return dtProductos;
             }
+            
+        }
+
+        public DataTable listarProductosDeBaja()
+        {
+            SqlDataReader dataReaderProducto = datosProducto.selectProductosDebaja();
+
+            DataTable tablaProducto = new DataTable();
+            tablaProducto.Load(dataReaderProducto);
+
+            datosProducto.cerrarConexion();
+
+            return tablaProducto;
+        }
+        public DataTable listarProductosPorDescripcion(string desc)
+        {
+            SqlDataReader dataReaderProducto = datosProducto.selectProductosPorDescripcion(desc);
+
+            DataTable tablaProducto = new DataTable();
+            tablaProducto.Load(dataReaderProducto);
+
+            datosProducto.cerrarConexion();
+
+            return tablaProducto;
+        }
+        public DataTable listarProductosPorTipo(string desc)
+        {
+            SqlDataReader dataReaderProducto = datosProducto.selectProductosPorTipo(desc);
+
+            DataTable tablaProducto = new DataTable();
+            tablaProducto.Load(dataReaderProducto);
+
+            datosProducto.cerrarConexion();
+
+            return tablaProducto;
         }
     }
 }
