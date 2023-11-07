@@ -14,7 +14,7 @@ namespace capa_negocio
 
         public void crearCabeceraEfectivo(DateTime fecha, int formaPago, float importeTotal, int dniEmpleado, int dniCliente)
         {
-            datosVenta.insertCabeceraEfectivo(fecha, int, formaPago, importeTotal, dniEmpleado, dniCliente);
+            int idCabecera = datosVenta.insertCabeceraEfectivo(fecha, formaPago, importeTotal, dniEmpleado, dniCliente);
         }
     }
 }
