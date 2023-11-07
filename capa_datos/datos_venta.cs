@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,10 +26,21 @@ namespace capa_datos
 
                 string query = "" +
                     "INSERT INTO ventasCabecera (fecha, idFormaPago, importeTotal, dniEmpleado, dniCliente) " +
-                    "VALUES ('"+ fecha.ToString("yyyy-MM-dd") +"', "+ formaPago +", "+ importeTotal +", "+ dniEmpleado +", "+ dniCliente +"); " +
+                    "VALUES ('" + fecha.ToString("yyyy-MM-dd") + "', " + formaPago + ", " + importeTotal.ToString("0.00", CultureInfo.InvariantCulture) +", "+ dniEmpleado +", "+ dniCliente +"); " +
                     "SELECT SCOPE_IDENTITY();";
 
+                /*string query = "" +
+                    "INSERT INTO ventasCabecera (fecha, idFormaPago, importeTotal, dniEmpleado, dniCliente) " +
+                    "OUTPUT INSERTED.idVentaCabecera" +
+                    "VALUES ('"+ fecha.ToString("yyyy-MM-dd") +"', "+ formaPago +", "+ importeTotal +", "+ dniEmpleado +", "+ dniCliente +")";*/
+
                 SqlCommand comando = new SqlCommand(query, conexion);
+
+                /*comando.ExecuteNonQuery();
+
+                string querySelect = "SELECT SCOPE_IDENTITY()";
+
+                SqlCommand comandoScalar = new SqlCommand(querySelect, conexion);*/
 
                 int idCabecera = int.Parse(comando.ExecuteScalar().ToString());
 
@@ -52,7 +64,7 @@ namespace capa_datos
 
                 string query = "" +
                     "INSERT INTO ventasDetalle (idVentaCabecera, idProducto, cantidad, precioParcial) " +
-                    "VALUES ("+ idCabecera +", "+ idProducto +", "+ cantidad +", "+ precio +")";
+                    "VALUES ("+ idCabecera +", "+ idProducto +", "+ cantidad +", "+ precio.ToString("0.00", CultureInfo.InvariantCulture) +")";
 
                 SqlCommand comando = new SqlCommand(query, conexion);
 

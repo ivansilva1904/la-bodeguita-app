@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Data;
 
 using capa_datos;
+using System.Globalization;
 
 namespace capa_negocio
 {
@@ -25,7 +26,7 @@ namespace capa_negocio
         {
             foreach(DataGridViewRow fila in dgvDetalle.Rows)
             {
-                datosVenta.insertDetalle(idCabecera, int.Parse(fila.Cells["ID Producto"].ToString()), int.Parse(fila.Cells["Cantidad"].ToString()), float.Parse(fila.Cells["Precio"].ToString()));
+                datosVenta.insertDetalle(idCabecera, int.Parse(fila.Cells["ID Producto"].Value.ToString()), int.Parse(fila.Cells["Cantidad"].Value.ToString()), float.Parse(fila.Cells["Precio"].Value.ToString()));
             }
         }
     }
