@@ -33,8 +33,11 @@ namespace capa_presentacion.perfil_vendedor
         private void btnRealizarVenta_Click(object sender, EventArgs e)
         {
             long tarjeta = long.Parse(txtTarjetaNumero.Text);
+            float importeTotal = float.Parse(txtMontoParcial.Text);
+            int dniEmpleado = dtEmpleadoLogueado.Rows[0].Field<int>("DNI");
+            int dniCliente = int.Parse(txtDNICliente.Text);
 
-            if (!string.IsNullOrWhiteSpace(txtDNICliente.Text))
+            if (!string.IsNullOrWhiteSpace(dniCliente.ToString()))
             {
                 if(dgvVentaDetalle.Rows.Count > 0)
                 {
@@ -45,10 +48,12 @@ namespace capa_presentacion.perfil_vendedor
                                 MessageBoxIcon.Question);
                         if (resp == DialogResult.Yes)
                         {
+                            
+
                             if(rbutEfectivo.Checked == true)
                             {
                                 //Insercion por efectivo
-                                
+                                negocioVenta.crearCabeceraEfectivo(DateTime.Now, 1, importeTotal, dniEmpleado, dniCliente);
                             }
                             else
                             {
