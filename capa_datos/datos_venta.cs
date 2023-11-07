@@ -29,18 +29,7 @@ namespace capa_datos
                     "VALUES ('" + fecha.ToString("yyyy-MM-dd") + "', " + formaPago + ", " + importeTotal.ToString("0.00", CultureInfo.InvariantCulture) +", "+ dniEmpleado +", "+ dniCliente +"); " +
                     "SELECT SCOPE_IDENTITY();";
 
-                /*string query = "" +
-                    "INSERT INTO ventasCabecera (fecha, idFormaPago, importeTotal, dniEmpleado, dniCliente) " +
-                    "OUTPUT INSERTED.idVentaCabecera" +
-                    "VALUES ('"+ fecha.ToString("yyyy-MM-dd") +"', "+ formaPago +", "+ importeTotal +", "+ dniEmpleado +", "+ dniCliente +")";*/
-
                 SqlCommand comando = new SqlCommand(query, conexion);
-
-                /*comando.ExecuteNonQuery();
-
-                string querySelect = "SELECT SCOPE_IDENTITY()";
-
-                SqlCommand comandoScalar = new SqlCommand(querySelect, conexion);*/
 
                 int idCabecera = int.Parse(comando.ExecuteScalar().ToString());
 
