@@ -99,6 +99,8 @@ CREATE TABLE ventasDetalle(
 	CONSTRAINT FK_producto FOREIGN KEY (idProducto) REFERENCES producto(idProducto)
 );
 
+SELECT GETDATE();
+
 /* Datos de entidades accesorio */
 
 INSERT INTO tiposEmpleados(descripcion) VALUES('Vendedor');
@@ -193,4 +195,7 @@ BEGIN
 END;
 
 
-
+CREATE TABLE algo(
+	id INT IDENTITY PRIMARY KEY,
+	descripcion VARCHAR(30)
+);

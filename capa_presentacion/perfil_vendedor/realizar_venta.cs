@@ -32,7 +32,7 @@ namespace capa_presentacion.perfil_vendedor
 
         private void btnRealizarVenta_Click(object sender, EventArgs e)
         {
-            long tarjeta = long.Parse(txtTarjetaNumero.Text);
+            //long tarjeta = long.Parse(txtTarjetaNumero.Text);
             float importeTotal = float.Parse(txtMontoParcial.Text);
             int dniEmpleado = dtEmpleadoLogueado.Rows[0].Field<int>("DNI");
             int dniCliente = int.Parse(txtDNICliente.Text);

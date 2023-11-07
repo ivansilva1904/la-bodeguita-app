@@ -67,15 +67,17 @@ namespace capa_negocio
             SqlDataReader drProductos = datosProducto.selectProductosVenta();
 
             DataTable dtProductos = new DataTable();
-            datosProducto.cerrarConexion();
             if (drProductos.HasRows)
             {
                 dtProductos.Load(drProductos);
+                datosProducto.cerrarConexion();
+
                 return dtProductos;
                 
             }
             else
             {
+                datosProducto.cerrarConexion();
                 return dtProductos;
             }
             
