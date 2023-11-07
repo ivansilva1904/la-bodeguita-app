@@ -30,6 +30,12 @@ namespace capa_presentacion.perfil_vendedor
         NegocioCliente negocioCliente = new NegocioCliente();
         NegocioVenta negocioVenta = new NegocioVenta();
 
+        private bool verificarCabecera(int id)
+        {
+            if(id != 0) { return true; }
+            else { return false; }
+        }
+
         private void btnRealizarVenta_Click(object sender, EventArgs e)
         {
             //long tarjeta = long.Parse(txtTarjetaNumero.Text);
@@ -48,12 +54,16 @@ namespace capa_presentacion.perfil_vendedor
                                 MessageBoxIcon.Question);
                         if (resp == DialogResult.Yes)
                         {
-                            
-
                             if(rbutEfectivo.Checked == true)
                             {
-                                //Insercion por efectivo
-                                negocioVenta.crearCabeceraEfectivo(DateTime.Now, 1, importeTotal, dniEmpleado, dniCliente);
+                                //Insercion cabecera - efectivo
+                                int idCabecera = negocioVenta.crearCabeceraEfectivo(DateTime.Now, 1, importeTotal, dniEmpleado, dniCliente);
+
+                                if(verificarCabecera(idCabecera) == true)
+                                {
+                                    //Insercion detalle
+                                    negocioVenta.crearDetalles(idCabecera, dgvVentaDetalle);
+                                }
                             }
                             else
                             {

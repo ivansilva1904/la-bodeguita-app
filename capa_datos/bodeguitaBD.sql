@@ -194,8 +194,3 @@ BEGIN
     END
 END;
 
-
-CREATE TABLE algo(
-	id INT IDENTITY PRIMARY KEY,
-	descripcion VARCHAR(30)
-);
