@@ -99,8 +99,6 @@ CREATE TABLE ventasDetalle(
 	CONSTRAINT FK_producto FOREIGN KEY (idProducto) REFERENCES producto(idProducto)
 );
 
-SELECT GETDATE();
-SELECT * FROM ventasCabecera;
 /* Datos de entidades accesorio */
 
 INSERT INTO tiposEmpleados(descripcion) VALUES('Vendedor');
@@ -195,15 +193,3 @@ BEGIN
 END;
 
 
-CREATE TABLE algo(
-	id INT IDENTITY PRIMARY KEY,
-	descripcion VARCHAR(30)
-);
-
-INSERT INTO algo (descripcion)
-OUTPUT INSERTED.id
-VALUES ('no se');
-
-SELECT SCOPE_IDENTITY();
-SELECT * FROM ventasCabecera;
-SELECT * FROM ventasDetalle;
