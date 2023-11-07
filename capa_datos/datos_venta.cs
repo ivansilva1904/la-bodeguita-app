@@ -39,7 +39,30 @@ namespace capa_datos
             catch (Exception ex)
             {
                 MessageBox.Show("Error al insertar la cabecera: " + ex.Message);
+                cerrarConexion();
                 return 0;
+            }
+        }
+
+        public void insertDetalle(int idCabecera, int idProducto, int cantidad, float precio)
+        {
+            try
+            {
+                conexion.Open();
+
+                string query = "" +
+                    "INSERT INTO ventasDetalle (idVentaCabecera, idProducto, cantidad, precioParcial) " +
+                    "VALUES ("+ idCabecera +", "+ idProducto +", "+ cantidad +", "+ precio +")";
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                comando.ExecuteNonQuery();
+
+                cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo insertar el detalle. ID del producto: " + idProducto + "\nError: " + ex.Message);
             }
         }
     }

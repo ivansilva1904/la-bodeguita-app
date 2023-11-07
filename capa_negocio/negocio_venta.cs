@@ -25,7 +25,7 @@ namespace capa_negocio
         {
             foreach(DataGridViewRow fila in dgvDetalle.Rows)
             {
-                datosVenta.insertDetalle(idCabecera, fila.Cells["ID Producto"], fila.Cells["Cantidad"], fila.Cells["Precio"]);
+                datosVenta.insertDetalle(idCabecera, int.Parse(fila.Cells["ID Producto"].ToString()), int.Parse(fila.Cells["Cantidad"].ToString()), float.Parse(fila.Cells["Precio"].ToString()));
             }
         }
     }
