@@ -36,6 +36,7 @@
             this.btnModificarProveedor = new System.Windows.Forms.Button();
             this.btnModificarProducto = new System.Windows.Forms.Button();
             this.pnlFormsSupervisor = new System.Windows.Forms.Panel();
+            this.btnInformesGenerales = new System.Windows.Forms.Button();
             this.menuSupervisor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +62,7 @@
             this.menuSupervisor.AutoSize = true;
             this.menuSupervisor.BackColor = System.Drawing.Color.Tan;
             this.menuSupervisor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.menuSupervisor.Controls.Add(this.btnInformesGenerales);
             this.menuSupervisor.Controls.Add(this.btnInformeVentas);
             this.menuSupervisor.Controls.Add(this.picboxLogo);
             this.menuSupervisor.Controls.Add(this.btnAltaProducto);
@@ -161,6 +163,19 @@
             this.pnlFormsSupervisor.Size = new System.Drawing.Size(722, 461);
             this.pnlFormsSupervisor.TabIndex = 0;
             // 
+            // btnInformesGenerales
+            // 
+            this.btnInformesGenerales.FlatAppearance.BorderSize = 0;
+            this.btnInformesGenerales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformesGenerales.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformesGenerales.Location = new System.Drawing.Point(-2, 404);
+            this.btnInformesGenerales.Name = "btnInformesGenerales";
+            this.btnInformesGenerales.Size = new System.Drawing.Size(255, 50);
+            this.btnInformesGenerales.TabIndex = 3;
+            this.btnInformesGenerales.Text = "Informes Generales";
+            this.btnInformesGenerales.UseVisualStyleBackColor = true;
+            this.btnInformesGenerales.Click += new System.EventHandler(this.btnInformesGenerales_Click);
+            // 
             // menu_supervisor
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -193,5 +208,6 @@
         private System.Windows.Forms.Button btnModificarProducto;
         private System.Windows.Forms.PictureBox picboxLogo;
         private System.Windows.Forms.Button btnInformeVentas;
+        private System.Windows.Forms.Button btnInformesGenerales;
     }
 }

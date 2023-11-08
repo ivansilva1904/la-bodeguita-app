@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
+using System.Data.SqlClient;
 
 using capa_datos;
 using System.Globalization;
@@ -28,6 +29,21 @@ namespace capa_negocio
             {
                 datosVenta.insertDetalle(idCabecera, int.Parse(fila.Cells["ID Producto"].Value.ToString()), int.Parse(fila.Cells["Cantidad"].Value.ToString()), float.Parse(fila.Cells["Precio"].Value.ToString()));
             }
+        }
+
+
+        public DataTable ventas_por_cantidad_tipoBebida(DateTime desde, DateTime hasta)
+        {
+            SqlDataReader dataReaderVentas = datosVenta.selectVentasCantidadBebidas(desde,hasta);
+
+            DataTable tablaCantidadBebidas = new DataTable();
+            tablaCantidadBebidas.Load(dataReaderVentas);
+
+
+
+            datosVenta.cerrarConexion();
+
+            return tablaCantidadBebidas;
         }
     }
 }

@@ -100,5 +100,42 @@ namespace capa_datos
                 MessageBox.Show("Error al actualizar el stock del producto: " + idProducto + "\nError: " + ex.Message);
             }
         }
+
+
+
+
+        public SqlDataReader selectVentasCantidadBebidas(DateTime desde, DateTime hasta)
+        {
+            try
+            {
+                conexion.Open();
+                string fechdesde = desde.ToString("yyyy-MM-dd");
+                string fechhasta = hasta.ToString("yyyy-MM-dd");
+
+                string query = "" +
+                     "SELECT tb.descripcion AS 'Tipo de Bebida', " +
+                     "SUM(vd.cantidad) AS 'Cantidad Vendida'" +
+                     "FROM ventasDetalle vd " +
+                     "INNER JOIN producto p ON vd.idProducto = p.idProducto " +
+                     "INNER JOIN tipoBebida tb ON p.idTipoBebida = tb.idTipoBebida " +
+                     "INNER JOIN ventasCabecera vc ON vd.idVentaCabecera = vc.idVentaCabecera " +
+                     "WHERE vc.fecha BETWEEN '" + fechdesde + "' AND '" + fechhasta + "' " +
+                     "GROUP BY tb.descripcion ";
+
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                SqlDataReader drComando = comando.ExecuteReader();
+
+                return drComando;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+        
+
     }
 }

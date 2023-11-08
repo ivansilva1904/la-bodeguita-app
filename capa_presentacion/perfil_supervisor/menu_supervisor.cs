@@ -192,6 +192,17 @@ namespace capa_presentacion.perfil_supervisor
 
         }
 
+        private void btnInformesGenerales_Click(object sender, EventArgs e)
+        {
 
+            pnlFormsSupervisor.Controls.Clear();
+
+            informes_generales vistaInformeGeneral = new informes_generales();
+            vistaInformeGeneral.TopLevel = false;
+            vistaInformeGeneral.FormBorderStyle = FormBorderStyle.None;
+            vistaInformeGeneral.Dock = DockStyle.Fill;
+            pnlFormsSupervisor.Controls.Add(vistaInformeGeneral);
+            vistaInformeGeneral.Show();
+        }
     }
 }
