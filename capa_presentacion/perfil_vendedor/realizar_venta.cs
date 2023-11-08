@@ -236,22 +236,32 @@ namespace capa_presentacion.perfil_vendedor
             int stock = int.Parse(dtDetalleCopia.Rows[e.RowIndex].Field<string>("Stock"));
 
             //Verifico que la cantidad deseada no supere al stock
-            if (nuevaCantidad <= stock)
+            if (nuevaCantidad < 1)
             {
-                //Esto actualiza en el datagrid y, consecuentemente, tambien en el datatable recibido por el form productos
-                dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value = precioUnitario * nuevaCantidad;
+                dgvVentaDetalle.Rows[e.RowIndex].Cells["Cantidad"].Value = 1;
+                dgvVentaDetalle_CellEndEdit(sender, e);
 
-                //Todo el calculo final de la operacion para actualizar el txtMontoParcial
-                float montoAcumulado = float.Parse(txtMontoParcial.Text);
-                float montoParcial = montoAcumulado - precioProductoAcumulado;
-                txtMontoParcial.Text = (montoParcial + (precioUnitario * nuevaCantidad)).ToString();
+                MessageBox.Show("No puede ingresar valores menores a 1");
             }
             else
             {
-                dgvVentaDetalle.Rows[e.RowIndex].Cells["Cantidad"].Value = stock;
-                dgvVentaDetalle_CellEndEdit(sender, e); //anda a buscarla al angulo con esta recursividad papa
+                if (nuevaCantidad <= stock)
+                {
+                    //Esto actualiza en el datagrid y, consecuentemente, tambien en el datatable recibido por el form productos
+                    dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value = precioUnitario * nuevaCantidad;
 
-                MessageBox.Show("Stock insuficiente. Maximo: " + dtDetalleCopia.Rows[e.RowIndex].Field<string>("Stock"));
+                    //Todo el calculo final de la operacion para actualizar el txtMontoParcial
+                    float montoAcumulado = float.Parse(txtMontoParcial.Text);
+                    float montoParcial = montoAcumulado - precioProductoAcumulado;
+                    txtMontoParcial.Text = (montoParcial + (precioUnitario * nuevaCantidad)).ToString();
+                }
+                else
+                {
+                    dgvVentaDetalle.Rows[e.RowIndex].Cells["Cantidad"].Value = stock;
+                    dgvVentaDetalle_CellEndEdit(sender, e); //anda a buscarla al angulo con esta recursividad papa
+
+                    MessageBox.Show("Stock insuficiente. Maximo: " + dtDetalleCopia.Rows[e.RowIndex].Field<string>("Stock"));
+                }
             }
         }
     }
