@@ -69,6 +69,8 @@ namespace capa_datos
 
                 SqlCommand comando = new SqlCommand(query, conexion);
 
+                updateStock(idProducto, cantidad);
+
                 comando.ExecuteNonQuery();
 
                 cerrarConexion();
@@ -76,6 +78,26 @@ namespace capa_datos
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo insertar el detalle. ID del producto: " + idProducto + "\nError: " + ex.Message);
+            }
+        }
+
+        private void updateStock(int idProducto, int cantidad)
+        {
+            //Esto no abre ni cierra la conexion porque ya se encuentra abierta en la funcion donde es llamada
+            try
+            {
+                string query = "" +
+                    "UPDATE producto " +
+                    "SET stockActual = stockActual - " + cantidad + " " +
+                    "WHERE idProducto = " + idProducto;
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                comando.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el stock del producto: " + idProducto + "\nError: " + ex.Message);
             }
         }
     }

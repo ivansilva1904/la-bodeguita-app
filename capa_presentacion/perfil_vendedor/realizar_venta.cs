@@ -56,22 +56,29 @@ namespace capa_presentacion.perfil_vendedor
                             int tipoPago = rbutEfectivo.Checked ? 1 : 2;
                             int idCabecera = 0;
 
-                            if(tipoPago == 1)
+                            try
                             {
-                                idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, 0, importeTotal, dniEmpleado, dniCliente);
-                            }
-                            else
-                            {
-                                if (!string.IsNullOrWhiteSpace(txtTarjetaNumero.Text))
+                                if(tipoPago == 1)
                                 {
-                                    long tarjeta = long.Parse(txtTarjetaNumero.Text);
-                                    idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, tarjeta, importeTotal, dniEmpleado, dniCliente);
+                                    idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, 0, importeTotal, dniEmpleado, dniCliente);
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Debe ingresar una tarjeta");
-                                    return;
+                                    if (!string.IsNullOrWhiteSpace(txtTarjetaNumero.Text))
+                                    {
+                                        long tarjeta = long.Parse(txtTarjetaNumero.Text);
+                                        idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, tarjeta, importeTotal, dniEmpleado, dniCliente);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Debe ingresar una tarjeta");
+                                        return;
+                                    }
                                 }
+                            }
+                            catch
+                            {
+                                return;
                             }
 
                             if (verificarCabecera(idCabecera) == true)
@@ -106,7 +113,6 @@ namespace capa_presentacion.perfil_vendedor
             }
         }
 
-        System.Timers.Timer timer;
         private void txtDNICliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
