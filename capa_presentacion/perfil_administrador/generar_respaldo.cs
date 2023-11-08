@@ -35,10 +35,6 @@ namespace capa_presentacion.perfil_administrador
                 if(resp == DialogResult.Yes)
                 {
                     negocioBackup.crearBackup(directorio, nombreArchivo);
-                    MessageBox.Show("Se ha generado el respaldo de la base de datos",
-                        "Confirmacion",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
                 }
             }
             else
