@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using capa_negocio;
+
 namespace capa_presentacion.perfil_administrador
 {
     public partial class generar_respaldo : Form
@@ -17,11 +19,13 @@ namespace capa_presentacion.perfil_administrador
             InitializeComponent();
         }
 
+        NegocioBackup negocioBackup = new NegocioBackup();
+
         private void btnGenerarRespaldo_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtNombreRespaldo.Text))
+            if (!string.IsNullOrWhiteSpace(txtNombreRespaldo.Text) && !string.IsNullOrWhiteSpace(txtDirectorio.Text))
             {
-                DialogResult resp = MessageBox.Show("Desea Crear el respaldo de la base de datos?",
+                DialogResult resp = MessageBox.Show("Desea crear el respaldo de la base de datos?",
                     "Confirmar",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
@@ -43,9 +47,15 @@ namespace capa_presentacion.perfil_administrador
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
+            fwdDirectorio.Description = "Seleccione el directorio donde guardar el backup";
+            //fwdDirectorio.RootFolder = Environment.SpecialFolder.Personal;
 
+            if (fwdDirectorio.ShowDialog() == DialogResult.OK)
+            {
+                txtDirectorio.Text = fwdDirectorio.SelectedPath;
+            }
         }
     }
 }

@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtDirectorio = new System.Windows.Forms.TextBox();
+            this.lblDirectorio = new System.Windows.Forms.Label();
             this.btnGenerarRespaldo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombreRespaldo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblDirectorio = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.fwdDirectorio = new System.Windows.Forms.FolderBrowserDialog();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Beige;
             this.panel1.Controls.Add(this.btnBuscar);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtDirectorio);
             this.panel1.Controls.Add(this.lblDirectorio);
             this.panel1.Controls.Add(this.btnGenerarRespaldo);
             this.panel1.Controls.Add(this.label2);
@@ -56,7 +57,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(709, 442);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(545, 152);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 22);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtDirectorio
+            // 
+            this.txtDirectorio.Location = new System.Drawing.Point(199, 152);
+            this.txtDirectorio.Name = "txtDirectorio";
+            this.txtDirectorio.ReadOnly = true;
+            this.txtDirectorio.Size = new System.Drawing.Size(326, 21);
+            this.txtDirectorio.TabIndex = 5;
+            // 
+            // lblDirectorio
+            // 
+            this.lblDirectorio.AutoSize = true;
+            this.lblDirectorio.Location = new System.Drawing.Point(67, 155);
+            this.lblDirectorio.Name = "lblDirectorio";
+            this.lblDirectorio.Size = new System.Drawing.Size(63, 13);
+            this.lblDirectorio.TabIndex = 4;
+            this.lblDirectorio.Text = "Directorio";
             // 
             // btnGenerarRespaldo
             // 
@@ -74,9 +101,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(67, 218);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 13);
+            this.label2.Size = new System.Drawing.Size(105, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nombre Respaldo";
+            this.label2.Text = "Nombre respaldo";
             // 
             // txtNombreRespaldo
             // 
@@ -95,32 +122,6 @@
             this.label1.Size = new System.Drawing.Size(111, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nuevo Respaldo";
-            // 
-            // lblDirectorio
-            // 
-            this.lblDirectorio.AutoSize = true;
-            this.lblDirectorio.Location = new System.Drawing.Point(67, 155);
-            this.lblDirectorio.Name = "lblDirectorio";
-            this.lblDirectorio.Size = new System.Drawing.Size(63, 13);
-            this.lblDirectorio.TabIndex = 4;
-            this.lblDirectorio.Text = "Directorio";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(199, 152);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(326, 21);
-            this.textBox1.TabIndex = 5;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(545, 152);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 22);
-            this.btnBuscar.TabIndex = 6;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // generar_respaldo
             // 
@@ -151,7 +152,8 @@
         private System.Windows.Forms.TextBox txtNombreRespaldo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDirectorio;
         private System.Windows.Forms.Label lblDirectorio;
+        private System.Windows.Forms.FolderBrowserDialog fwdDirectorio;
     }
 }
