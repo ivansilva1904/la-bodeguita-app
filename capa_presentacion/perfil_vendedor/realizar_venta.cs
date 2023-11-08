@@ -38,12 +38,10 @@ namespace capa_presentacion.perfil_vendedor
 
         private void btnRealizarVenta_Click(object sender, EventArgs e)
         {
-            //long tarjeta = long.Parse(txtTarjetaNumero.Text);
             float importeTotal = float.Parse(txtMontoParcial.Text);
             int dniEmpleado = dtEmpleadoLogueado.Rows[0].Field<int>("DNI");
-            int dniCliente = int.Parse(txtDNICliente.Text);
 
-            if (!string.IsNullOrWhiteSpace(dniCliente.ToString()))
+            if (!string.IsNullOrWhiteSpace(txtDNICliente.Text))
             {
                 if(dgvVentaDetalle.Rows.Count > 0)
                 {
@@ -54,26 +52,44 @@ namespace capa_presentacion.perfil_vendedor
                                 MessageBoxIcon.Question);
                         if (resp == DialogResult.Yes)
                         {
-                            if(rbutEfectivo.Checked == true)
-                            {
-                                //Insercion cabecera - efectivo
-                                int idCabecera = negocioVenta.crearCabeceraEfectivo(DateTime.Now, 1, importeTotal, dniEmpleado, dniCliente);
+                            int tipoPago = rbutEfectivo.Checked ? 1 : 2;
+                            int idCabecera = 0;
+                            int dniCliente = int.Parse(txtDNICliente.Text);
 
-                                if(verificarCabecera(idCabecera) == true)
+                            try
+                            {
+                                if(tipoPago == 1)
                                 {
-                                    //Insercion detalle
-                                    negocioVenta.crearDetalles(idCabecera, dgvVentaDetalle);
+                                    idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, 0, importeTotal, dniEmpleado, dniCliente);
+                                }
+                                else
+                                {
+                                    if (!string.IsNullOrWhiteSpace(txtTarjetaNumero.Text))
+                                    {
+                                        long tarjeta = long.Parse(txtTarjetaNumero.Text);
+                                        idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, tarjeta, importeTotal, dniEmpleado, dniCliente);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Debe ingresar una tarjeta");
+                                        return;
+                                    }
                                 }
                             }
-                            else
+                            catch
                             {
-                                //Insercion por tarjeta
+                                return;
                             }
+
+                            if (verificarCabecera(idCabecera) == true)
+                            {
+                                negocioVenta.crearDetalles(idCabecera, dgvVentaDetalle);
+                            }
+
                             MessageBox.Show("Se ha realizado la venta",
                                 "Venta exitosa",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
-
                         }
                     }
                     else
@@ -97,7 +113,6 @@ namespace capa_presentacion.perfil_vendedor
             }
         }
 
-        System.Timers.Timer timer;
         private void txtDNICliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -198,7 +213,8 @@ namespace capa_presentacion.perfil_vendedor
             string dni;
             if(txtDNICliente.Text == "")
             {
-                dni = "0";
+                //dni = "0";
+                return;
             }
             else
             {
@@ -236,22 +252,32 @@ namespace capa_presentacion.perfil_vendedor
             int stock = int.Parse(dtDetalleCopia.Rows[e.RowIndex].Field<string>("Stock"));
 
             //Verifico que la cantidad deseada no supere al stock
-            if (nuevaCantidad <= stock)
+            if (nuevaCantidad < 1)
             {
-                //Esto actualiza en el datagrid y, consecuentemente, tambien en el datatable recibido por el form productos
-                dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value = precioUnitario * nuevaCantidad;
+                dgvVentaDetalle.Rows[e.RowIndex].Cells["Cantidad"].Value = 1;
+                dgvVentaDetalle_CellEndEdit(sender, e);
 
-                //Todo el calculo final de la operacion para actualizar el txtMontoParcial
-                float montoAcumulado = float.Parse(txtMontoParcial.Text);
-                float montoParcial = montoAcumulado - precioProductoAcumulado;
-                txtMontoParcial.Text = (montoParcial + (precioUnitario * nuevaCantidad)).ToString();
+                MessageBox.Show("No puede ingresar valores menores a 1");
             }
             else
             {
-                dgvVentaDetalle.Rows[e.RowIndex].Cells["Cantidad"].Value = stock;
-                dgvVentaDetalle_CellEndEdit(sender, e); //anda a buscarla al angulo con esta recursividad papa
+                if (nuevaCantidad <= stock)
+                {
+                    //Esto actualiza en el datagrid y, consecuentemente, tambien en el datatable recibido por el form productos
+                    dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value = precioUnitario * nuevaCantidad;
 
-                MessageBox.Show("Stock insuficiente. Maximo: " + dtDetalleCopia.Rows[e.RowIndex].Field<string>("Stock"));
+                    //Todo el calculo final de la operacion para actualizar el txtMontoParcial
+                    float montoAcumulado = float.Parse(txtMontoParcial.Text);
+                    float montoParcial = montoAcumulado - precioProductoAcumulado;
+                    txtMontoParcial.Text = (montoParcial + (precioUnitario * nuevaCantidad)).ToString();
+                }
+                else
+                {
+                    dgvVentaDetalle.Rows[e.RowIndex].Cells["Cantidad"].Value = stock;
+                    dgvVentaDetalle_CellEndEdit(sender, e); //anda a buscarla al angulo con esta recursividad papa
+
+                    MessageBox.Show("Stock insuficiente. Maximo: " + dtDetalleCopia.Rows[e.RowIndex].Field<string>("Stock"));
+                }
             }
         }
     }
