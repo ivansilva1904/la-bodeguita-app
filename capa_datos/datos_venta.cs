@@ -18,16 +18,28 @@ namespace capa_datos
             conexion.Close();
         }
 
-        public int insertCabeceraEfectivo(DateTime fecha, int formaPago, float importeTotal, int dniEmpleado, int dniCliente)
+        public int insertCabecera(DateTime fecha, int formaPago, long tarjeta, float importeTotal, int dniEmpleado, int dniCliente)
         {
             try
             {
                 conexion.Open();
 
-                string query = "" +
-                    "INSERT INTO ventasCabecera (fecha, idFormaPago, importeTotal, dniEmpleado, dniCliente) " +
-                    "VALUES ('" + fecha.ToString("yyyy-MM-dd") + "', " + formaPago + ", " + importeTotal.ToString("0.00", CultureInfo.InvariantCulture) +", "+ dniEmpleado +", "+ dniCliente +"); " +
-                    "SELECT SCOPE_IDENTITY();";
+                string query = " ";
+
+                if (tarjeta == 0)
+                {
+                    query = "" +
+                        "INSERT INTO ventasCabecera (fecha, idFormaPago, importeTotal, dniEmpleado, dniCliente) " +
+                        "VALUES ('" + fecha.ToString("yyyy-MM-dd") + "', " + formaPago + ", " + importeTotal.ToString("0.00", CultureInfo.InvariantCulture) + ", " + dniEmpleado + ", " + dniCliente + "); " +
+                        "SELECT SCOPE_IDENTITY();";
+                }
+                else
+                {
+                    query = "" +
+                        "INSERT INTO ventasCabecera (fecha, idFormaPago, nroTarjeta, importeTotal, dniEmpleado, dniCliente) " +
+                        "VALUES ('" + fecha.ToString("yyyy-MM-dd") + "', " + formaPago + ", " + tarjeta + ", " + importeTotal.ToString("0.00", CultureInfo.InvariantCulture) + ", " + dniEmpleado + ", " + dniCliente + "); " +
+                        "SELECT SCOPE_IDENTITY();";
+                }
 
                 SqlCommand comando = new SqlCommand(query, conexion);
 

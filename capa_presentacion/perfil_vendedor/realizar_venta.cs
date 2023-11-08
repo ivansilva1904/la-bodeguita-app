@@ -38,7 +38,6 @@ namespace capa_presentacion.perfil_vendedor
 
         private void btnRealizarVenta_Click(object sender, EventArgs e)
         {
-            //long tarjeta = long.Parse(txtTarjetaNumero.Text);
             float importeTotal = float.Parse(txtMontoParcial.Text);
             int dniEmpleado = dtEmpleadoLogueado.Rows[0].Field<int>("DNI");
             int dniCliente = int.Parse(txtDNICliente.Text);
@@ -54,26 +53,36 @@ namespace capa_presentacion.perfil_vendedor
                                 MessageBoxIcon.Question);
                         if (resp == DialogResult.Yes)
                         {
-                            if(rbutEfectivo.Checked == true)
-                            {
-                                //Insercion cabecera - efectivo
-                                int idCabecera = negocioVenta.crearCabeceraEfectivo(DateTime.Now, 1, importeTotal, dniEmpleado, dniCliente);
+                            int tipoPago = rbutEfectivo.Checked ? 1 : 2;
+                            int idCabecera = 0;
 
-                                if(verificarCabecera(idCabecera) == true)
-                                {
-                                    //Insercion detalle
-                                    negocioVenta.crearDetalles(idCabecera, dgvVentaDetalle);
-                                }
+                            if(tipoPago == 1)
+                            {
+                                idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, 0, importeTotal, dniEmpleado, dniCliente);
                             }
                             else
                             {
-                                //Insercion por tarjeta
+                                if (!string.IsNullOrWhiteSpace(txtTarjetaNumero.Text))
+                                {
+                                    long tarjeta = long.Parse(txtTarjetaNumero.Text);
+                                    idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, tarjeta, importeTotal, dniEmpleado, dniCliente);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Debe ingresar una tarjeta");
+                                    return;
+                                }
                             }
+
+                            if (verificarCabecera(idCabecera) == true)
+                            {
+                                negocioVenta.crearDetalles(idCabecera, dgvVentaDetalle);
+                            }
+
                             MessageBox.Show("Se ha realizado la venta",
                                 "Venta exitosa",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
-
                         }
                     }
                     else
