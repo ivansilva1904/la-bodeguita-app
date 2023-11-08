@@ -40,9 +40,8 @@ namespace capa_presentacion.perfil_vendedor
         {
             float importeTotal = float.Parse(txtMontoParcial.Text);
             int dniEmpleado = dtEmpleadoLogueado.Rows[0].Field<int>("DNI");
-            int dniCliente = int.Parse(txtDNICliente.Text);
 
-            if (!string.IsNullOrWhiteSpace(dniCliente.ToString()))
+            if (!string.IsNullOrWhiteSpace(txtDNICliente.Text))
             {
                 if(dgvVentaDetalle.Rows.Count > 0)
                 {
@@ -55,6 +54,7 @@ namespace capa_presentacion.perfil_vendedor
                         {
                             int tipoPago = rbutEfectivo.Checked ? 1 : 2;
                             int idCabecera = 0;
+                            int dniCliente = int.Parse(txtDNICliente.Text);
 
                             try
                             {
@@ -213,7 +213,8 @@ namespace capa_presentacion.perfil_vendedor
             string dni;
             if(txtDNICliente.Text == "")
             {
-                dni = "0";
+                //dni = "0";
+                return;
             }
             else
             {
