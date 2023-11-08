@@ -40,6 +40,9 @@
             // 
             // pnlListarEmpleados
             // 
+            this.pnlListarEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlListarEmpleados.BackColor = System.Drawing.Color.Beige;
             this.pnlListarEmpleados.Controls.Add(this.dgvListaEmpleados);
             this.pnlListarEmpleados.Controls.Add(this.lblDni);
@@ -53,6 +56,8 @@
             // 
             // dgvListaEmpleados
             // 
+            this.dgvListaEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaEmpleados.Location = new System.Drawing.Point(26, 117);
             this.dgvListaEmpleados.Name = "dgvListaEmpleados";
@@ -88,6 +93,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(291, 32);
@@ -98,8 +104,8 @@
             // 
             // listar_empleados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_15455291;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(733, 466);
@@ -110,6 +116,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "listar_empleados";
             this.Text = "listar_empleados";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.listar_empleados_Load);
             this.pnlListarEmpleados.ResumeLayout(false);
             this.pnlListarEmpleados.PerformLayout();

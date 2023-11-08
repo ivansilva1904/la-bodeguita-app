@@ -29,15 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNombreRespaldo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnGenerarRespaldo = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNombreRespaldo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Beige;
             this.panel1.Controls.Add(this.btnGenerarRespaldo);
             this.panel1.Controls.Add(this.label2);
@@ -47,23 +50,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(709, 442);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label1
+            // btnGenerarRespaldo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(291, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nuevo Respaldo";
-            // 
-            // txtNombreRespaldo
-            // 
-            this.txtNombreRespaldo.Location = new System.Drawing.Point(165, 98);
-            this.txtNombreRespaldo.Name = "txtNombreRespaldo";
-            this.txtNombreRespaldo.Size = new System.Drawing.Size(326, 21);
-            this.txtNombreRespaldo.TabIndex = 1;
+            this.btnGenerarRespaldo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerarRespaldo.Location = new System.Drawing.Point(507, 98);
+            this.btnGenerarRespaldo.Name = "btnGenerarRespaldo";
+            this.btnGenerarRespaldo.Size = new System.Drawing.Size(129, 21);
+            this.btnGenerarRespaldo.TabIndex = 3;
+            this.btnGenerarRespaldo.Text = "Generar Respaldo";
+            this.btnGenerarRespaldo.UseVisualStyleBackColor = true;
+            this.btnGenerarRespaldo.Click += new System.EventHandler(this.btnGenerarRespaldo_Click);
             // 
             // label2
             // 
@@ -74,20 +72,28 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre Respaldo";
             // 
-            // btnGenerarRespaldo
+            // txtNombreRespaldo
             // 
-            this.btnGenerarRespaldo.Location = new System.Drawing.Point(507, 98);
-            this.btnGenerarRespaldo.Name = "btnGenerarRespaldo";
-            this.btnGenerarRespaldo.Size = new System.Drawing.Size(129, 21);
-            this.btnGenerarRespaldo.TabIndex = 3;
-            this.btnGenerarRespaldo.Text = "Generar Respaldo";
-            this.btnGenerarRespaldo.UseVisualStyleBackColor = true;
-            this.btnGenerarRespaldo.Click += new System.EventHandler(this.btnGenerarRespaldo_Click);
+            this.txtNombreRespaldo.Location = new System.Drawing.Point(165, 98);
+            this.txtNombreRespaldo.Name = "txtNombreRespaldo";
+            this.txtNombreRespaldo.Size = new System.Drawing.Size(326, 21);
+            this.txtNombreRespaldo.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(291, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nuevo Respaldo";
             // 
             // generar_respaldo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_15455291;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(733, 466);
@@ -98,6 +104,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "generar_respaldo";
             this.Text = "generar respaldo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

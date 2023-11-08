@@ -49,15 +49,16 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
             this.pnlAltaUsuario = new System.Windows.Forms.Panel();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.lblDireccion = new System.Windows.Forms.Label();
             this.btnLimpiarCampos = new System.Windows.Forms.Button();
             this.lblContraseña2 = new System.Windows.Forms.Label();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.pnlAltaUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblIngresar
             // 
+            this.lblIngresar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblIngresar.AutoSize = true;
             this.lblIngresar.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIngresar.Location = new System.Drawing.Point(256, 25);
@@ -79,6 +80,7 @@
             // 
             // lblApellido
             // 
+            this.lblApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblApellido.AutoSize = true;
             this.lblApellido.Location = new System.Drawing.Point(341, 98);
             this.lblApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -89,6 +91,7 @@
             // 
             // lblFechaNac
             // 
+            this.lblFechaNac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFechaNac.AutoSize = true;
             this.lblFechaNac.Location = new System.Drawing.Point(341, 157);
             this.lblFechaNac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -109,11 +112,12 @@
             // 
             // lblTelefono
             // 
+            this.lblTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Location = new System.Drawing.Point(341, 212);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(55, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(56, 13);
             this.lblTelefono.TabIndex = 5;
             this.lblTelefono.Text = "Telefono";
             // 
@@ -129,6 +133,7 @@
             // 
             // lblTipoUser
             // 
+            this.lblTipoUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTipoUser.AutoSize = true;
             this.lblTipoUser.Location = new System.Drawing.Point(341, 272);
             this.lblTipoUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -151,19 +156,22 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(120, 95);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(177, 21);
-            this.txtNombre.TabIndex = 10;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtApellido
             // 
+            this.txtApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtApellido.Location = new System.Drawing.Point(496, 95);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtApellido.MaxLength = 30;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(177, 21);
-            this.txtApellido.TabIndex = 11;
+            this.txtApellido.TabIndex = 2;
             this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
@@ -171,53 +179,61 @@
             // 
             this.txtDNI.Location = new System.Drawing.Point(120, 152);
             this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(177, 21);
-            this.txtDNI.TabIndex = 12;
+            this.txtDNI.TabIndex = 3;
             this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(120, 209);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(177, 21);
-            this.txtEmail.TabIndex = 13;
+            this.txtEmail.TabIndex = 5;
             // 
             // txtTelefono
             // 
+            this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTelefono.Location = new System.Drawing.Point(496, 209);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTelefono.MaxLength = 30;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(177, 21);
-            this.txtTelefono.TabIndex = 14;
+            this.txtTelefono.TabIndex = 6;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtContraseña
             // 
             this.txtContraseña.Location = new System.Drawing.Point(120, 324);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtContraseña.MaxLength = 30;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(177, 21);
-            this.txtContraseña.TabIndex = 15;
+            this.txtContraseña.TabIndex = 8;
             // 
             // txtContraseña2
             // 
+            this.txtContraseña2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtContraseña2.Location = new System.Drawing.Point(496, 324);
             this.txtContraseña2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtContraseña2.MaxLength = 30;
             this.txtContraseña2.Name = "txtContraseña2";
             this.txtContraseña2.PasswordChar = '*';
             this.txtContraseña2.Size = new System.Drawing.Size(177, 21);
-            this.txtContraseña2.TabIndex = 16;
+            this.txtContraseña2.TabIndex = 9;
             // 
             // radbtnVendedor
             // 
+            this.radbtnVendedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radbtnVendedor.AutoSize = true;
             this.radbtnVendedor.Location = new System.Drawing.Point(486, 269);
             this.radbtnVendedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radbtnVendedor.Name = "radbtnVendedor";
-            this.radbtnVendedor.Size = new System.Drawing.Size(79, 17);
+            this.radbtnVendedor.Size = new System.Drawing.Size(80, 17);
             this.radbtnVendedor.TabIndex = 17;
             this.radbtnVendedor.TabStop = true;
             this.radbtnVendedor.Text = "Vendedor";
@@ -225,6 +241,7 @@
             // 
             // radbtnSupervisor
             // 
+            this.radbtnSupervisor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radbtnSupervisor.AutoSize = true;
             this.radbtnSupervisor.Location = new System.Drawing.Point(586, 268);
             this.radbtnSupervisor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -237,26 +254,31 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregar.Location = new System.Drawing.Point(513, 389);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(150, 30);
-            this.btnAgregar.TabIndex = 19;
+            this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar Empleado";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dtpFechaNac
             // 
+            this.dtpFechaNac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaNac.Location = new System.Drawing.Point(496, 152);
             this.dtpFechaNac.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtpFechaNac.Name = "dtpFechaNac";
             this.dtpFechaNac.Size = new System.Drawing.Size(109, 21);
-            this.dtpFechaNac.TabIndex = 20;
+            this.dtpFechaNac.TabIndex = 4;
             // 
             // pnlAltaUsuario
             // 
+            this.pnlAltaUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlAltaUsuario.BackColor = System.Drawing.Color.Beige;
             this.pnlAltaUsuario.Controls.Add(this.txtDireccion);
             this.pnlAltaUsuario.Controls.Add(this.lblDireccion);
@@ -287,25 +309,13 @@
             this.pnlAltaUsuario.Size = new System.Drawing.Size(706, 442);
             this.pnlAltaUsuario.TabIndex = 21;
             // 
-            // btnLimpiarCampos
+            // txtDireccion
             // 
-            this.btnLimpiarCampos.Location = new System.Drawing.Point(356, 389);
-            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
-            this.btnLimpiarCampos.Size = new System.Drawing.Size(150, 30);
-            this.btnLimpiarCampos.TabIndex = 21;
-            this.btnLimpiarCampos.Text = "Limpiar Campos";
-            this.btnLimpiarCampos.UseVisualStyleBackColor = true;
-            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
-            // 
-            // lblContraseña2
-            // 
-            this.lblContraseña2.AutoSize = true;
-            this.lblContraseña2.Location = new System.Drawing.Point(341, 327);
-            this.lblContraseña2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblContraseña2.Name = "lblContraseña2";
-            this.lblContraseña2.Size = new System.Drawing.Size(136, 13);
-            this.lblContraseña2.TabIndex = 7;
-            this.lblContraseña2.Text = "Reingresar contraseña";
+            this.txtDireccion.Location = new System.Drawing.Point(120, 265);
+            this.txtDireccion.MaxLength = 30;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(177, 21);
+            this.txtDireccion.TabIndex = 7;
             // 
             // lblDireccion
             // 
@@ -316,17 +326,34 @@
             this.lblDireccion.TabIndex = 22;
             this.lblDireccion.Text = "Dirección";
             // 
-            // txtDireccion
+            // btnLimpiarCampos
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(120, 265);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(177, 21);
-            this.txtDireccion.TabIndex = 23;
+            this.btnLimpiarCampos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(356, 389);
+            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(150, 30);
+            this.btnLimpiarCampos.TabIndex = 10;
+            this.btnLimpiarCampos.Text = "Limpiar Campos";
+            this.btnLimpiarCampos.UseVisualStyleBackColor = true;
+            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
+            // 
+            // lblContraseña2
+            // 
+            this.lblContraseña2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblContraseña2.AutoSize = true;
+            this.lblContraseña2.Location = new System.Drawing.Point(341, 327);
+            this.lblContraseña2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContraseña2.Name = "lblContraseña2";
+            this.lblContraseña2.Size = new System.Drawing.Size(136, 13);
+            this.lblContraseña2.TabIndex = 7;
+            this.lblContraseña2.Text = "Reingresar contraseña";
             // 
             // alta_usuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Cornsilk;
             this.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_15455291;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -339,6 +366,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "alta_usuario";
             this.Text = "Alta usuario";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlAltaUsuario.ResumeLayout(false);
             this.pnlAltaUsuario.PerformLayout();
             this.ResumeLayout(false);

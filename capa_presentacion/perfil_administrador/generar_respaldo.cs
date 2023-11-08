@@ -42,5 +42,10 @@ namespace capa_presentacion.perfil_administrador
             }
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
