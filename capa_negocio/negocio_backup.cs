@@ -11,5 +11,12 @@ namespace capa_negocio
     public class NegocioBackup
     {
         DatosBackup datosBackup = new DatosBackup();
+
+        public void crearBackup(string directorio, string nombreArchivo)
+        {
+            string directorioArchivo = directorio + nombreArchivo;
+
+            datosBackup.backupDB(directorioArchivo);
+        }
     }
 }

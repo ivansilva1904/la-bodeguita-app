@@ -25,12 +25,16 @@ namespace capa_presentacion.perfil_administrador
         {
             if (!string.IsNullOrWhiteSpace(txtNombreRespaldo.Text) && !string.IsNullOrWhiteSpace(txtDirectorio.Text))
             {
+                string directorio = txtDirectorio.Text;
+                string nombreArchivo = txtNombreRespaldo.Text;
+
                 DialogResult resp = MessageBox.Show("Desea crear el respaldo de la base de datos?",
                     "Confirmar",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
                 if(resp == DialogResult.Yes)
                 {
+                    negocioBackup.crearBackup(directorio, nombreArchivo);
                     MessageBox.Show("Se ha generado el respaldo de la base de datos",
                         "Confirmacion",
                         MessageBoxButtons.OK,
@@ -39,7 +43,7 @@ namespace capa_presentacion.perfil_administrador
             }
             else
             {
-                MessageBox.Show("Tiene que ponerle un nombre al respaldo",
+                MessageBox.Show("Debe completar los campos",
                     "Advertencia",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation); ;
@@ -50,7 +54,6 @@ namespace capa_presentacion.perfil_administrador
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             fwdDirectorio.Description = "Seleccione el directorio donde guardar el backup";
-            //fwdDirectorio.RootFolder = Environment.SpecialFolder.Personal;
 
             if (fwdDirectorio.ShowDialog() == DialogResult.OK)
             {
