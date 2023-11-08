@@ -158,12 +158,14 @@ namespace capa_presentacion.perfil_supervisor
                 formularioInterno = (Form)control;
                 if (formularioInterno is alta_producto)
                 {
+                    
                     formularioInterno.Size = pnlFormsSupervisor.Size;
                     formularioInterno.WindowState = FormWindowState.Normal;
                     formularioInterno.WindowState = FormWindowState.Maximized;
                 }
                 if (formularioInterno is modificar_producto)
                 {
+
                     formularioInterno.Size = pnlFormsSupervisor.Size;
                     formularioInterno.WindowState = FormWindowState.Normal;
                     formularioInterno.WindowState = FormWindowState.Maximized;

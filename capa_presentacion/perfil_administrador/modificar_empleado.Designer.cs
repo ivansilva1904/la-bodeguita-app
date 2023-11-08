@@ -62,6 +62,7 @@
             // 
             // lblUsersRegistrados
             // 
+            this.lblUsersRegistrados.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblUsersRegistrados.AutoSize = true;
             this.lblUsersRegistrados.Location = new System.Drawing.Point(294, 273);
             this.lblUsersRegistrados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -72,6 +73,8 @@
             // 
             // dgvUsersRegistrados
             // 
+            this.dgvUsersRegistrados.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvUsersRegistrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsersRegistrados.Location = new System.Drawing.Point(15, 295);
             this.dgvUsersRegistrados.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -127,7 +130,7 @@
             this.lblTelefono.Location = new System.Drawing.Point(255, 135);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(55, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(56, 13);
             this.lblTelefono.TabIndex = 6;
             this.lblTelefono.Text = "Telefono";
             // 
@@ -155,9 +158,10 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(87, 101);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(139, 21);
-            this.txtNombre.TabIndex = 9;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -165,9 +169,10 @@
             // 
             this.txtApellido.Location = new System.Drawing.Point(319, 101);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtApellido.MaxLength = 30;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(139, 21);
-            this.txtApellido.TabIndex = 10;
+            this.txtApellido.TabIndex = 2;
             this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
@@ -175,17 +180,19 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(87, 132);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(139, 21);
-            this.txtEmail.TabIndex = 11;
+            this.txtEmail.TabIndex = 3;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(319, 132);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTelefono.MaxLength = 30;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(139, 21);
-            this.txtTelefono.TabIndex = 12;
+            this.txtTelefono.TabIndex = 4;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // radbtnVendedor
@@ -194,7 +201,7 @@
             this.radbtnVendedor.Location = new System.Drawing.Point(136, 207);
             this.radbtnVendedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radbtnVendedor.Name = "radbtnVendedor";
-            this.radbtnVendedor.Size = new System.Drawing.Size(79, 17);
+            this.radbtnVendedor.Size = new System.Drawing.Size(80, 17);
             this.radbtnVendedor.TabIndex = 13;
             this.radbtnVendedor.TabStop = true;
             this.radbtnVendedor.Text = "Vendedor";
@@ -214,6 +221,7 @@
             // 
             // lblNuevaContraseña
             // 
+            this.lblNuevaContraseña.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNuevaContraseña.AutoSize = true;
             this.lblNuevaContraseña.Location = new System.Drawing.Point(510, 70);
             this.lblNuevaContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -224,6 +232,7 @@
             // 
             // lblNuevaContraseña2
             // 
+            this.lblNuevaContraseña2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNuevaContraseña2.AutoSize = true;
             this.lblNuevaContraseña2.Location = new System.Drawing.Point(510, 132);
             this.lblNuevaContraseña2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -234,35 +243,43 @@
             // 
             // txtNuevaContraseña
             // 
+            this.txtNuevaContraseña.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNuevaContraseña.Location = new System.Drawing.Point(513, 96);
             this.txtNuevaContraseña.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNuevaContraseña.MaxLength = 30;
             this.txtNuevaContraseña.Name = "txtNuevaContraseña";
             this.txtNuevaContraseña.PasswordChar = '*';
             this.txtNuevaContraseña.Size = new System.Drawing.Size(174, 21);
-            this.txtNuevaContraseña.TabIndex = 17;
+            this.txtNuevaContraseña.TabIndex = 6;
             // 
             // txtNuevaContraseña2
             // 
+            this.txtNuevaContraseña2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNuevaContraseña2.Location = new System.Drawing.Point(513, 157);
             this.txtNuevaContraseña2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNuevaContraseña2.MaxLength = 30;
             this.txtNuevaContraseña2.Name = "txtNuevaContraseña2";
             this.txtNuevaContraseña2.PasswordChar = '*';
             this.txtNuevaContraseña2.Size = new System.Drawing.Size(174, 21);
-            this.txtNuevaContraseña2.TabIndex = 18;
+            this.txtNuevaContraseña2.TabIndex = 7;
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.Location = new System.Drawing.Point(529, 239);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(140, 30);
-            this.btnGuardar.TabIndex = 19;
+            this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "Guardar cambios";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Beige;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtDireccion);
@@ -309,29 +326,34 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(87, 168);
+            this.txtDireccion.MaxLength = 30;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(139, 21);
-            this.txtDireccion.TabIndex = 25;
+            this.txtDireccion.TabIndex = 5;
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBuscar.Location = new System.Drawing.Point(262, 243);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(80, 23);
-            this.btnBuscar.TabIndex = 24;
+            this.btnBuscar.TabIndex = 7;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
             // 
+            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtBuscar.Location = new System.Drawing.Point(117, 245);
+            this.txtBuscar.MaxLength = 30;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(133, 21);
-            this.txtBuscar.TabIndex = 23;
+            this.txtBuscar.TabIndex = 6;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 248);
             this.label1.Name = "label1";
@@ -341,6 +363,7 @@
             // 
             // lblModificarEmpleado
             // 
+            this.lblModificarEmpleado.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblModificarEmpleado.AutoSize = true;
             this.lblModificarEmpleado.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModificarEmpleado.Location = new System.Drawing.Point(283, 17);
@@ -351,18 +374,19 @@
             // 
             // btnLimpiarCampos
             // 
+            this.btnLimpiarCampos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLimpiarCampos.Location = new System.Drawing.Point(529, 200);
             this.btnLimpiarCampos.Name = "btnLimpiarCampos";
             this.btnLimpiarCampos.Size = new System.Drawing.Size(140, 30);
-            this.btnLimpiarCampos.TabIndex = 20;
+            this.btnLimpiarCampos.TabIndex = 8;
             this.btnLimpiarCampos.Text = "Limpiar campos";
             this.btnLimpiarCampos.UseVisualStyleBackColor = true;
             this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
             // 
             // modificar_empleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Cornsilk;
             this.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_15455291;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -374,6 +398,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "modificar_empleado";
             this.Text = "Modificar usuario";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.modificar_usuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsersRegistrados)).EndInit();
             this.panel1.ResumeLayout(false);
