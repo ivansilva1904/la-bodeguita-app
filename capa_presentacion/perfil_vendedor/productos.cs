@@ -52,6 +52,7 @@ namespace capa_presentacion.perfil_vendedor
                 dtProductos.Columns.Add("Descripcion");
                 dtProductos.Columns.Add("Precio");
                 dtProductos.Columns.Add("Cantidad");
+                dtProductos.Columns.Add("Stock");
 
                 contColumnasDT++;
             }
@@ -59,14 +60,16 @@ namespace capa_presentacion.perfil_vendedor
             if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
                 string id = dgvListaProductos.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string descripcion = dgvListaProductos.Rows[e.RowIndex].Cells[3].Value.ToString();
+                string descripcion = dgvListaProductos.Rows[e.RowIndex].Cells[2].Value.ToString() + " - " + dgvListaProductos.Rows[e.RowIndex].Cells[3].Value.ToString();
                 string precio = dgvListaProductos.Rows[e.RowIndex].Cells[4].Value.ToString();
+                string stock = dgvListaProductos.Rows[e.RowIndex].Cells[5].Value.ToString();
 
                 DataRow fila = dtProductos.NewRow();
                 fila["ID Producto"] = id;
                 fila["Descripcion"] = descripcion;
                 fila["Precio"] = precio;
                 fila["Cantidad"] = 1;
+                fila["Stock"] = stock;
 
                 foreach(DataRow row in dtProductos.Rows)
                 {

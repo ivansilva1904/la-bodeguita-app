@@ -136,6 +136,7 @@ namespace capa_presentacion.perfil_vendedor
             dgvVentaDetalle.Columns[0].ReadOnly = true;
             dgvVentaDetalle.Columns[1].ReadOnly = true;
             dgvVentaDetalle.Columns[2].ReadOnly = true;
+            dgvVentaDetalle.Columns[4].Visible = false;
 
             dtDetalleCopia.Clear();
             dtDetalleCopia = producto.Clone();
@@ -232,13 +233,26 @@ namespace capa_presentacion.perfil_vendedor
             float precioProductoAcumulado = float.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value.ToString());
             int nuevaCantidad = int.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString());
 
-            //Esto actualiza en el datagrid y, consecuentemente, tambien en el datatable recibido por el form productos
-            dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value = precioUnitario * nuevaCantidad;
+            int stock = int.Parse(dtDetalleCopia.Rows[e.RowIndex].Field<string>("Stock"));
 
-            //Todo el calculo final de la operacion para actualizar el txtMontoParcial
-            float montoAcumulado = float.Parse(txtMontoParcial.Text);
-            float montoParcial = montoAcumulado - precioProductoAcumulado;
-            txtMontoParcial.Text = (montoParcial + (precioUnitario * nuevaCantidad)).ToString();
+            //Verifico que la cantidad deseada no supere al stock
+            if (nuevaCantidad <= stock)
+            {
+                //Esto actualiza en el datagrid y, consecuentemente, tambien en el datatable recibido por el form productos
+                dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value = precioUnitario * nuevaCantidad;
+
+                //Todo el calculo final de la operacion para actualizar el txtMontoParcial
+                float montoAcumulado = float.Parse(txtMontoParcial.Text);
+                float montoParcial = montoAcumulado - precioProductoAcumulado;
+                txtMontoParcial.Text = (montoParcial + (precioUnitario * nuevaCantidad)).ToString();
+            }
+            else
+            {
+                dgvVentaDetalle.Rows[e.RowIndex].Cells["Cantidad"].Value = stock;
+                dgvVentaDetalle_CellEndEdit(sender, e); //anda a buscarla al angulo con esta recursividad papa
+
+                MessageBox.Show("Stock insuficiente. Maximo: " + dtDetalleCopia.Rows[e.RowIndex].Field<string>("Stock"));
+            }
         }
     }
 }
