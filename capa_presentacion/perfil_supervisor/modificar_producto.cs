@@ -138,6 +138,9 @@ namespace capa_presentacion.perfil_supervisor
             txtStock.Clear();
             cbxTipoBebida.Items.Clear();
             cbxProveedor.Items.Clear();
+            cbxTipoBebida.Text = "";
+            cbxProveedor.Text = "";
+            cbxMarca.Text = "";
 
         }
 
@@ -159,6 +162,7 @@ namespace capa_presentacion.perfil_supervisor
 
         public void carga_cbxTipoBebidaycbxProveedorycbxMarca()
         {
+
             DataTable tablaProveedor = negocioProveedor.listarProveedorActivos();
             DataTable tablaTipoBebida = negocioTipoBebida.listarTipoBebida();
             DataTable tablaMarca = negocioMarca.listarMarca();
@@ -207,7 +211,11 @@ namespace capa_presentacion.perfil_supervisor
 
         public void carga_dgvModificarProducto()
         {
-            carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            if (cbxMarca.Items.Count < 1 || cbxProveedor.Items.Count < 1 || cbxTipoBebida.Items.Count < 1)
+            {
+                carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            }
+
             dgvModificarProducto.DataSource = null;
             DataTable tablaProveedor = negocioProducto.listarTodosProductos();
             dgvModificarProducto.DataSource = tablaProveedor;
@@ -252,7 +260,6 @@ namespace capa_presentacion.perfil_supervisor
             }
             else if (cbxFiltro.Text == "Descripcion")
             {
-
                 //trae matchs con el string
                 cargaDGVporDescripcion(filtro);
             }
@@ -266,21 +273,30 @@ namespace capa_presentacion.perfil_supervisor
 
         private void cargaDGVDeshabilitado()
         {
-            carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            if(cbxMarca.Items.Count < 1 || cbxProveedor.Items.Count < 1 || cbxTipoBebida.Items.Count < 1)
+            {
+                carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            }
             dgvModificarProducto.DataSource = null;
             DataTable tablaProveedor = negocioProducto.listarProductosDeBaja();
             dgvModificarProducto.DataSource = tablaProveedor;
         }
         private void cargaDGVporDescripcion(string filtro)
         {
-            carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            if (cbxMarca.Items.Count < 1 || cbxProveedor.Items.Count < 1 || cbxTipoBebida.Items.Count < 1)
+            {
+                carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            }
             dgvModificarProducto.DataSource = null;
             DataTable tablaProveedor = negocioProducto.listarProductosPorDescripcion(filtro);
             dgvModificarProducto.DataSource = tablaProveedor;
         }
         private void cargaDGVporTipo(string filtro)
         {
-            carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            if (cbxMarca.Items.Count < 1 || cbxProveedor.Items.Count < 1 || cbxTipoBebida.Items.Count < 1)
+            {
+                carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            }
             dgvModificarProducto.DataSource = null;
             DataTable tablaProveedor = negocioProducto.listarProductosPorTipo(filtro);
             dgvModificarProducto.DataSource = tablaProveedor;

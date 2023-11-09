@@ -47,6 +47,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bodeguitaBDDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="datos_backup.cs" />
     <Compile Include="datos_cliente.cs" />
     <Compile Include="datos_empleado.cs" />
     <Compile Include="datos_marca.cs" />
