@@ -297,7 +297,8 @@ namespace capa_presentacion.perfil_vendedor
             }
 
             PdfDocument pdf = PdfGenerator.GeneratePdf(html, PageSize.A4);
-            pdf.Save("C:\\Users\\ivans\\OneDrive\\Escritorio\\pruebas");
+            pdf.Save("C:\\Users\\ivans\\OneDrive\\Escritorio\\pruebas\\documento1.pdf");
+            //pdf.Save("C:\\Users\\ivans\\pruebas\\documento1.pdf");
         }
     }
 }
