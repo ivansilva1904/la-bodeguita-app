@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblVendedorDNI = new System.Windows.Forms.Label();
             this.lblVerificarDNI = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.txtTarjetaNumero = new System.Windows.Forms.TextBox();
@@ -44,7 +45,7 @@
             this.dgvVentaDetalle = new System.Windows.Forms.DataGridView();
             this.txtDNICliente = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
-            this.lblVendedorDNI = new System.Windows.Forms.Label();
+            this.btnComprobante = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentaDetalle)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +53,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Controls.Add(this.btnComprobante);
             this.panel1.Controls.Add(this.lblVendedorDNI);
             this.panel1.Controls.Add(this.lblVerificarDNI);
             this.panel1.Controls.Add(this.lblFecha);
@@ -72,6 +74,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
+            // 
+            // lblVendedorDNI
+            // 
+            this.lblVendedorDNI.AutoSize = true;
+            this.lblVendedorDNI.Location = new System.Drawing.Point(232, 59);
+            this.lblVendedorDNI.Name = "lblVendedorDNI";
+            this.lblVendedorDNI.Size = new System.Drawing.Size(119, 13);
+            this.lblVendedorDNI.TabIndex = 15;
+            this.lblVendedorDNI.Text = "acaben esta tortura";
             // 
             // lblVerificarDNI
             // 
@@ -161,7 +172,7 @@
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(223, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 16);
+            this.label1.Size = new System.Drawing.Size(234, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "Ingrese los productos a vender";
             // 
@@ -203,7 +214,6 @@
             this.dgvVentaDetalle.TabIndex = 2;
             this.dgvVentaDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentaDetalle_CellContentClick);
             this.dgvVentaDetalle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentaDetalle_CellEndEdit);
-            //this.dgvVentaDetalle.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvVentaDetalle_RowsAdded);
             // 
             // txtDNICliente
             // 
@@ -224,14 +234,15 @@
             this.lblDNI.TabIndex = 0;
             this.lblDNI.Text = "DNI del cliente";
             // 
-            // lblVendedorDNI
+            // btnComprobante
             // 
-            this.lblVendedorDNI.AutoSize = true;
-            this.lblVendedorDNI.Location = new System.Drawing.Point(232, 59);
-            this.lblVendedorDNI.Name = "lblVendedorDNI";
-            this.lblVendedorDNI.Size = new System.Drawing.Size(119, 13);
-            this.lblVendedorDNI.TabIndex = 15;
-            this.lblVendedorDNI.Text = "acaben esta tortura";
+            this.btnComprobante.Location = new System.Drawing.Point(573, 155);
+            this.btnComprobante.Name = "btnComprobante";
+            this.btnComprobante.Size = new System.Drawing.Size(96, 23);
+            this.btnComprobante.TabIndex = 16;
+            this.btnComprobante.Text = "Comprobante";
+            this.btnComprobante.UseVisualStyleBackColor = true;
+            this.btnComprobante.Click += new System.EventHandler(this.btnComprobante_Click);
             // 
             // realizar_venta
             // 
@@ -275,5 +286,6 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblVerificarDNI;
         private System.Windows.Forms.Label lblVendedorDNI;
+        private System.Windows.Forms.Button btnComprobante;
     }
 }
