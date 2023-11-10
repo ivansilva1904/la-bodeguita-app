@@ -10,6 +10,10 @@ using System.Timers;
 using System.Windows.Forms;
 
 using capa_negocio;
+using PdfSharp;
+using PdfSharp.Pdf;
+using System.IO;
+using TheArtOfDev.HtmlRenderer.PdfSharp;
 
 namespace capa_presentacion.perfil_vendedor
 {
@@ -279,6 +283,22 @@ namespace capa_presentacion.perfil_vendedor
                     MessageBox.Show("Stock insuficiente. Maximo: " + dtDetalleCopia.Rows[e.RowIndex].Field<string>("Stock"));
                 }
             }
+        }
+
+        private void btnComprobante_Click(object sender, EventArgs e)
+        {
+            string pathInicial = Path.GetDirectoryName(Application.StartupPath);
+            string path = pathInicial.Replace("bin", "capa_presentacion\\modelo_comprobante.html");
+            string html = " ";
+
+            if (File.Exists(path))
+            {
+                html = File.ReadAllText(path);
+            }
+
+            PdfDocument pdf = PdfGenerator.GeneratePdf(html, PageSize.A4);
+            pdf.Save("C:\\Users\\ivans\\OneDrive\\Escritorio\\pruebas\\documento1.pdf");
+            //pdf.Save("C:\\Users\\ivans\\pruebas\\documento1.pdf");
         }
     }
 }
