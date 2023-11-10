@@ -9,11 +9,30 @@
             text-align: center;
         }
         #factura{
+            width: 700px;
+            height: auto;
+            margin: 0 auto;
+            border-style: dotted;
             text-align: center;
+            display: center;
+            justify-content: center;
         }
         #columna{
             display: inline-block;
             padding: 1rem 5rem;
+        }
+        #detalles{
+            display: flex;
+            justify-content: center;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        footer{
+            text-align: left;
+            padding-top: 10px;
+            padding-left: 70px;
         }
     </style>
 </head>
@@ -21,22 +40,39 @@
     <h1>La bodeguita - Comprobante</h1>
     <div id="factura">
         <div id="columna">
-            <p id="nro-comprobante"></p>
-            <p id="fecha">ola</p>
-            <p id="empleado-nombre">ola</p>
+            <p id="nro-comprobante">Nro comprobante: 00001</p>
+            <p id="fecha">Fecha: 10-11-2023</p>
+            <p id="empleado-nombre">Vendedor: El vendedor</p>
         </div>
         <div id="columna">
-            <p id="cliente-nombre">ola</p>
-            <p id="cliente-dni">ola</p>
-            <p id="metodo-pago">ola</p>
+            <p id="cliente-nombre">Cliente: El comprador</p>
+            <p id="cliente-dni">Cliente DNI: 41843297s</p>
+            <p id="metodo-pago">Metodo de pago: Efectivo</p>
         </div>
         <div id="detalles">
-            <table id="venta-detalle">
-                <tr>algo</tr>
+            <table id="venta-detalle" style="width: 80%">
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio unitario</th>
+                    <th>Subtotal</th>
+                  </tr>
+                  <tr>
+                    <td>Jack Daniels - Old No 7 Tennessee</td>
+                    <td>2</td>
+                    <td>2500,50</td>
+                    <td>5001</td>
+                  </tr>
+                  <tr>
+                    <td>Quilmes - Quilmes 1890</td>
+                    <td>4</td>
+                    <td>2100,50</td>
+                    <td>8402</td>
+                  </tr>
             </table>
         </div>
         <footer>
-            <p id="monto-final">ola</p>
+            <p id="monto-final">Monto final: $13403</p>
         </footer>
     </div>
 </body>

@@ -88,6 +88,8 @@ namespace capa_presentacion.perfil_vendedor
                                 negocioVenta.crearDetalles(idCabecera, dgvVentaDetalle);
                             }
 
+                            crearComprobante(idCabecera);
+
                             MessageBox.Show("Se ha realizado la venta",
                                 "Venta exitosa",
                                 MessageBoxButtons.OK,
@@ -301,6 +303,11 @@ namespace capa_presentacion.perfil_vendedor
             documento.GetElementbyId("nro-comprobante").InnerHtml = "Nro comprobante: 00001" + 1;
 
             documento.Save("D:\\Usuario\\Desktop\\backup\\documento.html");
+        }
+
+        private void crearComprobante(int idCabecera)
+        {
+            //DataTable dtVenta = negocioVenta.listarVenta(idCabecera);
         }
     }
 }
