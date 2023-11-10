@@ -10,10 +10,7 @@ using System.Timers;
 using System.Windows.Forms;
 
 using capa_negocio;
-using PdfSharp;
-using PdfSharp.Pdf;
 using System.IO;
-using TheArtOfDev.HtmlRenderer.PdfSharp;
 
 namespace capa_presentacion.perfil_vendedor
 {
@@ -295,10 +292,6 @@ namespace capa_presentacion.perfil_vendedor
             {
                 html = File.ReadAllText(path);
             }
-
-            PdfDocument pdf = PdfGenerator.GeneratePdf(html, PageSize.A4);
-            pdf.Save("C:\\Users\\ivans\\OneDrive\\Escritorio\\pruebas\\documento1.pdf");
-            //pdf.Save("C:\\Users\\ivans\\pruebas\\documento1.pdf");
         }
     }
 }
