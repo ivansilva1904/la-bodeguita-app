@@ -162,8 +162,7 @@ namespace capa_datos
                     "INNER JOIN clientes clientes ON ventaCabecera.dniCliente = clientes.dniCliente " +
                     "INNER JOIN empleados empleado ON ventaCabecera.dniEmpleado = empleado.dniEmpleado " +
                     "INNER JOIN formasPago formasPago ON ventaCabecera.idFormaPago = formasPago.idFormaPago " +
-                    "WHERE ventaCabecera.fecha BETWEEN '"+fechdesde+"' AND '"+fechhasta+"'";
-                 
+                    "WHERE ventaCabecera.fecha BETWEEN '"+fechdesde+"' AND '"+fechhasta+"'";               
                 if (!String.IsNullOrWhiteSpace(dniEmpleado))
                 {
                     int dEmp = Convert.ToInt32(dniEmpleado);

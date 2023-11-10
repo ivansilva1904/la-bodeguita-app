@@ -50,15 +50,15 @@ namespace capa_presentacion.perfil_supervisor
 
             if (desde < hasta)
             {
-                //Busqueda solo por fecha
+                //Busqueda filtro solo por fecha
                 if (String.IsNullOrWhiteSpace(dniCliente) && String.IsNullOrWhiteSpace(dniEmpleado))
                 {
                     DataTable tablaVentas = negocioVenta.ventasInformesMultiuso(desde, hasta, "", "");
                     recargar_dgvVentas(tablaVentas);
-                }
+                }//verifica si el campo DNI EMPLEADO contiene un string
                 else if (String.IsNullOrWhiteSpace(dniEmpleado) == false &&
                     String.IsNullOrWhiteSpace(dniCliente) == true)
-                {
+                {//Verifica que dicho empleado exista
                     if (negocioEmpleado.verificarEmpleadoExistente(Convert.ToInt32(dniEmpleado)) == true)
                     {
                         DataTable tablaVentas = negocioVenta.ventasInformesMultiuso(desde, hasta, dniEmpleado, "");
@@ -71,10 +71,10 @@ namespace capa_presentacion.perfil_supervisor
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     }                   
-                }
+                }//Verifica si el campo DNI CLIENTE contiene un string
                 else if (String.IsNullOrWhiteSpace(dniEmpleado) == true &&
                     String.IsNullOrWhiteSpace(dniCliente) == false)
-                {
+                {//verifica que dicho cliente Exista
                     if (negocioCliente.verificarClienteExistente(Convert.ToInt32(dniCliente)) == true)
                     {
                         DataTable tablaVentas = negocioVenta.ventasInformesMultiuso(desde, hasta, "", dniCliente);
@@ -87,10 +87,10 @@ namespace capa_presentacion.perfil_supervisor
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     }
-                }
+                }//Verifica que los campos DNI EMPLEADO y DNI CLIENTE contengan un string
                 else if (String.IsNullOrWhiteSpace(dniEmpleado) == false &&
                     String.IsNullOrWhiteSpace(dniCliente) == false)
-                {
+                {//Verifica que tanto el cliente como el empleado Existan
                     if (negocioCliente.verificarClienteExistente(Convert.ToInt32(dniCliente)) == true &&
                          negocioEmpleado.verificarEmpleadoExistente(Convert.ToInt32(dniEmpleado)))
                     {
@@ -121,7 +121,7 @@ namespace capa_presentacion.perfil_supervisor
             DataGridViewButtonColumn columnaBotonDetalles = new DataGridViewButtonColumn();
             columnaBotonDetalles.HeaderText = "Detalle Venta";
             columnaBotonDetalles.Name = "colDetalleVenta";
-            columnaBotonDetalles.Text = "Detalle";
+            columnaBotonDetalles.Text = "Detalle Venta";
             columnaBotonDetalles.UseColumnTextForButtonValue = true;
             dgvVentas.Columns.Add(columnaBotonDetalles);
             DataTable tablaVentas = negocioVenta.ventasInformesMultiuso(dtpDesde.Value, dtpHasta.Value, "", "");
