@@ -108,5 +108,30 @@ namespace capa_negocio
         {
             datosEmpleado.restoreEmpleado(dni);
         }
+
+
+        //Funcion para Informes Venta
+
+        public bool verificarEmpleadoExistente(int dniEmpleado)
+        {
+            SqlDataReader empleadoReader = datosEmpleado.selectEmpleadoDNI(dniEmpleado);
+
+            DataTable tablaEmpleado = new DataTable();
+
+            if (empleadoReader.HasRows)
+            {
+                tablaEmpleado.Load(empleadoReader);
+                datosEmpleado.cerrarConexion();
+
+                return true;
+            }
+            else
+            {
+                datosEmpleado.cerrarConexion();
+
+                return false;
+            }
+        }
+
     }
 }

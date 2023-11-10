@@ -31,7 +31,8 @@ namespace capa_negocio
             }
         }
 
-
+        //Funciones para informes generales
+        //
         public DataTable ventas_por_cantidad_tipoBebida(DateTime desde, DateTime hasta)
         {
             SqlDataReader dataReaderVentas = datosVenta.selectVentasCantidadBebidas(desde,hasta);
@@ -45,5 +46,43 @@ namespace capa_negocio
 
             return tablaCantidadBebidas;
         }
+
+
+        //funciones para Informes Ventas
+
+        public DataTable ventasInformesMultiuso(DateTime desde, DateTime hasta, string dniEmplead, string dniCliente)
+        {
+            /*
+            SqlDataReader ventaReader = datosVenta.selectVentasMultiuso(desde, hasta, dniEmplead, dniCliente);
+
+            DataTable tablaVentas = new DataTable();
+
+            if (ventaReader.HasRows)
+            {
+                tablaVentas.Load(ventaReader);
+                datosVenta.cerrarConexion();
+
+                return tablaVentas;
+            }
+            else
+            {
+                datosVenta.cerrarConexion();
+
+                return tablaVentas;
+            }
+            */
+            SqlDataReader dataReaderVentas = datosVenta.selectVentasMultiuso(desde, hasta, dniEmplead, dniCliente);
+
+            DataTable tablaCantidadBebidas = new DataTable();
+            tablaCantidadBebidas.Load(dataReaderVentas);
+
+
+
+            datosVenta.cerrarConexion();
+
+            return tablaCantidadBebidas;
+
+        }
     }
+
 }

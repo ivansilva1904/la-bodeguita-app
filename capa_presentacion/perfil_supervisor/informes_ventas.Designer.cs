@@ -31,18 +31,10 @@
             this.pnlInformeVentas = new System.Windows.Forms.Panel();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.idVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dniEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dniCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalleVenta = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDniCliente = new System.Windows.Forms.TextBox();
             this.txtDniEmpleado = new System.Windows.Forms.TextBox();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDniEmpleado = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
@@ -65,8 +57,6 @@
             this.pnlInformeVentas.Controls.Add(this.txtDniEmpleado);
             this.pnlInformeVentas.Controls.Add(this.dtpHasta);
             this.pnlInformeVentas.Controls.Add(this.dtpDesde);
-            this.pnlInformeVentas.Controls.Add(this.label7);
-            this.pnlInformeVentas.Controls.Add(this.label6);
             this.pnlInformeVentas.Controls.Add(this.label5);
             this.pnlInformeVentas.Controls.Add(this.lblDniEmpleado);
             this.pnlInformeVentas.Controls.Add(this.lblHasta);
@@ -86,67 +76,35 @@
             this.btnFiltrar.TabIndex = 12;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // dgvVentas
             // 
             this.dgvVentas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idVenta,
-            this.dniEmpleado,
-            this.dniCliente,
-            this.fecha,
-            this.detalleVenta,
-            this.total});
-            this.dgvVentas.Location = new System.Drawing.Point(3, 269);
+            this.dgvVentas.Location = new System.Drawing.Point(3, 266);
             this.dgvVentas.Name = "dgvVentas";
-            this.dgvVentas.Size = new System.Drawing.Size(703, 170);
+            this.dgvVentas.Size = new System.Drawing.Size(703, 173);
             this.dgvVentas.TabIndex = 11;
-            // 
-            // idVenta
-            // 
-            this.idVenta.HeaderText = "ID Venta";
-            this.idVenta.Name = "idVenta";
-            // 
-            // dniEmpleado
-            // 
-            this.dniEmpleado.HeaderText = "DNI Empleado";
-            this.dniEmpleado.Name = "dniEmpleado";
-            // 
-            // dniCliente
-            // 
-            this.dniCliente.HeaderText = "DNI Cliente";
-            this.dniCliente.Name = "dniCliente";
-            // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "Fecha";
-            this.fecha.Name = "fecha";
-            // 
-            // detalleVenta
-            // 
-            this.detalleVenta.HeaderText = "Detalle Venta";
-            this.detalleVenta.Name = "detalleVenta";
-            // 
-            // total
-            // 
-            this.total.HeaderText = "Total Venta";
-            this.total.Name = "total";
             // 
             // txtDniCliente
             // 
             this.txtDniCliente.Location = new System.Drawing.Point(176, 155);
+            this.txtDniCliente.MaxLength = 8;
             this.txtDniCliente.Name = "txtDniCliente";
             this.txtDniCliente.Size = new System.Drawing.Size(181, 21);
             this.txtDniCliente.TabIndex = 10;
+            this.txtDniCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDniCliente_KeyPress);
             // 
             // txtDniEmpleado
             // 
             this.txtDniEmpleado.Location = new System.Drawing.Point(176, 104);
+            this.txtDniEmpleado.MaxLength = 8;
             this.txtDniEmpleado.Name = "txtDniEmpleado";
             this.txtDniEmpleado.Size = new System.Drawing.Size(181, 21);
             this.txtDniEmpleado.TabIndex = 9;
+            this.txtDniEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDniEmpleado_KeyPress);
             // 
             // dtpHasta
             // 
@@ -156,6 +114,7 @@
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(97, 21);
             this.dtpHasta.TabIndex = 8;
+            this.dtpHasta.Value = new System.DateTime(2023, 11, 9, 0, 0, 0, 0);
             // 
             // dtpDesde
             // 
@@ -165,30 +124,7 @@
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(97, 21);
             this.dtpDesde.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Beige;
-            this.label7.ForeColor = System.Drawing.Color.IndianRed;
-            this.label7.Location = new System.Drawing.Point(21, 236);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Nombre Empleado :";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Beige;
-            this.label6.ForeColor = System.Drawing.Color.IndianRed;
-            this.label6.Location = new System.Drawing.Point(21, 223);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Nombre Cliente :";
+            this.dtpDesde.Value = new System.DateTime(2023, 9, 1, 0, 0, 0, 0);
             // 
             // label5
             // 
@@ -254,6 +190,7 @@
             this.Name = "informes_ventas";
             this.Text = "informes_ventas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.informes_ventas_Load);
             this.pnlInformeVentas.ResumeLayout(false);
             this.pnlInformeVentas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
@@ -268,8 +205,6 @@
         private System.Windows.Forms.TextBox txtDniEmpleado;
         private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.DateTimePicker dtpDesde;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblDniEmpleado;
         private System.Windows.Forms.Label lblHasta;
@@ -277,11 +212,5 @@
         private System.Windows.Forms.Label lblInformeVentas;
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.DataGridView dgvVentas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dniEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dniCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
-        private System.Windows.Forms.DataGridViewButtonColumn detalleVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total;
     }
 }

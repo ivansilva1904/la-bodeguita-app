@@ -58,5 +58,27 @@ namespace capa_negocio
         {
             datosCliente.updateCliente(dni, nombre, apellido, email);
         }
+
+        // Funcion para Informe Ventas
+        public bool verificarClienteExistente(int dniCliente)
+        {
+            SqlDataReader drCliente = datosCliente.selectClientePorDNI(dniCliente);
+
+            DataTable dtCliente = new DataTable();
+
+            if (drCliente.HasRows)
+            {
+                dtCliente.Load(drCliente);
+                datosCliente.cerrarConexion();
+
+                return true;
+            }
+            else
+            {
+                datosCliente.cerrarConexion();
+
+                return false;
+            }
+        }
     }
 }

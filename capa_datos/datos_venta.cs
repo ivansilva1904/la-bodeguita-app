@@ -104,6 +104,9 @@ namespace capa_datos
 
 
 
+
+
+        //Funciones para Informes Generales
         public SqlDataReader selectVentasCantidadBebidas(DateTime desde, DateTime hasta)
         {
             try
@@ -135,7 +138,56 @@ namespace capa_datos
                 return null;
             }
         }
-        
+
+        //Funciones para informes Venta
+
+        public SqlDataReader selectVentasMultiuso(DateTime desde, DateTime hasta,string dniEmpleado,string dniCliente)
+        {
+            try
+            {
+                conexion.Open();
+                string fechdesde = desde.ToString("yyyy-MM-dd");
+                string fechhasta = hasta.ToString("yyyy-MM-dd");
+
+                string query = "" +
+                    "SELECT ventaCabecera.idVentaCabecera as 'ID Venta'," +
+                    "clientes.dniCliente AS 'DNI Cliente'," +
+                    "clientes.nombre +' '+ clientes.apellido AS 'Nombre Cliente' ," +
+                    "empleado.dniEmpleado AS 'DNI Empleado'," +
+                    "empleado.nombre +' '+empleado.apellido AS 'Nombre Empleado',"+
+                    "formasPago.descripcion AS 'Forma Pago', " +
+                    "ventaCabecera.importeTotal AS 'Importe Total', " +
+                    "ventaCabecera.fecha AS 'Fecha' " +
+                    "FROM ventasCabecera ventaCabecera " +
+                    "INNER JOIN clientes clientes ON ventaCabecera.dniCliente = clientes.dniCliente " +
+                    "INNER JOIN empleados empleado ON ventaCabecera.dniEmpleado = empleado.dniEmpleado " +
+                    "INNER JOIN formasPago formasPago ON ventaCabecera.idFormaPago = formasPago.idFormaPago " +
+                    "WHERE ventaCabecera.fecha BETWEEN '"+fechdesde+"' AND '"+fechhasta+"'";
+                 
+                if (!String.IsNullOrWhiteSpace(dniEmpleado))
+                {
+                    int dEmp = Convert.ToInt32(dniEmpleado);
+                    query = query + " AND empleado.dniEmpleado = " + dEmp;
+                }
+                if (!String.IsNullOrWhiteSpace(dniCliente))
+                {
+                    int dCli = Convert.ToInt32(dniCliente);
+                    query = query + " AND clientes.dniCliente = " + dCli;
+                }
+
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                SqlDataReader drComando = comando.ExecuteReader();
+
+                return drComando;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
 
     }
 }

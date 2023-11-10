@@ -88,5 +88,10 @@ namespace capa_datos
 
             cerrarConexion();
         }
+
+
+        //Funcion para ver si existe un cliente
+        
+
     }
 }
