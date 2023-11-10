@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 using capa_negocio;
 using System.IO;
+using HtmlAgilityPack;
 
 namespace capa_presentacion.perfil_vendedor
 {
@@ -292,6 +293,14 @@ namespace capa_presentacion.perfil_vendedor
             {
                 html = File.ReadAllText(path);
             }
+
+            var documento = new HtmlAgilityPack.HtmlDocument();
+
+            documento.LoadHtml(html);
+
+            documento.GetElementbyId("nro-comprobante").InnerHtml = "Nro comprobante: 00001" + 1;
+
+            documento.Save("D:\\Usuario\\Desktop\\backup\\documento.html");
         }
     }
 }
