@@ -52,7 +52,7 @@ namespace capa_negocio
 
         public DataTable ventasInformesMultiuso(DateTime desde, DateTime hasta, string dniEmplead, string dniCliente)
         {
-            /*
+            
             SqlDataReader ventaReader = datosVenta.selectVentasMultiuso(desde, hasta, dniEmplead, dniCliente);
 
             DataTable tablaVentas = new DataTable();
@@ -70,17 +70,7 @@ namespace capa_negocio
 
                 return tablaVentas;
             }
-            */
-            SqlDataReader dataReaderVentas = datosVenta.selectVentasMultiuso(desde, hasta, dniEmplead, dniCliente);
-
-            DataTable tablaCantidadBebidas = new DataTable();
-            tablaCantidadBebidas.Load(dataReaderVentas);
-
-
-
-            datosVenta.cerrarConexion();
-
-            return tablaCantidadBebidas;
+     
 
         }
     }

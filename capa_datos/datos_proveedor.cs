@@ -54,8 +54,8 @@ namespace capa_datos
                 "direccion AS 'Direccion', " +
                 "telefono AS 'Telefono', " +
                 "email AS 'Email', " +
-                "fechaAlta AS 'Fecha Alta', " +
-                "fechaBaja AS 'Fecha Baja'" +
+                "fechaAlta AS 'Fecha Alta' " +
+                ",fechaBaja AS 'Fecha Baja'" +
                 " FROM proveedor";
 
             SqlCommand comando = new SqlCommand(query, conexion);

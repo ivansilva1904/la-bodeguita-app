@@ -188,6 +188,12 @@ namespace capa_presentacion.perfil_supervisor
                     formularioInterno.WindowState = FormWindowState.Normal;
                     formularioInterno.WindowState = FormWindowState.Maximized;
                 }
+                if (formularioInterno is informes_generales)
+                {
+                    formularioInterno.Size = pnlFormsSupervisor.Size;
+                    formularioInterno.WindowState = FormWindowState.Normal;
+                    formularioInterno.WindowState = FormWindowState.Maximized;
+                }
             }
 
         }
