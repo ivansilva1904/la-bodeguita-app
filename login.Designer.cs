@@ -30,13 +30,11 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelLogin = new System.Windows.Forms.Panel();
-            this.lblTest = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtContra = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelLogin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,8 +50,6 @@
             // panelLogin
             // 
             this.panelLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelLogin.Controls.Add(this.button1);
-            this.panelLogin.Controls.Add(this.lblTest);
             this.panelLogin.Controls.Add(this.btnLogin);
             this.panelLogin.Controls.Add(this.label2);
             this.panelLogin.Controls.Add(this.label1);
@@ -64,15 +60,6 @@
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(277, 273);
             this.panelLogin.TabIndex = 5;
-            // 
-            // lblTest
-            // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTest.Location = new System.Drawing.Point(184, 239);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(0, 13);
-            this.lblTest.TabIndex = 5;
             // 
             // btnLogin
             // 
@@ -122,16 +109,6 @@
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(103, 228);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,8 +143,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Label lblTest;
-        private System.Windows.Forms.Button button1;
     }
 }
 

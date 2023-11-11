@@ -37,7 +37,6 @@ namespace la_bodeguita
             if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtContra.Text) )
             {
                 MessageBox.Show("Existen Campos Vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                lblTest.Text = "log nul";
             }
             else
             {
@@ -88,12 +87,6 @@ namespace la_bodeguita
                     MessageBox.Show("El empleado no existe. Contacte al administrador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string hashp = BCrypt.Net.BCrypt.HashPassword(txtContra.Text);
-            txtUsuario.Text = hashp;
         }
     }
 }
