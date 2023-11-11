@@ -71,6 +71,34 @@ namespace capa_presentacion.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        ///    &lt;title&gt;Comprobante de pago&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        h1{
+        ///            text-align: center;
+        ///        }
+        ///        #factura{
+        ///            width: 700px;
+        ///            height: auto;
+        ///            margin: 0 auto;
+        ///            border-style: dotted;
+        ///            text-align: center;
+        ///            display: center;
+        ///            justify-content: center;
+        ///        }
+        ///       [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string modelo_comprobante {
+            get {
+                return ResourceManager.GetString("modelo_comprobante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap pexels_photo_15455291 {

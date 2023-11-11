@@ -70,9 +70,17 @@ namespace capa_negocio
 
                 return tablaVentas;
             }
-     
+        }
 
+        public DataTable listarVentas(int idCabecera)
+        {
+            SqlDataReader drVentas = datosVenta.selectVentasFactura(idCabecera);
+
+            DataTable dtVentas = new DataTable();
+
+            dtVentas.Load(drVentas);
+
+            return dtVentas;
         }
     }
-
 }

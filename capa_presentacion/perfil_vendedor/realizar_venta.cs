@@ -287,18 +287,13 @@ namespace capa_presentacion.perfil_vendedor
 
         private void btnComprobante_Click(object sender, EventArgs e)
         {
-            string pathInicial = Path.GetDirectoryName(Application.StartupPath);
-            string path = pathInicial.Replace("bin", "capa_presentacion\\modelo_comprobante.html");
-            string html = " ";
-
-            if (File.Exists(path))
-            {
-                html = File.ReadAllText(path);
-            }
+            string html = Properties.Resources.modelo_comprobante;
 
             var documento = new HtmlAgilityPack.HtmlDocument();
 
             documento.LoadHtml(html);
+
+            MessageBox.Show(documento.Text);
 
             documento.GetElementbyId("nro-comprobante").InnerHtml = "Nro comprobante: 00001" + 1;
 
@@ -307,7 +302,7 @@ namespace capa_presentacion.perfil_vendedor
 
         private void crearComprobante(int idCabecera)
         {
-            //DataTable dtVenta = negocioVenta.listarVenta(idCabecera);
+            DataTable dtVenta = negocioVenta.listarVenta(idCabecera);
         }
     }
 }
