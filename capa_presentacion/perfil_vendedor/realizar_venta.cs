@@ -58,37 +58,34 @@ namespace capa_presentacion.perfil_vendedor
                             int idCabecera = 0;
                             int dniCliente = int.Parse(txtDNICliente.Text);
 
-                            try
+                            if(tipoPago == 1)
                             {
-                                if(tipoPago == 1)
+                                idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, 0, importeTotal, dniEmpleado, dniCliente);
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrWhiteSpace(txtTarjetaNumero.Text))
                                 {
-                                    idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, 0, importeTotal, dniEmpleado, dniCliente);
+                                    long tarjeta = long.Parse(txtTarjetaNumero.Text);
+                                    idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, tarjeta, importeTotal, dniEmpleado, dniCliente);
                                 }
                                 else
                                 {
-                                    if (!string.IsNullOrWhiteSpace(txtTarjetaNumero.Text))
-                                    {
-                                        long tarjeta = long.Parse(txtTarjetaNumero.Text);
-                                        idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, tarjeta, importeTotal, dniEmpleado, dniCliente);
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Debe ingresar una tarjeta");
-                                        return;
-                                    }
+                                    MessageBox.Show("Debe ingresar una tarjeta");
+                                    return;
                                 }
-                            }
-                            catch
-                            {
-                                return;
                             }
 
                             if (verificarCabecera(idCabecera) == true)
                             {
                                 negocioVenta.crearDetalles(idCabecera, dgvVentaDetalle);
                             }
+                            else
+                            {
+                                return;
+                            }
 
-                            crearComprobante(idCabecera);
+                            //crearComprobante(idCabecera);
 
                             MessageBox.Show("Se ha realizado la venta",
                                 "Venta exitosa",

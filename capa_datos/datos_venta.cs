@@ -188,5 +188,21 @@ namespace capa_datos
             }
         }
 
+        public SqlDataReader selectVentasFactura(int idCabecera)
+        {
+            try
+            {
+                conexion.Open();
+
+                string query = "";
+                return null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar la venta: " + ex.Message);
+                return null;
+            }
+        }
+
     }
 }

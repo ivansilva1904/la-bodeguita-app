@@ -72,7 +72,7 @@ namespace capa_negocio
             }
         }
 
-        public DataTable listarVentas(int idCabecera)
+        public DataTable listarVenta(int idCabecera)
         {
             SqlDataReader drVentas = datosVenta.selectVentasFactura(idCabecera);
 
