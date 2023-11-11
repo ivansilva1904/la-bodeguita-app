@@ -194,8 +194,30 @@ namespace capa_datos
             {
                 conexion.Open();
 
-                string query = "";
-                return null;
+                string query = "" +
+                    "SELECT vc.fecha AS 'Fecha', " + 
+	                    "vc.idFormaPago AS 'Forma pago', " +
+                        "emp.nombre + ' ' + emp.apellido AS 'Nombre empleado', " +
+	                    "cli.dniCliente AS 'DNI cliente', " +
+                        "cli.nombre + ' ' + cli.apellido AS 'Nombre cliente', " +
+                        "mar.descripcion + ' - ' +  pro.descripcion AS 'Producto', " +
+	                    "vd.cantidad AS 'Cantidad', " +
+	                    "pro.precioVenta AS 'Precio', " +
+	                    "vd.precioParcial AS 'Subtotal', " +
+	                    "vc.importeTotal AS 'Total' " +
+                    "FROM ventasCabecera vc " +
+                    "JOIN ventasDetalle vd ON vc.idVentaCabecera = vd.idVentaCabecera " +
+                    "JOIN empleados emp ON vc.dniEmpleado = emp.dniEmpleado " +
+                    "JOIN clientes cli ON vc.dniCliente = cli.dniCliente " +
+                    "JOIN producto pro ON vd.idProducto = pro.idProducto " +
+                    "JOIN marca mar ON pro.idMarca = mar.idMarca " +
+                    "WHERE vc.idVentaCabecera = " + idCabecera + ";";
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                SqlDataReader drComando = comando.ExecuteReader();
+
+                return drComando;
             }
             catch (Exception ex)
             {

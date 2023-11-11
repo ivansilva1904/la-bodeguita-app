@@ -85,12 +85,12 @@ namespace capa_presentacion.perfil_vendedor
                                 return;
                             }
 
-                            //crearComprobante(idCabecera);
-
                             MessageBox.Show("Se ha realizado la venta",
                                 "Venta exitosa",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
+
+                            crearComprobante(idCabecera);
                         }
                     }
                     else
