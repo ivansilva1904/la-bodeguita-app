@@ -45,6 +45,8 @@ namespace capa_datos
                 comando.ExecuteNonQuery();
 
                 cerrarConexion();
+
+                MessageBox.Show("Se ha registrado el empleado", "Aviso de Alta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             catch (Exception ex)
             {
