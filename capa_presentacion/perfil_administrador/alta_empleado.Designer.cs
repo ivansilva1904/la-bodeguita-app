@@ -53,7 +53,6 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.btnLimpiarCampos = new System.Windows.Forms.Button();
             this.lblContraseña2 = new System.Windows.Forms.Label();
-            this.btnPass = new System.Windows.Forms.Button();
             this.pnlAltaUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -281,7 +280,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlAltaUsuario.BackColor = System.Drawing.Color.Beige;
-            this.pnlAltaUsuario.Controls.Add(this.btnPass);
             this.pnlAltaUsuario.Controls.Add(this.txtDireccion);
             this.pnlAltaUsuario.Controls.Add(this.lblDireccion);
             this.pnlAltaUsuario.Controls.Add(this.btnLimpiarCampos);
@@ -350,16 +348,6 @@
             this.lblContraseña2.TabIndex = 7;
             this.lblContraseña2.Text = "Reingresar contraseña";
             // 
-            // btnPass
-            // 
-            this.btnPass.Location = new System.Drawing.Point(131, 389);
-            this.btnPass.Name = "btnPass";
-            this.btnPass.Size = new System.Drawing.Size(92, 23);
-            this.btnPass.TabIndex = 23;
-            this.btnPass.Text = "contraseña";
-            this.btnPass.UseVisualStyleBackColor = true;
-            this.btnPass.Click += new System.EventHandler(this.btnPass_Click);
-            // 
             // alta_empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -412,6 +400,5 @@
         private System.Windows.Forms.Button btnLimpiarCampos;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.Button btnPass;
     }
 }

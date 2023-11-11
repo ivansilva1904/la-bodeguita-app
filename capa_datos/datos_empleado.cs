@@ -15,14 +15,7 @@ namespace capa_datos
 
         public void cerrarConexion()
         {
-            try
-            {
-                conexion.Close();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            conexion.Close();
         }
 
         public SqlDataReader buscarDNI(int dni)
@@ -40,16 +33,23 @@ namespace capa_datos
 
         public void insertEmpleado(int dni, string nombre, string apellido, DateTime fechaNac, string direccion, string telefono, string email, string contraseña, int tipoEmpleado)
         {
-            conexion.Open();
+            try
+            {
+                conexion.Open();
 
-            string query = "INSERT INTO empleados (dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, direccion, telefono, email, contraseña, idTipoEmpleado) " +
-                "VALUES (" + dni + ",'" + nombre + "' , '"+ apellido + "', '"+ fechaNac.ToString("yyyy-MM-dd") +"', '"+ DateTime.Now.ToString("yyyy-MM-dd") +"', '"+ direccion +"', '"+ telefono +"', '"+ email +"', '"+ contraseña +"', "+ tipoEmpleado +");";
+                string query = "INSERT INTO empleados (dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, direccion, telefono, email, contraseña, idTipoEmpleado) " +
+                    "VALUES (" + dni + ",'" + nombre + "' , '"+ apellido + "', '"+ fechaNac.ToString("yyyy-MM-dd") +"', '"+ DateTime.Now.ToString("yyyy-MM-dd") +"', '"+ direccion +"', '"+ telefono +"', '"+ email +"', '"+ BCrypt.Net.BCrypt.HashPassword(contraseña) +"', "+ tipoEmpleado +");";
 
-            SqlCommand comando = new SqlCommand(query, conexion);
+                SqlCommand comando = new SqlCommand(query, conexion);
 
-            comando.ExecuteNonQuery();
+                comando.ExecuteNonQuery();
 
-            cerrarConexion();
+                cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar empleado: " + ex.Message);
+            }
         }
 
         public SqlDataReader selectTodosEmpleados()
