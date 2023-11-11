@@ -78,7 +78,7 @@ namespace capa_presentacion.perfil_administrador
                 string.IsNullOrWhiteSpace(telefono) ||
                 string.IsNullOrWhiteSpace(contraseña) ||
                 string.IsNullOrWhiteSpace(contraseña2) ||
-                (radbtnSupervisor.Checked == true || radbtnVendedor.Checked == true))
+                (radbtnSupervisor.Checked == false || radbtnVendedor.Checked == false))
             {
                 MessageBox.Show("Debe completar todos los campos",
                     "Campos faltantes o erroneos",
