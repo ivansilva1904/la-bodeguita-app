@@ -148,19 +148,6 @@ VALUES('Efectivo');
 INSERT INTO formasPago(descripcion)
 VALUES('Tarjeta');
 
-/* Consulta inner join de ejemplo*/	
-SELECT producto.idProducto AS 'ID Producto',producto.descripcion AS 'Descripcion',marca.descripcion AS 'Marca',
-producto.precioCompra AS 'Precio Compra',producto.precioVenta AS 'Precio Venta',producto.stockMinimo AS 'Stock Minimo',
-producto.stockActual AS 'Stock Actual',proveedor.razonSocial AS 'Nombre Proveedor',tipoBebida.descripcion AS 'Tipo Bebida',producto.baja AS 'Baja'
-	FROM producto
-	INNER JOIN marca ON (producto.idMarca = marca.idMarca)
-	INNER JOIN proveedor ON (producto.cuitProveedor = proveedor.cuitProveedor)
-	INNER JOIN tipoBebida ON (producto.idTipoBebida = tipoBebida.idTipoBebida)
-	WHERE tipoBebida.descripcion like '%erveza%'
-	GROUP BY producto.idProducto,producto.descripcion,marca.descripcion
-	/*INNER JOIN marca.idMarc*/
-
-
 CREATE TRIGGER trg_ActualizarBaja
 ON producto
 AFTER UPDATE
@@ -192,6 +179,19 @@ BEGIN
 END;
 
 
+
+/* Consulta inner join de ejemplo	
+SELECT producto.idProducto AS 'ID Producto',producto.descripcion AS 'Descripcion',marca.descripcion AS 'Marca',
+producto.precioCompra AS 'Precio Compra',producto.precioVenta AS 'Precio Venta',producto.stockMinimo AS 'Stock Minimo',
+producto.stockActual AS 'Stock Actual',proveedor.razonSocial AS 'Nombre Proveedor',tipoBebida.descripcion AS 'Tipo Bebida',producto.baja AS 'Baja'
+	FROM producto
+	INNER JOIN marca ON (producto.idMarca = marca.idMarca)
+	INNER JOIN proveedor ON (producto.cuitProveedor = proveedor.cuitProveedor)
+	INNER JOIN tipoBebida ON (producto.idTipoBebida = tipoBebida.idTipoBebida)
+	WHERE tipoBebida.descripcion like '%erveza%'
+	GROUP BY producto.idProducto,producto.descripcion,marca.descripcion
+	/*INNER JOIN marca.idMarc*/
+
 SELECT 
 	vc.fecha AS 'Fecha',
 	vc.idFormaPago AS 'Forma pago',
@@ -210,3 +210,5 @@ JOIN clientes cli ON vc.dniCliente = cli.dniCliente
 JOIN producto pro ON vd.idProducto = pro.idProducto
 JOIN marca mar ON pro.idMarca = mar.idMarca
 WHERE vc.idVentaCabecera = 2;
+*/
+
