@@ -139,6 +139,160 @@ namespace capa_datos
             }
         }
 
+        public SqlDataReader selectVentasGananciaBebidas(DateTime desde, DateTime hasta)
+        {
+            try
+            {
+                conexion.Open();
+                string fechdesde = desde.ToString("yyyy-MM-dd");
+                string fechhasta = hasta.ToString("yyyy-MM-dd");
+
+                string query = "" +
+                     "SELECT tb.descripcion AS 'Tipo de Bebida', " +
+                     " SUM(vd.cantidad * (p.precioVenta - p.precioCompra)) AS 'Ganancia Neta'" +
+                     "FROM ventasDetalle vd " +
+                     "INNER JOIN producto p ON vd.idProducto = p.idProducto " +
+                     "INNER JOIN tipoBebida tb ON p.idTipoBebida = tb.idTipoBebida " +
+                     "INNER JOIN ventasCabecera vc ON vd.idVentaCabecera = vc.idVentaCabecera " +
+                     "WHERE vc.fecha BETWEEN '" + fechdesde + "' AND '" + fechhasta + "' " +
+                     "GROUP BY tb.descripcion ";
+
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                SqlDataReader drComando = comando.ExecuteReader();
+
+                return drComando;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+        public SqlDataReader selectVentasCantidadVendedor(DateTime desde, DateTime hasta)
+        {
+            try
+            {
+                conexion.Open();
+                string fechdesde = desde.ToString("yyyy-MM-dd");
+                string fechhasta = hasta.ToString("yyyy-MM-dd");
+
+                string query = "" +
+                     "SELECT (e.nombre + ' ' + e.apellido) AS 'Nombre Empleado', " +
+                     " COUNT(vc.idVentaCabecera) AS 'Cantidad de Ventas' " +
+                     "FROM empleados e " +
+                     "LEFT JOIN ventasCabecera vc ON e.dniEmpleado = vc.dniEmpleado " +
+                     "WHERE vc.fecha BETWEEN '" + fechdesde + "' AND '" + fechhasta + "' " +
+                     "GROUP BY e.nombre, e.apellido ";
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                SqlDataReader drComando = comando.ExecuteReader();
+
+                return drComando;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+        public SqlDataReader selectVentasGananciaVendedor(DateTime desde, DateTime hasta)
+        {
+            try
+            {
+                conexion.Open();
+                string fechdesde = desde.ToString("yyyy-MM-dd");
+                string fechhasta = hasta.ToString("yyyy-MM-dd");
+
+                string query = "" +
+                     "SELECT (e.nombre + ' ' + e.apellido) AS 'Nombre Empleado', " +
+                     " SUM(vd.cantidad * (p.precioVenta - p.precioCompra)) AS 'Ganancia Neta' " +
+                     "FROM empleados e " +
+                     "LEFT JOIN ventasCabecera vc ON e.dniEmpleado = vc.dniEmpleado " +
+                     "LEFT JOIN ventasDetalle vd ON vc.idVentaCabecera = vd.idVentaCabecera " +
+                     "LEFT JOIN producto p ON vd.idProducto = p.idProducto " +
+                     "WHERE vc.fecha BETWEEN '" + fechdesde + "' AND '" + fechhasta + "' " +
+                     "GROUP BY e.nombre, e.apellido ";
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                SqlDataReader drComando = comando.ExecuteReader();
+
+                return drComando;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+        public SqlDataReader selectVentasCantidadMarca(DateTime desde, DateTime hasta)
+        {
+            try
+            {
+                conexion.Open();
+                string fechdesde = desde.ToString("yyyy-MM-dd");
+                string fechhasta = hasta.ToString("yyyy-MM-dd");
+
+                string query = "" +
+                     "SELECT m.descripcion AS 'Marca', " +
+                     " COUNT(vc.idVentaCabecera) AS 'Cantidad de Ventas' " +
+                     "FROM marca m " +
+                     "LEFT JOIN producto p ON m.idMarca = p.idMarca " +
+                     "LEFT JOIN ventasDetalle vd ON p.idProducto = vd.idProducto " +
+                     "LEFT JOIN ventasCabecera vc ON vd.idVentaCabecera = vc.idVentaCabecera "+
+                     "WHERE vc.fecha BETWEEN '" + fechdesde + "' AND '" + fechhasta + "' " +
+                     "GROUP BY m.descripcion; ";
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                SqlDataReader drComando = comando.ExecuteReader();
+
+                return drComando;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+        public SqlDataReader selectVentasGananciaMarca(DateTime desde, DateTime hasta)
+        {
+            try
+            {
+                conexion.Open();
+                string fechdesde = desde.ToString("yyyy-MM-dd");
+                string fechhasta = hasta.ToString("yyyy-MM-dd");
+
+                string query = "" +
+                     "SELECT m.descripcion AS 'Marca', " +
+                     " SUM(vd.cantidad * (p.precioVenta - p.precioCompra)) AS 'Ganancia Neta' " +
+                     "FROM marca m " +
+                     "LEFT JOIN producto p ON m.idMarca = p.idMarca " +
+                     "LEFT JOIN ventasDetalle vd ON p.idProducto = vd.idProducto " +
+                     "LEFT JOIN ventasCabecera vc ON vd.idVentaCabecera = vc.idVentaCabecera " +
+                     "WHERE vc.fecha BETWEEN '" + fechdesde + "' AND '" + fechhasta + "' " +
+                     "GROUP BY m.descripcion ";
+
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                SqlDataReader drComando = comando.ExecuteReader();
+
+                return drComando;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+
         //Funciones para informes Venta
 
         public SqlDataReader selectVentasMultiuso(DateTime desde, DateTime hasta,string dniEmpleado,string dniCliente)

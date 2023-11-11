@@ -46,7 +46,92 @@ namespace capa_negocio
 
             return tablaCantidadBebidas;
         }
+        public DataTable ventas_por_ganancia_tipoBebida(DateTime desde, DateTime hasta)
+        {
+            SqlDataReader dataReaderVentas = datosVenta.selectVentasGananciaBebidas(desde, hasta);
 
+            DataTable tablaCantidadBebidas = new DataTable();
+            tablaCantidadBebidas.Load(dataReaderVentas);
+
+
+
+            datosVenta.cerrarConexion();
+
+            return tablaCantidadBebidas;
+        }
+        public DataTable ventas_por_cantidad_vendedor(DateTime desde, DateTime hasta)
+        {
+            SqlDataReader ventaReader = datosVenta.selectVentasCantidadVendedor(desde, hasta);
+            DataTable tablaVentas = new DataTable();
+            if (ventaReader.HasRows)
+            {
+                tablaVentas.Load(ventaReader);
+                datosVenta.cerrarConexion();
+
+                return tablaVentas;
+            }
+            else
+            {
+                datosVenta.cerrarConexion();
+
+                return tablaVentas;
+            }
+        }
+        public DataTable ventas_por_ganancia_vendedor(DateTime desde, DateTime hasta)
+        {
+            SqlDataReader ventaReader = datosVenta.selectVentasGananciaVendedor(desde, hasta);
+            DataTable tablaVentas = new DataTable();
+            if (ventaReader.HasRows)
+            {
+                tablaVentas.Load(ventaReader);
+                datosVenta.cerrarConexion();
+
+                return tablaVentas;
+            }
+            else
+            {
+                datosVenta.cerrarConexion();
+
+                return tablaVentas;
+            }
+        }
+
+        public DataTable ventas_por_ganancia_marca(DateTime desde, DateTime hasta)
+        {
+            SqlDataReader ventaReader = datosVenta.selectVentasGananciaMarca(desde, hasta);
+            DataTable tablaVentas = new DataTable();
+            if (ventaReader.HasRows)
+            {
+                tablaVentas.Load(ventaReader);
+                datosVenta.cerrarConexion();
+
+                return tablaVentas;
+            }
+            else
+            {
+                datosVenta.cerrarConexion();
+
+                return tablaVentas;
+            }
+        }
+        public DataTable ventas_por_cantidad_marca(DateTime desde, DateTime hasta)
+        {
+            SqlDataReader ventaReader = datosVenta.selectVentasCantidadMarca(desde, hasta);
+            DataTable tablaVentas = new DataTable();
+            if (ventaReader.HasRows)
+            {
+                tablaVentas.Load(ventaReader);
+                datosVenta.cerrarConexion();
+
+                return tablaVentas;
+            }
+            else
+            {
+                datosVenta.cerrarConexion();
+
+                return tablaVentas;
+            }
+        }
 
         //funciones para Informes Ventas
 

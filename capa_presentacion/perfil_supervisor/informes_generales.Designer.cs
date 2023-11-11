@@ -29,43 +29,48 @@ namespace capa_presentacion.perfil_supervisor
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chartGeneral = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.chartCantidad = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.pnlInformesGenerales = new System.Windows.Forms.Panel();
-            this.btnGanancia = new System.Windows.Forms.Button();
-            this.btnCantidad = new System.Windows.Forms.Button();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.lblChartGanancia = new System.Windows.Forms.Label();
+            this.chartGanancia = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblNombreGrafico = new System.Windows.Forms.Label();
+            this.lblChartCantidad = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
             this.lblDesde = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxFiltro = new System.Windows.Forms.ComboBox();
             this.lblInformesG = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.chartGeneral)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCantidad)).BeginInit();
             this.pnlInformesGenerales.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartGanancia)).BeginInit();
             this.SuspendLayout();
             // 
-            // chartGeneral
+            // chartCantidad
             // 
-            this.chartGeneral.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea2.Name = "ChartArea1";
-            this.chartGeneral.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartGeneral.Legends.Add(legend2);
-            this.chartGeneral.Location = new System.Drawing.Point(282, 66);
-            this.chartGeneral.Name = "chartGeneral";
-            this.chartGeneral.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartGeneral.Series.Add(series2);
-            this.chartGeneral.Size = new System.Drawing.Size(394, 335);
-            this.chartGeneral.TabIndex = 0;
-            this.chartGeneral.Text = "Cantidad";
+            this.chartCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            chartArea3.Name = "ChartArea1";
+            this.chartCantidad.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartCantidad.Legends.Add(legend3);
+            this.chartCantidad.Location = new System.Drawing.Point(35, 143);
+            this.chartCantidad.Name = "chartCantidad";
+            this.chartCantidad.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartCantidad.Series.Add(series3);
+            this.chartCantidad.Size = new System.Drawing.Size(307, 242);
+            this.chartCantidad.TabIndex = 0;
+            this.chartCantidad.Text = "Cantidad";
             // 
             // dtpDesde
             // 
@@ -79,7 +84,7 @@ namespace capa_presentacion.perfil_supervisor
             // dtpHasta
             // 
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(89, 123);
+            this.dtpHasta.Location = new System.Drawing.Point(246, 78);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(96, 21);
             this.dtpHasta.TabIndex = 2;
@@ -90,16 +95,17 @@ namespace capa_presentacion.perfil_supervisor
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlInformesGenerales.BackColor = System.Drawing.Color.Beige;
-            this.pnlInformesGenerales.Controls.Add(this.btnGanancia);
-            this.pnlInformesGenerales.Controls.Add(this.btnCantidad);
+            this.pnlInformesGenerales.Controls.Add(this.btnGenerar);
+            this.pnlInformesGenerales.Controls.Add(this.lblChartGanancia);
+            this.pnlInformesGenerales.Controls.Add(this.chartGanancia);
             this.pnlInformesGenerales.Controls.Add(this.label5);
-            this.pnlInformesGenerales.Controls.Add(this.lblNombreGrafico);
+            this.pnlInformesGenerales.Controls.Add(this.lblChartCantidad);
             this.pnlInformesGenerales.Controls.Add(this.lblHasta);
             this.pnlInformesGenerales.Controls.Add(this.lblDesde);
             this.pnlInformesGenerales.Controls.Add(this.label1);
             this.pnlInformesGenerales.Controls.Add(this.cbxFiltro);
             this.pnlInformesGenerales.Controls.Add(this.lblInformesG);
-            this.pnlInformesGenerales.Controls.Add(this.chartGeneral);
+            this.pnlInformesGenerales.Controls.Add(this.chartCantidad);
             this.pnlInformesGenerales.Controls.Add(this.dtpHasta);
             this.pnlInformesGenerales.Controls.Add(this.dtpDesde);
             this.pnlInformesGenerales.Location = new System.Drawing.Point(12, 12);
@@ -107,50 +113,69 @@ namespace capa_presentacion.perfil_supervisor
             this.pnlInformesGenerales.Size = new System.Drawing.Size(693, 404);
             this.pnlInformesGenerales.TabIndex = 4;
             // 
-            // btnGanancia
+            // btnGenerar
             // 
-            this.btnGanancia.Location = new System.Drawing.Point(133, 238);
-            this.btnGanancia.Name = "btnGanancia";
-            this.btnGanancia.Size = new System.Drawing.Size(100, 23);
-            this.btnGanancia.TabIndex = 5;
-            this.btnGanancia.Text = "Ganancia Neta";
-            this.btnGanancia.UseVisualStyleBackColor = true;
-            this.btnGanancia.Click += new System.EventHandler(this.btnGanancia_Click);
+            this.btnGenerar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerar.Location = new System.Drawing.Point(548, 76);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(94, 23);
+            this.btnGenerar.TabIndex = 13;
+            this.btnGenerar.Text = "Generar";
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
-            // btnCantidad
+            // lblChartGanancia
             // 
-            this.btnCantidad.Location = new System.Drawing.Point(33, 238);
-            this.btnCantidad.Name = "btnCantidad";
-            this.btnCantidad.Size = new System.Drawing.Size(94, 23);
-            this.btnCantidad.TabIndex = 4;
-            this.btnCantidad.Text = "Cantidad";
-            this.btnCantidad.UseVisualStyleBackColor = true;
-            this.btnCantidad.Click += new System.EventHandler(this.btnCantidad_Click);
+            this.lblChartGanancia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblChartGanancia.AutoSize = true;
+            this.lblChartGanancia.Location = new System.Drawing.Point(354, 127);
+            this.lblChartGanancia.Name = "lblChartGanancia";
+            this.lblChartGanancia.Size = new System.Drawing.Size(103, 13);
+            this.lblChartGanancia.TabIndex = 12;
+            this.lblChartGanancia.Text = "Ganancia Neta : ";
+            // 
+            // chartGanancia
+            // 
+            this.chartGanancia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea4.Name = "ChartArea1";
+            this.chartGanancia.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartGanancia.Legends.Add(legend4);
+            this.chartGanancia.Location = new System.Drawing.Point(357, 143);
+            this.chartGanancia.Name = "chartGanancia";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartGanancia.Series.Add(series4);
+            this.chartGanancia.Size = new System.Drawing.Size(300, 242);
+            this.chartGanancia.TabIndex = 11;
+            this.chartGanancia.Text = "chart1";
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(32, 169);
+            this.label5.Location = new System.Drawing.Point(391, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Informacion Sobre";
             // 
-            // lblNombreGrafico
+            // lblChartCantidad
             // 
-            this.lblNombreGrafico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNombreGrafico.AutoSize = true;
-            this.lblNombreGrafico.Location = new System.Drawing.Point(446, 50);
-            this.lblNombreGrafico.Name = "lblNombreGrafico";
-            this.lblNombreGrafico.Size = new System.Drawing.Size(97, 13);
-            this.lblNombreGrafico.TabIndex = 9;
-            this.lblNombreGrafico.Text = "Nombre Grafico";
+            this.lblChartCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblChartCantidad.AutoSize = true;
+            this.lblChartCantidad.Location = new System.Drawing.Point(32, 127);
+            this.lblChartCantidad.Name = "lblChartCantidad";
+            this.lblChartCantidad.Size = new System.Drawing.Size(132, 13);
+            this.lblChartCantidad.TabIndex = 9;
+            this.lblChartCantidad.Text = "Cantidad de Ventas : ";
             // 
             // lblHasta
             // 
             this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(32, 129);
+            this.lblHasta.Location = new System.Drawing.Point(189, 84);
             this.lblHasta.Name = "lblHasta";
             this.lblHasta.Size = new System.Drawing.Size(44, 13);
             this.lblHasta.TabIndex = 8;
@@ -177,14 +202,15 @@ namespace capa_presentacion.perfil_supervisor
             // 
             // cbxFiltro
             // 
+            this.cbxFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxFiltro.FormattingEnabled = true;
             this.cbxFiltro.Items.AddRange(new object[] {
             "Tipo de Bebida",
             "Vendedores",
             "Marca"});
-            this.cbxFiltro.Location = new System.Drawing.Point(33, 194);
+            this.cbxFiltro.Location = new System.Drawing.Point(394, 78);
             this.cbxFiltro.Name = "cbxFiltro";
-            this.cbxFiltro.Size = new System.Drawing.Size(121, 21);
+            this.cbxFiltro.Size = new System.Drawing.Size(132, 21);
             this.cbxFiltro.TabIndex = 3;
             // 
             // lblInformesG
@@ -212,27 +238,29 @@ namespace capa_presentacion.perfil_supervisor
             this.Name = "informes_generales";
             this.Text = "informes_generales";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.chartGeneral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCantidad)).EndInit();
             this.pnlInformesGenerales.ResumeLayout(false);
             this.pnlInformesGenerales.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartGanancia)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartGeneral;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartCantidad;
         private System.Windows.Forms.DateTimePicker dtpDesde;
         private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.Panel pnlInformesGenerales;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblNombreGrafico;
+        private System.Windows.Forms.Label lblChartCantidad;
         private System.Windows.Forms.Label lblHasta;
         private System.Windows.Forms.Label lblDesde;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxFiltro;
         private System.Windows.Forms.Label lblInformesG;
-        private System.Windows.Forms.Button btnGanancia;
-        private System.Windows.Forms.Button btnCantidad;
+        private System.Windows.Forms.Label lblChartGanancia;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartGanancia;
+        private System.Windows.Forms.Button btnGenerar;
     }
 }
