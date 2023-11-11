@@ -358,6 +358,7 @@
             this.btnPass.TabIndex = 23;
             this.btnPass.Text = "contraseña";
             this.btnPass.UseVisualStyleBackColor = true;
+            this.btnPass.Click += new System.EventHandler(this.btnPass_Click);
             // 
             // alta_empleado
             // 

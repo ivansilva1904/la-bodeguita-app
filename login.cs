@@ -11,6 +11,7 @@ using capa_presentacion.perfil_administrador;
 using capa_presentacion.perfil_supervisor;
 using capa_presentacion.perfil_vendedor;
 using capa_negocio;
+using BCrypt.Net;
 
 namespace la_bodeguita
 {
@@ -46,9 +47,14 @@ namespace la_bodeguita
                     DataTable dtEmpleado = negocioEmpleado.buscarEmpleadoPorDNI(int.Parse(txtUsuario.Text));
                     if(dtEmpleado.Rows[0].Field<bool>("Baja").ToString() == "False")
                     {
-                        //Aca iria el if para verificar la contraseña
+
+                        if (! BCrypt.Net.BCrypt.Verify(txtContra.Text, dtEmpleado.Rows[0].Field<string>("Contraseña").ToString()))
+                        {
+                            MessageBox.Show("Contraseña incorrecta");
+                            return;
+                        }
+
                         this.Hide();
-                        lblTest.Text = "log correcto";
 
                         switch(dtEmpleado.Rows[0].Field<int>("Tipo empleado"))
                         {
@@ -82,6 +88,12 @@ namespace la_bodeguita
                     MessageBox.Show("El empleado no existe. Contacte al administrador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string hashp = BCrypt.Net.BCrypt.HashPassword(txtContra.Text);
+            txtUsuario.Text = hashp;
         }
     }
 }

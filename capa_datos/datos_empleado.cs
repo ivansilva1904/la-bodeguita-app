@@ -142,7 +142,8 @@ namespace capa_datos
                 "telefono AS Telefono, " +
                 "email AS Email, " +
                 "idTipoEmpleado AS 'Tipo empleado', " +
-                "baja AS Baja " +
+                "baja AS Baja, " +
+                "contraseña AS 'Contraseña' " +
                 "FROM empleados " +
                 "WHERE dniEmpleado = " + dni;
 

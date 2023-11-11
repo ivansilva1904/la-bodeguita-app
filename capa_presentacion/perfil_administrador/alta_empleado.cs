@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
 using capa_negocio;
+using BCrypt.Net;
 
 namespace capa_presentacion.perfil_administrador
 {
@@ -176,6 +177,11 @@ namespace capa_presentacion.perfil_administrador
         {
            return comprobarCorreo != null && Regex.IsMatch(comprobarCorreo,@"^[^@\s]+@[^@\s]+\.[^@\s]+$");      
         }
- 
+
+        private void btnPass_Click(object sender, EventArgs e)
+        {
+            string hashp = BCrypt.Net.BCrypt.HashPassword(txtContraseña.Text);
+            MessageBox.Show(hashp + "\nCantidad de caracteres: " + hashp.Length);
+        }
     }
 }

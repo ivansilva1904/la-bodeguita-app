@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtContra = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelLogin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             // panelLogin
             // 
             this.panelLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLogin.Controls.Add(this.button1);
             this.panelLogin.Controls.Add(this.lblTest);
             this.panelLogin.Controls.Add(this.btnLogin);
             this.panelLogin.Controls.Add(this.label2);
@@ -120,6 +122,16 @@
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(103, 228);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +167,7 @@
         private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblTest;
+        private System.Windows.Forms.Button button1;
     }
 }
 

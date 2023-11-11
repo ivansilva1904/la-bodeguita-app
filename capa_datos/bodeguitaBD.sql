@@ -18,7 +18,7 @@ CREATE TABLE empleados(
 	direccion VARCHAR(30),
 	telefono VARCHAR(30),
 	email VARCHAR(30),
-	contraseña VARCHAR(30),
+	contraseña VARCHAR(100),
 	idTipoEmpleado INT,
 	baja BIT DEFAULT 0,
 	CONSTRAINT fk_tipoEmpleado FOREIGN KEY (idTipoEmpleado) REFERENCES tiposEmpleados(idTipoEmpleado)
@@ -105,10 +105,10 @@ INSERT INTO tiposEmpleados(descripcion) VALUES('Vendedor');
 INSERT INTO tiposEmpleados(descripcion) VALUES('Supervisor');
 INSERT INTO tiposEmpleados(descripcion) VALUES('Administrador');
 
-INSERT INTO empleados(dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, direccion, telefono, email, contraseña, idTipoEmpleado)
+/*INSERT INTO empleados(dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, direccion, telefono, email, contraseña, idTipoEmpleado)
 VALUES(11111111, 'El', 'Vendedor', '1900-01-01', GETDATE(), 'el infierno', '3123-64754', 'elvendedor@gmail.com', '123456', 1);
 INSERT INTO empleados(dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, direccion, telefono, email, contraseña, idTipoEmpleado)
-VALUES(22222222, 'El', 'Supervisor', '1900-01-01', GETDATE(), 'Otro lugar', '3123-4382432', 'elsuper@gmail.com', '12345', 2);
+VALUES(22222222, 'El', 'Supervisor', '1900-01-01', GETDATE(), 'Otro lugar', '3123-4382432', 'elsuper@gmail.com', '12345', 2);*/
 INSERT INTO empleados(dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, direccion, telefono, email, contraseña, idTipoEmpleado)
 VALUES(33333333, 'El', 'Administrador', '1900-01-01', GETDATE(), 'Algun lugar', '3123-438283', 'eladmin@gmail.com', '1234', 3);
 
