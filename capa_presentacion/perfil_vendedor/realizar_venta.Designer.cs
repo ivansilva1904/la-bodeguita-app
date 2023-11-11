@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnComprobante = new System.Windows.Forms.Button();
             this.lblVendedorDNI = new System.Windows.Forms.Label();
             this.lblVerificarDNI = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -54,7 +53,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Beige;
-            this.panel1.Controls.Add(this.btnComprobante);
             this.panel1.Controls.Add(this.lblVendedorDNI);
             this.panel1.Controls.Add(this.lblVerificarDNI);
             this.panel1.Controls.Add(this.lblFecha);
@@ -75,16 +73,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
-            // 
-            // btnComprobante
-            // 
-            this.btnComprobante.Location = new System.Drawing.Point(573, 155);
-            this.btnComprobante.Name = "btnComprobante";
-            this.btnComprobante.Size = new System.Drawing.Size(96, 23);
-            this.btnComprobante.TabIndex = 16;
-            this.btnComprobante.Text = "Comprobante";
-            this.btnComprobante.UseVisualStyleBackColor = true;
-            this.btnComprobante.Click += new System.EventHandler(this.btnComprobante_Click);
             // 
             // lblVendedorDNI
             // 
@@ -287,7 +275,6 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblVerificarDNI;
         private System.Windows.Forms.Label lblVendedorDNI;
-        private System.Windows.Forms.Button btnComprobante;
         private System.Windows.Forms.FolderBrowserDialog fbdComprobante;
     }
 }
