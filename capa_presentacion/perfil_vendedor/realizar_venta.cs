@@ -312,10 +312,26 @@ namespace capa_presentacion.perfil_vendedor
 
             documento.LoadHtml(html);
 
-            MessageBox.Show(html);
-            MessageBox.Show(documento.Text);
 
-            documento.GetElementbyId("nro-comprobante").InnerHtml = "Nro comprobante: 00001" + 1;
+            foreach(DataRow fila in dtVenta.Rows)
+            {
+                string nombreProducto = fila.Field<string>(5);
+                string cantidad = fila.Field<int>(6).ToString();
+                string precio = fila.Field<double>(7).ToString();
+                string subtotal = fila.Field<double>(8).ToString();
+
+                HtmlNode filaDetalle = HtmlNode.CreateNode(
+                    "<tr>" +
+                        "<td>" + nombreProducto + "</td>" +
+                        "<td>" + cantidad + "</td>" +
+                        "<td>" + precio + "</td>" +
+                        "<td>" + subtotal + "</td>" +
+                    "</tr>");
+
+                documento.GetElementbyId("venta-detalle").AppendChild(filaDetalle);
+            }
+
+
 
             documento.Save(directorio + "\\comprobantenose.html");
         }
