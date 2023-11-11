@@ -11,12 +11,13 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
 using capa_negocio;
+using BCrypt.Net;
 
 namespace capa_presentacion.perfil_administrador
 {
-    public partial class alta_usuario : Form
+    public partial class alta_empleado : Form
     {
-        public alta_usuario()
+        public alta_empleado()
         {
             InitializeComponent();
         }
@@ -70,61 +71,59 @@ namespace capa_presentacion.perfil_administrador
             string contraseña = txtContraseña.Text;
             string contraseña2 = txtContraseña2.Text;
 
-            if (!string.IsNullOrWhiteSpace(nombre) &&
-                !string.IsNullOrWhiteSpace(apellido) &&
-                !string.IsNullOrWhiteSpace(dni) &&
-                !string.IsNullOrWhiteSpace(email) &&
-                !string.IsNullOrWhiteSpace(telefono) &&
-                !string.IsNullOrWhiteSpace(contraseña) &&
-                !string.IsNullOrWhiteSpace(contraseña2) && 
-                (radbtnSupervisor.Checked == true || radbtnVendedor.Checked == true))
-            {
-                if (validarCorreo(email) == true)
-                {
-                    if (contraseña == contraseña2)
-                    {
-                        DialogResult resp = MessageBox.Show("Desea Ingresar el nuevo Empleado?",
-                            "Aviso",MessageBoxButtons.YesNo,
-                            MessageBoxIcon.Question);
-                        if (resp == DialogResult.Yes)
-                        {
-                            if (negocioEmpleado.verificarDNIExistente(int.Parse(dni)) == false)
-                            {
-                                negocioEmpleado.crearEmpleado(int.Parse(dni), nombre, apellido, fechaNac, direccion, telefono, email, contraseña, tipoEmpleado);
-                                MessageBox.Show("Se ha registrado el empleado",
-                                    "Aviso de Alta",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Exclamation);
-                            }
-                            else
-                            {
-                                MessageBox.Show("El cliente ya existe");
-                            }
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Las Contraseñas no coinciden",
-                        "Error Contraseña",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Email Invalido",
-                        "Email Invalido",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
-            }
-            else
+            if (string.IsNullOrWhiteSpace(nombre) ||
+                string.IsNullOrWhiteSpace(apellido) ||
+                string.IsNullOrWhiteSpace(dni) ||
+                string.IsNullOrWhiteSpace(email) ||
+                string.IsNullOrWhiteSpace(telefono) ||
+                string.IsNullOrWhiteSpace(contraseña) ||
+                string.IsNullOrWhiteSpace(contraseña2) ||
+                (radbtnSupervisor.Checked == false || radbtnVendedor.Checked == false))
             {
                 MessageBox.Show("Debe completar todos los campos",
                     "Campos faltantes o erroneos",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+                return;
             }
+
+            if(validarCorreo(email) == false)
+            {
+                MessageBox.Show("Email Invalido",
+                    "Email Invalido",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            if(contraseña != contraseña2)
+            {
+                MessageBox.Show("Las Contraseñas no coinciden",
+                    "Error Contraseña",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult resp = MessageBox.Show("Desea Ingresar el nuevo Empleado?",
+                "Aviso", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if(resp == DialogResult.No)
+            {
+                return;
+            }
+
+            if(negocioEmpleado.verificarDNIExistente(int.Parse(dni)) == true)
+            {
+                MessageBox.Show("El cliente ya existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //Si no se cumplio nada de lo anterior, es seguro cargar al empleado
+            negocioEmpleado.crearEmpleado(int.Parse(dni), nombre, apellido, fechaNac, direccion, telefono, email, contraseña, tipoEmpleado);
+
+            //El MessageBox de que el empleado se cargo se envio a la funcion insertEmpleado para mantener la consistencia de los avisos
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
@@ -176,6 +175,5 @@ namespace capa_presentacion.perfil_administrador
         {
            return comprobarCorreo != null && Regex.IsMatch(comprobarCorreo,@"^[^@\s]+@[^@\s]+\.[^@\s]+$");      
         }
- 
     }
 }
