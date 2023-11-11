@@ -48,7 +48,7 @@ namespace capa_datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar empleado: " + ex.Message);
+                MessageBox.Show("Error al cargar empleado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -156,73 +156,94 @@ namespace capa_datos
 
         public void updateEmpleado(int dni, string nombre, string apellido, string email, string telefono, string direccion, int tipoEmpleado, string nuevaContraseña)
         {
-            conexion.Open();
-
-            string query = "";
-
-            if(nuevaContraseña != "")
+            try
             {
-                query = "" +
-                    "UPDATE empleados " +
-                    "SET nombre = '"+ nombre + "', " +
-                    "apellido = '"+ apellido + "', " +
-                    "direccion = '"+ direccion + "', " +
-                    "telefono = '"+ telefono + "', " +
-                    "email = '"+ email + "', " +
-                    "idTipoEmpleado = "+ tipoEmpleado + ", " +
-                    "contraseña = '"+ nuevaContraseña + "' " +
-                    "WHERE dniEmpleado = "+ dni;
+                conexion.Open();
+
+                string query = "";
+
+                if(nuevaContraseña != "")
+                {
+                    query = "" +
+                        "UPDATE empleados " +
+                        "SET nombre = '"+ nombre + "', " +
+                        "apellido = '"+ apellido + "', " +
+                        "direccion = '"+ direccion + "', " +
+                        "telefono = '"+ telefono + "', " +
+                        "email = '"+ email + "', " +
+                        "idTipoEmpleado = "+ tipoEmpleado + ", " +
+                        "contraseña = '"+ nuevaContraseña + "' " +
+                        "WHERE dniEmpleado = "+ dni;
+                }
+                else
+                {
+                    query = "" +
+                        "UPDATE empleados " +
+                        "SET nombre = '" + nombre + "', " +
+                        "apellido = '" + apellido + "', " +
+                        "direccion = '" + direccion + "', " +
+                        "telefono = '" + telefono + "', " +
+                        "email = '" + email + "', " +
+                        "idTipoEmpleado = " + tipoEmpleado + " " +
+                        "WHERE dniEmpleado = " + dni;
+                }
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+
+                comando.ExecuteNonQuery();
+
+                cerrarConexion();
             }
-            else
+            catch(Exception ex)
             {
-                query = "" +
-                    "UPDATE empleados " +
-                    "SET nombre = '" + nombre + "', " +
-                    "apellido = '" + apellido + "', " +
-                    "direccion = '" + direccion + "', " +
-                    "telefono = '" + telefono + "', " +
-                    "email = '" + email + "', " +
-                    "idTipoEmpleado = " + tipoEmpleado + " " +
-                    "WHERE dniEmpleado = " + dni;
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            SqlCommand comando = new SqlCommand(query, conexion);
-
-            comando.ExecuteNonQuery();
-
-            cerrarConexion();
         }
 
         public void deleteEmpleado(int dni)
         {
-            conexion.Open();
+            try
+            {
+                conexion.Open();
 
-            string query = "" +
-                "UPDATE empleados " +
-                "SET baja = 1 " +
-                "WHERE dniEmpleado = "+ dni;
+                string query = "" +
+                    "UPDATE empleados " +
+                    "SET baja = 1 " +
+                    "WHERE dniEmpleado = "+ dni;
 
-            SqlCommand comando = new SqlCommand(query, conexion);
+                SqlCommand comando = new SqlCommand(query, conexion);
 
-            comando.ExecuteNonQuery();
+                comando.ExecuteNonQuery();
 
-            cerrarConexion();
+                cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         public void restoreEmpleado(int dni)
         {
-            conexion.Open();
+            try
+            {
+                conexion.Open();
 
-            string query = "" +
-                "UPDATE empleados " +
-                "SET baja = 0 " +
-                "WHERE dniEmpleado = " + dni;
+                string query = "" +
+                    "UPDATE empleados " +
+                    "SET baja = 0 " +
+                    "WHERE dniEmpleado = " + dni;
 
-            SqlCommand comando = new SqlCommand(query, conexion);
+                SqlCommand comando = new SqlCommand(query, conexion);
 
-            comando.ExecuteNonQuery();
+                comando.ExecuteNonQuery();
 
-            cerrarConexion();
+                cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
