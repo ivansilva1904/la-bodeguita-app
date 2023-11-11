@@ -1,6 +1,6 @@
 ﻿namespace capa_presentacion.perfil_administrador
 {
-    partial class alta_usuario
+    partial class alta_empleado
     {
         /// <summary>
         /// Required designer variable.
@@ -53,6 +53,7 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.btnLimpiarCampos = new System.Windows.Forms.Button();
             this.lblContraseña2 = new System.Windows.Forms.Label();
+            this.btnPass = new System.Windows.Forms.Button();
             this.pnlAltaUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,7 +118,7 @@
             this.lblTelefono.Location = new System.Drawing.Point(341, 212);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(56, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(55, 13);
             this.lblTelefono.TabIndex = 5;
             this.lblTelefono.Text = "Telefono";
             // 
@@ -230,10 +231,10 @@
             // 
             this.radbtnVendedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radbtnVendedor.AutoSize = true;
-            this.radbtnVendedor.Location = new System.Drawing.Point(486, 269);
+            this.radbtnVendedor.Location = new System.Drawing.Point(487, 269);
             this.radbtnVendedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radbtnVendedor.Name = "radbtnVendedor";
-            this.radbtnVendedor.Size = new System.Drawing.Size(80, 17);
+            this.radbtnVendedor.Size = new System.Drawing.Size(79, 17);
             this.radbtnVendedor.TabIndex = 17;
             this.radbtnVendedor.TabStop = true;
             this.radbtnVendedor.Text = "Vendedor";
@@ -280,6 +281,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlAltaUsuario.BackColor = System.Drawing.Color.Beige;
+            this.pnlAltaUsuario.Controls.Add(this.btnPass);
             this.pnlAltaUsuario.Controls.Add(this.txtDireccion);
             this.pnlAltaUsuario.Controls.Add(this.lblDireccion);
             this.pnlAltaUsuario.Controls.Add(this.btnLimpiarCampos);
@@ -348,7 +350,16 @@
             this.lblContraseña2.TabIndex = 7;
             this.lblContraseña2.Text = "Reingresar contraseña";
             // 
-            // alta_usuario
+            // btnPass
+            // 
+            this.btnPass.Location = new System.Drawing.Point(131, 389);
+            this.btnPass.Name = "btnPass";
+            this.btnPass.Size = new System.Drawing.Size(92, 23);
+            this.btnPass.TabIndex = 23;
+            this.btnPass.Text = "contraseña";
+            this.btnPass.UseVisualStyleBackColor = true;
+            // 
+            // alta_empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -364,7 +375,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "alta_usuario";
+            this.Name = "alta_empleado";
             this.Text = "Alta usuario";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlAltaUsuario.ResumeLayout(false);
@@ -400,5 +411,6 @@
         private System.Windows.Forms.Button btnLimpiarCampos;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.Button btnPass;
     }
 }

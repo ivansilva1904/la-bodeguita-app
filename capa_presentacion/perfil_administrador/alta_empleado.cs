@@ -14,9 +14,9 @@ using capa_negocio;
 
 namespace capa_presentacion.perfil_administrador
 {
-    public partial class alta_usuario : Form
+    public partial class alta_empleado : Form
     {
-        public alta_usuario()
+        public alta_empleado()
         {
             InitializeComponent();
         }

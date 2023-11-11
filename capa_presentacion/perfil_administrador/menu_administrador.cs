@@ -64,7 +64,7 @@ namespace capa_presentacion.perfil_administrador
         private void btnAltaEmpleado_Click(object sender, EventArgs e)
         {
             panFormsAdministrador.Controls.Clear();
-            alta_usuario vistaAltaUsuario = new alta_usuario();
+            alta_empleado vistaAltaUsuario = new alta_empleado();
             vistaAltaUsuario.TopLevel = false;
             //vistaAltaUsuario.FormBorderStyle = FormBorderStyle.None;
             vistaAltaUsuario.Dock = DockStyle.Fill;
@@ -216,7 +216,7 @@ namespace capa_presentacion.perfil_administrador
             foreach (Control control in panFormsAdministrador.Controls)
             {
                 formularioInterno = (Form)control;
-                if (formularioInterno is alta_usuario)
+                if (formularioInterno is alta_empleado)
                 {
                     formularioInterno.Size = panFormsAdministrador.Size;
                     formularioInterno.WindowState = FormWindowState.Normal;
