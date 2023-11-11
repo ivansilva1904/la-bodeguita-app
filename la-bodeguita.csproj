@@ -100,5 +100,8 @@
   <ItemGroup>
     <None Include="Resources\pexels-pixabay-434311.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="capa_presentacion\Resources\logosinfondo12.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,24 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelLogin = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtContra = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelLogin.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::la_bodeguita.Properties.Resources.pexels_pixabay_434311;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(308, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(335, 313);
-            this.panel1.TabIndex = 4;
             // 
             // panelLogin
             // 
@@ -108,6 +99,15 @@
             this.txtUsuario.Size = new System.Drawing.Size(152, 27);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::la_bodeguita.Properties.Resources.pexels_pixabay_434311;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(308, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(335, 313);
+            this.panel1.TabIndex = 4;
             // 
             // login
             // 
