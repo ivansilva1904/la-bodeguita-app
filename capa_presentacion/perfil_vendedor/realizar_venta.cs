@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using capa_negocio;
 using System.IO;
 using HtmlAgilityPack;
+using System.Xml.Linq;
 
 namespace capa_presentacion.perfil_vendedor
 {
@@ -284,7 +285,7 @@ namespace capa_presentacion.perfil_vendedor
 
         private void btnComprobante_Click(object sender, EventArgs e)
         {
-            DataTable dtVenta = negocioVenta.listarVenta(2);
+            DataTable dtVenta = negocioVenta.listarVenta(1);
             string directorio = " ";
 
             if (dtVenta == null)
@@ -310,10 +311,18 @@ namespace capa_presentacion.perfil_vendedor
 
             var documento = new HtmlAgilityPack.HtmlDocument();
 
-            documento.LoadHtml(html);
+            documento.LoadHtml(Properties.Resources.modelo_comprobante);
 
+            string metodoPago = dtVenta.Rows[1].Field<int>(1) == 1 ? "Efectivo" : "Tarjeta";
 
-            foreach(DataRow fila in dtVenta.Rows)
+            documento.GetElementbyId("nro-comprobante").InnerHtml = "Nro. comprobante: " + 1;
+            documento.GetElementbyId("fecha").InnerHtml = "Fecha: " + dtVenta.Rows[1].Field<DateTime>(0).ToString("dd-MM-yyyy");
+            documento.GetElementbyId("empleado-nombre").InnerHtml = "Empleado: " + dtVenta.Rows[1].Field<string>(2);
+            documento.GetElementbyId("cliente-nombre").InnerHtml = "Cliente: " + dtVenta.Rows[1].Field<string>(4);
+            documento.GetElementbyId("cliente-dni").InnerHtml = "Cliente DNI: " + dtVenta.Rows[1].Field<int>(3).ToString();
+            documento.GetElementbyId("metodo-pago").InnerHtml = "Metodo de pago: " + metodoPago;
+
+            foreach (DataRow fila in dtVenta.Rows)
             {
                 string nombreProducto = fila.Field<string>(5);
                 string cantidad = fila.Field<int>(6).ToString();
@@ -331,9 +340,11 @@ namespace capa_presentacion.perfil_vendedor
                 documento.GetElementbyId("venta-detalle").AppendChild(filaDetalle);
             }
 
+            documento.GetElementbyId("monto-final").InnerHtml = "Monto final: $" + dtVenta.Rows[1].Field<double>(9).ToString();
 
 
-            documento.Save(directorio + "\\comprobantenose.html");
+
+            documento.Save(directorio + "\\comprobantefinal.html");
         }
 
         private void generarComprobante(int idCabecera)
@@ -351,7 +362,10 @@ namespace capa_presentacion.perfil_vendedor
                 return;
             }
 
+            start:
+
             fbdComprobante.Description = "Seleccione donde guardar el comprobante";
+            fbdComprobante.RootFolder = Environment.SpecialFolder.Desktop;
 
             DialogResult accion = fbdComprobante.ShowDialog();
 
@@ -370,11 +384,45 @@ namespace capa_presentacion.perfil_vendedor
                 }
                 else
                 {
-                    fbdComprobante.Dispose();
-                    generarComprobante(idCabecera);
+                    goto start; //EL FAMOSISIMO GOTO PAPAAAAAAAAAAAAAAAAAAAAAAAAAA
                 }
             }
 
+            //Aca recien comienza la carga del comprobante
+            var documento = new HtmlAgilityPack.HtmlDocument();
+
+            documento.LoadHtml(Properties.Resources.modelo_comprobante);
+
+            string metodoPago = dtVenta.Rows[0].Field<int>(1) == 1 ? "Efectivo" : "Tarjeta";
+
+            documento.GetElementbyId("nro-comprobante").InnerHtml = "Nro. comprobante: " + idCabecera;
+            documento.GetElementbyId("fecha").InnerHtml = "Fecha: " + dtVenta.Rows[0].Field<DateTime>(0).ToString("dd-MM-yyyy");
+            documento.GetElementbyId("empleado-nombre").InnerHtml = "Empleado: " + dtVenta.Rows[0].Field<string>(2);
+            documento.GetElementbyId("cliente-nombre").InnerHtml = "Cliente: " + dtVenta.Rows[0].Field<string>(4);
+            documento.GetElementbyId("cliente-dni").InnerHtml = "Cliente DNI: " + dtVenta.Rows[0].Field<int>(3).ToString();
+            documento.GetElementbyId("metodo-pago").InnerHtml = "Metodo de pago: " + metodoPago;
+
+            foreach (DataRow fila in dtVenta.Rows)
+            {
+                string nombreProducto = fila.Field<string>(5);
+                string cantidad = fila.Field<int>(6).ToString();
+                string precio = fila.Field<double>(7).ToString();
+                string subtotal = fila.Field<double>(8).ToString();
+
+                HtmlNode filaDetalle = HtmlNode.CreateNode(
+                    "<tr>" +
+                        "<td>" + nombreProducto + "</td>" +
+                        "<td>" + cantidad + "</td>" +
+                        "<td>" + precio + "</td>" +
+                        "<td>" + subtotal + "</td>" +
+                "</tr>");
+
+                documento.GetElementbyId("venta-detalle").AppendChild(filaDetalle);
+            }
+
+            documento.GetElementbyId("monto-final").InnerHtml = "Monto final: $" + dtVenta.Rows[0].Field<double>(9).ToString();
+
+            documento.Save(directorio + "\\comprobante_de_compra" + idCabecera + ".html");
         }
     }
 }

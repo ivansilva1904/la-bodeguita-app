@@ -192,7 +192,8 @@ BEGIN
 END;
 
 
-SELECT vc.fecha AS 'Fecha',
+SELECT 
+	vc.fecha AS 'Fecha',
 	vc.idFormaPago AS 'Forma pago',
 	emp.nombre + ' ' + emp.apellido AS 'Nombre empleado',
 	cli.dniCliente AS 'DNI cliente',
@@ -209,4 +210,3 @@ JOIN clientes cli ON vc.dniCliente = cli.dniCliente
 JOIN producto pro ON vd.idProducto = pro.idProducto
 JOIN marca mar ON pro.idMarca = mar.idMarca
 WHERE vc.idVentaCabecera = 2;
-

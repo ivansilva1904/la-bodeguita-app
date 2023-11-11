@@ -80,6 +80,8 @@ namespace capa_negocio
 
             dtVentas.Load(drVentas);
 
+            datosVenta.cerrarConexion();
+
             return dtVentas;
         }
     }
