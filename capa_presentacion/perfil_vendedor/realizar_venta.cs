@@ -90,7 +90,7 @@ namespace capa_presentacion.perfil_vendedor
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
 
-                            crearComprobante(idCabecera);
+                            generarComprobante(idCabecera);
                         }
                     }
                     else
@@ -284,22 +284,81 @@ namespace capa_presentacion.perfil_vendedor
 
         private void btnComprobante_Click(object sender, EventArgs e)
         {
+            DataTable dtVenta = negocioVenta.listarVenta(2);
+            string directorio = " ";
+
+            if (dtVenta == null)
+            {
+                return;
+            }
+            if (dtVenta.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontro la cabecera para formar el comprobante");
+                return;
+            }
+
+            DialogResult accion = fbdComprobante.ShowDialog();
+
+            if (accion == DialogResult.OK)
+            {
+                directorio = fbdComprobante.SelectedPath;
+            }
+
+            //string html = Properties.Resources.modelo_comprobante;
+
             string html = Properties.Resources.modelo_comprobante;
 
             var documento = new HtmlAgilityPack.HtmlDocument();
 
             documento.LoadHtml(html);
 
+            MessageBox.Show(html);
             MessageBox.Show(documento.Text);
 
             documento.GetElementbyId("nro-comprobante").InnerHtml = "Nro comprobante: 00001" + 1;
 
-            documento.Save("D:\\Usuario\\Desktop\\backup\\documento.html");
+            documento.Save(directorio + "\\comprobantenose.html");
         }
 
-        private void crearComprobante(int idCabecera)
+        private void generarComprobante(int idCabecera)
         {
             DataTable dtVenta = negocioVenta.listarVenta(idCabecera);
+            string directorio = " ";
+
+            if (dtVenta == null)
+            {
+                return;
+            }
+            if(dtVenta.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontro la cabecera para formar el comprobante");
+                return;
+            }
+
+            fbdComprobante.Description = "Seleccione donde guardar el comprobante";
+
+            DialogResult accion = fbdComprobante.ShowDialog();
+
+            if(accion == DialogResult.OK)
+            {
+                directorio = fbdComprobante.SelectedPath;
+            }
+            else
+            {
+                DialogResult resp = MessageBox.Show("Si sale ahora no podra guardar el comprobante. Esta seguro de continuar?",
+                    "Aviso", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+                if (resp == DialogResult.Yes)
+                {
+                    return;
+                }
+                else
+                {
+                    fbdComprobante.Dispose();
+                    generarComprobante(idCabecera);
+                }
+            }
+
         }
     }
 }
