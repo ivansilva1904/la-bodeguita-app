@@ -29,20 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvListadoProductos = new System.Windows.Forms.DataGridView();
+            this.lblListadoProductos = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblBuscar = new System.Windows.Forms.Label();
-            this.dgvListadoProductos = new System.Windows.Forms.DataGridView();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblListadoProductos = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProductos)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +55,27 @@
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
             // 
+            // dgvListadoProductos
+            // 
+            this.dgvListadoProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvListadoProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoProductos.Location = new System.Drawing.Point(33, 78);
+            this.dgvListadoProductos.Name = "dgvListadoProductos";
+            this.dgvListadoProductos.Size = new System.Drawing.Size(642, 347);
+            this.dgvListadoProductos.TabIndex = 1;
+            // 
+            // lblListadoProductos
+            // 
+            this.lblListadoProductos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblListadoProductos.AutoSize = true;
+            this.lblListadoProductos.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListadoProductos.Location = new System.Drawing.Point(223, 19);
+            this.lblListadoProductos.Name = "lblListadoProductos";
+            this.lblListadoProductos.Size = new System.Drawing.Size(265, 16);
+            this.lblListadoProductos.TabIndex = 0;
+            this.lblListadoProductos.Text = "Listado de los productos registados";
+            // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(340, 49);
@@ -71,6 +84,7 @@
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Visible = false;
             // 
             // textBox1
             // 
@@ -78,6 +92,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(148, 21);
             this.textBox1.TabIndex = 4;
+            this.textBox1.Visible = false;
             // 
             // comboBox1
             // 
@@ -91,6 +106,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(70, 21);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.Visible = false;
             // 
             // lblBuscar
             // 
@@ -100,84 +116,7 @@
             this.lblBuscar.Size = new System.Drawing.Size(69, 13);
             this.lblBuscar.TabIndex = 2;
             this.lblBuscar.Text = "Buscar Por";
-            // 
-            // dgvListadoProductos
-            // 
-            this.dgvListadoProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvListadoProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colID,
-            this.colDescripcion,
-            this.colProveedor,
-            this.colTipoProducto,
-            this.colMarca,
-            this.colLinea,
-            this.colPrecio,
-            this.colStock});
-            this.dgvListadoProductos.Location = new System.Drawing.Point(33, 78);
-            this.dgvListadoProductos.Name = "dgvListadoProductos";
-            this.dgvListadoProductos.Size = new System.Drawing.Size(642, 347);
-            this.dgvListadoProductos.TabIndex = 1;
-            // 
-            // colID
-            // 
-            this.colID.HeaderText = "ID Producto";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            // 
-            // colDescripcion
-            // 
-            this.colDescripcion.HeaderText = "Descripcion";
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.ReadOnly = true;
-            // 
-            // colProveedor
-            // 
-            this.colProveedor.HeaderText = "Proveedor";
-            this.colProveedor.Name = "colProveedor";
-            this.colProveedor.ReadOnly = true;
-            // 
-            // colTipoProducto
-            // 
-            this.colTipoProducto.HeaderText = "Tipo producto";
-            this.colTipoProducto.Name = "colTipoProducto";
-            this.colTipoProducto.ReadOnly = true;
-            // 
-            // colMarca
-            // 
-            this.colMarca.HeaderText = "Marca";
-            this.colMarca.Name = "colMarca";
-            this.colMarca.ReadOnly = true;
-            // 
-            // colLinea
-            // 
-            this.colLinea.HeaderText = "Linea";
-            this.colLinea.Name = "colLinea";
-            this.colLinea.ReadOnly = true;
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.HeaderText = "Precio";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
-            // 
-            // colStock
-            // 
-            this.colStock.HeaderText = "Stock";
-            this.colStock.Name = "colStock";
-            this.colStock.ReadOnly = true;
-            // 
-            // lblListadoProductos
-            // 
-            this.lblListadoProductos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblListadoProductos.AutoSize = true;
-            this.lblListadoProductos.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblListadoProductos.Location = new System.Drawing.Point(223, 19);
-            this.lblListadoProductos.Name = "lblListadoProductos";
-            this.lblListadoProductos.Size = new System.Drawing.Size(266, 16);
-            this.lblListadoProductos.TabIndex = 0;
-            this.lblListadoProductos.Text = "Listado de los productos registados";
+            this.lblBuscar.Visible = false;
             // 
             // listar_productos
             // 
@@ -194,6 +133,7 @@
             this.Name = "listar_productos";
             this.Text = "listar_productos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.listar_productos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProductos)).EndInit();
@@ -206,14 +146,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblListadoProductos;
         private System.Windows.Forms.DataGridView dgvListadoProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTipoProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLinea;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
