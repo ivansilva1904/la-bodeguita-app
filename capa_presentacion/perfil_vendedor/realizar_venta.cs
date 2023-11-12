@@ -90,6 +90,15 @@ namespace capa_presentacion.perfil_vendedor
             int idCabecera = 0;
             int dniCliente = int.Parse(txtDNICliente.Text);
 
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
             if (tipoPago == 1)
             {
                 idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, 0, importeTotal, dniEmpleado, dniCliente);

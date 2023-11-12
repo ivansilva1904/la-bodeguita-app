@@ -1,5 +1,4 @@
-﻿using capa_entidades;
-using capa_negocio;
+﻿using capa_negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

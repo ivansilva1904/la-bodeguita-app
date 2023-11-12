@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using capa_entidades;
 using capa_datos;
 using System.Data.SqlClient;
 using System.Net;

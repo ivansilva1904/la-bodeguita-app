@@ -284,10 +284,6 @@
     <None Include="Resources\pexels-photo-15455291.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\capa_entidades\capa_entidades.csproj">
-      <Project>{7cb0ed3e-8ede-41fa-a9b7-6fed48c389ad}</Project>
-      <Name>capa_entidades</Name>
-    </ProjectReference>
     <ProjectReference Include="..\capa_negocio\capa_negocio.csproj">
       <Project>{be8a7de5-84d6-4ef8-929f-52759bab15df}</Project>
       <Name>capa_negocio</Name>

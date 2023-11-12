@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using capa_negocio;
-using capa_entidades;
 
 namespace capa_presentacion.perfil_vendedor
 {
