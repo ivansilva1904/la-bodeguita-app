@@ -171,7 +171,6 @@
             this.pnlFormsSupervisor.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_wine_barrel;
             this.pnlFormsSupervisor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlFormsSupervisor.Location = new System.Drawing.Point(262, 0);
-            this.pnlFormsSupervisor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlFormsSupervisor.Name = "pnlFormsSupervisor";
             this.pnlFormsSupervisor.Size = new System.Drawing.Size(733, 466);
             this.pnlFormsSupervisor.TabIndex = 0;
@@ -179,7 +178,6 @@
             // menu_supervisor
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.pnlFormsSupervisor);
             this.Controls.Add(this.menuSupervisor);
@@ -202,12 +200,12 @@
 
         private System.Windows.Forms.Button btnAltaProovedor;
         private System.Windows.Forms.Panel menuSupervisor;
-        private System.Windows.Forms.Panel pnlFormsSupervisor;
         private System.Windows.Forms.Button btnAltaProducto;
         private System.Windows.Forms.Button btnModificarProveedor;
         private System.Windows.Forms.Button btnModificarProducto;
         private System.Windows.Forms.PictureBox picboxLogo;
         private System.Windows.Forms.Button btnInformeVentas;
         private System.Windows.Forms.Button btnInformesGenerales;
+        private System.Windows.Forms.Panel pnlFormsSupervisor;
     }
 }
