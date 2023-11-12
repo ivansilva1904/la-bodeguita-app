@@ -90,15 +90,6 @@ namespace capa_presentacion.perfil_vendedor
             int idCabecera = 0;
             int dniCliente = int.Parse(txtDNICliente.Text);
 
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-
-            }
-
             if (tipoPago == 1)
             {
                 idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, 0, importeTotal, dniEmpleado, dniCliente);
@@ -260,13 +251,24 @@ namespace capa_presentacion.perfil_vendedor
 
         private void dgvVentaDetalle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+
+            //Verifico que no intente ingresar una letra
+            string cantidadString = dgvVentaDetalle.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString();
+            int nuevaCantidad;
+
+            if (!int.TryParse(cantidadString, out nuevaCantidad))
+            {
+                dgvVentaDetalle.Rows[e.RowIndex].Cells["Cantidad"].Value = 1;
+                dgvVentaDetalle_CellEndEdit(sender, e);
+                return;
+            }
+
             //Obtengo el precio unitario del producto por medio de la copia del datatable
             //No se puede usar el valor del original porque esta bindeado a los cambios que se hagan dentro del datagrid
             float precioUnitario = float.Parse(dtDetalleCopia.Rows[e.RowIndex].Field<string>("Precio"));
 
             //Obtengo el valor del producto acumulado, por si ya se haya agregado mas de una unidad del mismo
             float precioProductoAcumulado = float.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Precio"].Value.ToString());
-            int nuevaCantidad = int.Parse(dgvVentaDetalle.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString());
 
             int stock = int.Parse(dtDetalleCopia.Rows[e.RowIndex].Field<string>("Stock"));
 
