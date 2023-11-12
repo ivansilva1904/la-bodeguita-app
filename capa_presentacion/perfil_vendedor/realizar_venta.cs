@@ -39,6 +39,18 @@ namespace capa_presentacion.perfil_vendedor
             else { return false; }
         }
 
+        private void limpiarCampos()
+        {
+            txtDNICliente.Clear();
+            lblVerificarDNI.Text = string.Empty;
+            rbutEfectivo.Checked = false;
+            rbutTarjeta.Checked = false;
+            txtTarjetaNumero.Clear();
+            formProductos.limpiarDTProductos();
+            txtMontoParcial.Clear();
+            formProductos = new productos(this);
+        }
+
         private void btnRealizarVenta_Click(object sender, EventArgs e)
         {
             float importeTotal = float.Parse(txtMontoParcial.Text);
@@ -50,18 +62,21 @@ namespace capa_presentacion.perfil_vendedor
                     "Campos faltantes o erroneos",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+                return;
             }
 
             if(dgvVentaDetalle.Rows.Count == 0)
             {
                 MessageBox.Show("No ha agregado ningun producto al detalle",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
             if(rbutEfectivo.Checked == false && rbutTarjeta.Checked == false)
             {
                 MessageBox.Show("Debe agregar un metodo de pago", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
             DialogResult resp = MessageBox.Show("Desea completar la venta?",
@@ -95,14 +110,12 @@ namespace capa_presentacion.perfil_vendedor
                 }
             }
 
-            if (verificarCabecera(idCabecera) == true)
-            {
-                negocioVenta.crearDetalles(idCabecera, dgvVentaDetalle);
-            }
-            else
+            if (verificarCabecera(idCabecera) == false)
             {
                 return;
             }
+
+            negocioVenta.crearDetalles(idCabecera, dgvVentaDetalle);
 
             MessageBox.Show("Se ha realizado la venta",
                 "Venta exitosa",
@@ -110,6 +123,8 @@ namespace capa_presentacion.perfil_vendedor
                 MessageBoxIcon.Exclamation);
 
             generarComprobante(idCabecera);
+
+            limpiarCampos();
         }
 
         private void txtDNICliente_KeyPress(object sender, KeyPressEventArgs e)

@@ -105,5 +105,10 @@ namespace capa_presentacion.perfil_vendedor
             e.Cancel = true;
             this.Hide();
         }
+
+        public void limpiarDTProductos()
+        {
+            dtProductos.Rows.Clear();
+        }
     }
 }
