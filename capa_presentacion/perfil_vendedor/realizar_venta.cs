@@ -44,75 +44,72 @@ namespace capa_presentacion.perfil_vendedor
             float importeTotal = float.Parse(txtMontoParcial.Text);
             int dniEmpleado = dtEmpleadoLogueado.Rows[0].Field<int>("DNI");
 
-            if (!string.IsNullOrWhiteSpace(txtDNICliente.Text))
-            {
-                if(dgvVentaDetalle.Rows.Count > 0)
-                {
-                    if (rbutEfectivo.Checked == true || rbutTarjeta.Checked == true)
-                    {
-                        DialogResult resp = MessageBox.Show("Desea completar la venta?",
-                                "Aviso", MessageBoxButtons.YesNo,
-                                MessageBoxIcon.Question);
-                        if (resp == DialogResult.Yes)
-                        {
-                            int tipoPago = rbutEfectivo.Checked ? 1 : 2;
-                            int idCabecera = 0;
-                            int dniCliente = int.Parse(txtDNICliente.Text);
-
-                            if(tipoPago == 1)
-                            {
-                                idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, 0, importeTotal, dniEmpleado, dniCliente);
-                            }
-                            else
-                            {
-                                if (!string.IsNullOrWhiteSpace(txtTarjetaNumero.Text))
-                                {
-                                    long tarjeta = long.Parse(txtTarjetaNumero.Text);
-                                    idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, tarjeta, importeTotal, dniEmpleado, dniCliente);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Debe ingresar una tarjeta");
-                                    return;
-                                }
-                            }
-
-                            if (verificarCabecera(idCabecera) == true)
-                            {
-                                negocioVenta.crearDetalles(idCabecera, dgvVentaDetalle);
-                            }
-                            else
-                            {
-                                return;
-                            }
-
-                            MessageBox.Show("Se ha realizado la venta",
-                                "Venta exitosa",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Exclamation);
-
-                            generarComprobante(idCabecera);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Debe agregar un metodo de pago", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No ha agregado ningun producto al detalle",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            else
+            if (string.IsNullOrWhiteSpace(txtDNICliente.Text))
             {
                 MessageBox.Show("El campo DNI Cliente no debe estar vacio",
                     "Campos faltantes o erroneos",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+
+            if(dgvVentaDetalle.Rows.Count == 0)
+            {
+                MessageBox.Show("No ha agregado ningun producto al detalle",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if(rbutEfectivo.Checked == false && rbutTarjeta.Checked == false)
+            {
+                MessageBox.Show("Debe agregar un metodo de pago", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            DialogResult resp = MessageBox.Show("Desea completar la venta?",
+                "Aviso", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if(resp == DialogResult.No)
+            {
+                return;
+            }
+
+            int tipoPago = rbutEfectivo.Checked ? 1 : 2;
+            int idCabecera = 0;
+            int dniCliente = int.Parse(txtDNICliente.Text);
+
+            if (tipoPago == 1)
+            {
+                idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, 0, importeTotal, dniEmpleado, dniCliente);
+            }
+            else
+            {
+                if (!string.IsNullOrWhiteSpace(txtTarjetaNumero.Text))
+                {
+                    long tarjeta = long.Parse(txtTarjetaNumero.Text);
+                    idCabecera = negocioVenta.crearCabecera(DateTime.Now, tipoPago, tarjeta, importeTotal, dniEmpleado, dniCliente);
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar una tarjeta");
+                    return;
+                }
+            }
+
+            if (verificarCabecera(idCabecera) == true)
+            {
+                negocioVenta.crearDetalles(idCabecera, dgvVentaDetalle);
+            }
+            else
+            {
+                return;
+            }
+
+            MessageBox.Show("Se ha realizado la venta",
+                "Venta exitosa",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
+
+            generarComprobante(idCabecera);
         }
 
         private void txtDNICliente_KeyPress(object sender, KeyPressEventArgs e)
