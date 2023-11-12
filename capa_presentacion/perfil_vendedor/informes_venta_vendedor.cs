@@ -43,13 +43,14 @@ namespace capa_presentacion.perfil_vendedor
         private void informes_venta_vendedor_Load(object sender, EventArgs e)
         {
             string dniEmpleado = Convert.ToString(dtEmpleadoLogueado.Rows[0].Field<int>("DNI"));
+            label2.Text = dniEmpleado;
             DataGridViewButtonColumn columnaBotonDetalles = new DataGridViewButtonColumn();
             columnaBotonDetalles.HeaderText = "Detalle Venta";
             columnaBotonDetalles.Name = "colDetalleVenta";
             columnaBotonDetalles.Text = "Detalle Venta";
             columnaBotonDetalles.UseColumnTextForButtonValue = true;
             dgvVentasVendedor.Columns.Add(columnaBotonDetalles);
-            DataTable tablaVentas = negocioVenta.ventasInformesMultiuso(dtpDesde.Value, dtpHasta.Value,dniEmpleado, "");
+            DataTable tablaVentas = negocioVenta.ventasInformesMultiuso(dtpDesde.Value, dtpHasta.Value, dniEmpleado, "");
             dgvVentasVendedor.DataSource = tablaVentas;
 
         }
@@ -63,13 +64,14 @@ namespace capa_presentacion.perfil_vendedor
             if (desde < hasta)
             {
                 //Busqueda filtro solo por fecha
-                if (String.IsNullOrWhiteSpace(dniCliente))
+                if (String.IsNullOrWhiteSpace(dniCliente) == true)
                 {
                     DataTable tablaVentas = negocioVenta.ventasInformesMultiuso(desde, hasta, dniEmpleado, "");
+                    recargar_dgvVentasVendedor(tablaVentas);
                 }
                 else if (String.IsNullOrWhiteSpace(dniCliente) == false)
                 {//Verifica que dicho empleado exista
-                    if (negocioCliente.verificarClienteExistente(Convert.ToInt32(dniEmpleado)) == true)
+                    if (negocioCliente.verificarClienteExistente(Convert.ToInt32(dniCliente)) == true)
                     {
                         DataTable tablaVentas = negocioVenta.ventasInformesMultiuso(desde, hasta, dniEmpleado, dniCliente);
                         recargar_dgvVentasVendedor(tablaVentas);
