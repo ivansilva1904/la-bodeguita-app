@@ -13,6 +13,7 @@ using capa_negocio;
 using System.IO;
 using HtmlAgilityPack;
 using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace capa_presentacion.perfil_vendedor
 {
@@ -59,9 +60,7 @@ namespace capa_presentacion.perfil_vendedor
             if (string.IsNullOrWhiteSpace(txtDNICliente.Text))
             {
                 MessageBox.Show("El campo DNI Cliente no debe estar vacio",
-                    "Campos faltantes o erroneos",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                    "Campos faltantes o erroneos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -80,8 +79,7 @@ namespace capa_presentacion.perfil_vendedor
             }
 
             DialogResult resp = MessageBox.Show("Desea completar la venta?",
-                "Aviso", MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
+                "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if(resp == DialogResult.No)
             {
@@ -117,10 +115,8 @@ namespace capa_presentacion.perfil_vendedor
 
             negocioVenta.crearDetalles(idCabecera, dgvVentaDetalle);
 
-            MessageBox.Show("Se ha realizado la venta",
-                "Venta exitosa",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Exclamation);
+            MessageBox.Show("Se ha realizado la venta", "Venta exitosa",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             generarComprobante(idCabecera);
 
@@ -310,32 +306,6 @@ namespace capa_presentacion.perfil_vendedor
                 return;
             }
 
-            start:
-
-            fbdComprobante.Description = "Seleccione donde guardar el comprobante";
-            fbdComprobante.RootFolder = Environment.SpecialFolder.Desktop;
-
-            DialogResult accion = fbdComprobante.ShowDialog();
-
-            if(accion == DialogResult.OK)
-            {
-                directorio = fbdComprobante.SelectedPath;
-            }
-            else
-            {
-                DialogResult resp = MessageBox.Show("Si sale ahora no podra guardar el comprobante. Esta seguro de continuar?",
-                    "Aviso", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-                if (resp == DialogResult.Yes)
-                {
-                    return;
-                }
-                else
-                {
-                    goto start; //EL FAMOSISIMO GOTO PAPAAAAAAAAAAAAAAAAAAAAAAAAAA
-                }
-            }
-
             //Aca recien comienza la carga del comprobante
             var documento = new HtmlAgilityPack.HtmlDocument();
 
@@ -370,7 +340,11 @@ namespace capa_presentacion.perfil_vendedor
 
             documento.GetElementbyId("monto-final").InnerHtml = "Monto final: $" + dtVenta.Rows[0].Field<double>(9).ToString();
 
-            documento.Save(directorio + "\\comprobante_de_compra" + idCabecera + ".html");
+            directorio = Application.StartupPath.Replace("bin\\Debug", "comprobantes") + "\\comprobante_de_compra" + idCabecera + ".html";
+
+            documento.Save(directorio);
+
+            Process.Start(directorio);
         }
     }
 }
