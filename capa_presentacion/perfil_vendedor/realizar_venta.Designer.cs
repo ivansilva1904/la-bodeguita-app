@@ -214,9 +214,9 @@
             this.dgvVentaDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvVentaDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentaDetalle.Location = new System.Drawing.Point(76, 222);
+            this.dgvVentaDetalle.Location = new System.Drawing.Point(61, 222);
             this.dgvVentaDetalle.Name = "dgvVentaDetalle";
-            this.dgvVentaDetalle.Size = new System.Drawing.Size(544, 150);
+            this.dgvVentaDetalle.Size = new System.Drawing.Size(583, 150);
             this.dgvVentaDetalle.TabIndex = 2;
             this.dgvVentaDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentaDetalle_CellContentClick);
             this.dgvVentaDetalle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentaDetalle_CellEndEdit);

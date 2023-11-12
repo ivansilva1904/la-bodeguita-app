@@ -183,8 +183,35 @@ namespace capa_presentacion.perfil_vendedor
                     formularioInterno.WindowState = FormWindowState.Normal;
                     formularioInterno.WindowState = FormWindowState.Maximized;
                 }
-              
+                if (formularioInterno is informes_venta_vendedor)
+                {
+                    formularioInterno.Size = panVistasMenu.Size;
+                    formularioInterno.WindowState = FormWindowState.Normal;
+                    formularioInterno.WindowState = FormWindowState.Maximized;
+                }
+
             }
+        }
+
+        private void btnInformesVentas_Click(object sender, EventArgs e)
+        {
+            panVistasMenu.Controls.Clear();
+            informes_venta_vendedor vistaInformesVentas = new informes_venta_vendedor(dtEmpleadoLogueado);
+            vistaInformesVentas.TopLevel = false;
+            vistaInformesVentas.FormBorderStyle = FormBorderStyle.None;
+            vistaInformesVentas.Dock = DockStyle.Fill;
+            panVistasMenu.Controls.Add(vistaInformesVentas);
+            vistaInformesVentas.Show();
+        }
+
+        private void btnInformesVentas_MouseHover(object sender, EventArgs e)
+        {
+            btnInformesVentas.BackColor = Color.Bisque;
+        }
+
+        private void btnInformesVentas_MouseLeave(object sender, EventArgs e)
+        {
+            btnInformesVentas.BackColor = Color.Tan;
         }
     }
 }

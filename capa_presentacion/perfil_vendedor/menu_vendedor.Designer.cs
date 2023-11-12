@@ -36,6 +36,7 @@
             this.btnAltaCliente = new System.Windows.Forms.Button();
             this.picboxLogo = new System.Windows.Forms.PictureBox();
             this.panVistasMenu = new System.Windows.Forms.Panel();
+            this.btnInformesVentas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +46,7 @@
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.Tan;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnInformesVentas);
             this.panel1.Controls.Add(this.btnListarProductos);
             this.panel1.Controls.Add(this.btnListarClientes);
             this.panel1.Controls.Add(this.btnRealizarVenta);
@@ -158,6 +160,21 @@
             this.panVistasMenu.Size = new System.Drawing.Size(733, 466);
             this.panVistasMenu.TabIndex = 1;
             // 
+            // btnInformesVentas
+            // 
+            this.btnInformesVentas.FlatAppearance.BorderSize = 0;
+            this.btnInformesVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformesVentas.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformesVentas.Location = new System.Drawing.Point(-2, 397);
+            this.btnInformesVentas.Name = "btnInformesVentas";
+            this.btnInformesVentas.Size = new System.Drawing.Size(257, 50);
+            this.btnInformesVentas.TabIndex = 6;
+            this.btnInformesVentas.Text = "Informes Ventas";
+            this.btnInformesVentas.UseVisualStyleBackColor = true;
+            this.btnInformesVentas.Click += new System.EventHandler(this.btnInformesVentas_Click);
+            this.btnInformesVentas.MouseLeave += new System.EventHandler(this.btnInformesVentas_MouseLeave);
+            this.btnInformesVentas.MouseHover += new System.EventHandler(this.btnInformesVentas_MouseHover);
+            // 
             // menu_vendedor
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -186,5 +203,6 @@
         private System.Windows.Forms.Button btnAltaCliente;
         private System.Windows.Forms.Button btnListarProductos;
         private System.Windows.Forms.Button btnListarClientes;
+        private System.Windows.Forms.Button btnInformesVentas;
     }
 }
