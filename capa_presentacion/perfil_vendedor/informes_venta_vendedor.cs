@@ -43,7 +43,6 @@ namespace capa_presentacion.perfil_vendedor
         private void informes_venta_vendedor_Load(object sender, EventArgs e)
         {
             string dniEmpleado = Convert.ToString(dtEmpleadoLogueado.Rows[0].Field<int>("DNI"));
-            label2.Text = dniEmpleado;
             DataGridViewButtonColumn columnaBotonDetalles = new DataGridViewButtonColumn();
             columnaBotonDetalles.HeaderText = "Detalle Venta";
             columnaBotonDetalles.Name = "colDetalleVenta";
