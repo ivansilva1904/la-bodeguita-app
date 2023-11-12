@@ -150,13 +150,11 @@ namespace capa_presentacion.perfil_supervisor
         {
             var senderGrid = (DataGridView)sender;
             //int indiceFila = e.RowIndex;
-            MessageBox.Show("hola 1");
+            
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-                
-                int cabecera = Convert.ToInt32(dgvVentas.Rows[e.RowIndex].Cells[1].Value.ToString());
-                MessageBox.Show("hola 2" + cabecera);
+                int cabecera = Convert.ToInt32(dgvVentas.Rows[e.RowIndex].Cells[1].Value.ToString());              
                 generarComprobante(cabecera);
             }
         }
