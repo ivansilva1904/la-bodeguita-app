@@ -52,6 +52,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Beige;
             this.panel1.Controls.Add(this.lblVendedorDNI);
             this.panel1.Controls.Add(this.lblVerificarDNI);
@@ -125,7 +128,7 @@
             this.rbutTarjeta.AutoSize = true;
             this.rbutTarjeta.Location = new System.Drawing.Point(265, 178);
             this.rbutTarjeta.Name = "rbutTarjeta";
-            this.rbutTarjeta.Size = new System.Drawing.Size(65, 17);
+            this.rbutTarjeta.Size = new System.Drawing.Size(66, 17);
             this.rbutTarjeta.TabIndex = 10;
             this.rbutTarjeta.TabStop = true;
             this.rbutTarjeta.Text = "Tarjeta";
@@ -167,11 +170,12 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(223, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 16);
+            this.label1.Size = new System.Drawing.Size(234, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "Ingrese los productos a vender";
             // 
@@ -195,6 +199,7 @@
             // 
             // btnBuscarProducto
             // 
+            this.btnBuscarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscarProducto.Location = new System.Drawing.Point(470, 95);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(150, 30);
@@ -206,6 +211,8 @@
             // dgvVentaDetalle
             // 
             this.dgvVentaDetalle.AllowUserToAddRows = false;
+            this.dgvVentaDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvVentaDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentaDetalle.Location = new System.Drawing.Point(76, 222);
             this.dgvVentaDetalle.Name = "dgvVentaDetalle";
@@ -235,8 +242,8 @@
             // 
             // realizar_venta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Cornsilk;
             this.BackgroundImage = global::capa_presentacion.Properties.Resources.purple_grapes_vineyard_napa_valley_napa_vineyard;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -248,6 +255,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "realizar_venta";
             this.Text = "La bodeguita - Realizar venta";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.realizar_venta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

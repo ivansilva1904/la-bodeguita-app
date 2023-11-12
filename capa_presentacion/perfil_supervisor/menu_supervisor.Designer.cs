@@ -30,13 +30,13 @@
         {
             this.btnAltaProovedor = new System.Windows.Forms.Button();
             this.menuSupervisor = new System.Windows.Forms.Panel();
+            this.btnInformesGenerales = new System.Windows.Forms.Button();
             this.btnInformeVentas = new System.Windows.Forms.Button();
             this.picboxLogo = new System.Windows.Forms.PictureBox();
             this.btnAltaProducto = new System.Windows.Forms.Button();
             this.btnModificarProveedor = new System.Windows.Forms.Button();
             this.btnModificarProducto = new System.Windows.Forms.Button();
             this.pnlFormsSupervisor = new System.Windows.Forms.Panel();
-            this.btnInformesGenerales = new System.Windows.Forms.Button();
             this.menuSupervisor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,19 @@
             this.menuSupervisor.Name = "menuSupervisor";
             this.menuSupervisor.Size = new System.Drawing.Size(262, 461);
             this.menuSupervisor.TabIndex = 1;
+            // 
+            // btnInformesGenerales
+            // 
+            this.btnInformesGenerales.FlatAppearance.BorderSize = 0;
+            this.btnInformesGenerales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformesGenerales.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformesGenerales.Location = new System.Drawing.Point(-2, 404);
+            this.btnInformesGenerales.Name = "btnInformesGenerales";
+            this.btnInformesGenerales.Size = new System.Drawing.Size(255, 50);
+            this.btnInformesGenerales.TabIndex = 3;
+            this.btnInformesGenerales.Text = "Informes Generales";
+            this.btnInformesGenerales.UseVisualStyleBackColor = true;
+            this.btnInformesGenerales.Click += new System.EventHandler(this.btnInformesGenerales_Click);
             // 
             // btnInformeVentas
             // 
@@ -160,21 +173,8 @@
             this.pnlFormsSupervisor.Location = new System.Drawing.Point(262, 0);
             this.pnlFormsSupervisor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlFormsSupervisor.Name = "pnlFormsSupervisor";
-            this.pnlFormsSupervisor.Size = new System.Drawing.Size(722, 461);
+            this.pnlFormsSupervisor.Size = new System.Drawing.Size(733, 466);
             this.pnlFormsSupervisor.TabIndex = 0;
-            // 
-            // btnInformesGenerales
-            // 
-            this.btnInformesGenerales.FlatAppearance.BorderSize = 0;
-            this.btnInformesGenerales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformesGenerales.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformesGenerales.Location = new System.Drawing.Point(-2, 404);
-            this.btnInformesGenerales.Name = "btnInformesGenerales";
-            this.btnInformesGenerales.Size = new System.Drawing.Size(255, 50);
-            this.btnInformesGenerales.TabIndex = 3;
-            this.btnInformesGenerales.Text = "Informes Generales";
-            this.btnInformesGenerales.UseVisualStyleBackColor = true;
-            this.btnInformesGenerales.Click += new System.EventHandler(this.btnInformesGenerales_Click);
             // 
             // menu_supervisor
             // 

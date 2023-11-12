@@ -42,6 +42,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.Tan;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.btnListarProductos);
@@ -50,9 +51,10 @@
             this.panel1.Controls.Add(this.btnModificarCliente);
             this.panel1.Controls.Add(this.btnAltaCliente);
             this.panel1.Controls.Add(this.picboxLogo);
-            this.panel1.Location = new System.Drawing.Point(-1, -1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 466);
+            this.panel1.Size = new System.Drawing.Size(262, 461);
             this.panel1.TabIndex = 0;
             // 
             // btnListarProductos
@@ -145,6 +147,10 @@
             // 
             // panVistasMenu
             // 
+            this.panVistasMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panVistasMenu.AutoSize = true;
             this.panVistasMenu.BackgroundImage = global::capa_presentacion.Properties.Resources.purple_grapes_vineyard_napa_valley_napa_vineyard;
             this.panVistasMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panVistasMenu.Location = new System.Drawing.Point(254, -1);
@@ -154,8 +160,7 @@
             // 
             // menu_vendedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.panVistasMenu);
             this.Controls.Add(this.panel1);
@@ -163,9 +168,11 @@
             this.Name = "menu_vendedor";
             this.Text = "La bodeguita - Menu vendedor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_vendedor_FormClosing);
+            this.SizeChanged += new System.EventHandler(this.menu_vendedor_SizeChanged);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
