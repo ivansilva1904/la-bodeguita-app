@@ -23,10 +23,9 @@ namespace capa_presentacion.perfil_administrador
 
         private void btnGenerarRespaldo_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtNombreRespaldo.Text) && !string.IsNullOrWhiteSpace(txtDirectorio.Text))
+            if (!string.IsNullOrWhiteSpace(txtDirectorio.Text))
             {
                 string directorio = txtDirectorio.Text;
-                string nombreArchivo = txtNombreRespaldo.Text;
 
                 DialogResult resp = MessageBox.Show("Desea crear el respaldo de la base de datos?",
                     "Confirmar",
@@ -34,7 +33,7 @@ namespace capa_presentacion.perfil_administrador
                     MessageBoxIcon.Question);
                 if(resp == DialogResult.Yes)
                 {
-                    negocioBackup.crearBackup(directorio, nombreArchivo);
+                    negocioBackup.crearBackup(directorio);
                 }
             }
             else
@@ -53,7 +52,7 @@ namespace capa_presentacion.perfil_administrador
 
             if (fwdDirectorio.ShowDialog() == DialogResult.OK)
             {
-                txtDirectorio.Text = fwdDirectorio.SelectedPath;
+                txtDirectorio.Text = fwdDirectorio.SelectedPath + "\\bodeguitaBD_" + DateTime.Now.ToString("dd-MM-yyyy_H.mm");
             }
         }
     }

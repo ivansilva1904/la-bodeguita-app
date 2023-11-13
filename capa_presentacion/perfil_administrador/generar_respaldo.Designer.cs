@@ -33,8 +33,6 @@
             this.txtDirectorio = new System.Windows.Forms.TextBox();
             this.lblDirectorio = new System.Windows.Forms.Label();
             this.btnGenerarRespaldo = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNombreRespaldo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.fwdDirectorio = new System.Windows.Forms.FolderBrowserDialog();
             this.panel1.SuspendLayout();
@@ -50,8 +48,6 @@
             this.panel1.Controls.Add(this.txtDirectorio);
             this.panel1.Controls.Add(this.lblDirectorio);
             this.panel1.Controls.Add(this.btnGenerarRespaldo);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtNombreRespaldo);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
@@ -60,7 +56,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(545, 152);
+            this.btnBuscar.Location = new System.Drawing.Point(545, 176);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 22);
             this.btnBuscar.TabIndex = 6;
@@ -70,7 +66,7 @@
             // 
             // txtDirectorio
             // 
-            this.txtDirectorio.Location = new System.Drawing.Point(199, 152);
+            this.txtDirectorio.Location = new System.Drawing.Point(199, 176);
             this.txtDirectorio.Name = "txtDirectorio";
             this.txtDirectorio.ReadOnly = true;
             this.txtDirectorio.Size = new System.Drawing.Size(326, 21);
@@ -79,7 +75,7 @@
             // lblDirectorio
             // 
             this.lblDirectorio.AutoSize = true;
-            this.lblDirectorio.Location = new System.Drawing.Point(67, 155);
+            this.lblDirectorio.Location = new System.Drawing.Point(67, 179);
             this.lblDirectorio.Name = "lblDirectorio";
             this.lblDirectorio.Size = new System.Drawing.Size(63, 13);
             this.lblDirectorio.TabIndex = 4;
@@ -95,22 +91,6 @@
             this.btnGenerarRespaldo.Text = "Generar Respaldo";
             this.btnGenerarRespaldo.UseVisualStyleBackColor = true;
             this.btnGenerarRespaldo.Click += new System.EventHandler(this.btnGenerarRespaldo_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 218);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nombre respaldo";
-            // 
-            // txtNombreRespaldo
-            // 
-            this.txtNombreRespaldo.Location = new System.Drawing.Point(199, 215);
-            this.txtNombreRespaldo.Name = "txtNombreRespaldo";
-            this.txtNombreRespaldo.Size = new System.Drawing.Size(326, 21);
-            this.txtNombreRespaldo.TabIndex = 1;
             // 
             // label1
             // 
@@ -148,8 +128,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnGenerarRespaldo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNombreRespaldo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtDirectorio;
