@@ -108,6 +108,7 @@
             // 
             this.txtTarjetaNumero.Enabled = false;
             this.txtTarjetaNumero.Location = new System.Drawing.Point(356, 177);
+            this.txtTarjetaNumero.MaxLength = 16;
             this.txtTarjetaNumero.Name = "txtTarjetaNumero";
             this.txtTarjetaNumero.Size = new System.Drawing.Size(165, 21);
             this.txtTarjetaNumero.TabIndex = 12;
@@ -223,6 +224,7 @@
             // txtDNICliente
             // 
             this.txtDNICliente.Location = new System.Drawing.Point(76, 101);
+            this.txtDNICliente.MaxLength = 8;
             this.txtDNICliente.Name = "txtDNICliente";
             this.txtDNICliente.Size = new System.Drawing.Size(150, 21);
             this.txtDNICliente.TabIndex = 1;
