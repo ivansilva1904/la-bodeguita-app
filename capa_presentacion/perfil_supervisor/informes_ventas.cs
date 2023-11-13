@@ -163,7 +163,7 @@ namespace capa_presentacion.perfil_supervisor
         {
            
             DataTable dtVenta = negocioVenta.listarVenta(idCabecera);
-            string directorio = " ";
+
 
             if (dtVenta == null || dtVenta.Rows.Count == 0)
             {
@@ -173,7 +173,7 @@ namespace capa_presentacion.perfil_supervisor
 
             
 
-            //Aca recien comienza la carga del comprobante
+            //carga del comprobante
             var documento = new HtmlAgilityPack.HtmlDocument();
 
             documento.LoadHtml(Properties.Resources.modelo_comprobante);
@@ -208,24 +208,22 @@ namespace capa_presentacion.perfil_supervisor
             documento.GetElementbyId("monto-final").InnerHtml = "Monto final: $" + dtVenta.Rows[0].Field<double>(9).ToString();
 
             
-            // Guarda el contenido HTML en una cadena en lugar de en un archivo
+            // Guarda el contenido HTML en una cadena 
             string contenidoHTML = documento.DocumentNode.OuterHtml;
 
             // Llama a la función para abrir el navegador con el contenido HTML
-            AbrirNavegadorConHTML(contenidoHTML);
+            AbrirNavegadorConHTML(contenidoHTML,idCabecera);
         }
 
 
-        private void AbrirNavegadorConHTML(string contenidoHTML)
+        private void AbrirNavegadorConHTML(string contenidoHTML,int idCabecera)
         {
             try
             {
                 // Crea un archivo HTML temporal en una ubicación temporal del sistema
-                string rutaArchivoHTML = Path.Combine(Path.GetTempPath(), "comprobante_temporal.html");
-
+                string rutaArchivoHTML = Path.Combine(Path.GetTempPath(), "comprobante_temporal_venta" + idCabecera + ".html");
                 // Escribe el contenido HTML en el archivo temporal
                 File.WriteAllText(rutaArchivoHTML, contenidoHTML);
-
                 // Utiliza Process.Start para abrir el navegador predeterminado con el archivo HTML
                 Process.Start(new ProcessStartInfo
                 {

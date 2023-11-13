@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInformesVentas = new System.Windows.Forms.Button();
             this.btnListarProductos = new System.Windows.Forms.Button();
             this.btnListarClientes = new System.Windows.Forms.Button();
             this.btnRealizarVenta = new System.Windows.Forms.Button();
@@ -36,7 +37,6 @@
             this.btnAltaCliente = new System.Windows.Forms.Button();
             this.picboxLogo = new System.Windows.Forms.PictureBox();
             this.panVistasMenu = new System.Windows.Forms.Panel();
-            this.btnInformesVentas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +58,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(262, 461);
             this.panel1.TabIndex = 0;
+            // 
+            // btnInformesVentas
+            // 
+            this.btnInformesVentas.FlatAppearance.BorderSize = 0;
+            this.btnInformesVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformesVentas.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformesVentas.Location = new System.Drawing.Point(-2, 397);
+            this.btnInformesVentas.Name = "btnInformesVentas";
+            this.btnInformesVentas.Size = new System.Drawing.Size(257, 50);
+            this.btnInformesVentas.TabIndex = 6;
+            this.btnInformesVentas.Text = "Informes Ventas";
+            this.btnInformesVentas.UseVisualStyleBackColor = true;
+            this.btnInformesVentas.Click += new System.EventHandler(this.btnInformesVentas_Click);
+            this.btnInformesVentas.MouseEnter += new System.EventHandler(this.btnInformesVentas_MouseEnter);
+            this.btnInformesVentas.MouseLeave += new System.EventHandler(this.btnInformesVentas_MouseLeave);
             // 
             // btnListarProductos
             // 
@@ -159,21 +174,6 @@
             this.panVistasMenu.Name = "panVistasMenu";
             this.panVistasMenu.Size = new System.Drawing.Size(733, 466);
             this.panVistasMenu.TabIndex = 1;
-            // 
-            // btnInformesVentas
-            // 
-            this.btnInformesVentas.FlatAppearance.BorderSize = 0;
-            this.btnInformesVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformesVentas.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformesVentas.Location = new System.Drawing.Point(-2, 397);
-            this.btnInformesVentas.Name = "btnInformesVentas";
-            this.btnInformesVentas.Size = new System.Drawing.Size(257, 50);
-            this.btnInformesVentas.TabIndex = 6;
-            this.btnInformesVentas.Text = "Informes Ventas";
-            this.btnInformesVentas.UseVisualStyleBackColor = true;
-            this.btnInformesVentas.Click += new System.EventHandler(this.btnInformesVentas_Click);
-            this.btnInformesVentas.MouseLeave += new System.EventHandler(this.btnInformesVentas_MouseLeave);
-            this.btnInformesVentas.MouseHover += new System.EventHandler(this.btnInformesVentas_MouseHover);
             // 
             // menu_vendedor
             // 

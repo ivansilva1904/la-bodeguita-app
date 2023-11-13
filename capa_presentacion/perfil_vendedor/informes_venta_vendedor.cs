@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+using System.Diagnostics;
+
 using capa_negocio;
 using System.IO;
 using HtmlAgilityPack;
@@ -23,8 +26,9 @@ namespace capa_presentacion.perfil_vendedor
         public informes_venta_vendedor(DataTable dtEmpleado)
         {
             InitializeComponent();
-
+            
             dtEmpleadoLogueado = dtEmpleado;
+            
         }
 
         
@@ -99,5 +103,90 @@ namespace capa_presentacion.perfil_vendedor
             dgvVentasVendedor.DataSource = tablaVentas;
         }
 
+        private void dgvVentasVendedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            //int indiceFila = e.RowIndex;
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                int cabecera = Convert.ToInt32(dgvVentasVendedor.Rows[e.RowIndex].Cells[1].Value.ToString());
+                generarComprobante(cabecera);
+            }
+        }
+
+
+
+        private void generarComprobante(int idCabecera)
+        {
+            DataTable dtVenta = negocioVenta.listarVenta(idCabecera);
+            if (dtVenta == null || dtVenta.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontró la cabecera para formar el comprobante");
+                return;
+            }
+            //carga del comprobante
+            var documento = new HtmlAgilityPack.HtmlDocument();
+
+            documento.LoadHtml(Properties.Resources.modelo_comprobante);
+
+            string metodoPago = dtVenta.Rows[0].Field<int>(1) == 1 ? "Efectivo" : "Tarjeta";
+
+            documento.GetElementbyId("nro-comprobante").InnerHtml = "Nro. comprobante: " + idCabecera;
+            documento.GetElementbyId("fecha").InnerHtml = "Fecha: " + dtVenta.Rows[0].Field<DateTime>(0).ToString("dd-MM-yyyy");
+            documento.GetElementbyId("empleado-nombre").InnerHtml = "Empleado: " + dtVenta.Rows[0].Field<string>(2);
+            documento.GetElementbyId("cliente-nombre").InnerHtml = "Cliente: " + dtVenta.Rows[0].Field<string>(4);
+            documento.GetElementbyId("cliente-dni").InnerHtml = "Cliente DNI: " + dtVenta.Rows[0].Field<int>(3).ToString();
+            documento.GetElementbyId("metodo-pago").InnerHtml = "Metodo de pago: " + metodoPago;
+
+            foreach (DataRow fila in dtVenta.Rows)
+            {
+                string nombreProducto = fila.Field<string>(5);
+                string cantidad = fila.Field<int>(6).ToString();
+                string precio = fila.Field<double>(7).ToString();
+                string subtotal = fila.Field<double>(8).ToString();
+
+                HtmlNode filaDetalle = HtmlNode.CreateNode(
+                    "<tr>" +
+                        "<td>" + nombreProducto + "</td>" +
+                        "<td>" + cantidad + "</td>" +
+                        "<td>" + precio + "</td>" +
+                        "<td>" + subtotal + "</td>" +
+                "</tr>");
+
+                documento.GetElementbyId("venta-detalle").AppendChild(filaDetalle);
+            }
+
+            documento.GetElementbyId("monto-final").InnerHtml = "Monto final: $" + dtVenta.Rows[0].Field<double>(9).ToString();
+
+
+            // Guarda el contenido HTML en una cadena 
+            string contenidoHTML = documento.DocumentNode.OuterHtml;
+
+            // Llama a la función para abrir el navegador con el contenido HTML
+            AbrirNavegadorConHTML(contenidoHTML,idCabecera);
+        }
+
+
+        private void AbrirNavegadorConHTML(string contenidoHTML,int idCabecera)
+        {
+            try
+            {
+                // Crea un archivo HTML temporal en una ubicación temporal del sistema
+                string rutaArchivoHTML = Path.Combine(Path.GetTempPath(), "comprobante_temporal_venta"+idCabecera+".html");
+                // Escribe el contenido HTML en el archivo temporal
+                File.WriteAllText(rutaArchivoHTML, contenidoHTML);
+                // Utiliza Process.Start para abrir el navegador predeterminado con el archivo HTML
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = rutaArchivoHTML,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al intentar abrir el navegador: {ex.Message}");
+            }
+        }
     }
 }

@@ -88,6 +88,8 @@
             this.btnInformesGenerales.Text = "Informes Generales";
             this.btnInformesGenerales.UseVisualStyleBackColor = true;
             this.btnInformesGenerales.Click += new System.EventHandler(this.btnInformesGenerales_Click);
+            this.btnInformesGenerales.MouseEnter += new System.EventHandler(this.btnInformesGenerales_MouseEnter);
+            this.btnInformesGenerales.MouseLeave += new System.EventHandler(this.btnInformesGenerales_MouseLeave);
             // 
             // btnInformeVentas
             // 

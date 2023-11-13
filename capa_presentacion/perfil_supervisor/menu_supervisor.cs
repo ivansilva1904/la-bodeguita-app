@@ -210,5 +210,15 @@ namespace capa_presentacion.perfil_supervisor
             pnlFormsSupervisor.Controls.Add(vistaInformeGeneral);
             vistaInformeGeneral.Show();
         }
+
+        private void btnInformesGenerales_MouseEnter(object sender, EventArgs e)
+        {
+            btnInformesGenerales.BackColor = Color.Bisque;
+        }
+
+        private void btnInformesGenerales_MouseLeave(object sender, EventArgs e)
+        {
+            btnInformesGenerales.BackColor = Color.Tan;
+        }
     }
 }

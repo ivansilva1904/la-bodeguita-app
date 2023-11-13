@@ -80,6 +80,7 @@ namespace capa_presentacion.perfil_vendedor
             this.dgvVentasVendedor.Name = "dgvVentasVendedor";
             this.dgvVentasVendedor.Size = new System.Drawing.Size(703, 183);
             this.dgvVentasVendedor.TabIndex = 15;
+            this.dgvVentasVendedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentasVendedor_CellContentClick);
             // 
             // txtDniCliente
             // 

@@ -204,7 +204,7 @@ namespace capa_presentacion.perfil_vendedor
             vistaInformesVentas.Show();
         }
 
-        private void btnInformesVentas_MouseHover(object sender, EventArgs e)
+        private void btnInformesVentas_MouseEnter(object sender, EventArgs e)
         {
             btnInformesVentas.BackColor = Color.Bisque;
         }
@@ -213,5 +213,6 @@ namespace capa_presentacion.perfil_vendedor
         {
             btnInformesVentas.BackColor = Color.Tan;
         }
+
     }
 }
