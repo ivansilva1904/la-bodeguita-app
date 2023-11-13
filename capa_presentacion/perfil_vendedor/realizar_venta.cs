@@ -162,6 +162,10 @@ namespace capa_presentacion.perfil_vendedor
             dgvVentaDetalle.Columns[1].ReadOnly = true;
             dgvVentaDetalle.Columns[2].ReadOnly = true;
             dgvVentaDetalle.Columns[4].Visible = false;
+            dgvVentaDetalle.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dgvVentaDetalle.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvVentaDetalle.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dgvVentaDetalle.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 
             dtDetalleCopia.Clear();
             dtDetalleCopia = producto.Clone();
