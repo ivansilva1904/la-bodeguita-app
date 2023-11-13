@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtNombreProducto = new System.Windows.Forms.TextBox();
+            this.lblBuscar = new System.Windows.Forms.Label();
             this.dgvListadoProductos = new System.Windows.Forms.DataGridView();
             this.lblListadoProductos = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblBuscar = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProductos)).BeginInit();
             this.SuspendLayout();
@@ -45,8 +44,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.btnBuscar);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.txtNombreProducto);
             this.panel1.Controls.Add(this.lblBuscar);
             this.panel1.Controls.Add(this.dgvListadoProductos);
             this.panel1.Controls.Add(this.lblListadoProductos);
@@ -54,6 +52,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(329, 49);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(116, 23);
+            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtNombreProducto
+            // 
+            this.txtNombreProducto.Location = new System.Drawing.Point(147, 49);
+            this.txtNombreProducto.MaxLength = 30;
+            this.txtNombreProducto.Name = "txtNombreProducto";
+            this.txtNombreProducto.Size = new System.Drawing.Size(166, 21);
+            this.txtNombreProducto.TabIndex = 4;
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Location = new System.Drawing.Point(35, 54);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(106, 13);
+            this.lblBuscar.TabIndex = 2;
+            this.lblBuscar.Text = "Nombre producto";
             // 
             // dgvListadoProductos
             // 
@@ -75,48 +100,6 @@
             this.lblListadoProductos.Size = new System.Drawing.Size(265, 16);
             this.lblListadoProductos.TabIndex = 0;
             this.lblListadoProductos.Text = "Listado de los productos registados";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(340, 49);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(116, 23);
-            this.btnBuscar.TabIndex = 5;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Visible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(186, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 21);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Visible = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "ID Producto",
-            "Descripcion",
-            "Proveedor",
-            "Precio"});
-            this.comboBox1.Location = new System.Drawing.Point(110, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(70, 21);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.Visible = false;
-            // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(35, 54);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(69, 13);
-            this.lblBuscar.TabIndex = 2;
-            this.lblBuscar.Text = "Buscar Por";
-            this.lblBuscar.Visible = false;
             // 
             // listar_productos
             // 
@@ -147,8 +130,7 @@
         private System.Windows.Forms.Label lblListadoProductos;
         private System.Windows.Forms.DataGridView dgvListadoProductos;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtNombreProducto;
         private System.Windows.Forms.Label lblBuscar;
     }
 }
