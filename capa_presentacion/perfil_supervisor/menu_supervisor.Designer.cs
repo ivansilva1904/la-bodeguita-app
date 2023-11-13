@@ -188,7 +188,7 @@
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "menu_supervisor";
-            this.Text = "Supervisor";
+            this.Text = "La bodeguita - Menu supervisor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_supervisor_FormClosing);
             this.SizeChanged += new System.EventHandler(this.menu_supervisor_SizeChanged);
             this.menuSupervisor.ResumeLayout(false);

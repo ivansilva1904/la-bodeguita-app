@@ -168,7 +168,7 @@
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Name = "menu_administrador";
-            this.Text = "menu";
+            this.Text = "La bodeguita - Menu administrador";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_administrador_FormClosing);
             this.SizeChanged += new System.EventHandler(this.menu_administrador_SizeChanged);
             this.panOpciones.ResumeLayout(false);
