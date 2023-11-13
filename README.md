@@ -1,6 +1,11 @@
 # la-bodeguita-app
 
-Para acceder a cada menu del sistema debe usar los siguientes usuarios en el login: 1 - Administrador; 2 - Supervisor; 3 - Vendedor
+Script SQL en /capa_datos/bodeguitaBD.sql
+
+Usuarios por defecto del sistema:
+Vendedor - DNI: 11111111 PASSWORD: 12
+Supervisor - DNI: 22222222 PASSWORD: 123
+Administrador - DNI: 33333333 PASSWORD: 1234
 
 ERS: https://docs.google.com/document/d/1EYbKJGRKlkF2NouZH-YFr9591NWEvCgQw5QeAyjQ93M/edit?usp=sharing
 
