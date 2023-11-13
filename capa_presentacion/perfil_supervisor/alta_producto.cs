@@ -217,7 +217,5 @@ namespace capa_presentacion.perfil_supervisor
                 cbxMarca.Items.Add(lectorMarca.GetString(1));
             }
         }
-
-        
     }
 }

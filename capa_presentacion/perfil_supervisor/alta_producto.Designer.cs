@@ -93,6 +93,7 @@
             // 
             this.txtStockMinimo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStockMinimo.Location = new System.Drawing.Point(480, 170);
+            this.txtStockMinimo.MaxLength = 8;
             this.txtStockMinimo.Name = "txtStockMinimo";
             this.txtStockMinimo.Size = new System.Drawing.Size(176, 21);
             this.txtStockMinimo.TabIndex = 6;
@@ -132,7 +133,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(372, 216);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 20;
             this.label1.Text = "Precio Venta";
             // 
@@ -159,6 +160,7 @@
             // txtStock
             // 
             this.txtStock.Location = new System.Drawing.Point(148, 170);
+            this.txtStock.MaxLength = 8;
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(166, 21);
             this.txtStock.TabIndex = 5;

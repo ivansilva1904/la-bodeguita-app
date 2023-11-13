@@ -130,7 +130,7 @@
             this.lblTelefono.Location = new System.Drawing.Point(255, 135);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(56, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(55, 13);
             this.lblTelefono.TabIndex = 6;
             this.lblTelefono.Text = "Telefono";
             // 
@@ -201,7 +201,7 @@
             this.radbtnVendedor.Location = new System.Drawing.Point(136, 207);
             this.radbtnVendedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radbtnVendedor.Name = "radbtnVendedor";
-            this.radbtnVendedor.Size = new System.Drawing.Size(80, 17);
+            this.radbtnVendedor.Size = new System.Drawing.Size(79, 17);
             this.radbtnVendedor.TabIndex = 13;
             this.radbtnVendedor.TabStop = true;
             this.radbtnVendedor.Text = "Vendedor";
@@ -346,7 +346,7 @@
             // 
             this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtBuscar.Location = new System.Drawing.Point(117, 245);
-            this.txtBuscar.MaxLength = 30;
+            this.txtBuscar.MaxLength = 8;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(133, 21);
             this.txtBuscar.TabIndex = 6;
