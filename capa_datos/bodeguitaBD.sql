@@ -111,8 +111,14 @@ INSERT INTO empleados(dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, dire
 VALUES(22222222, 'El', 'Supervisor', '1900-01-01', GETDATE(), 'Otro lugar', '3123-4382432', 'elsuper@gmail.com', '$2a$11$Jz69JJLQp8py/5MnflbHde34DoERh/Y1UMadzk./WDsMIiSLTnGjK', 2);
 INSERT INTO empleados(dniEmpleado, nombre, apellido, fechaNac, fechaIncorp, direccion, telefono, email, contraseña, idTipoEmpleado)
 VALUES(33333333, 'El', 'Administrador', '1900-01-01', GETDATE(), 'Algun lugar', '3123-438283', 'eladmin@gmail.com', '$2a$11$Pn3k06A8YIuqS7cFeBhtXe5Zr6IoQJtj5sMjKgptsLRr.OMDo14Tq', 3);
+INSERT INTO empleados(dniEmpleado,nombre,apellido,fechaNac,fechaIncorp,direccion,telefono,email,contraseña,idTipoEmpleado)
+values (11222333,'vendedor','vendedor','02-06-99','20-06-22','azcuenaga 123','3794221133','vendedor@gmail.com','11222333',1);
+INSERT INTO empleados(dniEmpleado,nombre,apellido,fechaNac,fechaIncorp,direccion,telefono,email,contraseña,idTipoEmpleado)
+values (99888777,'vendedor2','vendedor2','02-04-99','20-06-22','belgrano 231','3794232322','vendedor2@gmail.com','99888777',1);
 
-/* datos de prueba sin DATE*/
+INSERT INTO clientes(dniCliente, nombre, apellido, email, fechaNac) VALUES (12345678,'Roberto','Ayala','rayala@live.com','20-02-88');
+INSERT INTO clientes(dniCliente, nombre, apellido, email, fechaNac) VALUES (13234456,'Julian','Gomez','jgomez@gmail.com','22-09-86');
+INSERT INTO clientes(dniCliente,nombre,apellido,email,fechaNac) VALUES (24666777,'Mariana','Avila','mavila@live.com','11-12-94');
 
 INSERT INTO proveedor(cuitProveedor,razonSocial,direccion,telefono,email) VALUES(77111111117,'Whiskeria UNO','Calle Falsa 111','3794000111','whiskeriaUNO@gmail.com');
 INSERT INTO proveedor(cuitProveedor,razonSocial,direccion,telefono,email) VALUES(77222222227,'CERVECERIA DOS','Calle Falsa 222','3794000222','cerveceriaDOS@live.com');
@@ -147,6 +153,25 @@ INSERT INTO formasPago(descripcion)
 VALUES('Efectivo');
 INSERT INTO formasPago(descripcion)
 VALUES('Tarjeta');
+
+INSERT INTO ventasCabecera(fecha, idFormaPago, importeTotal, dniEmpleado, dniCliente) VALUES ('22-10-23', 1, 8101.50, 99888777, 24666777);
+INSERT INTO ventasDetalle(idVentaCabecera, idProducto, cantidad, precioParcial) VALUES (1, 3, 2, 6001);
+INSERT INTO ventasDetalle(idVentaCabecera, idProducto, cantidad, precioParcial) VALUES (1, 4, 1, 4201);
+
+INSERT INTO ventasCabecera(fecha, idFormaPago, importeTotal, dniEmpleado, dniCliente) VALUES ('24-10-23', 1, 22500.50 , 99888777, 24666777);
+INSERT INTO ventasDetalle(idVentaCabecera, idProducto, cantidad, precioParcial) VALUES (2, 6, 1, 20000);
+INSERT INTO ventasDetalle(idVentaCabecera, idProducto, cantidad, precioParcial) VALUES (2, 2, 1, 2500.5);
+ 
+INSERT INTO ventasCabecera(fecha, idFormaPago, importeTotal, dniEmpleado, dniCliente) VALUES ('22-10-23', 1, 3751.5, 11222333, 13234456);
+INSERT INTO ventasDetalle(idVentaCabecera, idProducto, cantidad, precioParcial) VALUES (3, 1, 3, 3751.5);
+ 
+INSERT INTO ventasCabecera(fecha, idFormaPago, importeTotal, dniEmpleado, dniCliente) VALUES ('22-10-23', 1, 4251, 11222333, 12345678);
+INSERT INTO ventasDetalle(idVentaCabecera, idProducto, cantidad, precioParcial) VALUES (4, 1, 1, 1250.5);
+INSERT INTO ventasDetalle(idVentaCabecera, idProducto, cantidad, precioParcial) VALUES (4, 3, 1, 3000.5);
+ 
+INSERT INTO ventasCabecera(fecha, idFormaPago, importeTotal, dniEmpleado, dniCliente) VALUES ('29-10-23', 1, 8101.5, 11222333, 24666777);
+INSERT INTO ventasDetalle(idVentaCabecera, idProducto, cantidad, precioParcial) VALUES (5, 3, 2, 6001);
+INSERT INTO ventasDetalle(idVentaCabecera, idProducto, cantidad, precioParcial) VALUES (5, 4, 1, 2100.5);
 
 CREATE TRIGGER trg_ActualizarBaja
 ON producto
