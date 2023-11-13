@@ -78,6 +78,7 @@
             // 
             this.txtFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtFiltro.Location = new System.Drawing.Point(117, 257);
+            this.txtFiltro.MaxLength = 8;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(183, 21);
             this.txtFiltro.TabIndex = 14;
@@ -121,7 +122,7 @@
             this.lblTitulo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(154, 19);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(393, 16);
+            this.lblTitulo.Size = new System.Drawing.Size(392, 16);
             this.lblTitulo.TabIndex = 10;
             this.lblTitulo.Text = "Seleccione un usuario que desee modificar o eliminar";
             // 
@@ -140,6 +141,7 @@
             // 
             this.txtApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtApellido.Location = new System.Drawing.Point(437, 127);
+            this.txtApellido.MaxLength = 30;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(200, 21);
             this.txtApellido.TabIndex = 8;
@@ -148,6 +150,7 @@
             // 
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Location = new System.Drawing.Point(437, 77);
+            this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 21);
             this.txtEmail.TabIndex = 7;
@@ -155,6 +158,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(139, 124);
+            this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 21);
             this.txtNombre.TabIndex = 6;

@@ -79,9 +79,9 @@
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(44, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 18);
+            this.label1.Size = new System.Drawing.Size(39, 18);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Usuario";
+            this.label1.Text = "DNI";
             // 
             // txtContra
             // 
@@ -95,6 +95,7 @@
             // 
             this.txtUsuario.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtUsuario.Location = new System.Drawing.Point(47, 59);
+            this.txtUsuario.MaxLength = 8;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(152, 27);
             this.txtUsuario.TabIndex = 0;

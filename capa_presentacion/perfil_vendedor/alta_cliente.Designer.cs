@@ -98,7 +98,7 @@ namespace capa_presentacion.perfil_vendedor
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(96, 260);
+            this.txtEmail.Location = new System.Drawing.Point(96, 262);
             this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 21);

@@ -66,6 +66,7 @@
             // txtFiltroDni
             // 
             this.txtFiltroDni.Location = new System.Drawing.Point(61, 68);
+            this.txtFiltroDni.MaxLength = 8;
             this.txtFiltroDni.Name = "txtFiltroDni";
             this.txtFiltroDni.Size = new System.Drawing.Size(159, 21);
             this.txtFiltroDni.TabIndex = 3;
@@ -98,7 +99,7 @@
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(223, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 16);
+            this.label1.Size = new System.Drawing.Size(255, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Listado de los clientes registrados";
             // 
