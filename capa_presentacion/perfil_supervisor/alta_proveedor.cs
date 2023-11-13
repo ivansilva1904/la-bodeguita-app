@@ -1,4 +1,5 @@
-﻿using System;
+﻿using capa_negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace capa_presentacion.perfil_supervisor
         {
             InitializeComponent();
         }
-
+        NegocioProveedor negocioProveedor = new NegocioProveedor();
         private void btnGuardarProveedor_Click(object sender, EventArgs e)
         {
             DialogResult ask;
@@ -34,10 +35,19 @@ namespace capa_presentacion.perfil_supervisor
                     ask = MessageBox.Show("¿Seguro que desea insertar un nuevo Proveedor?", "Confirmar Insercion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (ask == DialogResult.Yes)
                     {
-
-                        //Mensaje de insercion correcta
-                        MessageBox.Show("El Proveedor se inserto correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                        long valor = long.Parse(txtCuit.Text);
+                        if (negocioProveedor.verificarCuitExistente(valor) == false)
+                        {
+                            negocioProveedor.crearProveedor(long.Parse(txtCuit.Text), txtRazonSocial.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text);
+                            MessageBox.Show("Se ha registrado el Proveedor",
+                            "Aviso de Alta",
+                            MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            MessageBox.Show("El Proveedor ya existe");
+                        }
                     }
                 }
                 else
@@ -91,5 +101,6 @@ namespace capa_presentacion.perfil_supervisor
         {
             return comprobarCorreo != null && Regex.IsMatch(comprobarCorreo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
         }
+
     }
 }

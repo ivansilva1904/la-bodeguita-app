@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblVendedorDNI = new System.Windows.Forms.Label();
+            this.lblVerificarDNI = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.txtTarjetaNumero = new System.Windows.Forms.TextBox();
             this.lblMedioPago = new System.Windows.Forms.Label();
             this.rbutTarjeta = new System.Windows.Forms.RadioButton();
             this.rbutEfectivo = new System.Windows.Forms.RadioButton();
@@ -39,21 +43,21 @@
             this.lblMontoParcial = new System.Windows.Forms.Label();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.dgvVentaDetalle = new System.Windows.Forms.DataGridView();
-            this.colCodProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtDNICliente = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
-            this.txtTarjetaNumero = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentaDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Controls.Add(this.lblVendedorDNI);
+            this.panel1.Controls.Add(this.lblVerificarDNI);
+            this.panel1.Controls.Add(this.lblFecha);
             this.panel1.Controls.Add(this.txtTarjetaNumero);
             this.panel1.Controls.Add(this.lblMedioPago);
             this.panel1.Controls.Add(this.rbutTarjeta);
@@ -71,6 +75,44 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
+            // 
+            // lblVendedorDNI
+            // 
+            this.lblVendedorDNI.AutoSize = true;
+            this.lblVendedorDNI.Location = new System.Drawing.Point(232, 59);
+            this.lblVendedorDNI.Name = "lblVendedorDNI";
+            this.lblVendedorDNI.Size = new System.Drawing.Size(119, 13);
+            this.lblVendedorDNI.TabIndex = 15;
+            this.lblVendedorDNI.Text = "acaben esta tortura";
+            // 
+            // lblVerificarDNI
+            // 
+            this.lblVerificarDNI.AutoSize = true;
+            this.lblVerificarDNI.Location = new System.Drawing.Point(232, 104);
+            this.lblVerificarDNI.Name = "lblVerificarDNI";
+            this.lblVerificarDNI.Size = new System.Drawing.Size(34, 13);
+            this.lblVerificarDNI.TabIndex = 14;
+            this.lblVerificarDNI.Text = "chau";
+            this.lblVerificarDNI.Visible = false;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(73, 59);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(24, 13);
+            this.lblFecha.TabIndex = 13;
+            this.lblFecha.Text = "ola";
+            // 
+            // txtTarjetaNumero
+            // 
+            this.txtTarjetaNumero.Enabled = false;
+            this.txtTarjetaNumero.Location = new System.Drawing.Point(356, 177);
+            this.txtTarjetaNumero.MaxLength = 16;
+            this.txtTarjetaNumero.Name = "txtTarjetaNumero";
+            this.txtTarjetaNumero.Size = new System.Drawing.Size(165, 21);
+            this.txtTarjetaNumero.TabIndex = 12;
+            this.txtTarjetaNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTarjetaNumero_KeyPress);
             // 
             // lblMedioPago
             // 
@@ -128,6 +170,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(223, 17);
@@ -143,6 +186,7 @@
             this.txtMontoParcial.ReadOnly = true;
             this.txtMontoParcial.Size = new System.Drawing.Size(150, 21);
             this.txtMontoParcial.TabIndex = 5;
+            this.txtMontoParcial.Text = "0";
             // 
             // lblMontoParcial
             // 
@@ -155,63 +199,38 @@
             // 
             // btnBuscarProducto
             // 
-            this.btnBuscarProducto.Location = new System.Drawing.Point(470, 92);
+            this.btnBuscarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscarProducto.Location = new System.Drawing.Point(470, 95);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(150, 30);
             this.btnBuscarProducto.TabIndex = 3;
             this.btnBuscarProducto.Text = "Buscar productos";
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // dgvVentaDetalle
             // 
             this.dgvVentaDetalle.AllowUserToAddRows = false;
+            this.dgvVentaDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvVentaDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentaDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colCodProducto,
-            this.colDescripcion,
-            this.colCantidad,
-            this.colPrecio,
-            this.colQuitar});
-            this.dgvVentaDetalle.Location = new System.Drawing.Point(76, 222);
+            this.dgvVentaDetalle.Location = new System.Drawing.Point(61, 222);
             this.dgvVentaDetalle.Name = "dgvVentaDetalle";
-            this.dgvVentaDetalle.Size = new System.Drawing.Size(544, 150);
+            this.dgvVentaDetalle.Size = new System.Drawing.Size(583, 150);
             this.dgvVentaDetalle.TabIndex = 2;
-            // 
-            // colCodProducto
-            // 
-            this.colCodProducto.HeaderText = "Cod. Producto";
-            this.colCodProducto.Name = "colCodProducto";
-            this.colCodProducto.ReadOnly = true;
-            // 
-            // colDescripcion
-            // 
-            this.colDescripcion.HeaderText = "Descripcion";
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.HeaderText = "Precio unitario";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
-            // 
-            // colQuitar
-            // 
-            this.colQuitar.HeaderText = "Quitar";
-            this.colQuitar.Name = "colQuitar";
+            this.dgvVentaDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentaDetalle_CellContentClick);
+            this.dgvVentaDetalle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentaDetalle_CellEndEdit);
             // 
             // txtDNICliente
             // 
             this.txtDNICliente.Location = new System.Drawing.Point(76, 101);
+            this.txtDNICliente.MaxLength = 8;
             this.txtDNICliente.Name = "txtDNICliente";
             this.txtDNICliente.Size = new System.Drawing.Size(150, 21);
             this.txtDNICliente.TabIndex = 1;
             this.txtDNICliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNICliente_KeyPress);
+            this.txtDNICliente.Validating += new System.ComponentModel.CancelEventHandler(this.txtDNICliente_Validating);
+            this.txtDNICliente.Validated += new System.EventHandler(this.txtDNICliente_Validated);
             // 
             // lblDNI
             // 
@@ -222,19 +241,10 @@
             this.lblDNI.TabIndex = 0;
             this.lblDNI.Text = "DNI del cliente";
             // 
-            // txtTarjetaNumero
-            // 
-            this.txtTarjetaNumero.Enabled = false;
-            this.txtTarjetaNumero.Location = new System.Drawing.Point(356, 177);
-            this.txtTarjetaNumero.Name = "txtTarjetaNumero";
-            this.txtTarjetaNumero.Size = new System.Drawing.Size(165, 21);
-            this.txtTarjetaNumero.TabIndex = 12;
-            this.txtTarjetaNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTarjetaNumero_KeyPress);
-            // 
             // realizar_venta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Cornsilk;
             this.BackgroundImage = global::capa_presentacion.Properties.Resources.purple_grapes_vineyard_napa_valley_napa_vineyard;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -246,6 +256,8 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "realizar_venta";
             this.Text = "La bodeguita - Realizar venta";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.realizar_venta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentaDetalle)).EndInit();
@@ -262,11 +274,6 @@
         private System.Windows.Forms.TextBox txtMontoParcial;
         private System.Windows.Forms.Label lblMontoParcial;
         private System.Windows.Forms.Button btnBuscarProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCodProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
-        private System.Windows.Forms.DataGridViewButtonColumn colQuitar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel lblRegistroCliente;
         private System.Windows.Forms.Button btnRealizarVenta;
@@ -274,5 +281,8 @@
         private System.Windows.Forms.RadioButton rbutTarjeta;
         private System.Windows.Forms.RadioButton rbutEfectivo;
         private System.Windows.Forms.TextBox txtTarjetaNumero;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label lblVerificarDNI;
+        private System.Windows.Forms.Label lblVendedorDNI;
     }
 }

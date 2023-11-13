@@ -236,3 +236,6 @@ capa_negocio/obj
 
 capa_entidades/bin
 capa_entidades/obj
+
+comprobantes/*
+!comprobantes/.gitkeep

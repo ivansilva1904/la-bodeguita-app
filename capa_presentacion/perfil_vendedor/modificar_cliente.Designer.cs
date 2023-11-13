@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnLimpiarCampos = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -40,22 +44,15 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblDNI = new System.Windows.Forms.Label();
             this.dgvClientesRegistrados = new System.Windows.Forms.DataGridView();
-            this.colDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colModificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.baja = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btnLimpiarCampos = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientesRegistrados)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Beige;
             this.panel1.Controls.Add(this.txtFiltro);
             this.panel1.Controls.Add(this.label1);
@@ -77,6 +74,48 @@
             this.panel1.Size = new System.Drawing.Size(706, 442);
             this.panel1.TabIndex = 0;
             // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtFiltro.Location = new System.Drawing.Point(117, 257);
+            this.txtFiltro.MaxLength = 8;
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(183, 21);
+            this.txtFiltro.TabIndex = 14;
+            this.txtFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltro_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Filtrar por DNI";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBuscar.Location = new System.Drawing.Point(316, 255);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 12;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnLimpiarCampos
+            // 
+            this.btnLimpiarCampos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(504, 192);
+            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(143, 25);
+            this.btnLimpiarCampos.TabIndex = 11;
+            this.btnLimpiarCampos.Text = "Limpiar campos";
+            this.btnLimpiarCampos.UseVisualStyleBackColor = true;
+            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
+            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
@@ -89,6 +128,7 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.Location = new System.Drawing.Point(504, 223);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(143, 27);
@@ -99,14 +139,18 @@
             // 
             // txtApellido
             // 
+            this.txtApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtApellido.Location = new System.Drawing.Point(437, 127);
+            this.txtApellido.MaxLength = 30;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(200, 21);
             this.txtApellido.TabIndex = 8;
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Location = new System.Drawing.Point(437, 77);
+            this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 21);
             this.txtEmail.TabIndex = 7;
@@ -114,6 +158,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(139, 124);
+            this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 21);
             this.txtNombre.TabIndex = 6;
@@ -128,6 +173,7 @@
             // 
             // lblApellido
             // 
+            this.lblApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblApellido.AutoSize = true;
             this.lblApellido.Location = new System.Drawing.Point(368, 130);
             this.lblApellido.Name = "lblApellido";
@@ -146,6 +192,7 @@
             // 
             // lblEmail
             // 
+            this.lblEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmail.AutoSize = true;
             this.lblEmail.Location = new System.Drawing.Point(368, 79);
             this.lblEmail.Name = "lblEmail";
@@ -164,91 +211,19 @@
             // 
             // dgvClientesRegistrados
             // 
+            this.dgvClientesRegistrados.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvClientesRegistrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientesRegistrados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colDNI,
-            this.colNombre,
-            this.colApellido,
-            this.colEmail,
-            this.colModificar,
-            this.baja});
             this.dgvClientesRegistrados.Location = new System.Drawing.Point(25, 289);
             this.dgvClientesRegistrados.Name = "dgvClientesRegistrados";
             this.dgvClientesRegistrados.Size = new System.Drawing.Size(650, 138);
             this.dgvClientesRegistrados.TabIndex = 0;
-            // 
-            // colDNI
-            // 
-            this.colDNI.HeaderText = "DNI";
-            this.colDNI.Name = "colDNI";
-            this.colDNI.ReadOnly = true;
-            // 
-            // colNombre
-            // 
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
-            // 
-            // colApellido
-            // 
-            this.colApellido.HeaderText = "Apellido";
-            this.colApellido.Name = "colApellido";
-            this.colApellido.ReadOnly = true;
-            // 
-            // colEmail
-            // 
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
-            // 
-            // colModificar
-            // 
-            this.colModificar.HeaderText = "Modificar";
-            this.colModificar.Name = "colModificar";
-            // 
-            // baja
-            // 
-            this.baja.HeaderText = "Dar de Baja";
-            this.baja.Name = "baja";
-            // 
-            // btnLimpiarCampos
-            // 
-            this.btnLimpiarCampos.Location = new System.Drawing.Point(504, 192);
-            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
-            this.btnLimpiarCampos.Size = new System.Drawing.Size(143, 25);
-            this.btnLimpiarCampos.TabIndex = 11;
-            this.btnLimpiarCampos.Text = "Limpiar Campos";
-            this.btnLimpiarCampos.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(316, 255);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 12;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 260);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Filtrar por DNI";
-            // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Location = new System.Drawing.Point(117, 257);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(183, 21);
-            this.txtFiltro.TabIndex = 14;
+            this.dgvClientesRegistrados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientesRegistrados_CellContentClick);
             // 
             // modificar_cliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Cornsilk;
             this.BackgroundImage = global::capa_presentacion.Properties.Resources.purple_grapes_vineyard_napa_valley_napa_vineyard;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -256,9 +231,12 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "modificar_cliente";
             this.Text = "La bodeguita - Modificar cliente";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.modificar_cliente_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientesRegistrados)).EndInit();
@@ -280,12 +258,6 @@
         private System.Windows.Forms.Label lblDNI;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
-        private System.Windows.Forms.DataGridViewButtonColumn colModificar;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn baja;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscar;

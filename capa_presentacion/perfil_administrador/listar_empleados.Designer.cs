@@ -29,78 +29,40 @@
         private void InitializeComponent()
         {
             this.pnlListarEmpleados = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dgvListaEmpleados = new System.Windows.Forms.DataGridView();
             this.lblDni = new System.Windows.Forms.Label();
-            this.dniEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaIncorporacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlListarEmpleados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlListarEmpleados
             // 
+            this.pnlListarEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlListarEmpleados.BackColor = System.Drawing.Color.Beige;
+            this.pnlListarEmpleados.Controls.Add(this.dgvListaEmpleados);
             this.pnlListarEmpleados.Controls.Add(this.lblDni);
-            this.pnlListarEmpleados.Controls.Add(this.button1);
-            this.pnlListarEmpleados.Controls.Add(this.textBox1);
-            this.pnlListarEmpleados.Controls.Add(this.dataGridView1);
+            this.pnlListarEmpleados.Controls.Add(this.btnBuscar);
+            this.pnlListarEmpleados.Controls.Add(this.txtDNI);
             this.pnlListarEmpleados.Controls.Add(this.label1);
             this.pnlListarEmpleados.Location = new System.Drawing.Point(12, 12);
             this.pnlListarEmpleados.Name = "pnlListarEmpleados";
             this.pnlListarEmpleados.Size = new System.Drawing.Size(709, 442);
             this.pnlListarEmpleados.TabIndex = 0;
             // 
-            // label1
+            // dgvListaEmpleados
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(291, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Lista Empleados";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dniEmpleado,
-            this.nombre,
-            this.apellido,
-            this.telefono,
-            this.fechaNac,
-            this.fechaIncorporacion,
-            this.activo,
-            this.tipo});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 103);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(703, 336);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(49, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 21);
-            this.textBox1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(269, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 21);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dgvListaEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvListaEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaEmpleados.Location = new System.Drawing.Point(26, 117);
+            this.dgvListaEmpleados.Name = "dgvListaEmpleados";
+            this.dgvListaEmpleados.Size = new System.Drawing.Size(654, 292);
+            this.dgvListaEmpleados.TabIndex = 5;
             // 
             // lblDni
             // 
@@ -111,50 +73,40 @@
             this.lblDni.TabIndex = 4;
             this.lblDni.Text = "DNI";
             // 
-            // dniEmpleado
+            // btnBuscar
             // 
-            this.dniEmpleado.HeaderText = "DNI";
-            this.dniEmpleado.Name = "dniEmpleado";
+            this.btnBuscar.Location = new System.Drawing.Point(269, 76);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 21);
+            this.btnBuscar.TabIndex = 3;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // nombre
+            // txtDNI
             // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
+            this.txtDNI.Location = new System.Drawing.Point(49, 76);
+            this.txtDNI.MaxLength = 8;
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(214, 21);
+            this.txtDNI.TabIndex = 2;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
-            // apellido
+            // label1
             // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            // 
-            // fechaNac
-            // 
-            this.fechaNac.HeaderText = "Fecha Nacimiento";
-            this.fechaNac.Name = "fechaNac";
-            // 
-            // fechaIncorporacion
-            // 
-            this.fechaIncorporacion.HeaderText = "Fecha Incorporacion";
-            this.fechaIncorporacion.Name = "fechaIncorporacion";
-            // 
-            // activo
-            // 
-            this.activo.HeaderText = "Activo";
-            this.activo.Name = "activo";
-            // 
-            // tipo
-            // 
-            this.tipo.HeaderText = "Tipo Empleado";
-            this.tipo.Name = "tipo";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(291, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Lista Empleados";
             // 
             // listar_empleados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_15455291;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(733, 466);
@@ -165,9 +117,11 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "listar_empleados";
             this.Text = "listar_empleados";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.listar_empleados_Load);
             this.pnlListarEmpleados.ResumeLayout(false);
             this.pnlListarEmpleados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaEmpleados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,17 +130,9 @@
 
         private System.Windows.Forms.Panel pnlListarEmpleados;
         private System.Windows.Forms.Label lblDni;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dniEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaNac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaIncorporacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn activo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvListaEmpleados;
     }
 }

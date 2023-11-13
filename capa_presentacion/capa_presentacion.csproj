@@ -31,10 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net35\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.54.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.54\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,17 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="perfil_administrador\alta_usuario.cs">
+    <Compile Include="perfil_administrador\alta_empleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="perfil_administrador\alta_usuario.Designer.cs">
-      <DependentUpon>alta_usuario.cs</DependentUpon>
+    <Compile Include="perfil_administrador\alta_empleado.Designer.cs">
+      <DependentUpon>alta_empleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="perfil_administrador\baja_usuario.cs">
+    <Compile Include="perfil_administrador\baja_empleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="perfil_administrador\baja_usuario.Designer.cs">
-      <DependentUpon>baja_usuario.cs</DependentUpon>
+    <Compile Include="perfil_administrador\baja_empleado.Designer.cs">
+      <DependentUpon>baja_empleado.cs</DependentUpon>
     </Compile>
     <Compile Include="perfil_administrador\generar_respaldo.cs">
       <SubType>Form</SubType>
@@ -73,11 +80,11 @@
     <Compile Include="perfil_administrador\menu_administrador.Designer.cs">
       <DependentUpon>menu_administrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="perfil_administrador\modificar_usuario.cs">
+    <Compile Include="perfil_administrador\modificar_empleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="perfil_administrador\modificar_usuario.Designer.cs">
-      <DependentUpon>modificar_usuario.cs</DependentUpon>
+    <Compile Include="perfil_administrador\modificar_empleado.Designer.cs">
+      <DependentUpon>modificar_empleado.cs</DependentUpon>
     </Compile>
     <Compile Include="perfil_supervisor\alta_producto.cs">
       <SubType>Form</SubType>
@@ -96,6 +103,12 @@
     </Compile>
     <Compile Include="perfil_supervisor\baja_proveedor.Designer.cs">
       <DependentUpon>baja_proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="perfil_supervisor\informes_generales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="perfil_supervisor\informes_generales.Designer.cs">
+      <DependentUpon>informes_generales.cs</DependentUpon>
     </Compile>
     <Compile Include="perfil_supervisor\informes_ventas.cs">
       <SubType>Form</SubType>
@@ -127,6 +140,12 @@
     <Compile Include="perfil_vendedor\alta_cliente.Designer.cs">
       <DependentUpon>alta_cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="perfil_vendedor\informes_venta_vendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="perfil_vendedor\informes_venta_vendedor.Designer.cs">
+      <DependentUpon>informes_venta_vendedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="perfil_vendedor\listar_clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +170,12 @@
     <Compile Include="perfil_vendedor\modificar_cliente.Designer.cs">
       <DependentUpon>modificar_cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="perfil_vendedor\productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="perfil_vendedor\productos.Designer.cs">
+      <DependentUpon>productos.cs</DependentUpon>
+    </Compile>
     <Compile Include="perfil_vendedor\realizar_venta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,13 +188,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="perfil_administrador\alta_usuario.resx">
-      <DependentUpon>alta_usuario.cs</DependentUpon>
+    <EmbeddedResource Include="perfil_administrador\alta_empleado.resx">
+      <DependentUpon>alta_empleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="perfil_administrador\baja_usuario.resx">
-      <DependentUpon>baja_usuario.cs</DependentUpon>
+    <EmbeddedResource Include="perfil_administrador\baja_empleado.resx">
+      <DependentUpon>baja_empleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_administrador\generar_respaldo.resx">
       <DependentUpon>generar_respaldo.cs</DependentUpon>
@@ -180,8 +210,8 @@
     <EmbeddedResource Include="perfil_administrador\menu_administrador.resx">
       <DependentUpon>menu_administrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="perfil_administrador\modificar_usuario.resx">
-      <DependentUpon>modificar_usuario.cs</DependentUpon>
+    <EmbeddedResource Include="perfil_administrador\modificar_empleado.resx">
+      <DependentUpon>modificar_empleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_supervisor\alta_producto.resx">
       <DependentUpon>alta_producto.cs</DependentUpon>
@@ -191,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_supervisor\baja_proveedor.resx">
       <DependentUpon>baja_proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="perfil_supervisor\informes_generales.resx">
+      <DependentUpon>informes_generales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="perfil_supervisor\informes_ventas.resx">
       <DependentUpon>informes_ventas.cs</DependentUpon>
@@ -207,6 +240,9 @@
     <EmbeddedResource Include="perfil_vendedor\alta_cliente.resx">
       <DependentUpon>alta_cliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="perfil_vendedor\informes_venta_vendedor.resx">
+      <DependentUpon>informes_venta_vendedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="perfil_vendedor\listar_clientes.resx">
       <DependentUpon>listar_clientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +255,9 @@
     <EmbeddedResource Include="perfil_vendedor\modificar_cliente.resx">
       <DependentUpon>modificar_cliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="perfil_vendedor\productos.resx">
+      <DependentUpon>productos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="perfil_vendedor\realizar_venta.resx">
       <DependentUpon>realizar_venta.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +267,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\logosinfondo12.png" />
   </ItemGroup>
   <ItemGroup>
@@ -240,14 +284,16 @@
     <None Include="Resources\pexels-photo-15455291.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\capa_entidades\capa_entidades.csproj">
-      <Project>{7cb0ed3e-8ede-41fa-a9b7-6fed48c389ad}</Project>
-      <Name>capa_entidades</Name>
-    </ProjectReference>
     <ProjectReference Include="..\capa_negocio\capa_negocio.csproj">
       <Project>{be8a7de5-84d6-4ef8-929f-52759bab15df}</Project>
       <Name>capa_negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modelo_comprobante.html.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="modelo_comprobante.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

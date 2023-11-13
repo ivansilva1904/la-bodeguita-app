@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlModificarProveedor = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbxEstado = new System.Windows.Forms.ComboBox();
+            this.dgvModificarProveedor = new System.Windows.Forms.DataGridView();
             this.cbxFiltro = new System.Windows.Forms.ComboBox();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
@@ -46,20 +49,19 @@
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.txtCuit = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baja = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlModificarProveedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModificarProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlModificarProveedor
             // 
+            this.pnlModificarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlModificarProveedor.BackColor = System.Drawing.Color.Beige;
+            this.pnlModificarProveedor.Controls.Add(this.label2);
+            this.pnlModificarProveedor.Controls.Add(this.cbxEstado);
+            this.pnlModificarProveedor.Controls.Add(this.dgvModificarProveedor);
             this.pnlModificarProveedor.Controls.Add(this.cbxFiltro);
             this.pnlModificarProveedor.Controls.Add(this.lblFiltro);
             this.pnlModificarProveedor.Controls.Add(this.txtFiltro);
@@ -77,28 +79,59 @@
             this.pnlModificarProveedor.Controls.Add(this.txtRazonSocial);
             this.pnlModificarProveedor.Controls.Add(this.txtCuit);
             this.pnlModificarProveedor.Controls.Add(this.txtEmail);
-            this.pnlModificarProveedor.Controls.Add(this.dataGridView1);
             this.pnlModificarProveedor.Location = new System.Drawing.Point(12, 12);
             this.pnlModificarProveedor.Name = "pnlModificarProveedor";
             this.pnlModificarProveedor.Size = new System.Drawing.Size(709, 442);
             this.pnlModificarProveedor.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(40, 199);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Estado";
+            // 
+            // cbxEstado
+            // 
+            this.cbxEstado.FormattingEnabled = true;
+            this.cbxEstado.Items.AddRange(new object[] {
+            "Habilitado\t",
+            "Deshabilitado"});
+            this.cbxEstado.Location = new System.Drawing.Point(105, 196);
+            this.cbxEstado.Name = "cbxEstado";
+            this.cbxEstado.Size = new System.Drawing.Size(210, 21);
+            this.cbxEstado.TabIndex = 5;
+            // 
+            // dgvModificarProveedor
+            // 
+            this.dgvModificarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvModificarProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvModificarProveedor.Location = new System.Drawing.Point(3, 299);
+            this.dgvModificarProveedor.Name = "dgvModificarProveedor";
+            this.dgvModificarProveedor.Size = new System.Drawing.Size(703, 140);
+            this.dgvModificarProveedor.TabIndex = 18;
+            this.dgvModificarProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModificarProveedor_CellContentClick);
+            // 
             // cbxFiltro
             // 
+            this.cbxFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbxFiltro.FormattingEnabled = true;
             this.cbxFiltro.Items.AddRange(new object[] {
             "Cuit",
-            "Razon Social",
-            "Rubro"});
-            this.cbxFiltro.Location = new System.Drawing.Point(117, 270);
+            "Razon Social"});
+            this.cbxFiltro.Location = new System.Drawing.Point(64, 270);
             this.cbxFiltro.Name = "cbxFiltro";
-            this.cbxFiltro.Size = new System.Drawing.Size(56, 21);
+            this.cbxFiltro.Size = new System.Drawing.Size(93, 21);
             this.cbxFiltro.TabIndex = 17;
             // 
             // lblFiltro
             // 
+            this.lblFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(76, 273);
+            this.lblFiltro.Location = new System.Drawing.Point(23, 273);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(35, 13);
             this.lblFiltro.TabIndex = 16;
@@ -106,30 +139,35 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(186, 270);
+            this.txtFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtFiltro.Location = new System.Drawing.Point(163, 270);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(205, 21);
             this.txtFiltro.TabIndex = 15;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(397, 270);
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBuscar.Location = new System.Drawing.Point(374, 270);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(119, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(114, 23);
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(135, 156);
+            this.txtTelefono.Location = new System.Drawing.Point(105, 156);
+            this.txtTelefono.MaxLength = 30;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(150, 21);
-            this.txtTelefono.TabIndex = 13;
+            this.txtTelefono.Size = new System.Drawing.Size(210, 21);
+            this.txtTelefono.TabIndex = 4;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // lblModificarProveedor
             // 
+            this.lblModificarProveedor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblModificarProveedor.AutoSize = true;
             this.lblModificarProveedor.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModificarProveedor.Location = new System.Drawing.Point(282, 20);
@@ -141,18 +179,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 159);
+            this.label1.Location = new System.Drawing.Point(40, 159);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Telefono";
             // 
             // btnLimpiarCampos
             // 
-            this.btnLimpiarCampos.Location = new System.Drawing.Point(481, 169);
+            this.btnLimpiarCampos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(540, 212);
             this.btnLimpiarCampos.Name = "btnLimpiarCampos";
             this.btnLimpiarCampos.Size = new System.Drawing.Size(119, 24);
-            this.btnLimpiarCampos.TabIndex = 10;
+            this.btnLimpiarCampos.TabIndex = 6;
             this.btnLimpiarCampos.Text = "Limpiar Campos";
             this.btnLimpiarCampos.UseVisualStyleBackColor = true;
             this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
@@ -160,7 +199,7 @@
             // lblRubro
             // 
             this.lblRubro.AutoSize = true;
-            this.lblRubro.Location = new System.Drawing.Point(70, 117);
+            this.lblRubro.Location = new System.Drawing.Point(40, 117);
             this.lblRubro.Name = "lblRubro";
             this.lblRubro.Size = new System.Drawing.Size(38, 13);
             this.lblRubro.TabIndex = 9;
@@ -169,7 +208,7 @@
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(70, 75);
+            this.lblCuit.Location = new System.Drawing.Point(40, 75);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(30, 13);
             this.lblCuit.TabIndex = 8;
@@ -177,8 +216,9 @@
             // 
             // lblDireccion
             // 
+            this.lblDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(341, 115);
+            this.lblDireccion.Location = new System.Drawing.Point(354, 117);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(60, 13);
             this.lblDireccion.TabIndex = 7;
@@ -186,8 +226,9 @@
             // 
             // lblRazonSocial
             // 
+            this.lblRazonSocial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.Location = new System.Drawing.Point(341, 75);
+            this.lblRazonSocial.Location = new System.Drawing.Point(354, 75);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(80, 13);
             this.lblRazonSocial.TabIndex = 6;
@@ -195,94 +236,54 @@
             // 
             // btnGuardarCambios
             // 
-            this.btnGuardarCambios.Location = new System.Drawing.Point(481, 199);
+            this.btnGuardarCambios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardarCambios.Location = new System.Drawing.Point(540, 242);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(119, 24);
-            this.btnGuardarCambios.TabIndex = 5;
+            this.btnGuardarCambios.TabIndex = 7;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(444, 112);
+            this.txtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDireccion.Location = new System.Drawing.Point(440, 114);
+            this.txtDireccion.MaxLength = 30;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(156, 21);
-            this.txtDireccion.TabIndex = 4;
+            this.txtDireccion.Size = new System.Drawing.Size(219, 21);
+            this.txtDireccion.TabIndex = 3;
             // 
             // txtRazonSocial
             // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(444, 72);
+            this.txtRazonSocial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRazonSocial.Location = new System.Drawing.Point(440, 72);
+            this.txtRazonSocial.MaxLength = 50;
             this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(156, 21);
-            this.txtRazonSocial.TabIndex = 3;
+            this.txtRazonSocial.Size = new System.Drawing.Size(219, 21);
+            this.txtRazonSocial.TabIndex = 1;
             // 
             // txtCuit
             // 
-            this.txtCuit.Location = new System.Drawing.Point(135, 72);
+            this.txtCuit.Location = new System.Drawing.Point(105, 72);
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.ReadOnly = true;
-            this.txtCuit.Size = new System.Drawing.Size(150, 21);
+            this.txtCuit.Size = new System.Drawing.Size(210, 21);
             this.txtCuit.TabIndex = 2;
             this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(135, 114);
+            this.txtEmail.Location = new System.Drawing.Point(105, 114);
+            this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(150, 21);
-            this.txtEmail.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cuit,
-            this.razonSocial,
-            this.email,
-            this.direccion,
-            this.telefono,
-            this.baja});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 304);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(703, 135);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // cuit
-            // 
-            this.cuit.HeaderText = "Cuit";
-            this.cuit.Name = "cuit";
-            // 
-            // razonSocial
-            // 
-            this.razonSocial.HeaderText = "Razon Social";
-            this.razonSocial.Name = "razonSocial";
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            // 
-            // direccion
-            // 
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            // 
-            // baja
-            // 
-            this.baja.HeaderText = "Dar Baja";
-            this.baja.Name = "baja";
-            this.baja.Text = "Dar Baja";
+            this.txtEmail.Size = new System.Drawing.Size(210, 21);
+            this.txtEmail.TabIndex = 2;
             // 
             // modificar_proveedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Cornsilk;
             this.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_wine_barrel;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -293,9 +294,11 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "modificar_proveedor";
             this.Text = "modificar_proveedor";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.modificar_proveedor_Load);
             this.pnlModificarProveedor.ResumeLayout(false);
             this.pnlModificarProveedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModificarProveedor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,7 +315,6 @@
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.TextBox txtCuit;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLimpiarCampos;
         private System.Windows.Forms.Label lblModificarProveedor;
@@ -321,11 +323,8 @@
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewButtonColumn baja;
+        private System.Windows.Forms.DataGridView dgvModificarProveedor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxEstado;
     }
 }

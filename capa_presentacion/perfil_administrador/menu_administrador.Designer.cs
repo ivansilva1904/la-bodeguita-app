@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu_administrador));
             this.panOpciones = new System.Windows.Forms.Panel();
+            this.btnBajaEmpleado = new System.Windows.Forms.Button();
             this.btnListarEmpleados = new System.Windows.Forms.Button();
             this.picboxLogo = new System.Windows.Forms.PictureBox();
             this.btnModEmpleado = new System.Windows.Forms.Button();
@@ -45,16 +46,32 @@
             this.panOpciones.AutoSize = true;
             this.panOpciones.BackColor = System.Drawing.Color.Tan;
             this.panOpciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panOpciones.Controls.Add(this.btnBajaEmpleado);
             this.panOpciones.Controls.Add(this.btnListarEmpleados);
             this.panOpciones.Controls.Add(this.picboxLogo);
             this.panOpciones.Controls.Add(this.btnModEmpleado);
             this.panOpciones.Controls.Add(this.btnAltaEmpleado);
             this.panOpciones.Controls.Add(this.btnGenerarRespaldo);
+            this.panOpciones.Dock = System.Windows.Forms.DockStyle.Left;
             this.panOpciones.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panOpciones.Location = new System.Drawing.Point(-1, -1);
+            this.panOpciones.Location = new System.Drawing.Point(0, 0);
             this.panOpciones.Name = "panOpciones";
-            this.panOpciones.Size = new System.Drawing.Size(262, 468);
+            this.panOpciones.Size = new System.Drawing.Size(262, 461);
             this.panOpciones.TabIndex = 0;
+            // 
+            // btnBajaEmpleado
+            // 
+            this.btnBajaEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnBajaEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBajaEmpleado.Location = new System.Drawing.Point(-2, 291);
+            this.btnBajaEmpleado.Name = "btnBajaEmpleado";
+            this.btnBajaEmpleado.Size = new System.Drawing.Size(257, 50);
+            this.btnBajaEmpleado.TabIndex = 9;
+            this.btnBajaEmpleado.Text = "Baja empleado";
+            this.btnBajaEmpleado.UseVisualStyleBackColor = true;
+            this.btnBajaEmpleado.Click += new System.EventHandler(this.btnBajaEmpleado_Click);
+            this.btnBajaEmpleado.MouseEnter += new System.EventHandler(this.btnBajaEmpleado_MouseEnter);
+            this.btnBajaEmpleado.MouseLeave += new System.EventHandler(this.btnBajaEmpleado_MouseLeave);
             // 
             // btnListarEmpleados
             // 
@@ -113,9 +130,10 @@
             // 
             // btnGenerarRespaldo
             // 
+            this.btnGenerarRespaldo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGenerarRespaldo.FlatAppearance.BorderSize = 0;
             this.btnGenerarRespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarRespaldo.Location = new System.Drawing.Point(-2, 411);
+            this.btnGenerarRespaldo.Location = new System.Drawing.Point(-2, 404);
             this.btnGenerarRespaldo.Name = "btnGenerarRespaldo";
             this.btnGenerarRespaldo.Size = new System.Drawing.Size(257, 50);
             this.btnGenerarRespaldo.TabIndex = 3;
@@ -127,24 +145,32 @@
             // 
             // panFormsAdministrador
             // 
+            this.panFormsAdministrador.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panFormsAdministrador.AutoSize = true;
             this.panFormsAdministrador.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_15455291;
             this.panFormsAdministrador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panFormsAdministrador.Location = new System.Drawing.Point(254, -1);
+            this.panFormsAdministrador.Location = new System.Drawing.Point(262, 0);
+            this.panFormsAdministrador.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panFormsAdministrador.Name = "panFormsAdministrador";
-            this.panFormsAdministrador.Size = new System.Drawing.Size(733, 466);
+            this.panFormsAdministrador.Size = new System.Drawing.Size(722, 461);
             this.panFormsAdministrador.TabIndex = 1;
             // 
             // menu_administrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.panFormsAdministrador);
             this.Controls.Add(this.panOpciones);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IsMdiContainer = true;
+            this.KeyPreview = true;
             this.Name = "menu_administrador";
-            this.Text = "menu";
+            this.Text = "La bodeguita - Menu administrador";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_administrador_FormClosing);
+            this.SizeChanged += new System.EventHandler(this.menu_administrador_SizeChanged);
             this.panOpciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).EndInit();
             this.ResumeLayout(false);
@@ -161,5 +187,6 @@
         private System.Windows.Forms.Button btnModEmpleado;
         private System.Windows.Forms.PictureBox picboxLogo;
         private System.Windows.Forms.Button btnListarEmpleados;
+        private System.Windows.Forms.Button btnBajaEmpleado;
     }
 }

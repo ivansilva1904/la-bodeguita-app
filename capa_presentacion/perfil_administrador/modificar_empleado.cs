@@ -9,14 +9,18 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using capa_negocio;
+
 namespace capa_presentacion.perfil_administrador
 {
-    public partial class modificar_usuario : Form
+    public partial class modificar_empleado : Form
     {
-        public modificar_usuario()
+        public modificar_empleado()
         {
             InitializeComponent();
         }
+
+        NegocioEmpleado negocioEmpleado = new NegocioEmpleado();
 
         private void btnLimpiarCampos_Click(object sender, EventArgs e)
         {
@@ -102,27 +106,28 @@ namespace capa_presentacion.perfil_administrador
             string dni = txtDNI.Text;
             string email = txtEmail.Text;
             string telefono = txtTelefono.Text;
-            string contraseña = txtNuevaContraseña.Text;
-            string contraseña2 = txtNuevaContraseña2.Text;
+            string direccion = txtDireccion.Text;
+            int tipoEmpleado = radbtnVendedor.Checked == true ? 1 : 2;
+            string nuevaContraseña = txtNuevaContraseña.Text;
+            string nuevaContraseña2 = txtNuevaContraseña2.Text;
 
             if (!string.IsNullOrWhiteSpace(nombre) &&
                 !string.IsNullOrWhiteSpace(apellido) &&
                 !string.IsNullOrWhiteSpace(email) &&
                 !string.IsNullOrWhiteSpace(telefono) &&
-                !string.IsNullOrWhiteSpace(contraseña) &&
-                !string.IsNullOrWhiteSpace(contraseña2) &&
-                (radbtnSupervisor.Checked == true || radbtnVendedor.Checked == true))
+                !string.IsNullOrWhiteSpace(direccion))
             {
                 if (validarCorreo(email) == true)
                 {
-                    if (contraseña == contraseña2)
+                    if (nuevaContraseña == nuevaContraseña2)
                     {
                         DialogResult resp = MessageBox.Show("Desea Modificar el Empleado?",
                             "Aviso", MessageBoxButtons.YesNo,
                             MessageBoxIcon.Question);
                         if (resp == DialogResult.Yes)
                         {
-                            // Modificar base de datos //
+                            negocioEmpleado.actualizarEmpleado(int.Parse(dni), nombre, apellido, email, telefono, direccion, tipoEmpleado, nuevaContraseña);
+
                             MessageBox.Show("Se han modificado los datos del empleado",
                                 "Aviso de Alta",
                                 MessageBoxButtons.OK,
@@ -160,6 +165,65 @@ namespace capa_presentacion.perfil_administrador
         public static bool validarCorreo(string comprobarCorreo)
         {
             return comprobarCorreo != null && Regex.IsMatch(comprobarCorreo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        }
+
+        private void modificar_usuario_Load(object sender, EventArgs e)
+        {
+            DataTable tablaEmpleados = negocioEmpleado.listarEmpleadosActivos();
+
+            DataGridViewButtonColumn columnaBotonMod = new DataGridViewButtonColumn();
+            columnaBotonMod.HeaderText = "";
+            columnaBotonMod.Name = "colModificar";
+            columnaBotonMod.Text = "Modificar";
+            columnaBotonMod.UseColumnTextForButtonValue = true;
+            tablaEmpleados.Columns.Remove("Fecha deshabilitacion");
+            tablaEmpleados.Columns.Remove("Baja");
+
+            dgvUsersRegistrados.Columns.Add(columnaBotonMod);
+
+            dgvUsersRegistrados.DataSource = tablaEmpleados;
+        }
+
+        private void dgvUsersRegistrados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var sendergrid = (DataGridView)sender;
+
+            if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                txtDNI.Text = dgvUsersRegistrados.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtNombre.Text = dgvUsersRegistrados.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtApellido.Text = dgvUsersRegistrados.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtEmail.Text = dgvUsersRegistrados.Rows[e.RowIndex].Cells[8].Value.ToString();
+                txtTelefono.Text = dgvUsersRegistrados.Rows[e.RowIndex].Cells[7].Value.ToString();
+                txtDireccion.Text = dgvUsersRegistrados.Rows[e.RowIndex].Cells[6].Value.ToString();
+                if (dgvUsersRegistrados.Rows[e.RowIndex].Cells[9].Value.ToString() == "1")
+                {
+                    radbtnVendedor.Checked = true;
+                }
+                else
+                {
+                    radbtnSupervisor.Checked = true;
+                }
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DataTable empleado = negocioEmpleado.buscarEmpleadoPorDNI(int.Parse(txtBuscar.Text));
+
+            if(empleado.Rows.Count > 0)
+            {
+                empleado.Columns.Remove("Fecha deshabilitacion");
+                empleado.Columns.Remove("Baja");
+
+                dgvUsersRegistrados.DataSource = null;
+
+                dgvUsersRegistrados.DataSource = empleado;
+            }
+            else
+            {
+                MessageBox.Show("El DNI ingresado no pertenece a un empleado registrado");
+            }
         }
     }
 }

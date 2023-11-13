@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.Net-Next.4.0.3\lib\net35\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.54.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>packages\HtmlAgilityPack.1.11.54\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -67,6 +73,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,6 +88,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="capa_negocio\capa_negocio.csproj">
+      <Project>{be8a7de5-84d6-4ef8-929f-52759bab15df}</Project>
+      <Name>capa_negocio</Name>
+    </ProjectReference>
     <ProjectReference Include="capa_presentacion\capa_presentacion.csproj">
       <Project>{0a724df1-060a-4718-867e-e55ecb4d3815}</Project>
       <Name>capa_presentacion</Name>
@@ -88,6 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pexels-pixabay-434311.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="capa_presentacion\Resources\logosinfondo12.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

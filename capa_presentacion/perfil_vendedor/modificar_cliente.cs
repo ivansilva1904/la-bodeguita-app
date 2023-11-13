@@ -9,6 +9,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using capa_negocio;
+
 namespace capa_presentacion.perfil_vendedor
 {
     public partial class modificar_cliente : Form
@@ -16,6 +18,16 @@ namespace capa_presentacion.perfil_vendedor
         public modificar_cliente()
         {
             InitializeComponent();
+        }
+
+        NegocioCliente negocioCliente = new NegocioCliente();
+
+        private void limpiarCampos()
+        {
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtEmail.Clear();
+            txtDNI.Clear();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -28,7 +40,6 @@ namespace capa_presentacion.perfil_vendedor
 
             if (!string.IsNullOrWhiteSpace(nombre) &&
                 !string.IsNullOrWhiteSpace(apellido) &&
-                !string.IsNullOrWhiteSpace(dni) &&
                 !string.IsNullOrWhiteSpace(email))
             {
                 if (validarCorreo(email) == true)
@@ -38,16 +49,17 @@ namespace capa_presentacion.perfil_vendedor
                             MessageBoxIcon.Question);
                     if (resp == DialogResult.Yes)
                     {
-                        // ingresar en la base de datos // verificar que no este repetido en la b (poner try catch?)
-                        // faltaria validacion de dni ya existente
+                        negocioCliente.actualizarCliente(int.Parse(dni), nombre, apellido, email);
                         MessageBox.Show("Se ha Modificado en la base de datos",
                             "Aviso Modificacion",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
 
+                        dgvClientesRegistrados.DataSource = null;
+                        dgvClientesRegistrados.DataSource = negocioCliente.listarClientes();
+
+                        limpiarCampos();
                     }
-
-
                 }
                 else
                 {
@@ -88,13 +100,61 @@ namespace capa_presentacion.perfil_vendedor
                 e.Handled = true;
             }
         }
+
+        private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void modificar_cliente_Load(object sender, EventArgs e)
+        {
+            DataTable dtClientes = negocioCliente.listarClientes();
+
+            DataGridViewButtonColumn btnModificar = new DataGridViewButtonColumn();
+
+            btnModificar.HeaderText = "";
+            btnModificar.Name = "colModificar";
+            btnModificar.Text = "Modificar";
+            btnModificar.UseColumnTextForButtonValue = true;
+
+            dgvClientesRegistrados.Columns.Add(btnModificar);
+            dgvClientesRegistrados.DataSource = dtClientes;
+        }
+
+        private void dgvClientesRegistrados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var sendergrid = (DataGridView)sender;
+
+            if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                txtDNI.Text = dgvClientesRegistrados.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtNombre.Text = dgvClientesRegistrados.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtApellido.Text = dgvClientesRegistrados.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtEmail.Text = dgvClientesRegistrados.Rows[e.RowIndex].Cells[4].Value.ToString();
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DataTable dtCliente = negocioCliente.listarClientePorDNI(int.Parse(txtFiltro.Text));
+
+            if(dtCliente.Rows.Count > 0)
+            {
+                dgvClientesRegistrados.DataSource = null;
+                dgvClientesRegistrados.DataSource = dtCliente;
+            }
+            else
+            {
+                MessageBox.Show("El DNI ingresado no corresponde con ningun cliente registrado");
+            }
+        }
+
         private void btnLimpiarCampos_Click(object sender, EventArgs e)
         {
-            txtNombre.Clear();
-            txtApellido.Clear();
-            txtEmail.Clear();
-            txtDNI.Clear();
-
+            limpiarCampos();
         }
     }
 

@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using capa_presentacion.perfil_administrador;
 using capa_presentacion.perfil_supervisor;
 using capa_presentacion.perfil_vendedor;
+using capa_negocio;
+using BCrypt.Net;
 
 namespace la_bodeguita
 {
     public partial class login : Form
     {
+        NegocioEmpleado negocioEmpleado = new NegocioEmpleado();
         public login()
         {
             InitializeComponent();
@@ -34,27 +37,50 @@ namespace la_bodeguita
             if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtContra.Text) )
             {
                 MessageBox.Show("Existen Campos Vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                lblTest.Text = "log nul";
+                return;
             }
-            else
+
+            bool existeEmpleado = negocioEmpleado.verificarEmpleadoExistente(int.Parse(txtUsuario.Text));
+            if(existeEmpleado == false)
             {
-                this.Hide();
-                //Checkear login con base de datos y entrar al menu de usuario correspondiente
-                lblTest.Text = "log correcto";
-                if(txtUsuario.Text == "1")
+                MessageBox.Show("El empleado no existe. Contacte al administrador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DataTable dtEmpleado = negocioEmpleado.buscarEmpleadoPorDNI(int.Parse(txtUsuario.Text));
+            if (dtEmpleado.Rows[0].Field<bool>("Baja").ToString() == "True")
+            {
+                MessageBox.Show("El empleado existe, pero esta deshabilitado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!BCrypt.Net.BCrypt.Verify(txtContra.Text, dtEmpleado.Rows[0].Field<string>("Contraseña").ToString()))
+            {
+                MessageBox.Show("La contraseña ingresada es incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //Si no se cumplio nada de lo anterior, loguea al empleado en su perfil correspondiente
+            this.Hide();
+            switch (dtEmpleado.Rows[0].Field<int>("Tipo empleado"))
+            {
+                case 1:
                 {
-                    Form menu_administrador = new menu_administrador();
-                    menu_administrador.Show();
-                }
-                if(txtUsuario.Text == "2")
-                {
-                    Form menu_supervisor = new menu_supervisor();
-                    menu_supervisor.Show();
-                }
-                if(txtUsuario.Text == "3")
-                {
-                    Form menu_vendedor = new menu_vendedor();
+                    Form menu_vendedor = new menu_vendedor(dtEmpleado);
                     menu_vendedor.Show();
+                    break;
+                }
+                case 2:
+                {
+                    Form menu_supervisor = new menu_supervisor(dtEmpleado);
+                    menu_supervisor.Show();
+                    break;
+                }
+                case 3:
+                {
+                    Form menu_administrador = new menu_administrador(dtEmpleado);
+                    menu_administrador.Show();
+                    break;
                 }
             }
         }

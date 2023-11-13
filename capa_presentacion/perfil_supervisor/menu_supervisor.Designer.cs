@@ -30,6 +30,7 @@
         {
             this.btnAltaProovedor = new System.Windows.Forms.Button();
             this.menuSupervisor = new System.Windows.Forms.Panel();
+            this.btnInformesGenerales = new System.Windows.Forms.Button();
             this.btnInformeVentas = new System.Windows.Forms.Button();
             this.picboxLogo = new System.Windows.Forms.PictureBox();
             this.btnAltaProducto = new System.Windows.Forms.Button();
@@ -58,19 +59,37 @@
             // 
             // menuSupervisor
             // 
+            this.menuSupervisor.AutoSize = true;
             this.menuSupervisor.BackColor = System.Drawing.Color.Tan;
             this.menuSupervisor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.menuSupervisor.Controls.Add(this.btnInformesGenerales);
             this.menuSupervisor.Controls.Add(this.btnInformeVentas);
             this.menuSupervisor.Controls.Add(this.picboxLogo);
             this.menuSupervisor.Controls.Add(this.btnAltaProducto);
             this.menuSupervisor.Controls.Add(this.btnModificarProveedor);
             this.menuSupervisor.Controls.Add(this.btnModificarProducto);
             this.menuSupervisor.Controls.Add(this.btnAltaProovedor);
-            this.menuSupervisor.Location = new System.Drawing.Point(1, 0);
+            this.menuSupervisor.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuSupervisor.Location = new System.Drawing.Point(0, 0);
             this.menuSupervisor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.menuSupervisor.Name = "menuSupervisor";
-            this.menuSupervisor.Size = new System.Drawing.Size(257, 466);
+            this.menuSupervisor.Size = new System.Drawing.Size(262, 461);
             this.menuSupervisor.TabIndex = 1;
+            // 
+            // btnInformesGenerales
+            // 
+            this.btnInformesGenerales.FlatAppearance.BorderSize = 0;
+            this.btnInformesGenerales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformesGenerales.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformesGenerales.Location = new System.Drawing.Point(-2, 404);
+            this.btnInformesGenerales.Name = "btnInformesGenerales";
+            this.btnInformesGenerales.Size = new System.Drawing.Size(255, 50);
+            this.btnInformesGenerales.TabIndex = 3;
+            this.btnInformesGenerales.Text = "Informes Generales";
+            this.btnInformesGenerales.UseVisualStyleBackColor = true;
+            this.btnInformesGenerales.Click += new System.EventHandler(this.btnInformesGenerales_Click);
+            this.btnInformesGenerales.MouseEnter += new System.EventHandler(this.btnInformesGenerales_MouseEnter);
+            this.btnInformesGenerales.MouseLeave += new System.EventHandler(this.btnInformesGenerales_MouseLeave);
             // 
             // btnInformeVentas
             // 
@@ -146,32 +165,36 @@
             // 
             // pnlFormsSupervisor
             // 
-            this.pnlFormsSupervisor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnlFormsSupervisor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFormsSupervisor.AutoSize = true;
+            this.pnlFormsSupervisor.BackColor = System.Drawing.SystemColors.Control;
             this.pnlFormsSupervisor.BackgroundImage = global::capa_presentacion.Properties.Resources.pexels_photo_wine_barrel;
             this.pnlFormsSupervisor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlFormsSupervisor.Location = new System.Drawing.Point(256, -1);
-            this.pnlFormsSupervisor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pnlFormsSupervisor.Location = new System.Drawing.Point(262, 0);
             this.pnlFormsSupervisor.Name = "pnlFormsSupervisor";
             this.pnlFormsSupervisor.Size = new System.Drawing.Size(733, 466);
             this.pnlFormsSupervisor.TabIndex = 0;
             // 
             // menu_supervisor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.pnlFormsSupervisor);
             this.Controls.Add(this.menuSupervisor);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "menu_supervisor";
-            this.Text = "Supervisor";
+            this.Text = "La bodeguita - Menu supervisor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_supervisor_FormClosing);
+            this.SizeChanged += new System.EventHandler(this.menu_supervisor_SizeChanged);
             this.menuSupervisor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picboxLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -179,11 +202,12 @@
 
         private System.Windows.Forms.Button btnAltaProovedor;
         private System.Windows.Forms.Panel menuSupervisor;
-        private System.Windows.Forms.Panel pnlFormsSupervisor;
         private System.Windows.Forms.Button btnAltaProducto;
         private System.Windows.Forms.Button btnModificarProveedor;
         private System.Windows.Forms.Button btnModificarProducto;
         private System.Windows.Forms.PictureBox picboxLogo;
         private System.Windows.Forms.Button btnInformeVentas;
+        private System.Windows.Forms.Button btnInformesGenerales;
+        private System.Windows.Forms.Panel pnlFormsSupervisor;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using capa_negocio;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +18,11 @@ namespace capa_presentacion.perfil_supervisor
         {
             InitializeComponent();
         }
+
+        NegocioProducto negocioProducto = new NegocioProducto();
+        NegocioProveedor negocioProveedor = new NegocioProveedor();
+        NegocioMarca negocioMarca = new NegocioMarca();
+        NegocioTipoBebida negocioTipoBebida = new NegocioTipoBebida();
 
         private void txtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -36,31 +43,73 @@ namespace capa_presentacion.perfil_supervisor
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtMarca.Text) &&
+            if (!string.IsNullOrWhiteSpace(cbxMarca.Text) &&
                 !string.IsNullOrWhiteSpace(txtPrecioCompra.Text) &&
                 !string.IsNullOrWhiteSpace(txtPrecioVenta.Text) &&
                 !string.IsNullOrWhiteSpace(txtStock.Text) &&
+                !string.IsNullOrWhiteSpace(txtStockMinimo.Text) &&
                 !string.IsNullOrWhiteSpace(txtDescripcion.Text) &&
-                (rbtCristaleria.Checked == true || rbtBebida.Checked == true))
+                !string.IsNullOrWhiteSpace(cbxProveedor.Text) &&
+                !string.IsNullOrWhiteSpace(cbxTipoBebida.Text))
             {
                 float precioCompra = float.Parse(txtPrecioCompra.Text);
                 float precioVenta = float.Parse(txtPrecioVenta.Text);
+                int stockAc = Int32.Parse(txtStock.Text);
+                int stockMin = Int32.Parse(txtStockMinimo.Text);
+                long cuitProveedor = 0;
+                int idBebida = 0;
+                int idMarca = 0;
                 if (precioCompra < precioVenta)
                 {
-                    DialogResult resp = MessageBox.Show("Esta seguro de modificar los datos del producto?",
-                    "Confirmar cambios",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-
-
-                    if (resp == DialogResult.Yes)
+                    if (stockMin < stockAc)
                     {
-                        MessageBox.Show("Se ha modificado el producto",
-                            "Cambios realizados",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                        limpiarCampos();
+                        
+                        
+                        //esto para obterner id proveedor y bebida
+                        DataTable tablaProveedor = negocioProveedor.buscarProveedorPorRazonSocial(cbxProveedor.Text);
+                        DataTable tablaTipoBebida = negocioTipoBebida.buscarTipoBebida(cbxTipoBebida.Text);
+                        DataTable tablaMarca = negocioMarca.obtenerMarca(cbxMarca.Text);
+                        DataTableReader lectorProveedor = new DataTableReader(tablaProveedor);
+                        DataTableReader lectorTipoBebida = new DataTableReader(tablaTipoBebida);
+                        DataTableReader lectorMarca = new DataTableReader(tablaMarca);
+                        while (lectorProveedor.Read())
+                        {
+                            cuitProveedor = lectorProveedor.GetInt64(0);
+                        }
+                        while (lectorTipoBebida.Read())
+                        {
+                            idBebida = lectorTipoBebida.GetInt32(0);
+                        }
+                        while (lectorMarca.Read())
+                        {
+                            idMarca = lectorMarca.GetInt32(0);
+                        }
+                        //Final carga
+                        if (idBebida != 0 && idMarca != 0 && cuitProveedor != 0)
+                        {
+                            DialogResult ask = DialogResult.No;
+
+                            ask = MessageBox.Show("Desea Modificar el Producto?",
+                                           "Confirmar Modificacion",
+                                            MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+                            if (ask == DialogResult.Yes)
+                            {
+                                negocioProducto.modificacionProducto(Int32.Parse(txtIdProducto.Text), txtDescripcion.Text, idMarca,
+                                precioCompra, precioVenta, stockMin, stockAc, cuitProveedor, idBebida);
+
+                                limpiarCampos();
+                                carga_dgvModificarProducto();
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("El stock minimo no puede ser mayor stock cctual",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -70,7 +119,7 @@ namespace capa_presentacion.perfil_supervisor
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
-                             
+
             }
             else
             {
@@ -81,14 +130,17 @@ namespace capa_presentacion.perfil_supervisor
         private void limpiarCampos()
         {
             txtIdProducto.Clear();
-            rbtCristaleria.Checked = false;
-            rbtBebida.Checked = false;
+            txtStockMinimo.Clear();
             txtPrecioCompra.Clear();
             txtPrecioVenta.Clear();
-            txtMarca.Clear();
+            cbxMarca.Items.Clear();
             txtDescripcion.Clear();
             txtStock.Clear();
-
+            cbxTipoBebida.Items.Clear();
+            cbxProveedor.Items.Clear();
+            cbxTipoBebida.Text = "";
+            cbxProveedor.Text = "";
+            cbxMarca.Text = "";
 
         }
 
@@ -106,6 +158,180 @@ namespace capa_presentacion.perfil_supervisor
 
         }
 
+
+
+        public void carga_cbxTipoBebidaycbxProveedorycbxMarca()
+        {
+
+            DataTable tablaProveedor = negocioProveedor.listarProveedorActivos();
+            DataTable tablaTipoBebida = negocioTipoBebida.listarTipoBebida();
+            DataTable tablaMarca = negocioMarca.listarMarca();
+            DataTableReader lectorProveedor = new DataTableReader(tablaProveedor);
+            DataTableReader lectorTipoBebida = new DataTableReader(tablaTipoBebida);
+            DataTableReader lectorMarca = new DataTableReader(tablaMarca);
+
+            while (lectorProveedor.Read())
+            {
+                cbxProveedor.Items.Add(lectorProveedor.GetString(1));
+            }
+            while (lectorTipoBebida.Read())
+            {
+                cbxTipoBebida.Items.Add(lectorTipoBebida.GetString(1));
+            }
+            while (lectorMarca.Read())
+            {
+                cbxMarca.Items.Add(lectorMarca.GetString(1));
+            }
+        }
+
+        private void modificar_producto_Load(object sender, EventArgs e)
+        {
+            DataGridViewButtonColumn columnaBotonMod = new DataGridViewButtonColumn();
+            columnaBotonMod.HeaderText = "Modificar";
+            columnaBotonMod.Name = "colModificar";
+            columnaBotonMod.Text = "Modificar";
+            columnaBotonMod.UseColumnTextForButtonValue = true;
+
+            dgvModificarProducto.Columns.Add(columnaBotonMod);
+
+            DataTable tablaProductos = negocioProducto.listarTodosProductos();
+
+            dgvModificarProducto.DataSource = tablaProductos;
+            /*
+            if (dgvModificarProducto.DataSource != null)
+            {
+                dgvModificarProducto.Columns["Baja"].Visible = false;
+            }*/
+            //
+
+            //
+            AplicarColorFondoSegunBaja();
+            carga_cbxTipoBebidaycbxProveedorycbxMarca();        
+        }
+
+        public void carga_dgvModificarProducto()
+        {
+            if (cbxMarca.Items.Count < 1 || cbxProveedor.Items.Count < 1 || cbxTipoBebida.Items.Count < 1)
+            {
+                carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            }
+
+            dgvModificarProducto.DataSource = null;
+            DataTable tablaProveedor = negocioProducto.listarTodosProductos();
+            dgvModificarProducto.DataSource = tablaProveedor;
+           /* if (dgvModificarProducto.DataSource != null)
+            {
+                dgvModificarProducto.Columns["Baja"].Visible = false;
+            }
+            */
+        }
+
+        private void dgvModificarProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            //int indiceFila = e.RowIndex;
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                txtIdProducto.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtDescripcion.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[2].Value.ToString();
+                cbxMarca.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtPrecioCompra.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txtPrecioVenta.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtStockMinimo.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[6].Value.ToString();
+                txtStock.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[7].Value.ToString();
+                cbxProveedor.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[8].Value.ToString();
+                cbxTipoBebida.Text = dgvModificarProducto.Rows[e.RowIndex].Cells[9].Value.ToString();
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string filtro = txtFiltro.Text;
+            
+            if(cbxFiltro.Text == "Deshabilitados")
+            {
+                cargaDGVDeshabilitado();
+            }
+            else if (String.IsNullOrWhiteSpace(filtro))
+            {
+                //gridview total
+                carga_dgvModificarProducto();
+            }
+            else if (cbxFiltro.Text == "Descripcion")
+            {
+                //trae matchs con el string
+                cargaDGVporDescripcion(filtro);
+            }
+            
+            else if (cbxFiltro.Text == "Tipo")
+            {
+                cargaDGVporTipo(filtro);
+                // trae matchs con nombre del tipo
+            }
+        }
+
+        private void cargaDGVDeshabilitado()
+        {
+            if(cbxMarca.Items.Count < 1 || cbxProveedor.Items.Count < 1 || cbxTipoBebida.Items.Count < 1)
+            {
+                carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            }
+            dgvModificarProducto.DataSource = null;
+            DataTable tablaProveedor = negocioProducto.listarProductosDeBaja();
+            dgvModificarProducto.DataSource = tablaProveedor;
+        }
+        private void cargaDGVporDescripcion(string filtro)
+        {
+            if (cbxMarca.Items.Count < 1 || cbxProveedor.Items.Count < 1 || cbxTipoBebida.Items.Count < 1)
+            {
+                carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            }
+            dgvModificarProducto.DataSource = null;
+            DataTable tablaProveedor = negocioProducto.listarProductosPorDescripcion(filtro);
+            dgvModificarProducto.DataSource = tablaProveedor;
+        }
+        private void cargaDGVporTipo(string filtro)
+        {
+            if (cbxMarca.Items.Count < 1 || cbxProveedor.Items.Count < 1 || cbxTipoBebida.Items.Count < 1)
+            {
+                carga_cbxTipoBebidaycbxProveedorycbxMarca();
+            }
+            dgvModificarProducto.DataSource = null;
+            DataTable tablaProveedor = negocioProducto.listarProductosPorTipo(filtro);
+            dgvModificarProducto.DataSource = tablaProveedor;
+        }
+
+        private void dgvModificarProducto_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            AplicarColorFondoSegunBaja();
+            
+        }
+
+        private void AplicarColorFondoSegunBaja()
+        {
+            if(dgvModificarProducto.DataSource != null)
+            {
+
+
+                foreach (DataGridViewRow row in dgvModificarProducto.Rows)
+                {
+                    if (row.Cells["Baja"].Value != null)
+                    {
+                        string estado = row.Cells["Baja"].Value.ToString();
+
+                        if (estado == "True")
+                        {
+                            row.DefaultCellStyle.BackColor = Color.Red;
+                        }
+                        else
+                        {
+                            row.DefaultCellStyle.BackColor = dgvModificarProducto.DefaultCellStyle.BackColor;
+                        }
+                    }
+                }
+            }
+        }
 
     }
 }

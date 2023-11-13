@@ -31,8 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net35\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="negocio_backup.cs" />
+    <Compile Include="negocio_marca.cs" />
+    <Compile Include="negocio_producto.cs" />
+    <Compile Include="negocio_tipobebida.cs" />
     <Compile Include="negocio_cliente.cs" />
+    <Compile Include="negocio_empleado.cs" />
+    <Compile Include="negocio_proveedor.cs" />
+    <Compile Include="negocio_venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,10 +60,9 @@
       <Project>{313531e5-54b2-4ade-bd7b-4fbb6ec92d23}</Project>
       <Name>capa_datos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\capa_entidades\capa_entidades.csproj">
-      <Project>{7cb0ed3e-8ede-41fa-a9b7-6fed48c389ad}</Project>
-      <Name>capa_entidades</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
