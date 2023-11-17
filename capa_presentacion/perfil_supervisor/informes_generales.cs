@@ -31,25 +31,26 @@ namespace capa_presentacion.perfil_supervisor
                 chartCantidad.Series.Clear();
                 chartCantidad.Series.Add(nombreSerie);
                 chartCantidad.Series[nombreSerie].ChartType = SeriesChartType.Pie;
+       
                 foreach (DataRow row in tabla.Rows)
                 {
                     string nombre = row[nombreX].ToString() + "/" + Convert.ToString(row[nombreY]);
                     double y = Convert.ToDouble(row[nombreY]);
                     chartCantidad.Series[nombreSerie].Points.AddXY(nombre, y);
+                    
+                    
                 }
-                /*
-                chartCantidad.Series.Clear();
 
-                foreach (DataRow row in v_cantidad_bebidas.Rows)
-                {   
-                    string nombre = row["Tipo de Bebida"].ToString();
-                    Series serie = chartCantidad.Series.Add(nombre);
-                    chartCantidad.Series[nombre].ChartType = SeriesChartType.Column;
-                    int y = Convert.ToInt32(row["Cantidad Vendida"]);
-                    serie.Label = Convert.ToString(y);
-                    serie.Points.Add(y);
+                
+                chartCantidad.Series[nombreSerie]["PieLabelStyle"] = "Disabled";
+
+                foreach (DataPoint point in chartCantidad.Series[nombreSerie].Points)
+                {
+                    string nombre = point.AxisLabel;
+                    chartCantidad.Series[nombreSerie].Points[0].Label = nombre;
                 }
-                */
+
+
             }
         }
 

@@ -55,7 +55,8 @@ namespace capa_datos
                 "telefono AS 'Telefono', " +
                 "email AS 'Email', " +
                 "fechaAlta AS 'Fecha Alta' " +
-                ",fechaBaja AS 'Fecha Baja'" +
+                ",fechaBaja AS 'Fecha Baja'," +
+                "baja AS 'Baja' " +
                 " FROM proveedor";
 
             SqlCommand comando = new SqlCommand(query, conexion);
@@ -77,7 +78,8 @@ namespace capa_datos
                 "telefono AS 'Telefono', " +
                 "email AS 'Email', " +
                 "fechaAlta AS 'Fecha Alta', " +
-                "fechaBaja AS 'Fecha Baja'" +
+                "fechaBaja AS 'Fecha Baja', " +
+                "baja AS 'Baja' " +
                 " FROM proveedor" +
                 " WHERE Baja = 0";
 
@@ -99,7 +101,8 @@ namespace capa_datos
                 "telefono AS 'Telefono'," +
                 "email AS 'Email', " +
                 "fechaAlta AS 'Fecha Alta'," +
-                "fechaBaja AS 'Fecha Baja'" +     
+                "fechaBaja AS 'Fecha Baja', " +
+                "baja AS 'Baja' " +
                 " FROM proveedor" + 
                 " WHERE cuitProveedor = " + cuit;
 
@@ -180,7 +183,8 @@ namespace capa_datos
                 "telefono AS Telefono, " +
                 "email AS Email, " +
                 "fechaAlta AS 'Fecha Alta', " +
-                "fechaBaja AS 'Fecha Baja' " +
+                "fechaBaja AS 'Fecha Baja', " +
+                "baja AS 'Baja' " +
                 " FROM proveedor" +
                 " WHERE razonSocial like '%"+razon+"%'";
 
